@@ -1,0 +1,353 @@
+﻿Hex Addr,Dec Addr,Tag Name,Description,Type,#,Data Type,Access
+ , ,PID595,,PID,#10,,
+0x0940,2369,PID595.PV,PV,PID,#10,float 32,R
+0x0942,2371,PID595.RSP_SP2,RSP_SP2,PID,#10,float 32,R/W
+0x0944,2373,PID595.WSP,WSP,PID,#10,float 32,R/W
+0x0946,2375,PID595.Output,Output,PID,#10,float 32,R/W
+0x094A,2379,PID595.CarbonPotTemp,Carbon Pot Temp,PID,#10,float 32,R
+0x094C,2381,PID595.Gain1_PropBand1,Gain 1_Prop Band 1,PID,#10,float 32,R/W
+0x094E,2383,PID595.Direction,Direction,PID,#10,float 32,R
+0x0950,2385,PID595.Reset1,Reset 1,PID,#10,float 32,R/W
+0x0952,2387,PID595.Rate1,Rate 1,PID,#10,float 32,R/W
+0x0954,2389,PID595.ScanCycleTime,Scan Cycle Time,PID,#10,float 32,R
+0x0956,2391,PID595.PV_LowRange,PV_Low Range,PID,#10,float 32,R
+0x0958,2393,PID595.PV_HighRange,PV_High Range,PID,#10,float 32,R
+0x095A,2395,PID595.Alarm1SP1,Alarm 1 SP1,PID,#10,float 32,R/W
+0x095C,2397,PID595.Alarm1SP2,Alarm 1 SP2,PID,#10,float 32,R/W
+0x0960,2401,PID595.Gain2_PropBand2,Gain2_Prop Band 2,PID,#10,float 32,R/W
+0x0962,2403,PID595.3PosStepDeadband,3 Pos Step Deadband,PID,#10,float 32,R/W
+0x0964,2405,PID595.Reset2,Reset 2,PID,#10,float 32,R/W
+0x0966,2407,PID595.Rate2,Rate 2,PID,#10,float 32,R/W
+0x0968,2409,PID595.CycleTime_Scan,Cycle Time_Scan,PID,#10,float 32,R
+0x096A,2411,PID595.LSP1,LSP1,PID,#10,float 32,R/W
+0x096C,2413,PID595.LSP2,LSP2,PID,#10,float 32,R/W
+0x096E,2415,PID595.Alarm2SP1,Alarm 2 SP1,PID,#10,float 32,R/W
+0x0970,2417,PID595.Alarm2SP2,Alarm 2 SP2,PID,#10,float 32,R/W
+0x0974,2421,PID595.SP_LowLimit,SP_Low Limit,PID,#10,float 32,R/W
+0x0976,2423,PID595.SP_HighLimit,SP_High Limit,PID,#10,float 32,R/W
+0x097A,2427,PID595.Output_LowLimit,Output_Low Limit,PID,#10,float 32,R/W
+0x097C,2429,PID595.Output_HighLimit,Output_High Limit,PID,#10,float 32,R/W
+0x097E,2431,PID595.OutputB,Output (B),PID,#10,float 32,R/W
+0x0986,2439,PID595.Ratio,Ratio,PID,#10,float 32,R/W
+0x0988,2441,PID595.Bias,Bias,PID,#10,float 32,R/W
+0x098A,2443,PID595.Deviation,Deviation,PID,#10,float 32,R
+0x098E,2447,PID595.ManualReset,Manual Reset,PID,#10,float 32,R/W
+0x0990,2449,PID595.FeedforwardGain,Feed forward Gain,PID,#10,float 32,R/W
+0x0992,2451,PID595.LocalPercentCarbMonoxide,Local Percent Carb Monoxide,PID,#10,float 32,R/W
+0x0994,2453,PID595.FurnaceFactor,Furnace Factor,PID,#10,float 32,R/W
+0x0996,2455,PID595.PercentHydrogen,Percent Hydrogen,PID,#10,float 32,R/W
+0x0998,2457,PID595.OnOff_OutHysterisis,On Off_Out Hysterisis,PID,#10,float 32,R/W
+0x099A,2459,PID595.CarbPotDewPt,Carb Pot Dew Pt,PID,#10,float 32,R/W
+0x099C,2461,PID595.3PosStepMotorTime,3 Pos Step Motor Time,PID,#10,float 32,R/W
+0x09F7,2552,PID595.EnableDisableFuzzy,Enable Disable Fuzzy,PID,#10,unsigned 16,R/W
+0x09F8,2553,PID595.DemandTuneReq,Demand Tune Req,PID,#10,unsigned 16,R/W
+0x09F9,2554,PID595.AntiSootSPLimEnable,Anti Soot SP Lim Enable,PID,#10,unsigned 16,R/W
+0x09FA,2555,PID595.AutoManState,Auto Man State,PID,#10,unsigned 16,R/W
+0x09FB,2556,PID595.LSPSelectState,LSP Select State,PID,#10,unsigned 16,R/W
+0x09FC,2557,PID595.RemLocSPState,Rem Loc SP State,PID,#10,unsigned 16,R/W
+0x09FD,2558,PID595.TuneSetState,Tune Set State,PID,#10,unsigned 16,R/W
+0x09FE,2559,PID595.LoopStatusRegister,Loop Status Register,PID,#10,unsigned 16,R
+ , ,PID599,,PID,#11,,
+0x0A40,2625,PID599.PV,PV,PID,#11,float 32,R
+0x0A42,2627,PID599.RSP_SP2,RSP_SP2,PID,#11,float 32,R/W
+0x0A44,2629,PID599.WSP,WSP,PID,#11,float 32,R/W
+0x0A46,2631,PID599.Output,Output,PID,#11,float 32,R/W
+0x0A4A,2635,PID599.CarbonPotTemp,Carbon Pot Temp,PID,#11,float 32,R
+0x0A4C,2637,PID599.Gain1_PropBand1,Gain 1_Prop Band 1,PID,#11,float 32,R/W
+0x0A4E,2639,PID599.Direction,Direction,PID,#11,float 32,R
+0x0A50,2641,PID599.Reset1,Reset 1,PID,#11,float 32,R/W
+0x0A52,2643,PID599.Rate1,Rate 1,PID,#11,float 32,R/W
+0x0A54,2645,PID599.ScanCycleTime,Scan Cycle Time,PID,#11,float 32,R
+0x0A56,2647,PID599.PV_LowRange,PV_Low Range,PID,#11,float 32,R
+0x0A58,2649,PID599.PV_HighRange,PV_High Range,PID,#11,float 32,R
+0x0A5A,2651,PID599.Alarm1SP1,Alarm 1 SP1,PID,#11,float 32,R/W
+0x0A5C,2653,PID599.Alarm1SP2,Alarm 1 SP2,PID,#11,float 32,R/W
+0x0A60,2657,PID599.Gain2_PropBand2,Gain2_Prop Band 2,PID,#11,float 32,R/W
+0x0A62,2659,PID599.3PosStepDeadband,3 Pos Step Deadband,PID,#11,float 32,R/W
+0x0A64,2661,PID599.Reset2,Reset 2,PID,#11,float 32,R/W
+0x0A66,2663,PID599.Rate2,Rate 2,PID,#11,float 32,R/W
+0x0A68,2665,PID599.CycleTime_Scan,Cycle Time_Scan,PID,#11,float 32,R
+0x0A6A,2667,PID599.LSP1,LSP1,PID,#11,float 32,R/W
+0x0A6C,2669,PID599.LSP2,LSP2,PID,#11,float 32,R/W
+0x0A6E,2671,PID599.Alarm2SP1,Alarm 2 SP1,PID,#11,float 32,R/W
+0x0A70,2673,PID599.Alarm2SP2,Alarm 2 SP2,PID,#11,float 32,R/W
+0x0A74,2677,PID599.SP_LowLimit,SP_Low Limit,PID,#11,float 32,R/W
+0x0A76,2679,PID599.SP_HighLimit,SP_High Limit,PID,#11,float 32,R/W
+0x0A7A,2683,PID599.Output_LowLimit,Output_Low Limit,PID,#11,float 32,R/W
+0x0A7C,2685,PID599.Output_HighLimit,Output_High Limit,PID,#11,float 32,R/W
+0x0A7E,2687,PID599.OutputB,Output (B),PID,#11,float 32,R/W
+0x0A86,2695,PID599.Ratio,Ratio,PID,#11,float 32,R/W
+0x0A88,2697,PID599.Bias,Bias,PID,#11,float 32,R/W
+0x0A8A,2699,PID599.Deviation,Deviation,PID,#11,float 32,R
+0x0A8E,2703,PID599.ManualReset,Manual Reset,PID,#11,float 32,R/W
+0x0A90,2705,PID599.FeedforwardGain,Feed forward Gain,PID,#11,float 32,R/W
+0x0A92,2707,PID599.LocalPercentCarbMonoxide,Local Percent Carb Monoxide,PID,#11,float 32,R/W
+0x0A94,2709,PID599.FurnaceFactor,Furnace Factor,PID,#11,float 32,R/W
+0x0A96,2711,PID599.PercentHydrogen,Percent Hydrogen,PID,#11,float 32,R/W
+0x0A98,2713,PID599.OnOff_OutHysterisis,On Off_Out Hysterisis,PID,#11,float 32,R/W
+0x0A9A,2715,PID599.CarbPotDewPt,Carb Pot Dew Pt,PID,#11,float 32,R/W
+0x0A9C,2717,PID599.3PosStepMotorTime,3 Pos Step Motor Time,PID,#11,float 32,R/W
+0x0AF7,2808,PID599.EnableDisableFuzzy,Enable Disable Fuzzy,PID,#11,unsigned 16,R/W
+0x0AF8,2809,PID599.DemandTuneReq,Demand Tune Req,PID,#11,unsigned 16,R/W
+0x0AF9,2810,PID599.AntiSootSPLimEnable,Anti Soot SP Lim Enable,PID,#11,unsigned 16,R/W
+0x0AFA,2811,PID599.AutoManState,Auto Man State,PID,#11,unsigned 16,R/W
+0x0AFB,2812,PID599.LSPSelectState,LSP Select State,PID,#11,unsigned 16,R/W
+0x0AFC,2813,PID599.RemLocSPState,Rem Loc SP State,PID,#11,unsigned 16,R/W
+0x0AFD,2814,PID599.TuneSetState,Tune Set State,PID,#11,unsigned 16,R/W
+0x0AFE,2815,PID599.LoopStatusRegister,Loop Status Register,PID,#11,unsigned 16,R
+ , ,PID603,,PID,#12,,
+0x0B40,2881,PID603.PV,PV,PID,#12,float 32,R
+0x0B42,2883,PID603.RSP_SP2,RSP_SP2,PID,#12,float 32,R/W
+0x0B44,2885,PID603.WSP,WSP,PID,#12,float 32,R/W
+0x0B46,2887,PID603.Output,Output,PID,#12,float 32,R/W
+0x0B4A,2891,PID603.CarbonPotTemp,Carbon Pot Temp,PID,#12,float 32,R
+0x0B4C,2893,PID603.Gain1_PropBand1,Gain 1_Prop Band 1,PID,#12,float 32,R/W
+0x0B4E,2895,PID603.Direction,Direction,PID,#12,float 32,R
+0x0B50,2897,PID603.Reset1,Reset 1,PID,#12,float 32,R/W
+0x0B52,2899,PID603.Rate1,Rate 1,PID,#12,float 32,R/W
+0x0B54,2901,PID603.ScanCycleTime,Scan Cycle Time,PID,#12,float 32,R
+0x0B56,2903,PID603.PV_LowRange,PV_Low Range,PID,#12,float 32,R
+0x0B58,2905,PID603.PV_HighRange,PV_High Range,PID,#12,float 32,R
+0x0B5A,2907,PID603.Alarm1SP1,Alarm 1 SP1,PID,#12,float 32,R/W
+0x0B5C,2909,PID603.Alarm1SP2,Alarm 1 SP2,PID,#12,float 32,R/W
+0x0B60,2913,PID603.Gain2_PropBand2,Gain2_Prop Band 2,PID,#12,float 32,R/W
+0x0B62,2915,PID603.3PosStepDeadband,3 Pos Step Deadband,PID,#12,float 32,R/W
+0x0B64,2917,PID603.Reset2,Reset 2,PID,#12,float 32,R/W
+0x0B66,2919,PID603.Rate2,Rate 2,PID,#12,float 32,R/W
+0x0B68,2921,PID603.CycleTime_Scan,Cycle Time_Scan,PID,#12,float 32,R
+0x0B6A,2923,PID603.LSP1,LSP1,PID,#12,float 32,R/W
+0x0B6C,2925,PID603.LSP2,LSP2,PID,#12,float 32,R/W
+0x0B6E,2927,PID603.Alarm2SP1,Alarm 2 SP1,PID,#12,float 32,R/W
+0x0B70,2929,PID603.Alarm2SP2,Alarm 2 SP2,PID,#12,float 32,R/W
+0x0B74,2933,PID603.SP_LowLimit,SP_Low Limit,PID,#12,float 32,R/W
+0x0B76,2935,PID603.SP_HighLimit,SP_High Limit,PID,#12,float 32,R/W
+0x0B7A,2939,PID603.Output_LowLimit,Output_Low Limit,PID,#12,float 32,R/W
+0x0B7C,2941,PID603.Output_HighLimit,Output_High Limit,PID,#12,float 32,R/W
+0x0B7E,2943,PID603.OutputB,Output (B),PID,#12,float 32,R/W
+0x0B86,2951,PID603.Ratio,Ratio,PID,#12,float 32,R/W
+0x0B88,2953,PID603.Bias,Bias,PID,#12,float 32,R/W
+0x0B8A,2955,PID603.Deviation,Deviation,PID,#12,float 32,R
+0x0B8E,2959,PID603.ManualReset,Manual Reset,PID,#12,float 32,R/W
+0x0B90,2961,PID603.FeedforwardGain,Feed forward Gain,PID,#12,float 32,R/W
+0x0B92,2963,PID603.LocalPercentCarbMonoxide,Local Percent Carb Monoxide,PID,#12,float 32,R/W
+0x0B94,2965,PID603.FurnaceFactor,Furnace Factor,PID,#12,float 32,R/W
+0x0B96,2967,PID603.PercentHydrogen,Percent Hydrogen,PID,#12,float 32,R/W
+0x0B98,2969,PID603.OnOff_OutHysterisis,On Off_Out Hysterisis,PID,#12,float 32,R/W
+0x0B9A,2971,PID603.CarbPotDewPt,Carb Pot Dew Pt,PID,#12,float 32,R/W
+0x0B9C,2973,PID603.3PosStepMotorTime,3 Pos Step Motor Time,PID,#12,float 32,R/W
+0x0BF7,3064,PID603.EnableDisableFuzzy,Enable Disable Fuzzy,PID,#12,unsigned 16,R/W
+0x0BF8,3065,PID603.DemandTuneReq,Demand Tune Req,PID,#12,unsigned 16,R/W
+0x0BF9,3066,PID603.AntiSootSPLimEnable,Anti Soot SP Lim Enable,PID,#12,unsigned 16,R/W
+0x0BFA,3067,PID603.AutoManState,Auto Man State,PID,#12,unsigned 16,R/W
+0x0BFB,3068,PID603.LSPSelectState,LSP Select State,PID,#12,unsigned 16,R/W
+0x0BFC,3069,PID603.RemLocSPState,Rem Loc SP State,PID,#12,unsigned 16,R/W
+0x0BFD,3070,PID603.TuneSetState,Tune Set State,PID,#12,unsigned 16,R/W
+0x0BFE,3071,PID603.LoopStatusRegister,Loop Status Register,PID,#12,unsigned 16,R
+ , ,PID607,,PID,#13,,
+0x0C40,3137,PID607.PV,PV,PID,#13,float 32,R
+0x0C42,3139,PID607.RSP_SP2,RSP_SP2,PID,#13,float 32,R/W
+0x0C44,3141,PID607.WSP,WSP,PID,#13,float 32,R/W
+0x0C46,3143,PID607.Output,Output,PID,#13,float 32,R/W
+0x0C4A,3147,PID607.CarbonPotTemp,Carbon Pot Temp,PID,#13,float 32,R
+0x0C4C,3149,PID607.Gain1_PropBand1,Gain 1_Prop Band 1,PID,#13,float 32,R/W
+0x0C4E,3151,PID607.Direction,Direction,PID,#13,float 32,R
+0x0C50,3153,PID607.Reset1,Reset 1,PID,#13,float 32,R/W
+0x0C52,3155,PID607.Rate1,Rate 1,PID,#13,float 32,R/W
+0x0C54,3157,PID607.ScanCycleTime,Scan Cycle Time,PID,#13,float 32,R
+0x0C56,3159,PID607.PV_LowRange,PV_Low Range,PID,#13,float 32,R
+0x0C58,3161,PID607.PV_HighRange,PV_High Range,PID,#13,float 32,R
+0x0C5A,3163,PID607.Alarm1SP1,Alarm 1 SP1,PID,#13,float 32,R/W
+0x0C5C,3165,PID607.Alarm1SP2,Alarm 1 SP2,PID,#13,float 32,R/W
+0x0C60,3169,PID607.Gain2_PropBand2,Gain2_Prop Band 2,PID,#13,float 32,R/W
+0x0C62,3171,PID607.3PosStepDeadband,3 Pos Step Deadband,PID,#13,float 32,R/W
+0x0C64,3173,PID607.Reset2,Reset 2,PID,#13,float 32,R/W
+0x0C66,3175,PID607.Rate2,Rate 2,PID,#13,float 32,R/W
+0x0C68,3177,PID607.CycleTime_Scan,Cycle Time_Scan,PID,#13,float 32,R
+0x0C6A,3179,PID607.LSP1,LSP1,PID,#13,float 32,R/W
+0x0C6C,3181,PID607.LSP2,LSP2,PID,#13,float 32,R/W
+0x0C6E,3183,PID607.Alarm2SP1,Alarm 2 SP1,PID,#13,float 32,R/W
+0x0C70,3185,PID607.Alarm2SP2,Alarm 2 SP2,PID,#13,float 32,R/W
+0x0C74,3189,PID607.SP_LowLimit,SP_Low Limit,PID,#13,float 32,R/W
+0x0C76,3191,PID607.SP_HighLimit,SP_High Limit,PID,#13,float 32,R/W
+0x0C7A,3195,PID607.Output_LowLimit,Output_Low Limit,PID,#13,float 32,R/W
+0x0C7C,3197,PID607.Output_HighLimit,Output_High Limit,PID,#13,float 32,R/W
+0x0C7E,3199,PID607.OutputB,Output (B),PID,#13,float 32,R/W
+0x0C86,3207,PID607.Ratio,Ratio,PID,#13,float 32,R/W
+0x0C88,3209,PID607.Bias,Bias,PID,#13,float 32,R/W
+0x0C8A,3211,PID607.Deviation,Deviation,PID,#13,float 32,R
+0x0C8E,3215,PID607.ManualReset,Manual Reset,PID,#13,float 32,R/W
+0x0C90,3217,PID607.FeedforwardGain,Feed forward Gain,PID,#13,float 32,R/W
+0x0C92,3219,PID607.LocalPercentCarbMonoxide,Local Percent Carb Monoxide,PID,#13,float 32,R/W
+0x0C94,3221,PID607.FurnaceFactor,Furnace Factor,PID,#13,float 32,R/W
+0x0C96,3223,PID607.PercentHydrogen,Percent Hydrogen,PID,#13,float 32,R/W
+0x0C98,3225,PID607.OnOff_OutHysterisis,On Off_Out Hysterisis,PID,#13,float 32,R/W
+0x0C9A,3227,PID607.CarbPotDewPt,Carb Pot Dew Pt,PID,#13,float 32,R/W
+0x0C9C,3229,PID607.3PosStepMotorTime,3 Pos Step Motor Time,PID,#13,float 32,R/W
+0x0CF7,3320,PID607.EnableDisableFuzzy,Enable Disable Fuzzy,PID,#13,unsigned 16,R/W
+0x0CF8,3321,PID607.DemandTuneReq,Demand Tune Req,PID,#13,unsigned 16,R/W
+0x0CF9,3322,PID607.AntiSootSPLimEnable,Anti Soot SP Lim Enable,PID,#13,unsigned 16,R/W
+0x0CFA,3323,PID607.AutoManState,Auto Man State,PID,#13,unsigned 16,R/W
+0x0CFB,3324,PID607.LSPSelectState,LSP Select State,PID,#13,unsigned 16,R/W
+0x0CFC,3325,PID607.RemLocSPState,Rem Loc SP State,PID,#13,unsigned 16,R/W
+0x0CFD,3326,PID607.TuneSetState,Tune Set State,PID,#13,unsigned 16,R/W
+0x0CFE,3327,PID607.LoopStatusRegister,Loop Status Register,PID,#13,unsigned 16,R
+ , ,PID611,,PID,#14,,
+0x0D40,3393,PID611.PV,PV,PID,#14,float 32,R
+0x0D42,3395,PID611.RSP_SP2,RSP_SP2,PID,#14,float 32,R/W
+0x0D44,3397,PID611.WSP,WSP,PID,#14,float 32,R/W
+0x0D46,3399,PID611.Output,Output,PID,#14,float 32,R/W
+0x0D4A,3403,PID611.CarbonPotTemp,Carbon Pot Temp,PID,#14,float 32,R
+0x0D4C,3405,PID611.Gain1_PropBand1,Gain 1_Prop Band 1,PID,#14,float 32,R/W
+0x0D4E,3407,PID611.Direction,Direction,PID,#14,float 32,R
+0x0D50,3409,PID611.Reset1,Reset 1,PID,#14,float 32,R/W
+0x0D52,3411,PID611.Rate1,Rate 1,PID,#14,float 32,R/W
+0x0D54,3413,PID611.ScanCycleTime,Scan Cycle Time,PID,#14,float 32,R
+0x0D56,3415,PID611.PV_LowRange,PV_Low Range,PID,#14,float 32,R
+0x0D58,3417,PID611.PV_HighRange,PV_High Range,PID,#14,float 32,R
+0x0D5A,3419,PID611.Alarm1SP1,Alarm 1 SP1,PID,#14,float 32,R/W
+0x0D5C,3421,PID611.Alarm1SP2,Alarm 1 SP2,PID,#14,float 32,R/W
+0x0D60,3425,PID611.Gain2_PropBand2,Gain2_Prop Band 2,PID,#14,float 32,R/W
+0x0D62,3427,PID611.3PosStepDeadband,3 Pos Step Deadband,PID,#14,float 32,R/W
+0x0D64,3429,PID611.Reset2,Reset 2,PID,#14,float 32,R/W
+0x0D66,3431,PID611.Rate2,Rate 2,PID,#14,float 32,R/W
+0x0D68,3433,PID611.CycleTime_Scan,Cycle Time_Scan,PID,#14,float 32,R
+0x0D6A,3435,PID611.LSP1,LSP1,PID,#14,float 32,R/W
+0x0D6C,3437,PID611.LSP2,LSP2,PID,#14,float 32,R/W
+0x0D6E,3439,PID611.Alarm2SP1,Alarm 2 SP1,PID,#14,float 32,R/W
+0x0D70,3441,PID611.Alarm2SP2,Alarm 2 SP2,PID,#14,float 32,R/W
+0x0D74,3445,PID611.SP_LowLimit,SP_Low Limit,PID,#14,float 32,R/W
+0x0D76,3447,PID611.SP_HighLimit,SP_High Limit,PID,#14,float 32,R/W
+0x0D7A,3451,PID611.Output_LowLimit,Output_Low Limit,PID,#14,float 32,R/W
+0x0D7C,3453,PID611.Output_HighLimit,Output_High Limit,PID,#14,float 32,R/W
+0x0D7E,3455,PID611.OutputB,Output (B),PID,#14,float 32,R/W
+0x0D86,3463,PID611.Ratio,Ratio,PID,#14,float 32,R/W
+0x0D88,3465,PID611.Bias,Bias,PID,#14,float 32,R/W
+0x0D8A,3467,PID611.Deviation,Deviation,PID,#14,float 32,R
+0x0D8E,3471,PID611.ManualReset,Manual Reset,PID,#14,float 32,R/W
+0x0D90,3473,PID611.FeedforwardGain,Feed forward Gain,PID,#14,float 32,R/W
+0x0D92,3475,PID611.LocalPercentCarbMonoxide,Local Percent Carb Monoxide,PID,#14,float 32,R/W
+0x0D94,3477,PID611.FurnaceFactor,Furnace Factor,PID,#14,float 32,R/W
+0x0D96,3479,PID611.PercentHydrogen,Percent Hydrogen,PID,#14,float 32,R/W
+0x0D98,3481,PID611.OnOff_OutHysterisis,On Off_Out Hysterisis,PID,#14,float 32,R/W
+0x0D9A,3483,PID611.CarbPotDewPt,Carb Pot Dew Pt,PID,#14,float 32,R/W
+0x0D9C,3485,PID611.3PosStepMotorTime,3 Pos Step Motor Time,PID,#14,float 32,R/W
+0x0DF7,3576,PID611.EnableDisableFuzzy,Enable Disable Fuzzy,PID,#14,unsigned 16,R/W
+0x0DF8,3577,PID611.DemandTuneReq,Demand Tune Req,PID,#14,unsigned 16,R/W
+0x0DF9,3578,PID611.AntiSootSPLimEnable,Anti Soot SP Lim Enable,PID,#14,unsigned 16,R/W
+0x0DFA,3579,PID611.AutoManState,Auto Man State,PID,#14,unsigned 16,R/W
+0x0DFB,3580,PID611.LSPSelectState,LSP Select State,PID,#14,unsigned 16,R/W
+0x0DFC,3581,PID611.RemLocSPState,Rem Loc SP State,PID,#14,unsigned 16,R/W
+0x0DFD,3582,PID611.TuneSetState,Tune Set State,PID,#14,unsigned 16,R/W
+0x0DFE,3583,PID611.LoopStatusRegister,Loop Status Register,PID,#14,unsigned 16,R
+ , ,DC219,,DC,#01,,
+0x6B00,27393,DC219.ResetReq,Reset Req,DC,#01,unsigned 16,W
+0x6B01,27394,DC219.StatusRegister,Status Register,DC,#01,unsigned 16,R
+0x6B02,27395,DC219.DelayTimeRemain,Delay Time Remain,DC,#01,float 32,R
+0x6B04,27397,DC219.StartDelay,Start Delay,DC,#01,float 32,R/W
+0x6B06,27399,DC219.StopDelay,Stop Delay,DC,#01,float 32,R/W
+0x6B08,27401,DC219.FBFailDelay,FB Fail Delay,DC,#01,float 32,R/W
+ , ,DC223,,DC,#02,,
+0x6B10,27409,DC223.ResetReq,Reset Req,DC,#02,unsigned 16,W
+0x6B11,27410,DC223.StatusRegister,Status Register,DC,#02,unsigned 16,R
+0x6B12,27411,DC223.DelayTimeRemain,Delay Time Remain,DC,#02,float 32,R
+0x6B14,27413,DC223.StartDelay,Start Delay,DC,#02,float 32,R/W
+0x6B16,27415,DC223.StopDelay,Stop Delay,DC,#02,float 32,R/W
+0x6B18,27417,DC223.FBFailDelay,FB Fail Delay,DC,#02,float 32,R/W
+ , ,DC227,,DC,#03,,
+0x6B20,27425,DC227.ResetReq,Reset Req,DC,#03,unsigned 16,W
+0x6B21,27426,DC227.StatusRegister,Status Register,DC,#03,unsigned 16,R
+0x6B22,27427,DC227.DelayTimeRemain,Delay Time Remain,DC,#03,float 32,R
+0x6B24,27429,DC227.StartDelay,Start Delay,DC,#03,float 32,R/W
+0x6B26,27431,DC227.StopDelay,Stop Delay,DC,#03,float 32,R/W
+0x6B28,27433,DC227.FBFailDelay,FB Fail Delay,DC,#03,float 32,R/W
+ , ,DC231,,DC,#04,,
+0x6B30,27441,DC231.ResetReq,Reset Req,DC,#04,unsigned 16,W
+0x6B31,27442,DC231.StatusRegister,Status Register,DC,#04,unsigned 16,R
+0x6B32,27443,DC231.DelayTimeRemain,Delay Time Remain,DC,#04,float 32,R
+0x6B34,27445,DC231.StartDelay,Start Delay,DC,#04,float 32,R/W
+0x6B36,27447,DC231.StopDelay,Stop Delay,DC,#04,float 32,R/W
+0x6B38,27449,DC231.FBFailDelay,FB Fail Delay,DC,#04,float 32,R/W
+ , ,DC235,,DC,#05,,
+0x6B40,27457,DC235.ResetReq,Reset Req,DC,#05,unsigned 16,W
+0x6B41,27458,DC235.StatusRegister,Status Register,DC,#05,unsigned 16,R
+0x6B42,27459,DC235.DelayTimeRemain,Delay Time Remain,DC,#05,float 32,R
+0x6B44,27461,DC235.StartDelay,Start Delay,DC,#05,float 32,R/W
+0x6B46,27463,DC235.StopDelay,Stop Delay,DC,#05,float 32,R/W
+0x6B48,27465,DC235.FBFailDelay,FB Fail Delay,DC,#05,float 32,R/W
+ , ,DC239,,DC,#06,,
+0x6B50,27473,DC239.ResetReq,Reset Req,DC,#06,unsigned 16,W
+0x6B51,27474,DC239.StatusRegister,Status Register,DC,#06,unsigned 16,R
+0x6B52,27475,DC239.DelayTimeRemain,Delay Time Remain,DC,#06,float 32,R
+0x6B54,27477,DC239.StartDelay,Start Delay,DC,#06,float 32,R/W
+0x6B56,27479,DC239.StopDelay,Stop Delay,DC,#06,float 32,R/W
+0x6B58,27481,DC239.FBFailDelay,FB Fail Delay,DC,#06,float 32,R/W
+ , ,DC243,,DC,#07,,
+0x6B60,27489,DC243.ResetReq,Reset Req,DC,#07,unsigned 16,W
+0x6B61,27490,DC243.StatusRegister,Status Register,DC,#07,unsigned 16,R
+0x6B62,27491,DC243.DelayTimeRemain,Delay Time Remain,DC,#07,float 32,R
+0x6B64,27493,DC243.StartDelay,Start Delay,DC,#07,float 32,R/W
+0x6B66,27495,DC243.StopDelay,Stop Delay,DC,#07,float 32,R/W
+0x6B68,27497,DC243.FBFailDelay,FB Fail Delay,DC,#07,float 32,R/W
+ , ,DC247,,DC,#08,,
+0x6B70,27505,DC247.ResetReq,Reset Req,DC,#08,unsigned 16,W
+0x6B71,27506,DC247.StatusRegister,Status Register,DC,#08,unsigned 16,R
+0x6B72,27507,DC247.DelayTimeRemain,Delay Time Remain,DC,#08,float 32,R
+0x6B74,27509,DC247.StartDelay,Start Delay,DC,#08,float 32,R/W
+0x6B76,27511,DC247.StopDelay,Stop Delay,DC,#08,float 32,R/W
+0x6B78,27513,DC247.FBFailDelay,FB Fail Delay,DC,#08,float 32,R/W
+ , ,DC251,,DC,#09,,
+0x6B80,27521,DC251.ResetReq,Reset Req,DC,#09,unsigned 16,W
+0x6B81,27522,DC251.StatusRegister,Status Register,DC,#09,unsigned 16,R
+0x6B82,27523,DC251.DelayTimeRemain,Delay Time Remain,DC,#09,float 32,R
+0x6B84,27525,DC251.StartDelay,Start Delay,DC,#09,float 32,R/W
+0x6B86,27527,DC251.StopDelay,Stop Delay,DC,#09,float 32,R/W
+0x6B88,27529,DC251.FBFailDelay,FB Fail Delay,DC,#09,float 32,R/W
+ , ,DC255,,DC,#10,,
+0x6B90,27537,DC255.ResetReq,Reset Req,DC,#10,unsigned 16,W
+0x6B91,27538,DC255.StatusRegister,Status Register,DC,#10,unsigned 16,R
+0x6B92,27539,DC255.DelayTimeRemain,Delay Time Remain,DC,#10,float 32,R
+0x6B94,27541,DC255.StartDelay,Start Delay,DC,#10,float 32,R/W
+0x6B96,27543,DC255.StopDelay,Stop Delay,DC,#10,float 32,R/W
+0x6B98,27545,DC255.FBFailDelay,FB Fail Delay,DC,#10,float 32,R/W
+ , ,DC259,,DC,#11,,
+0x6BA0,27553,DC259.ResetReq,Reset Req,DC,#11,unsigned 16,W
+0x6BA1,27554,DC259.StatusRegister,Status Register,DC,#11,unsigned 16,R
+0x6BA2,27555,DC259.DelayTimeRemain,Delay Time Remain,DC,#11,float 32,R
+0x6BA4,27557,DC259.StartDelay,Start Delay,DC,#11,float 32,R/W
+0x6BA6,27559,DC259.StopDelay,Stop Delay,DC,#11,float 32,R/W
+0x6BA8,27561,DC259.FBFailDelay,FB Fail Delay,DC,#11,float 32,R/W
+ , ,DC263,,DC,#12,,
+0x6BB0,27569,DC263.ResetReq,Reset Req,DC,#12,unsigned 16,W
+0x6BB1,27570,DC263.StatusRegister,Status Register,DC,#12,unsigned 16,R
+0x6BB2,27571,DC263.DelayTimeRemain,Delay Time Remain,DC,#12,float 32,R
+0x6BB4,27573,DC263.StartDelay,Start Delay,DC,#12,float 32,R/W
+0x6BB6,27575,DC263.StopDelay,Stop Delay,DC,#12,float 32,R/W
+0x6BB8,27577,DC263.FBFailDelay,FB Fail Delay,DC,#12,float 32,R/W
+ , ,DC267,,DC,#13,,
+0x6BC0,27585,DC267.ResetReq,Reset Req,DC,#13,unsigned 16,W
+0x6BC1,27586,DC267.StatusRegister,Status Register,DC,#13,unsigned 16,R
+0x6BC2,27587,DC267.DelayTimeRemain,Delay Time Remain,DC,#13,float 32,R
+0x6BC4,27589,DC267.StartDelay,Start Delay,DC,#13,float 32,R/W
+0x6BC6,27591,DC267.StopDelay,Stop Delay,DC,#13,float 32,R/W
+0x6BC8,27593,DC267.FBFailDelay,FB Fail Delay,DC,#13,float 32,R/W
+ , ,DC271,,DC,#14,,
+0x6BD0,27601,DC271.ResetReq,Reset Req,DC,#14,unsigned 16,W
+0x6BD1,27602,DC271.StatusRegister,Status Register,DC,#14,unsigned 16,R
+0x6BD2,27603,DC271.DelayTimeRemain,Delay Time Remain,DC,#14,float 32,R
+0x6BD4,27605,DC271.StartDelay,Start Delay,DC,#14,float 32,R/W
+0x6BD6,27607,DC271.StopDelay,Stop Delay,DC,#14,float 32,R/W
+0x6BD8,27609,DC271.FBFailDelay,FB Fail Delay,DC,#14,float 32,R/W
+ , ,DC275,,DC,#15,,
+0x6BE0,27617,DC275.ResetReq,Reset Req,DC,#15,unsigned 16,W
+0x6BE1,27618,DC275.StatusRegister,Status Register,DC,#15,unsigned 16,R
+0x6BE2,27619,DC275.DelayTimeRemain,Delay Time Remain,DC,#15,float 32,R
+0x6BE4,27621,DC275.StartDelay,Start Delay,DC,#15,float 32,R/W
+0x6BE6,27623,DC275.StopDelay,Stop Delay,DC,#15,float 32,R/W
+0x6BE8,27625,DC275.FBFailDelay,FB Fail Delay,DC,#15,float 32,R/W
+ , ,DC279,,DC,#16,,
+0x6BF0,27633,DC279.ResetReq,Reset Req,DC,#16,unsigned 16,W
+0x6BF1,27634,DC279.StatusRegister,Status Register,DC,#16,unsigned 16,R
+0x6BF2,27635,DC279.DelayTimeRemain,Delay Time Remain,DC,#16,float 32,R
+0x6BF4,27637,DC279.StartDelay,Start Delay,DC,#16,float 32,R/W
+0x6BF6,27639,DC279.StopDelay,Stop Delay,DC,#16,float 32,R/W
+0x6BF8,27641,DC279.FBFailDelay,FB Fail Delay,DC,#16,float 32,R/W

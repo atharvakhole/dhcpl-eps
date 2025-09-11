@@ -1,0 +1,1627 @@
+Hex Addr,Dec Addr,Tag Name,Description,Type,#,Data Type,EU,Decimal Places,Tag Type,'On' Label,'Off' Label,Initial/Source
+0x18C0,6337,SRN_RW_PMP01_RST,,Variable,1,float 32, , ,Digital,ON,OFF,OFF
+0x18C2,6339,SRN_RW_PMP01_STR,,Variable,2,float 32, , ,Digital,ON,OFF,OFF
+0x18C4,6341,SRN_RW_PMP02_STR,,Variable,3,float 32, , ,Digital,ON,OFF,OFF
+0x18C6,6343,SRN_RW_PMP02_RST,,Variable,4,float 32, , ,Digital,ON,OFF,OFF
+0x18C8,6345,PTN_FD_PMP01_STR,,Variable,5,float 32, , ,Digital,ON,OFF,OFF
+0x18CA,6347,PTN_FD_PMP01_RST,,Variable,6,float 32, , ,Digital,ON,OFF,OFF
+0x18CC,6349,PTN_FD_PMP02_STR,,Variable,7,float 32, , ,Digital,ON,OFF,OFF
+0x18CE,6351,PTN_FD_PMP02_RST,,Variable,8,float 32, , ,Digital,ON,OFF,OFF
+0x18D0,6353,DM_WTR_PMP01_STR,,Variable,9,float 32, , ,Digital,ON,OFF,OFF
+0x18D2,6355,DM_WTR_PMP01_RST,,Variable,10,float 32, , ,Digital,ON,OFF,OFF
+0x18D4,6357,DM_WTR_PMP02_STR,,Variable,11,float 32, , ,Digital,ON,OFF,OFF
+0x18D6,6359,DM_WTR_PMP02_RST,,Variable,12,float 32, , ,Digital,ON,OFF,OFF
+0x18D8,6361,EF_WTR_PMP01_STR,,Variable,13,float 32, , ,Digital,ON,OFF,OFF
+0x18DA,6363,EF_WTR_PMP01_RST,,Variable,14,float 32, , ,Digital,ON,OFF,OFF
+0x18DC,6365,EF_WTR_PMP02_STR,,Variable,15,float 32, , ,Digital,ON,OFF,OFF
+0x18DE,6367,EF_WTR_PMP02_RST,,Variable,16,float 32, , ,Digital,ON,OFF,OFF
+0x18E0,6369,ACD_MIX_TNK_STR,,Variable,17,float 32, , ,Digital,ON,OFF,OFF
+0x18E2,6371,ACD_MIX_TNK_RST,,Variable,18,float 32, , ,Digital,ON,OFF,OFF
+0x18E4,6373,CNT_AIR_BR01_STR,,Variable,19,float 32, , ,Digital,ON,OFF,OFF
+0x18E6,6375,CNT_AIR_BR01_RST,,Variable,20,float 32, , ,Digital,ON,OFF,OFF
+0x18E8,6377,CNT_AIR_BR02_STR,,Variable,21,float 32, , ,Digital,ON,OFF,OFF
+0x18EA,6379,CNT_AIR_BR02_RST,,Variable,22,float 32, , ,Digital,ON,OFF,OFF
+0x18EC,6381,WTR_COOL_PMP_STR,,Variable,23,float 32, , ,Digital,ON,OFF,OFF
+0x18EE,6383,WTR_COOL_PMP_RST,,Variable,24,float 32, , ,Digital,ON,OFF,OFF
+0x18F0,6385,DRY_CHN_STR,,Variable,25,float 32, , ,Digital,ON,OFF,OFF
+0x18F2,6387,DRY_CHN_RST,,Variable,26,float 32, , ,Digital,ON,OFF,OFF
+0x18F4,6389,DRY_USA_STR,,Variable,27,float 32, , ,Digital,ON,OFF,OFF
+0x18F6,6391,DRY_USA_RST,,Variable,28,float 32, , ,Digital,ON,OFF,OFF
+0x18F8,6393,HLD_TK_VFD01_STR,,Variable,29,float 32, , ,Digital,ON,OFF,OFF
+0x18FA,6395,HLD_TK_VFD01_RST,,Variable,30,float 32, , ,Digital,ON,OFF,OFF
+0x18FC,6397,HLD_TK_VFD02_STR,,Variable,31,float 32, , ,Digital,ON,OFF,OFF
+0x18FE,6399,HLD_TK_VFD02_RST,,Variable,32,float 32, , ,Digital,ON,OFF,OFF
+0x1900,6401,CHL_WTR_PMP1_STR,,Variable,33,float 32, , ,Digital,ON,OFF,OFF
+0x1902,6403,CHL_WTR_PMP1_RST,,Variable,34,float 32, , ,Digital,ON,OFF,OFF
+0x1904,6405,CHL_WTR_PMP2_STR,,Variable,35,float 32, , ,Digital,ON,OFF,OFF
+0x1906,6407,CHL_WTR_PMP2_RST,,Variable,36,float 32, , ,Digital,ON,OFF,OFF
+0x1908,6409,RCT_RX01_VFD_STR,,Variable,37,float 32, , ,Digital,ON,OFF,OFF
+0x190A,6411,RCT_RX01_VFD_RST,,Variable,38,float 32, , ,Digital,ON,OFF,OFF
+0x190C,6413,RCT_RX02_VFD_STR,,Variable,39,float 32, , ,Digital,ON,OFF,OFF
+0x190E,6415,RCT_RX02_VFD_RST,,Variable,40,float 32, , ,Digital,ON,OFF,OFF
+0x1910,6417,RCT_RX03_VFD_STR,,Variable,41,float 32, , ,Digital,ON,OFF,OFF
+0x1912,6419,RCT_RX03_VFD_RST,,Variable,42,float 32, , ,Digital,ON,OFF,OFF
+0x1914,6421,RCT_RX04_VFD_STR,,Variable,43,float 32, , ,Digital,ON,OFF,OFF
+0x1916,6423,RCT_RX04_VFD_RST,,Variable,44,float 32, , ,Digital,ON,OFF,OFF
+0x1918,6425,XVX_101_STR,,Variable,45,float 32, , ,Digital,ON,OFF,OFF
+0x191A,6427,XVX_101_RST,,Variable,46,float 32, , ,Digital,ON,OFF,OFF
+0x191C,6429,XVX_101_STR_AM,,Variable,47,float 32, , ,Digital,ON,OFF,OFF
+0x191E,6431,XVX_102_STR,,Variable,48,float 32, , ,Digital,ON,OFF,OFF
+0x1920,6433,XVX_102_RST,,Variable,49,float 32, , ,Digital,ON,OFF,OFF
+0x1922,6435,XVX_102_STR_AM,,Variable,50,float 32, , ,Digital,ON,OFF,OFF
+0x1924,6437,XVX_103_STR,,Variable,51,float 32, , ,Digital,ON,OFF,OFF
+0x1926,6439,XVX_103_RST,,Variable,52,float 32, , ,Digital,ON,OFF,OFF
+0x1928,6441,XVX_103_STR_AM,,Variable,53,float 32, , ,Digital,ON,OFF,OFF
+0x192A,6443,XVX_104_STR,,Variable,54,float 32, , ,Digital,ON,OFF,OFF
+0x192C,6445,XVX_104_RST,,Variable,55,float 32, , ,Digital,ON,OFF,OFF
+0x192E,6447,XVX_104_STR_AM,,Variable,56,float 32, , ,Digital,ON,OFF,OFF
+0x1930,6449,XV_101_STR,,Variable,57,float 32, , ,Digital,ON,OFF,OFF
+0x1932,6451,XV_101_RST,,Variable,58,float 32, , ,Digital,ON,OFF,OFF
+0x1934,6453,XV_101_STR_AM,,Variable,59,float 32, , ,Digital,ON,OFF,OFF
+0x1936,6455,XV_102_STR,,Variable,60,float 32, , ,Digital,ON,OFF,OFF
+0x1938,6457,XV_102_RST,,Variable,61,float 32, , ,Digital,ON,OFF,OFF
+0x193A,6459,XV_102_STR_AM,,Variable,62,float 32, , ,Digital,ON,OFF,OFF
+0x193C,6461,XV_103_STR,,Variable,63,float 32, , ,Digital,ON,OFF,OFF
+0x193E,6463,XV_103_RST,,Variable,64,float 32, , ,Digital,ON,OFF,OFF
+0x1940,6465,XV_103_STR_AM,,Variable,65,float 32, , ,Digital,ON,OFF,OFF
+0x1942,6467,XV_104_STR,,Variable,66,float 32, , ,Digital,ON,OFF,OFF
+0x1944,6469,XV_104_RST,,Variable,67,float 32, , ,Digital,ON,OFF,OFF
+0x1946,6471,XV_104_STR_AM,,Variable,68,float 32, , ,Digital,ON,OFF,OFF
+0x1948,6473,XV_105_STR,,Variable,69,float 32, , ,Digital,ON,OFF,OFF
+0x194A,6475,XV_105_RST,,Variable,70,float 32, , ,Digital,ON,OFF,OFF
+0x194C,6477,XV_105_STR_AM,,Variable,71,float 32, , ,Digital,ON,OFF,OFF
+0x194E,6479,XV_106_STR,,Variable,72,float 32, , ,Digital,ON,OFF,OFF
+0x1950,6481,XV_106_RST,,Variable,73,float 32, , ,Digital,ON,OFF,OFF
+0x1952,6483,XV_106_STR_AM,,Variable,74,float 32, , ,Digital,ON,OFF,OFF
+0x1954,6485,XV_107_STR,,Variable,75,float 32, , ,Digital,ON,OFF,OFF
+0x1956,6487,XV_107_RST,,Variable,76,float 32, , ,Digital,ON,OFF,OFF
+0x1958,6489,XV_107_STR_AM,,Variable,77,float 32, , ,Digital,ON,OFF,OFF
+0x195A,6491,XV_108_STR,,Variable,78,float 32, , ,Digital,ON,OFF,OFF
+0x195C,6493,XV_108_RST,,Variable,79,float 32, , ,Digital,ON,OFF,OFF
+0x195E,6495,XV_108_STR_AM,,Variable,80,float 32, , ,Digital,ON,OFF,OFF
+0x1960,6497,XV_109_STR,,Variable,81,float 32, , ,Digital,ON,OFF,OFF
+0x1962,6499,XV_109_RST,,Variable,82,float 32, , ,Digital,ON,OFF,OFF
+0x1964,6501,XV_109_STR_AM,,Variable,83,float 32, , ,Digital,ON,OFF,OFF
+0x1966,6503,XV_110_STR,,Variable,84,float 32, , ,Digital,ON,OFF,OFF
+0x1968,6505,XV_110_RST,,Variable,85,float 32, , ,Digital,ON,OFF,OFF
+0x196A,6507,XV_110_STR_AM,,Variable,86,float 32, , ,Digital,ON,OFF,OFF
+0x196C,6509,XV_111_STR,,Variable,87,float 32, , ,Digital,ON,OFF,OFF
+0x196E,6511,XV_111_RST,,Variable,88,float 32, , ,Digital,ON,OFF,OFF
+0x1970,6513,XV_111_STR_AM,,Variable,89,float 32, , ,Digital,ON,OFF,OFF
+0x1972,6515,XV_112_STR,,Variable,90,float 32, , ,Digital,ON,OFF,OFF
+0x1974,6517,XV_112_RST,,Variable,91,float 32, , ,Digital,ON,OFF,OFF
+0x1976,6519,XV_112_STR_AM,,Variable,92,float 32, , ,Digital,ON,OFF,OFF
+0x1978,6521,XV_113_STR,,Variable,93,float 32, , ,Digital,ON,OFF,OFF
+0x197A,6523,XV_113_RST,,Variable,94,float 32, , ,Digital,ON,OFF,OFF
+0x197C,6525,XV_113_STR_AM,,Variable,95,float 32, , ,Digital,ON,OFF,OFF
+0x197E,6527,XV_114_STR,,Variable,96,float 32, , ,Digital,ON,OFF,OFF
+0x1980,6529,XV_114_RST,,Variable,97,float 32, , ,Digital,ON,OFF,OFF
+0x1982,6531,XV_114_STR_AM,,Variable,98,float 32, , ,Digital,ON,OFF,OFF
+0x1984,6533,XV_115_STR,,Variable,99,float 32, , ,Digital,ON,OFF,OFF
+0x1986,6535,XV_115_RST,,Variable,100,float 32, , ,Digital,ON,OFF,OFF
+0x1988,6537,XV_115_STR_AM,,Variable,101,float 32, , ,Digital,ON,OFF,OFF
+0x198A,6539,XV_116_STR,,Variable,102,float 32, , ,Digital,ON,OFF,OFF
+0x198C,6541,XV_116_RST,,Variable,103,float 32, , ,Digital,ON,OFF,OFF
+0x198E,6543,XV_116_STR_AM,,Variable,104,float 32, , ,Digital,ON,OFF,OFF
+0x1990,6545,XV_117_STR,,Variable,105,float 32, , ,Digital,ON,OFF,OFF
+0x1992,6547,XV_117_RST,,Variable,106,float 32, , ,Digital,ON,OFF,OFF
+0x1994,6549,XV_117_STR_AM,,Variable,107,float 32, , ,Digital,ON,OFF,OFF
+0x1996,6551,XV_118_STR,,Variable,108,float 32, , ,Digital,ON,OFF,OFF
+0x1998,6553,XV_118_RST,,Variable,109,float 32, , ,Digital,ON,OFF,OFF
+0x199A,6555,XV_118_STR_AM,,Variable,110,float 32, , ,Digital,ON,OFF,OFF
+0x199C,6557,XV_119_STR,,Variable,111,float 32, , ,Digital,ON,OFF,OFF
+0x199E,6559,XV_119_RST,,Variable,112,float 32, , ,Digital,ON,OFF,OFF
+0x19A0,6561,XV_119_STR_AM,,Variable,113,float 32, , ,Digital,ON,OFF,OFF
+0x19A2,6563,XV_120_STR,,Variable,114,float 32, , ,Digital,ON,OFF,OFF
+0x19A4,6565,XV_120_RST,,Variable,115,float 32, , ,Digital,ON,OFF,OFF
+0x19A6,6567,XV_120_STR_AM,,Variable,116,float 32, , ,Digital,ON,OFF,OFF
+0x19A8,6569,XV_121_STR,,Variable,117,float 32, , ,Digital,ON,OFF,OFF
+0x19AA,6571,XV_121_RST,,Variable,118,float 32, , ,Digital,ON,OFF,OFF
+0x19AC,6573,XV_121_STR_AM,,Variable,119,float 32, , ,Digital,ON,OFF,OFF
+0x19AE,6575,XV_122_STR,,Variable,120,float 32, , ,Digital,ON,OFF,OFF
+0x19B0,6577,XV_122_RST,,Variable,121,float 32, , ,Digital,ON,OFF,OFF
+0x19B2,6579,XV_122_STR_AM,,Variable,122,float 32, , ,Digital,ON,OFF,OFF
+0x19B4,6581,XV_123_STR,,Variable,123,float 32, , ,Digital,ON,OFF,OFF
+0x19B6,6583,XV_123_RST,,Variable,124,float 32, , ,Digital,ON,OFF,OFF
+0x19B8,6585,XV_123_STR_AM,,Variable,125,float 32, , ,Digital,ON,OFF,OFF
+0x19BA,6587,XV_124_STR,,Variable,126,float 32, , ,Digital,ON,OFF,OFF
+0x19BC,6589,XV_124_RST,,Variable,127,float 32, , ,Digital,ON,OFF,OFF
+0x19BE,6591,XV_124_STR_AM,,Variable,128,float 32, , ,Digital,ON,OFF,OFF
+0x19C0,6593,XV_125_STR,,Variable,129,float 32, , ,Digital,ON,OFF,OFF
+0x19C2,6595,XV_125_RST,,Variable,130,float 32, , ,Digital,ON,OFF,OFF
+0x19C4,6597,XV_125_STR_AM,,Variable,131,float 32, , ,Digital,ON,OFF,OFF
+0x19C6,6599,XV_126_STR,,Variable,132,float 32, , ,Digital,ON,OFF,OFF
+0x19C8,6601,XV_126_RST,,Variable,133,float 32, , ,Digital,ON,OFF,OFF
+0x19CA,6603,XV_126_STR_AM,,Variable,134,float 32, , ,Digital,ON,OFF,OFF
+0x19CC,6605,XV_127_STR,,Variable,135,float 32, , ,Digital,ON,OFF,OFF
+0x19CE,6607,XV_127_RST,,Variable,136,float 32, , ,Digital,ON,OFF,OFF
+0x19D0,6609,XV_127_STR_AM,,Variable,137,float 32, , ,Digital,ON,OFF,OFF
+0x19D2,6611,XV_128_STR,,Variable,138,float 32, , ,Digital,ON,OFF,OFF
+0x19D4,6613,XV_128_RST,,Variable,139,float 32, , ,Digital,ON,OFF,OFF
+0x19D6,6615,XV_128_STR_AM,,Variable,140,float 32, , ,Digital,ON,OFF,OFF
+0x19D8,6617,XV_129_STR,,Variable,141,float 32, , ,Digital,ON,OFF,OFF
+0x19DA,6619,XV_129_RST,,Variable,142,float 32, , ,Digital,ON,OFF,OFF
+0x19DC,6621,XV_129_STR_AM,,Variable,143,float 32, , ,Digital,ON,OFF,OFF
+0x19DE,6623,XV_130_STR,,Variable,144,float 32, , ,Digital,ON,OFF,OFF
+0x19E0,6625,XV_130_RST,,Variable,145,float 32, , ,Digital,ON,OFF,OFF
+0x19E2,6627,XV_130_STR_AM,,Variable,146,float 32, , ,Digital,ON,OFF,OFF
+0x19E4,6629,XV_131_STR,,Variable,147,float 32, , ,Digital,ON,OFF,OFF
+0x19E6,6631,XV_131_RST,,Variable,148,float 32, , ,Digital,ON,OFF,OFF
+0x19E8,6633,XV_131_STR_AM,,Variable,149,float 32, , ,Digital,ON,OFF,OFF
+0x19EA,6635,XV_132_STR,,Variable,150,float 32, , ,Digital,ON,OFF,OFF
+0x19EC,6637,XV_132_RST,,Variable,151,float 32, , ,Digital,ON,OFF,OFF
+0x19EE,6639,XV_132_STR_AM,,Variable,152,float 32, , ,Digital,ON,OFF,OFF
+0x19F0,6641,XV_133_STR,,Variable,153,float 32, , ,Digital,ON,OFF,OFF
+0x19F2,6643,XV_133_RST,,Variable,154,float 32, , ,Digital,ON,OFF,OFF
+0x19F4,6645,XV_133_STR_AM,,Variable,155,float 32, , ,Digital,ON,OFF,OFF
+0x19F6,6647,XV_134_STR,,Variable,156,float 32, , ,Digital,ON,OFF,OFF
+0x19F8,6649,XV_134_RST,,Variable,157,float 32, , ,Digital,ON,OFF,OFF
+0x19FA,6651,XV_134_STR_AM,,Variable,158,float 32, , ,Digital,ON,OFF,OFF
+0x19FC,6653,XV_135_STR,,Variable,159,float 32, , ,Digital,ON,OFF,OFF
+0x19FE,6655,XV_135_RST,,Variable,160,float 32, , ,Digital,ON,OFF,OFF
+0x1A00,6657,XV_135_STR_AM,,Variable,161,float 32, , ,Digital,ON,OFF,OFF
+0x1A02,6659,XV_136_STR,,Variable,162,float 32, , ,Digital,ON,OFF,OFF
+0x1A04,6661,XV_136_RST,,Variable,163,float 32, , ,Digital,ON,OFF,OFF
+0x1A06,6663,XV_136_STR_AM,,Variable,164,float 32, , ,Digital,ON,OFF,OFF
+0x1A08,6665,XV_137_STR,,Variable,165,float 32, , ,Digital,ON,OFF,OFF
+0x1A0A,6667,XV_137_RST,,Variable,166,float 32, , ,Digital,ON,OFF,OFF
+0x1A0C,6669,XV_137_STR_AM,,Variable,167,float 32, , ,Digital,ON,OFF,OFF
+0x1A0E,6671,XV_138_STR,,Variable,168,float 32, , ,Digital,ON,OFF,OFF
+0x1A10,6673,XV_138_RST,,Variable,169,float 32, , ,Digital,ON,OFF,OFF
+0x1A12,6675,XV_138_STR_AM,,Variable,170,float 32, , ,Digital,ON,OFF,OFF
+0x1A14,6677,XV_139_STR,,Variable,171,float 32, , ,Digital,ON,OFF,OFF
+0x1A16,6679,XV_139_RST,,Variable,172,float 32, , ,Digital,ON,OFF,OFF
+0x1A18,6681,XV_139_STR_AM,,Variable,173,float 32, , ,Digital,ON,OFF,OFF
+0x1A1A,6683,XV_140_STR,,Variable,174,float 32, , ,Digital,ON,OFF,OFF
+0x1A1C,6685,XV_140_RST,,Variable,175,float 32, , ,Digital,ON,OFF,OFF
+0x1A1E,6687,XV_140_STR_AM,,Variable,176,float 32, , ,Digital,ON,OFF,OFF
+0x1A20,6689,XV_141_STR,,Variable,177,float 32, , ,Digital,ON,OFF,OFF
+0x1A22,6691,XV_141_RST,,Variable,178,float 32, , ,Digital,ON,OFF,OFF
+0x1A24,6693,XV_141_STR_AM,,Variable,179,float 32, , ,Digital,ON,OFF,OFF
+0x1A26,6695,XV_142_STR,,Variable,180,float 32, , ,Digital,ON,OFF,OFF
+0x1A28,6697,XV_142_RST,,Variable,181,float 32, , ,Digital,ON,OFF,OFF
+0x1A2A,6699,XV_142_STR_AM,,Variable,182,float 32, , ,Digital,ON,OFF,OFF
+0x1A2C,6701,XV_143_STR,,Variable,183,float 32, , ,Digital,ON,OFF,OFF
+0x1A2E,6703,XV_143_RST,,Variable,184,float 32, , ,Digital,ON,OFF,OFF
+0x1A30,6705,XV_143_STR_AM,,Variable,185,float 32, , ,Digital,ON,OFF,OFF
+0x1A32,6707,XV_144_STR,,Variable,186,float 32, , ,Digital,ON,OFF,OFF
+0x1A34,6709,XV_144_RST,,Variable,187,float 32, , ,Digital,ON,OFF,OFF
+0x1A36,6711,XV_144_STR_AM,,Variable,188,float 32, , ,Digital,ON,OFF,OFF
+0x1A38,6713,XV_145_STR,,Variable,189,float 32, , ,Digital,ON,OFF,OFF
+0x1A3A,6715,XV_145_RST,,Variable,190,float 32, , ,Digital,ON,OFF,OFF
+0x1A3C,6717,XV_145_STR_AM,,Variable,191,float 32, , ,Digital,ON,OFF,OFF
+0x1A3E,6719,CHINA_VFD_SP,,Variable,192,float 32,,0,Analog, , ,0.00
+0x1A40,6721,START_MEASURE,,Variable,193,float 32, , ,Digital,ON,OFF,OFF
+0x1A42,6723,USA_VFD_SP,,Variable,194,float 32,,0,Analog, , ,0.00
+0x1A44,6725,STOP_MEASURE,,Variable,195,float 32, , ,Digital,ON,OFF,OFF
+0x1A46,6727,H_TK_VFD01_SP,,Variable,196,float 32,,0,Analog, , ,0.00
+0x1A48,6729,FT_102_SET_VAL,,Variable,197,float 32,,0,Analog, , ,0.00
+0x1A4A,6731,H_TK_VFD02_SP,,Variable,198,float 32,,0,Analog, , ,0.00
+0x1A4C,6733,SCADA_HOOTER,,Variable,199,float 32, , ,Digital,ON,OFF,OFF
+0x1A4E,6735,VAR200,,Variable,200,float 32,,0,Analog, , ,0.00
+0x1A50,6737,VAR201,,Variable,201,float 32,,0,Analog, , ,0.00
+0x1A52,6739,RX_01_VFD_SP,,Variable,202,float 32,,0,Analog, , ,0.00
+0x1A56,6743,RX_02_VFD_SP,,Variable,204,float 32,,0,Analog, , ,0.00
+0x1A58,6745,FT_101_SET_VAL,,Variable,205,float 32,,0,Analog, , ,0.00
+0x1A5A,6747,RX_03_VFD_SP,,Variable,206,float 32,,0,Analog, , ,0.00
+0x1A5C,6749,STY_START_MEASUR,,Variable,207,float 32, , ,Digital,ON,OFF,OFF
+0x1A5E,6751,RX_04_VFD_SP,,Variable,208,float 32,,0,Analog, , ,0.00
+0x1A60,6753,STY_STOP_MEASURE,,Variable,209,float 32, , ,Digital,ON,OFF,OFF
+0x1A62,6755,FCV_101_AM,,Variable,210,float 32, , ,Digital,ON,OFF,OFF
+0x1A64,6757,FCV_101_SP,,Variable,211,float 32,,1,Analog, , ,0.00
+0x1A66,6759,FCV_102_AM,,Variable,212,float 32, , ,Digital,ON,OFF,OFF
+0x1A68,6761,FCV_102_SP,,Variable,213,float 32,,1,Analog, , ,0.00
+0x1A6A,6763,FCV_103_AM,,Variable,214,float 32, , ,Digital,ON,OFF,OFF
+0x1A6C,6765,FCV_103_SP,,Variable,215,float 32,,1,Analog, , ,0.00
+0x1A6E,6767,FCV_104_AM,,Variable,216,float 32, , ,Digital,ON,OFF,OFF
+0x1A70,6769,FCV_104_SP,,Variable,217,float 32,,1,Analog, , ,0.00
+0x1A72,6771,FCV_105_AM,,Variable,218,float 32, , ,Digital,ON,OFF,OFF
+0x1A74,6773,FCV_105_SP,,Variable,219,float 32,,1,Analog, , ,0.00
+0x1A76,6775,RESET_FT_101,,Variable,220,float 32, , ,Digital,ON,OFF,OFF
+0x1A78,6777,RESET_FT_102,,Variable,221,float 32, , ,Digital,ON,OFF,OFF
+0x1A7A,6779,RESET_FT_103,,Variable,222,float 32, , ,Digital,ON,OFF,OFF
+0x1A7C,6781,TT_103_SP,,Variable,223,float 32,,0,Analog, , ,0.00
+0x1A7E,6783,RX_01_MD_STR_STP,,Variable,224,float 32, , ,Digital,ON,OFF,OFF
+0x1A80,6785,XVX101_XV_129_ON,,Variable,225,float 32, , ,Digital,ON,OFF,OFF
+0x1A82,6787,XVX101_XV_128_ON,,Variable,226,float 32, , ,Digital,ON,OFF,OFF
+0x1A84,6789,RX_01_MD_SELCT,,Variable,227,float 32,,0,Analog, , ,0.00
+0x1A86,6791,TT_107_SP,,Variable,228,float 32,,0,Analog, , ,0.00
+0x1A88,6793,RX_02_MD_STR_STP,,Variable,229,float 32, , ,Digital,ON,OFF,OFF
+0x1A8A,6795,XVX102_XV_131_ON,,Variable,230,float 32, , ,Digital,ON,OFF,OFF
+0x1A8C,6797,XVX102_XV_130_ON,,Variable,231,float 32, , ,Digital,ON,OFF,OFF
+0x1A8E,6799,RX_02_MD_SELCT,,Variable,232,float 32,,0,Analog, , ,0.00
+0x1A90,6801,TT_111_SP,,Variable,233,float 32,,0,Analog, , ,0.00
+0x1A92,6803,VAR234D,,Variable,234,float 32, , ,Digital,ON,OFF,OFF
+0x1A94,6805,VAR235D,,Variable,235,float 32, , ,Digital,ON,OFF,OFF
+0x1A96,6807,VAR236D,,Variable,236,float 32, , ,Digital,ON,OFF,OFF
+0x1A98,6809,VAR237,,Variable,237,float 32,,0,Analog, , ,0.00
+0x1A9A,6811,VAR238,,Variable,238,float 32,,0,Analog, , ,0.00
+0x1A9C,6813,VAR239,,Variable,239,float 32,,0,Analog, , ,0.00
+0x1A9E,6815,VAR240,,Variable,240,float 32,,0,Analog, , ,0.00
+0x1AA0,6817,VAR241,,Variable,241,float 32,,0,Analog, , ,0.00
+0x1AA2,6819,VAR242,,Variable,242,float 32,,0,Analog, , ,0.00
+0x1AA4,6821,VAR243,,Variable,243,float 32,,0,Analog, , ,0.00
+0x1AA6,6823,VAR244,,Variable,244,float 32,,0,Analog, , ,0.00
+0x1AA8,6825,VAR245,,Variable,245,float 32,,0,Analog, , ,0.00
+0x1AAA,6827,VAR246,,Variable,246,float 32,,0,Analog, , ,0.00
+0x1AAC,6829,VAR247,,Variable,247,float 32,,0,Analog, , ,0.00
+0x1AAE,6831,VAR248,,Variable,248,float 32,,0,Analog, , ,0.00
+0x1AB0,6833,VAR249,,Variable,249,float 32,,0,Analog, , ,0.00
+0x1AB2,6835,VAR250,,Variable,250,float 32,,0,Analog, , ,0.00
+0x1AB4,6837,VAR251,,Variable,251,float 32,,0,Analog, , ,0.00
+0x1AB6,6839,VAR252,,Variable,252,float 32,,0,Analog, , ,0.00
+0x1AB8,6841,VAR253,,Variable,253,float 32,,0,Analog, , ,0.00
+0x1ABA,6843,VAR254,,Variable,254,float 32,,0,Analog, , ,0.00
+0x1ABC,6845,VAR255D,,Variable,255,float 32, , ,Digital,ON,OFF,OFF
+0x1ABE,6847,VAR256D,,Variable,256,float 32, , ,Digital,ON,OFF,OFF
+0x1AC0,6849,PT_101_HI,,Variable,257,float 32,,0,Analog, , ,2.00
+0x1AC2,6851,PT_101_LO,,Variable,258,float 32,,0,Analog, , ,0.00
+0x1AC6,6855,DOOR1,,Variable,260,float 32, , ,Digital,ON,OFF,OFF
+0x1AC8,6857,VAR261D,,Variable,261,float 32, , ,Digital,ON,OFF,OFF
+0x1ACA,6859,VAR262D,,Variable,262,float 32, , ,Digital,ON,OFF,OFF
+0x1ACC,6861,VAR263D,,Variable,263,float 32, , ,Digital,ON,OFF,OFF
+0x1ACE,6863,RESET,,Variable,264,float 32, , ,Digital,ON,OFF,OFF
+0x1AD0,6865,DOOR2,,Variable,265,float 32, , ,Digital,ON,OFF,OFF
+0x1AD2,6867,DIR,,Variable,266,float 32, , ,Digital,ON,OFF,OFF
+0x1AD4,6869,LL_PT_101_SP,,Variable,267,float 32,,0,Analog, , ,0.00
+0x1AD6,6871,HH_PT_101_SP,,Variable,268,float 32,,0,Analog, , ,1.50
+0x1AD8,6873,H_PT_101_SP,,Variable,269,float 32,,0,Analog, , ,1.00
+0x1ADA,6875,L_PT_101_SP,,Variable,270,float 32,,0,Analog, , ,0.00
+0x1AE4,6885,ACK,,Variable,275,float 32, , ,Digital,ON,OFF,OFF
+0x1AE6,6887,LL_PT_102_SP,,Variable,276,float 32,,0,Analog, , ,0.00
+0x1AE8,6889,HH_PT_102_SP,,Variable,277,float 32,,0,Analog, , ,1.50
+0x1AEA,6891,H_PT_102_SP,,Variable,278,float 32,,0,Analog, , ,1.00
+0x1AEC,6893,L_PT_102_SP,,Variable,279,float 32,,0,Analog, , ,0.00
+0x1AEE,6895,LL_PT_103_SP,,Variable,280,float 32,,0,Analog, , ,0.00
+0x1AF0,6897,HH_PT_103_SP,,Variable,281,float 32,,0,Analog, , ,1.50
+0x1AF2,6899,H_PT_103_SP,,Variable,282,float 32,,0,Analog, , ,1.00
+0x1AF4,6901,L_PT_103_SP,,Variable,283,float 32,,0,Analog, , ,0.00
+0x1AF6,6903,LL_PT_104_SP,,Variable,284,float 32,,0,Analog, , ,0.00
+0x1AF8,6905,HH_PT_104_SP,,Variable,285,float 32,,0,Analog, , ,0.00
+0x1AFA,6907,H_PT_104_SP,,Variable,286,float 32,,0,Analog, , ,0.00
+0x1AFC,6909,L_PT_104_SP,,Variable,287,float 32,,0,Analog, , ,0.00
+0x1AFE,6911,LL_PT_105_SP,,Variable,288,float 32,,0,Analog, , ,0.00
+0x1B00,6913,HH_PT_105_SP,,Variable,289,float 32,,0,Analog, , ,0.00
+0x1B02,6915,H_PT_105_SP,,Variable,290,float 32,,0,Analog, , ,0.00
+0x1B04,6917,L_PT_105_SP,,Variable,291,float 32,,0,Analog, , ,0.00
+0x1B06,6919,LL_PT_106_SP,,Variable,292,float 32,,0,Analog, , ,0.00
+0x1B08,6921,HH_PT_106_SP,,Variable,293,float 32,,0,Analog, , ,0.00
+0x1B0A,6923,H_PT_106_SP,,Variable,294,float 32,,0,Analog, , ,0.00
+0x1B0C,6925,L_PT_106_SP,,Variable,295,float 32,,0,Analog, , ,0.00
+0x1B0E,6927,LL_PT_107_SP,,Variable,296,float 32,,0,Analog, , ,0.00
+0x1B10,6929,HH_PT_107_SP,,Variable,297,float 32,,0,Analog, , ,0.00
+0x1B12,6931,H_PT_107_SP,,Variable,298,float 32,,0,Analog, , ,0.00
+0x1B14,6933,L_PT_107_SP,,Variable,299,float 32,,0,Analog, , ,0.00
+0x1B16,6935,LL_PT_108_SP,,Variable,300,float 32,,0,Analog, , ,0.00
+0x1B18,6937,HH_PT_108_SP,,Variable,301,float 32,,0,Analog, , ,0.00
+0x1B1A,6939,H_PT_108_SP,,Variable,302,float 32,,0,Analog, , ,0.00
+0x1B1C,6941,L_PT_108_SP,,Variable,303,float 32,,0,Analog, , ,0.00
+0x1B1E,6943,LL_PT_109_SP,,Variable,304,float 32,,0,Analog, , ,0.00
+0x1B20,6945,HH_PT_109_SP,,Variable,305,float 32,,0,Analog, , ,0.00
+0x1B22,6947,H_PT_109_SP,,Variable,306,float 32,,0,Analog, , ,0.00
+0x1B24,6949,L_PT_109_SP,,Variable,307,float 32,,0,Analog, , ,0.00
+0x1B26,6951,LL_PT_110_SP,,Variable,308,float 32,,0,Analog, , ,0.00
+0x1B28,6953,HH_PT_110_SP,,Variable,309,float 32,,0,Analog, , ,0.00
+0x1B2A,6955,H_PT_110_SP,,Variable,310,float 32,,0,Analog, , ,0.00
+0x1B2C,6957,L_PT_110_SP,,Variable,311,float 32,,0,Analog, , ,0.00
+0x1B2E,6959,LL_PT_111_SP,,Variable,312,float 32,,0,Analog, , ,0.00
+0x1B30,6961,HH_PT_111_SP,,Variable,313,float 32,,0,Analog, , ,0.00
+0x1B32,6963,H_PT_111_SP,,Variable,314,float 32,,0,Analog, , ,0.00
+0x1B34,6965,L_PT_111_SP,,Variable,315,float 32,,0,Analog, , ,0.00
+0x1B36,6967,LL_PT_112_SP,,Variable,316,float 32,,0,Analog, , ,0.00
+0x1B38,6969,HH_PT_112_SP,,Variable,317,float 32,,0,Analog, , ,0.00
+0x1B3A,6971,H_PT_112_SP,,Variable,318,float 32,,0,Analog, , ,0.00
+0x1B3C,6973,L_PT_112_SP,,Variable,319,float 32,,0,Analog, , ,0.00
+0x1B3E,6975,LL_LT_101_SP,,Variable,320,float 32,,0,Analog, , ,0.00
+0x1B40,6977,HH_LT_101_SP,,Variable,321,float 32,,0,Analog, , ,0.00
+0x1B42,6979,H_LT_101_SP,,Variable,322,float 32,,0,Analog, , ,80.00
+0x1B44,6981,L_LT_101_SP,,Variable,323,float 32,,0,Analog, , ,20.00
+0x1B46,6983,LL_LT_102_SP,,Variable,324,float 32,,0,Analog, , ,0.00
+0x1B48,6985,HH_LT_102_SP,,Variable,325,float 32,,0,Analog, , ,0.00
+0x1B4A,6987,H_LT_102_SP,,Variable,326,float 32,,0,Analog, , ,80.00
+0x1B4C,6989,L_LT_102_SP,,Variable,327,float 32,,0,Analog, , ,20.00
+0x1B4E,6991,LL_LT_103_SP,,Variable,328,float 32,,0,Analog, , ,0.00
+0x1B50,6993,HH_LT_103_SP,,Variable,329,float 32,,0,Analog, , ,0.00
+0x1B52,6995,H_LT_103_SP,,Variable,330,float 32,,0,Analog, , ,80.00
+0x1B54,6997,L_LT_103_SP,,Variable,331,float 32,,0,Analog, , ,20.00
+0x1B56,6999,LL_LT_104_SP,,Variable,332,float 32,,0,Analog, , ,20.00
+0x1B58,7001,HH_LT_104_SP,,Variable,333,float 32,,0,Analog, , ,90.00
+0x1B5A,7003,H_LT_104_SP,,Variable,334,float 32,,0,Analog, , ,80.00
+0x1B5C,7005,L_LT_104_SP,,Variable,335,float 32,,0,Analog, , ,30.00
+0x1B5E,7007,LL_LT_105_SP,,Variable,336,float 32,,0,Analog, , ,0.00
+0x1B60,7009,HH_LT_105_SP,,Variable,337,float 32,,0,Analog, , ,0.00
+0x1B62,7011,H_LT_105_SP,,Variable,338,float 32,,0,Analog, , ,0.00
+0x1B64,7013,L_LT_105_SP,,Variable,339,float 32,,0,Analog, , ,0.00
+0x1B66,7015,LL_LT_106_SP,,Variable,340,float 32,,0,Analog, , ,0.00
+0x1B68,7017,HH_LT_106_SP,,Variable,341,float 32,,0,Analog, , ,0.00
+0x1B6A,7019,H_LT_106_SP,,Variable,342,float 32,,0,Analog, , ,0.00
+0x1B6C,7021,L_LT_106_SP,,Variable,343,float 32,,0,Analog, , ,0.00
+0x1B6E,7023,LL_LT_107_SP,,Variable,344,float 32,,0,Analog, , ,0.00
+0x1B70,7025,HH_LT_107_SP,,Variable,345,float 32,,0,Analog, , ,0.00
+0x1B72,7027,H_LT_107_SP,,Variable,346,float 32,,0,Analog, , ,0.00
+0x1B74,7029,L_LT_107_SP,,Variable,347,float 32,,0,Analog, , ,0.00
+0x1B76,7031,LL_LT_108_SP,,Variable,348,float 32,,0,Analog, , ,0.00
+0x1B78,7033,HH_LT_108_SP,,Variable,349,float 32,,0,Analog, , ,0.00
+0x1B7A,7035,H_LT_108_SP,,Variable,350,float 32,,0,Analog, , ,0.00
+0x1B7C,7037,L_LT_108_SP,,Variable,351,float 32,,0,Analog, , ,0.00
+0x1B7E,7039,LL_LT_109_SP,,Variable,352,float 32,,0,Analog, , ,0.00
+0x1B80,7041,HH_LT_109_SP,,Variable,353,float 32,,0,Analog, , ,0.00
+0x1B82,7043,H_LT_109_SP,,Variable,354,float 32,,0,Analog, , ,0.00
+0x1B84,7045,L_LT_109_SP,,Variable,355,float 32,,0,Analog, , ,0.00
+0x1B86,7047,LL_TT_101_SP,,Variable,356,float 32,,0,Analog, , ,0.00
+0x1B88,7049,HH_TT_101_SP,,Variable,357,float 32,,0,Analog, , ,0.00
+0x1B8A,7051,H_TT_101_SP,,Variable,358,float 32,,0,Analog, , ,0.00
+0x1B8C,7053,L_TT_101_SP,,Variable,359,float 32,,0,Analog, , ,0.00
+0x1B8E,7055,LL_TT_102_SP,,Variable,360,float 32,,0,Analog, , ,0.00
+0x1B90,7057,HH_TT_102_SP,,Variable,361,float 32,,0,Analog, , ,0.00
+0x1B92,7059,H_TT_102_SP,,Variable,362,float 32,,0,Analog, , ,0.00
+0x1B94,7061,L_TT_102_SP,,Variable,363,float 32,,0,Analog, , ,0.00
+0x1B96,7063,LL_TT_103_SP,,Variable,364,float 32,,0,Analog, , ,0.00
+0x1B98,7065,HH_TT_103_SP,,Variable,365,float 32,,0,Analog, , ,0.00
+0x1B9A,7067,H_TT_103_SP,,Variable,366,float 32,,0,Analog, , ,0.00
+0x1B9C,7069,L_TT_103_SP,,Variable,367,float 32,,0,Analog, , ,0.00
+0x1B9E,7071,LL_TT_104_SP,,Variable,368,float 32,,0,Analog, , ,0.00
+0x1BA0,7073,HH_TT_104_SP,,Variable,369,float 32,,0,Analog, , ,0.00
+0x1BA2,7075,H_TT_104_SP,,Variable,370,float 32,,0,Analog, , ,0.00
+0x1BA4,7077,L_TT_104_SP,,Variable,371,float 32,,0,Analog, , ,0.00
+0x1BA6,7079,LL_TT_105_SP,,Variable,372,float 32,,0,Analog, , ,0.00
+0x1BA8,7081,HH_TT_105_SP,,Variable,373,float 32,,0,Analog, , ,0.00
+0x1BAA,7083,H_TT_105_SP,,Variable,374,float 32,,0,Analog, , ,0.00
+0x1BAC,7085,L_TT_105_SP,,Variable,375,float 32,,0,Analog, , ,0.00
+0x1BAE,7087,LL_TT_106_SP,,Variable,376,float 32,,0,Analog, , ,0.00
+0x1BB0,7089,HH_TT_106_SP,,Variable,377,float 32,,0,Analog, , ,0.00
+0x1BB2,7091,H_TT_106_SP,,Variable,378,float 32,,0,Analog, , ,0.00
+0x1BB4,7093,L_TT_106_SP,,Variable,379,float 32,,0,Analog, , ,0.00
+0x1BB6,7095,LL_TT_107_SP,,Variable,380,float 32,,0,Analog, , ,0.00
+0x1BB8,7097,HH_TT_107_SP,,Variable,381,float 32,,0,Analog, , ,0.00
+0x1BBA,7099,H_TT_107_SP,,Variable,382,float 32,,0,Analog, , ,0.00
+0x1BBC,7101,L_TT_107_SP,,Variable,383,float 32,,0,Analog, , ,0.00
+0x1BBE,7103,LL_TT_108_SP,,Variable,384,float 32,,0,Analog, , ,0.00
+0x1BC0,7105,HH_TT_108_SP,,Variable,385,float 32,,0,Analog, , ,0.00
+0x1BC2,7107,H_TT_108_SP,,Variable,386,float 32,,0,Analog, , ,0.00
+0x1BC4,7109,L_TT_108_SP,,Variable,387,float 32,,0,Analog, , ,0.00
+0x1BC6,7111,LL_TT_109_SP,,Variable,388,float 32,,0,Analog, , ,0.00
+0x1BC8,7113,HH_TT_109_SP,,Variable,389,float 32,,0,Analog, , ,0.00
+0x1BCA,7115,H_TT_109_SP,,Variable,390,float 32,,0,Analog, , ,0.00
+0x1BCC,7117,L_TT_109_SP,,Variable,391,float 32,,0,Analog, , ,0.00
+0x1BCE,7119,LL_TT_110_SP,,Variable,392,float 32,,0,Analog, , ,0.00
+0x1BD0,7121,HH_TT_110_SP,,Variable,393,float 32,,0,Analog, , ,0.00
+0x1BD2,7123,H_TT_110_SP,,Variable,394,float 32,,0,Analog, , ,0.00
+0x1BD4,7125,L_TT_110_SP,,Variable,395,float 32,,0,Analog, , ,0.00
+0x1BD6,7127,LL_TT_111_SP,,Variable,396,float 32,,0,Analog, , ,0.00
+0x1BD8,7129,HH_TT_111_SP,,Variable,397,float 32,,0,Analog, , ,0.00
+0x1BDA,7131,H_TT_111_SP,,Variable,398,float 32,,0,Analog, , ,0.00
+0x1BDC,7133,L_TT_111_SP,,Variable,399,float 32,,0,Analog, , ,0.00
+0x1BDE,7135,LL_TT_112_SP,,Variable,400,float 32,,0,Analog, , ,0.00
+0x1BE0,7137,HH_TT_112_SP,,Variable,401,float 32,,0,Analog, , ,0.00
+0x1BE2,7139,H_TT_112_SP,,Variable,402,float 32,,0,Analog, , ,0.00
+0x1BE4,7141,L_TT_112_SP,,Variable,403,float 32,,0,Analog, , ,0.00
+0x1BE6,7143,LL_TT_113_SP,,Variable,404,float 32,,0,Analog, , ,0.00
+0x1BE8,7145,HH_TT_113_SP,,Variable,405,float 32,,0,Analog, , ,0.00
+0x1BEA,7147,H_TT_113_SP,,Variable,406,float 32,,0,Analog, , ,0.00
+0x1BEC,7149,L_TT_113_SP,,Variable,407,float 32,,0,Analog, , ,0.00
+0x1BEE,7151,LL_TT_114_SP,,Variable,408,float 32,,0,Analog, , ,0.00
+0x1BF0,7153,HH_TT_114_SP,,Variable,409,float 32,,0,Analog, , ,0.00
+0x1BF2,7155,H_TT_114_SP,,Variable,410,float 32,,0,Analog, , ,0.00
+0x1BF4,7157,L_TT_114_SP,,Variable,411,float 32,,0,Analog, , ,0.00
+0x1BF6,7159,LL_TT_115_SP,,Variable,412,float 32,,0,Analog, , ,0.00
+0x1BF8,7161,HH_TT_115_SP,,Variable,413,float 32,,0,Analog, , ,0.00
+0x1BFA,7163,H_TT_115_SP,,Variable,414,float 32,,0,Analog, , ,0.00
+0x1BFC,7165,L_TT_115_SP,,Variable,415,float 32,,0,Analog, , ,0.00
+0x1BFE,7167,LL_TT_116_SP,,Variable,416,float 32,,0,Analog, , ,0.00
+0x1C00,7169,HH_TT_116_SP,,Variable,417,float 32,,0,Analog, , ,0.00
+0x1C02,7171,H_TT_116_SP,,Variable,418,float 32,,0,Analog, , ,0.00
+0x1C04,7173,L_TT_116_SP,,Variable,419,float 32,,0,Analog, , ,0.00
+0x1C06,7175,LL_TT_117_SP,,Variable,420,float 32,,0,Analog, , ,0.00
+0x1C08,7177,HH_TT_117_SP,,Variable,421,float 32,,0,Analog, , ,0.00
+0x1C0A,7179,H_TT_117_SP,,Variable,422,float 32,,0,Analog, , ,0.00
+0x1C0C,7181,L_TT_117_SP,,Variable,423,float 32,,0,Analog, , ,0.00
+0x1C0E,7183,LL_TT_118_SP,,Variable,424,float 32,,0,Analog, , ,0.00
+0x1C10,7185,HH_TT_118_SP,,Variable,425,float 32,,0,Analog, , ,0.00
+0x1C12,7187,H_TT_118_SP,,Variable,426,float 32,,0,Analog, , ,0.00
+0x1C14,7189,L_TT_118_SP,,Variable,427,float 32,,0,Analog, , ,0.00
+0x1C16,7191,LL_TT_119_SP,,Variable,428,float 32,,0,Analog, , ,0.00
+0x1C18,7193,HH_TT_119_SP,,Variable,429,float 32,,0,Analog, , ,0.00
+0x1C1A,7195,H_TT_119_SP,,Variable,430,float 32,,0,Analog, , ,0.00
+0x1C1C,7197,L_TT_119_SP,,Variable,431,float 32,,0,Analog, , ,0.00
+0x1C1E,7199,LL_TT_120_SP,,Variable,432,float 32,,0,Analog, , ,0.00
+0x1C20,7201,HH_TT_120_SP,,Variable,433,float 32,,0,Analog, , ,0.00
+0x1C22,7203,H_TT_120_SP,,Variable,434,float 32,,0,Analog, , ,0.00
+0x1C24,7205,L_TT_120_SP,,Variable,435,float 32,,0,Analog, , ,0.00
+0x1C26,7207,LL_TT_121_SP,,Variable,436,float 32,,0,Analog, , ,0.00
+0x1C28,7209,HH_TT_121_SP,,Variable,437,float 32,,0,Analog, , ,0.00
+0x1C2A,7211,H_TT_121_SP,,Variable,438,float 32,,0,Analog, , ,0.00
+0x1C2C,7213,L_TT_121_SP,,Variable,439,float 32,,0,Analog, , ,0.00
+0x1C2E,7215,LL_TT_122_SP,,Variable,440,float 32,,0,Analog, , ,0.00
+0x1C30,7217,HH_TT_122_SP,,Variable,441,float 32,,0,Analog, , ,0.00
+0x1C32,7219,H_TT_122_SP,,Variable,442,float 32,,0,Analog, , ,0.00
+0x1C34,7221,L_TT_122_SP,,Variable,443,float 32,,0,Analog, , ,0.00
+0x1C36,7223,LL_TT_123_SP,,Variable,444,float 32,,0,Analog, , ,0.00
+0x1C38,7225,HH_TT_123_SP,,Variable,445,float 32,,0,Analog, , ,0.00
+0x1C3A,7227,H_TT_123_SP,,Variable,446,float 32,,0,Analog, , ,0.00
+0x1C3C,7229,L_TT_123_SP,,Variable,447,float 32,,0,Analog, , ,0.00
+0x1C3E,7231,LL_TT_124_SP,,Variable,448,float 32,,0,Analog, , ,0.00
+0x1C40,7233,HH_TT_124_SP,,Variable,449,float 32,,0,Analog, , ,0.00
+0x1C42,7235,H_TT_124_SP,,Variable,450,float 32,,0,Analog, , ,0.00
+0x1C44,7237,L_TT_124_SP,,Variable,451,float 32,,0,Analog, , ,0.00
+0x1C46,7239,LL_TT_125_SP,,Variable,452,float 32,,0,Analog, , ,0.00
+0x1C48,7241,HH_TT_125_SP,,Variable,453,float 32,,0,Analog, , ,0.00
+0x1C4A,7243,H_TT_125_SP,,Variable,454,float 32,,0,Analog, , ,0.00
+0x1C4C,7245,L_TT_125_SP,,Variable,455,float 32,,0,Analog, , ,0.00
+0x1C4E,7247,LL_TT_126_SP,,Variable,456,float 32,,0,Analog, , ,0.00
+0x1C50,7249,HH_TT_126_SP,,Variable,457,float 32,,0,Analog, , ,0.00
+0x1C52,7251,H_TT_126_SP,,Variable,458,float 32,,0,Analog, , ,30.00
+0x1C54,7253,L_TT_126_SP,,Variable,459,float 32,,0,Analog, , ,0.00
+0x1C56,7255,LL_TT_127_SP,,Variable,460,float 32,,0,Analog, , ,0.00
+0x1C58,7257,HH_TT_127_SP,,Variable,461,float 32,,0,Analog, , ,0.00
+0x1C5A,7259,H_TT_127_SP,,Variable,462,float 32,,0,Analog, , ,30.00
+0x1C5C,7261,L_TT_127_SP,,Variable,463,float 32,,0,Analog, , ,0.00
+0x1C5E,7263,LL_TT_128_SP,,Variable,464,float 32,,0,Analog, , ,0.00
+0x1C60,7265,HH_TT_128_SP,,Variable,465,float 32,,0,Analog, , ,0.00
+0x1C62,7267,H_TT_128_SP,,Variable,466,float 32,,0,Analog, , ,30.00
+0x1C64,7269,L_TT_128_SP,,Variable,467,float 32,,0,Analog, , ,0.00
+0x1C66,7271,LL_TT_129_SP,,Variable,468,float 32,,0,Analog, , ,0.00
+0x1C68,7273,HH_TT_129_SP,,Variable,469,float 32,,0,Analog, , ,0.00
+0x1C6A,7275,H_TT_129_SP,,Variable,470,float 32,,0,Analog, , ,0.00
+0x1C6C,7277,L_TT_129_SP,,Variable,471,float 32,,0,Analog, , ,0.00
+0x1C6E,7279,LL_TT_130_SP,,Variable,472,float 32,,0,Analog, , ,0.00
+0x1C70,7281,HH_TT_130_SP,,Variable,473,float 32,,0,Analog, , ,0.00
+0x1C72,7283,H_TT_130_SP,,Variable,474,float 32,,0,Analog, , ,0.00
+0x1C74,7285,L_TT_130_SP,,Variable,475,float 32,,0,Analog, , ,0.00
+0x1C76,7287,LL_TT_131_SP,,Variable,476,float 32,,0,Analog, , ,0.00
+0x1C78,7289,HH_TT_131_SP,,Variable,477,float 32,,0,Analog, , ,0.00
+0x1C7A,7291,H_TT_131_SP,,Variable,478,float 32,,0,Analog, , ,0.00
+0x1C7C,7293,L_TT_131_SP,,Variable,479,float 32,,0,Analog, , ,0.00
+0x1C7E,7295,LL_TT_132_SP,,Variable,480,float 32,,0,Analog, , ,0.00
+0x1C80,7297,HH_TT_132_SP,,Variable,481,float 32,,0,Analog, , ,0.00
+0x1C82,7299,H_TT_132_SP,,Variable,482,float 32,,0,Analog, , ,0.00
+0x1C84,7301,L_TT_132_SP,,Variable,483,float 32,,0,Analog, , ,0.00
+0x1C86,7303,LL_TT_133_SP,,Variable,484,float 32,,0,Analog, , ,0.00
+0x1C88,7305,HH_TT_133_SP,,Variable,485,float 32,,0,Analog, , ,0.00
+0x1C8A,7307,H_TT_133_SP,,Variable,486,float 32,,0,Analog, , ,0.00
+0x1C8C,7309,L_TT_133_SP,,Variable,487,float 32,,0,Analog, , ,0.00
+0x1C8E,7311,LL_TT_134_SP,,Variable,488,float 32,,0,Analog, , ,0.00
+0x1C90,7313,HH_TT_134_SP,,Variable,489,float 32,,0,Analog, , ,0.00
+0x1C92,7315,H_TT_134_SP,,Variable,490,float 32,,0,Analog, , ,0.00
+0x1C94,7317,L_TT_134_SP,,Variable,491,float 32,,0,Analog, , ,0.00
+0x1C96,7319,LL_TT_135_SP,,Variable,492,float 32,,0,Analog, , ,0.00
+0x1C98,7321,HH_TT_135_SP,,Variable,493,float 32,,0,Analog, , ,0.00
+0x1C9A,7323,H_TT_135_SP,,Variable,494,float 32,,0,Analog, , ,0.00
+0x1C9C,7325,L_TT_135_SP,,Variable,495,float 32,,0,Analog, , ,0.00
+0x1C9E,7327,LL_TT_136_SP,,Variable,496,float 32,,0,Analog, , ,0.00
+0x1CA0,7329,HH_TT_136_SP,,Variable,497,float 32,,0,Analog, , ,0.00
+0x1CA2,7331,H_TT_136_SP,,Variable,498,float 32,,0,Analog, , ,0.00
+0x1CA4,7333,L_TT_136_SP,,Variable,499,float 32,,0,Analog, , ,0.00
+0x1CA6,7335,LL_FT_108_SP,,Variable,500,float 32,,0,Analog, , ,0.00
+0x1CA8,7337,HH_FT_108_SP,,Variable,501,float 32,,0,Analog, , ,0.00
+0x1CAA,7339,H_FT_108_SP,,Variable,502,float 32,,0,Analog, , ,0.00
+0x1CAC,7341,L_FT_108_SP,,Variable,503,float 32,,0,Analog, , ,0.00
+0x1CAE,7343,LL_FT_101_SP,,Variable,504,float 32,,0,Analog, , ,0.00
+0x1CB0,7345,HH_FT_101_SP,,Variable,505,float 32,,0,Analog, , ,0.00
+0x1CB2,7347,H_FT_101_SP,,Variable,506,float 32,,0,Analog, , ,0.00
+0x1CB4,7349,L_FT_101_SP,,Variable,507,float 32,,0,Analog, , ,0.00
+0x1CB6,7351,LL_FT_101_A_SP,,Variable,508,float 32,,0,Analog, , ,0.00
+0x1CB8,7353,HH_FT_101_A_SP,,Variable,509,float 32,,0,Analog, , ,0.00
+0x1CBA,7355,H_FT_101_A_SP,,Variable,510,float 32,,0,Analog, , ,0.00
+0x1CBC,7357,L_FT_101_A_SP,,Variable,511,float 32,,0,Analog, , ,0.00
+0x1CBE,7359,LL_FT_102_SP,,Variable,512,float 32,,0,Analog, , ,0.00
+0x1CC0,7361,HH_FT_102_SP,,Variable,513,float 32,,0,Analog, , ,0.00
+0x1CC2,7363,H_FT_102_SP,,Variable,514,float 32,,0,Analog, , ,0.00
+0x1CC4,7365,L_FT_102_SP,,Variable,515,float 32,,0,Analog, , ,0.00
+0x1CC6,7367,LL_FT_103_SP,,Variable,516,float 32,,0,Analog, , ,0.00
+0x1CC8,7369,HH_FT_103_SP,,Variable,517,float 32,,0,Analog, , ,0.00
+0x1CCA,7371,H_FT_103_SP,,Variable,518,float 32,,0,Analog, , ,0.00
+0x1CCC,7373,L_FT_103_SP,,Variable,519,float 32,,0,Analog, , ,0.00
+0x1CCE,7375,LL_FT_103_A_SP,,Variable,520,float 32,,0,Analog, , ,0.00
+0x1CD0,7377,HH_FT_103_A_SP,,Variable,521,float 32,,0,Analog, , ,0.00
+0x1CD2,7379,H_FT_103_A_SP,,Variable,522,float 32,,0,Analog, , ,0.00
+0x1CD4,7381,L_FT_103_A_SP,,Variable,523,float 32,,0,Analog, , ,0.00
+0x1CD6,7383,LL_CHINA_VFD_SP,,Variable,524,float 32,,0,Analog, , ,0.00
+0x1CD8,7385,HH_CHINA_VFD_SP,,Variable,525,float 32,,0,Analog, , ,0.00
+0x1CDA,7387,H_CHINA_VFD_SP,,Variable,526,float 32,,0,Analog, , ,0.00
+0x1CDC,7389,L_CHINA_VFD_SP,,Variable,527,float 32,,0,Analog, , ,0.00
+0x1CDE,7391,LL_USA_VFD_SP,,Variable,528,float 32,,0,Analog, , ,0.00
+0x1CE0,7393,HH_USA_VFD_SP,,Variable,529,float 32,,0,Analog, , ,0.00
+0x1CE2,7395,H_USA_VFD_SP,,Variable,530,float 32,,0,Analog, , ,0.00
+0x1CE4,7397,L_USA_VFD_SP,,Variable,531,float 32,,0,Analog, , ,0.00
+0x1CE6,7399,LL_H_TK_VFD01_SP,,Variable,532,float 32,,0,Analog, , ,0.00
+0x1CE8,7401,HH_H_TK_VFD01_SP,,Variable,533,float 32,,0,Analog, , ,0.00
+0x1CEA,7403,H_H_TK_VFD01_SP,,Variable,534,float 32,,0,Analog, , ,0.00
+0x1CEC,7405,L_H_TK_VFD01_SP,,Variable,535,float 32,,0,Analog, , ,0.00
+0x1CEE,7407,LL_H_TK_VFD02_SP,,Variable,536,float 32,,0,Analog, , ,0.00
+0x1CF0,7409,HH_H_TK_VFD02_SP,,Variable,537,float 32,,0,Analog, , ,0.00
+0x1CF2,7411,H_H_TK_VFD02_SP,,Variable,538,float 32,,0,Analog, , ,0.00
+0x1CF4,7413,L_H_TK_VFD02_SP,,Variable,539,float 32,,0,Analog, , ,0.00
+0x1CF6,7415,LL_RX_01_VFD_SP,,Variable,540,float 32,,0,Analog, , ,0.00
+0x1CF8,7417,HH_RX_01_VFD_SP,,Variable,541,float 32,,0,Analog, , ,0.00
+0x1CFA,7419,H_RX_01_VFD_SP,,Variable,542,float 32,,0,Analog, , ,0.00
+0x1CFC,7421,L_RX_01_VFD_SP,,Variable,543,float 32,,0,Analog, , ,0.00
+0x1CFE,7423,LL_RX_02_VFD_SP,,Variable,544,float 32,,0,Analog, , ,0.00
+0x1D00,7425,HH_RX_02_VFD_SP,,Variable,545,float 32,,0,Analog, , ,0.00
+0x1D02,7427,H_RX_02_VFD_SP,,Variable,546,float 32,,0,Analog, , ,0.00
+0x1D04,7429,L_RX_02_VFD_SP,,Variable,547,float 32,,0,Analog, , ,0.00
+0x1D06,7431,LL_RX_03_VFD_SP,,Variable,548,float 32,,0,Analog, , ,0.00
+0x1D08,7433,HH_RX_03_VFD_SP,,Variable,549,float 32,,0,Analog, , ,0.00
+0x1D0A,7435,H_RX_03_VFD_SP,,Variable,550,float 32,,0,Analog, , ,0.00
+0x1D0C,7437,L_RX_03_VFD_SP,,Variable,551,float 32,,0,Analog, , ,0.00
+0x1D0E,7439,LL_RX_04_VFD_SP,,Variable,552,float 32,,0,Analog, , ,0.00
+0x1D10,7441,HH_RX_04_VFD_SP,,Variable,553,float 32,,0,Analog, , ,0.00
+0x1D12,7443,H_RX_04_VFD_SP,,Variable,554,float 32,,0,Analog, , ,0.00
+0x1D14,7445,L_RX_04_VFD_SP,,Variable,555,float 32,,0,Analog, , ,0.00
+0xEC36,60471,PT_102_LO,,Variable,836,float 32,,0,Analog, , ,0.00
+0xEC38,60473,PT_102_HI,,Variable,837,float 32,,0,Analog, , ,2.00
+0xEC3A,60475,PT_103_LO,,Variable,838,float 32,,0,Analog, , ,0.00
+0xEC3C,60477,PT_103_HI,,Variable,839,float 32,,0,Analog, , ,2.00
+0xEC3E,60479,PT_104_LO,,Variable,840,float 32,,0,Analog, , ,0.00
+0xEC40,60481,PT_104_HI,,Variable,841,float 32,,0,Analog, , ,2.00
+0xEC42,60483,PT_105_LO,,Variable,842,float 32,,0,Analog, , ,0.00
+0xEC44,60485,PT_105_HI,,Variable,843,float 32,,0,Analog, , ,2.00
+0xEC46,60487,SRN_RW_PMP01_AM,,Variable,844,float 32, , ,Digital,ON,OFF,OFF
+0xEC48,60489,SRN_RW_PMP02_AM,,Variable,845,float 32, , ,Digital,ON,OFF,OFF
+0xEC4A,60491,DM_WTR_PMP01_ATO,,Variable,846,float 32, , ,Digital,ON,OFF,OFF
+0xEC4C,60493,DM_WTR_PMP02_ATO,,Variable,847,float 32, , ,Digital,ON,OFF,OFF
+0xEC4E,60495,PTN_FD_PMP01_ATO,,Variable,848,float 32, , ,Digital,ON,OFF,OFF
+0xEC50,60497,PTN_FD_PMP02_ATO,,Variable,849,float 32, , ,Digital,ON,OFF,OFF
+0xEC52,60499,EF_WTR_PMP01_ATO,,Variable,850,float 32, , ,Digital,ON,OFF,OFF
+0xEC54,60501,EF_WTR_PMP02_ATO,,Variable,851,float 32, , ,Digital,ON,OFF,OFF
+0xEC56,60503,ACD_MIX_TNK_ATO,,Variable,852,float 32, , ,Digital,ON,OFF,OFF
+0xEC58,60505,CNT_AIR_BR01_ATO,,Variable,853,float 32, , ,Digital,ON,OFF,OFF
+0xEC5A,60507,CNT_AIR_BR02_ATO,,Variable,854,float 32, , ,Digital,ON,OFF,OFF
+0xEC5C,60509,WTR_COOL_PMP_ATO,,Variable,855,float 32, , ,Digital,ON,OFF,OFF
+0xEC5E,60511,DRY_CHN_ATO,,Variable,856,float 32, , ,Digital,ON,OFF,OFF
+0xEC60,60513,DRY_USA_ATO,,Variable,857,float 32, , ,Digital,ON,OFF,OFF
+0xEC62,60515,HLD_TK_VFD01_ATO,,Variable,858,float 32, , ,Digital,ON,OFF,OFF
+0xEC64,60517,HLD_TK_VFD02_ATO,,Variable,859,float 32, , ,Digital,ON,OFF,OFF
+0xEC66,60519,CHL_WTR_PMP1_ATO,,Variable,860,float 32, , ,Digital,ON,OFF,OFF
+0xEC68,60521,CHL_WTR_PMP2_ATO,,Variable,861,float 32, , ,Digital,ON,OFF,OFF
+0xEC6A,60523,RCT_RX01_VFD_ATO,,Variable,862,float 32, , ,Digital,ON,OFF,OFF
+0xEC6C,60525,RCT_RX02_VFD_ATO,,Variable,863,float 32, , ,Digital,ON,OFF,OFF
+0xEC6E,60527,RCT_RX03_VFD_ATO,,Variable,864,float 32, , ,Digital,ON,OFF,OFF
+0xEC70,60529,RCT_RX04_VFD_ATO,,Variable,865,float 32, , ,Digital,ON,OFF,OFF
+0x2000,8193,A2,,Signal Tag,1,float 32, , ,Digital,ON,OFF,Block 1438  Output 1
+0x2002,8195,STR_FD_PMP01_TRP,,Signal Tag,2,float 32, , ,Digital,ON,OFF,Block 101  Output 10
+0x2004,8197,STR_FD_PMP01_AM,,Signal Tag,3,float 32, , ,Digital,ON,OFF,Block 101  Output 11
+0x2006,8199,STR_FD_PMP02_ON,,Signal Tag,4,float 32, , ,Digital,ON,OFF,Block 101  Output 12
+0x2008,8201,STR_FD_PMP02_TRP,,Signal Tag,5,float 32, , ,Digital,ON,OFF,Block 101  Output 13
+0x200A,8203,STR_FD_PMP02_AM,,Signal Tag,6,float 32, , ,Digital,ON,OFF,Block 101  Output 14
+0x200C,8205,PTN_FD_PMP01_ON,,Signal Tag,7,float 32, , ,Digital,ON,OFF,Block 101  Output 15
+0x200E,8207,PTN_FD_PMP01_TRP,,Signal Tag,8,float 32, , ,Digital,ON,OFF,Block 101  Output 16
+0x2010,8209,PTN_FD_PMP01_AM,,Signal Tag,9,float 32, , ,Digital,ON,OFF,Block 102  Output 9
+0x2012,8211,PTN_FD_PMP02_ON,,Signal Tag,10,float 32, , ,Digital,ON,OFF,Block 102  Output 10
+0x2014,8213,PTN_FD_PMP02_TRP,,Signal Tag,11,float 32, , ,Digital,ON,OFF,Block 102  Output 11
+0x2016,8215,PTN_FD_PMP02_AM,,Signal Tag,12,float 32, , ,Digital,ON,OFF,Block 102  Output 12
+0x2018,8217,DM_W_FD_PMP1_ON,,Signal Tag,13,float 32, , ,Digital,ON,OFF,Block 102  Output 13
+0x201A,8219,DM_W_FD_PMP1_TRP,,Signal Tag,14,float 32, , ,Digital,ON,OFF,Block 102  Output 14
+0x201C,8221,DM_W_FD_PMP1_AM,,Signal Tag,15,float 32, , ,Digital,ON,OFF,Block 102  Output 15
+0x201E,8223,DM_W_FD_PMP2_ON,,Signal Tag,16,float 32, , ,Digital,ON,OFF,Block 102  Output 16
+0x2020,8225,DM_W_FD_PMP2_TRP,,Signal Tag,17,float 32, , ,Digital,ON,OFF,Block 103  Output 9
+0x2022,8227,DM_W_FD_PMP2_AM,,Signal Tag,18,float 32, , ,Digital,ON,OFF,Block 103  Output 10
+0x2024,8229,EFT_WTR_PMP1_ON,,Signal Tag,19,float 32, , ,Digital,ON,OFF,Block 103  Output 11
+0x2026,8231,EFT_WTR_PMP1_TRP,,Signal Tag,20,float 32, , ,Digital,ON,OFF,Block 103  Output 12
+0x2028,8233,EFT_WTR_PMP1_AM,,Signal Tag,21,float 32, , ,Digital,ON,OFF,Block 103  Output 13
+0x202A,8235,EFT_WTR_PMP2_ON,,Signal Tag,22,float 32, , ,Digital,ON,OFF,Block 103  Output 14
+0x202C,8237,EFT_WTR_PMP2_TRP,,Signal Tag,23,float 32, , ,Digital,ON,OFF,Block 103  Output 15
+0x202E,8239,EFT_WTR_PMP2_AM,,Signal Tag,24,float 32, , ,Digital,ON,OFF,Block 103  Output 16
+0x2030,8241,ACID_MIX_TK_ON,,Signal Tag,25,float 32, , ,Digital,ON,OFF,Block 104  Output 9
+0x2032,8243,ACID_MIX_TK_TRP,,Signal Tag,26,float 32, , ,Digital,ON,OFF,Block 104  Output 10
+0x2034,8245,ACID_MIX_TK_AM,,Signal Tag,27,float 32, , ,Digital,ON,OFF,Block 104  Output 11
+0x2036,8247,CNTR_BLWR_01_ON,,Signal Tag,28,float 32, , ,Digital,ON,OFF,Block 104  Output 12
+0x2038,8249,CNTR_BLWR_01_TRP,,Signal Tag,29,float 32, , ,Digital,ON,OFF,Block 104  Output 13
+0x203A,8251,CNTR_BLWR_01_AM,,Signal Tag,30,float 32, , ,Digital,ON,OFF,Block 104  Output 14
+0x203C,8253,CNTR_BLWR_02_ON,,Signal Tag,31,float 32, , ,Digital,ON,OFF,Block 104  Output 15
+0x203E,8255,CNTR_BLWR_02_TRP,,Signal Tag,32,float 32, , ,Digital,ON,OFF,Block 104  Output 16
+0x2040,8257,CNTR_BLWR_02_AM,,Signal Tag,33,float 32, , ,Digital,ON,OFF,Block 105  Output 9
+0x2042,8259,WTR_COOL_PMP_ON,,Signal Tag,34,float 32, , ,Digital,ON,OFF,Block 105  Output 10
+0x2044,8261,WTR_COOL_PMP_TRP,,Signal Tag,35,float 32, , ,Digital,ON,OFF,Block 105  Output 11
+0x2046,8263,WTR_COOL_PMP_AM,,Signal Tag,36,float 32, , ,Digital,ON,OFF,Block 105  Output 12
+0x2048,8265,DRY_CHN_VFD_ON,,Signal Tag,37,float 32, , ,Digital,ON,OFF,Block 105  Output 13
+0x204A,8267,DRY_CHN_VFD_TRP,,Signal Tag,38,float 32, , ,Digital,ON,OFF,Block 105  Output 14
+0x204C,8269,DRY_CHN_VFD_AM,,Signal Tag,39,float 32, , ,Digital,ON,OFF,Block 105  Output 15
+0x204E,8271,DRY_USA_VFD_ON,,Signal Tag,40,float 32, , ,Digital,ON,OFF,Block 105  Output 16
+0x2050,8273,DRY_USA_VFD_TRP,,Signal Tag,41,float 32, , ,Digital,ON,OFF,Block 106  Output 9
+0x2052,8275,DRY_USA_VFD_AM,,Signal Tag,42,float 32, , ,Digital,ON,OFF,Block 106  Output 10
+0x2054,8277,HLD_TK_VFD1_ON,,Signal Tag,43,float 32, , ,Digital,ON,OFF,Block 106  Output 11
+0x2056,8279,HLD_TK_VFD1_TRP,,Signal Tag,44,float 32, , ,Digital,ON,OFF,Block 106  Output 12
+0x2058,8281,HLD_TK_VFD1_AM,,Signal Tag,45,float 32, , ,Digital,ON,OFF,Block 106  Output 13
+0x205A,8283,HLD_TK_VFD2_ON,,Signal Tag,46,float 32, , ,Digital,ON,OFF,Block 106  Output 14
+0x205C,8285,HLD_TK_VFD2_TRP,,Signal Tag,47,float 32, , ,Digital,ON,OFF,Block 106  Output 15
+0x205E,8287,HLD_TK_VFD2_AM,,Signal Tag,48,float 32, , ,Digital,ON,OFF,Block 106  Output 16
+0x2060,8289,CH_H_WT_PMP1_ON,,Signal Tag,49,float 32, , ,Digital,ON,OFF,Block 107  Output 9
+0x2062,8291,CH_H_WT_PMP1_TRP,,Signal Tag,50,float 32, , ,Digital,ON,OFF,Block 107  Output 10
+0x2064,8293,CH_H_WT_PMP1_AM,,Signal Tag,51,float 32, , ,Digital,ON,OFF,Block 107  Output 11
+0x2066,8295,CH_H_WT_PMP2_ON,,Signal Tag,52,float 32, , ,Digital,ON,OFF,Block 107  Output 12
+0x2068,8297,CH_H_WT_PMP2_TRP,,Signal Tag,53,float 32, , ,Digital,ON,OFF,Block 107  Output 13
+0x206A,8299,CH_H_WT_PMP2_AM,,Signal Tag,54,float 32, , ,Digital,ON,OFF,Block 107  Output 14
+0x206C,8301,RX_1_VFD_BY_ON,,Signal Tag,55,float 32, , ,Digital,ON,OFF,Block 107  Output 15
+0x206E,8303,RX_1_VFD_BY_TRP,,Signal Tag,56,float 32, , ,Digital,ON,OFF,Block 107  Output 16
+0x2070,8305,RX_1_VFD_BY_AM,,Signal Tag,57,float 32, , ,Digital,ON,OFF,Block 108  Output 9
+0x2072,8307,RX_2_VFD_BY_ON,,Signal Tag,58,float 32, , ,Digital,ON,OFF,Block 108  Output 10
+0x2074,8309,RX_2_VFD_BY_TRP,,Signal Tag,59,float 32, , ,Digital,ON,OFF,Block 108  Output 11
+0x2076,8311,RX_2_VFD_BY_AM,,Signal Tag,60,float 32, , ,Digital,ON,OFF,Block 108  Output 12
+0x2078,8313,RX_3_VFD_BY_ON,,Signal Tag,61,float 32, , ,Digital,ON,OFF,Block 108  Output 13
+0x207A,8315,RX_3_VFD_BY_TRP,,Signal Tag,62,float 32, , ,Digital,ON,OFF,Block 108  Output 14
+0x207C,8317,RX_3_VFD_BY_AM,,Signal Tag,63,float 32, , ,Digital,ON,OFF,Block 108  Output 15
+0x207E,8319,RX_4_VFD_BY_ON,,Signal Tag,64,float 32, , ,Digital,ON,OFF,Block 108  Output 16
+0x2080,8321,RX_4_VFD_BY_TRP,,Signal Tag,65,float 32, , ,Digital,ON,OFF,Block 109  Output 9
+0x2082,8323,RX_4_VFD_BY_AM,,Signal Tag,66,float 32, , ,Digital,ON,OFF,Block 109  Output 10
+0x2084,8325,XVX_101_OPEN_FB,,Signal Tag,67,float 32, , ,Digital,ON,OFF,Block 109  Output 11
+0x2086,8327,XVX_101_CLOSE_FB,,Signal Tag,68,float 32, , ,Digital,ON,OFF,Block 109  Output 12
+0x2088,8329,XVX_102_OPEN_FB,,Signal Tag,69,float 32, , ,Digital,ON,OFF,Block 109  Output 13
+0x208A,8331,XVX_102_CLOSE_FB,,Signal Tag,70,float 32, , ,Digital,ON,OFF,Block 109  Output 14
+0x208C,8333,XVX_103_OPEN_FB,,Signal Tag,71,float 32, , ,Digital,ON,OFF,Block 109  Output 15
+0x208E,8335,XVX_103_CLOSE_FB,,Signal Tag,72,float 32, , ,Digital,ON,OFF,Block 109  Output 16
+0x2090,8337,XVX_104_OPEN_FB,,Signal Tag,73,float 32, , ,Digital,ON,OFF,Block 110  Output 9
+0x2092,8339,XVX_104_CLOSE_FB,,Signal Tag,74,float 32, , ,Digital,ON,OFF,Block 110  Output 10
+0x2094,8341,XV_101_OPEN_FB,,Signal Tag,75,float 32, , ,Digital,ON,OFF,Block 110  Output 11
+0x2096,8343,XV_101_CLOSE_FB,,Signal Tag,76,float 32, , ,Digital,ON,OFF,Block 110  Output 12
+0x2098,8345,XV_102_OPEN_FB,,Signal Tag,77,float 32, , ,Digital,ON,OFF,Block 110  Output 13
+0x209A,8347,XV_102_CLOSE_FB,,Signal Tag,78,float 32, , ,Digital,ON,OFF,Block 110  Output 14
+0x209C,8349,XV_103_OPEN_FB,,Signal Tag,79,float 32, , ,Digital,ON,OFF,Block 110  Output 15
+0x209E,8351,XV_103_CLOSE_FB,,Signal Tag,80,float 32, , ,Digital,ON,OFF,Block 110  Output 16
+0x20A0,8353,XV_104_OPEN_FB,,Signal Tag,81,float 32, , ,Digital,ON,OFF,Block 111  Output 9
+0x20A2,8355,XV_104_CLOSE_FB,,Signal Tag,82,float 32, , ,Digital,ON,OFF,Block 111  Output 10
+0x20A4,8357,XV_105_OPEN_FB,,Signal Tag,83,float 32, , ,Digital,ON,OFF,Block 111  Output 11
+0x20A6,8359,XV_105_CLOSE_FB,,Signal Tag,84,float 32, , ,Digital,ON,OFF,Block 111  Output 12
+0x20A8,8361,XV_106_OPEN_FB,,Signal Tag,85,float 32, , ,Digital,ON,OFF,Block 111  Output 13
+0x20AA,8363,XV_106_CLOSE_FB,,Signal Tag,86,float 32, , ,Digital,ON,OFF,Block 111  Output 14
+0x20AC,8365,XV_107_OPEN_FB,,Signal Tag,87,float 32, , ,Digital,ON,OFF,Block 111  Output 15
+0x20AE,8367,XV_107_CLOSE_FB,,Signal Tag,88,float 32, , ,Digital,ON,OFF,Block 111  Output 16
+0x20B0,8369,XV_108_OPEN_FB,,Signal Tag,89,float 32, , ,Digital,ON,OFF,Block 112  Output 9
+0x20B2,8371,XV_108_CLOSE_FB,,Signal Tag,90,float 32, , ,Digital,ON,OFF,Block 112  Output 10
+0x20B4,8373,XV_109_OPEN_FB,,Signal Tag,91,float 32, , ,Digital,ON,OFF,Block 112  Output 11
+0x20B6,8375,XV_109_CLOSE_FB,,Signal Tag,92,float 32, , ,Digital,ON,OFF,Block 112  Output 12
+0x20B8,8377,XV_110_OPEN_FB,,Signal Tag,93,float 32, , ,Digital,ON,OFF,Block 112  Output 13
+0x20BA,8379,XV_110_CLOSE_FB,,Signal Tag,94,float 32, , ,Digital,ON,OFF,Block 112  Output 14
+0x20BC,8381,XV_111_OPEN_FB,,Signal Tag,95,float 32, , ,Digital,ON,OFF,Block 112  Output 15
+0x20BE,8383,XV_111_CLOSE_FB,,Signal Tag,96,float 32, , ,Digital,ON,OFF,Block 112  Output 16
+0x20C0,8385,XV_112_OPEN_FB,,Signal Tag,97,float 32, , ,Digital,ON,OFF,Block 113  Output 9
+0x20C2,8387,XV_112_CLOSE_FB,,Signal Tag,98,float 32, , ,Digital,ON,OFF,Block 113  Output 10
+0x20C4,8389,XV_113_OPEN_FB,,Signal Tag,99,float 32, , ,Digital,ON,OFF,Block 113  Output 11
+0x20C6,8391,XV_113_CLOSE_FB,,Signal Tag,100,float 32, , ,Digital,ON,OFF,Block 113  Output 12
+0x20C8,8393,XV_114_OPEN_FB,,Signal Tag,101,float 32, , ,Digital,ON,OFF,Block 113  Output 13
+0x20CA,8395,XV_114_CLOSE_FB,,Signal Tag,102,float 32, , ,Digital,ON,OFF,Block 113  Output 14
+0x20CC,8397,XV_115_OPEN_FB,,Signal Tag,103,float 32, , ,Digital,ON,OFF,Block 113  Output 15
+0x20CE,8399,XV_115_CLOSE_FB,,Signal Tag,104,float 32, , ,Digital,ON,OFF,Block 113  Output 16
+0x20D0,8401,XV_116_OPEN_FB,,Signal Tag,105,float 32, , ,Digital,ON,OFF,Block 114  Output 9
+0x20D2,8403,XV_116_CLOSE_FB,,Signal Tag,106,float 32, , ,Digital,ON,OFF,Block 114  Output 10
+0x20D4,8405,XV_117_OPEN_FB,,Signal Tag,107,float 32, , ,Digital,ON,OFF,Block 114  Output 11
+0x20D6,8407,XV_117_CLOSE_FB,,Signal Tag,108,float 32, , ,Digital,ON,OFF,Block 114  Output 12
+0x20D8,8409,XV_118_OPEN_FB,,Signal Tag,109,float 32, , ,Digital,ON,OFF,Block 114  Output 13
+0x20DA,8411,XV_118_CLOSE_FB,,Signal Tag,110,float 32, , ,Digital,ON,OFF,Block 114  Output 14
+0x20DC,8413,XV_119_OPEN_FB,,Signal Tag,111,float 32, , ,Digital,ON,OFF,Block 114  Output 15
+0x20DE,8415,XV_119_CLOSE_FB,,Signal Tag,112,float 32, , ,Digital,ON,OFF,Block 114  Output 16
+0x20E0,8417,XV_120_OPEN_FB,,Signal Tag,113,float 32, , ,Digital,ON,OFF,Block 115  Output 9
+0x20E2,8419,XV_120_CLOSE_FB,,Signal Tag,114,float 32, , ,Digital,ON,OFF,Block 115  Output 10
+0x20E4,8421,XV_121_OPEN_FB,,Signal Tag,115,float 32, , ,Digital,ON,OFF,Block 115  Output 11
+0x20E6,8423,XV_121_CLOSE_FB,,Signal Tag,116,float 32, , ,Digital,ON,OFF,Block 115  Output 12
+0x20E8,8425,XV_122_OPEN_FB,,Signal Tag,117,float 32, , ,Digital,ON,OFF,Block 115  Output 13
+0x20EA,8427,XV_122_CLOSE_FB,,Signal Tag,118,float 32, , ,Digital,ON,OFF,Block 115  Output 14
+0x20EC,8429,XV_123_OPEN_FB,,Signal Tag,119,float 32, , ,Digital,ON,OFF,Block 115  Output 15
+0x20EE,8431,XV_123_CLOSE_FB,,Signal Tag,120,float 32, , ,Digital,ON,OFF,Block 115  Output 16
+0x20F0,8433,XV_124_OPEN_FB,,Signal Tag,121,float 32, , ,Digital,ON,OFF,Block 116  Output 9
+0x20F2,8435,XV_124_CLOSE_FB,,Signal Tag,122,float 32, , ,Digital,ON,OFF,Block 116  Output 10
+0x20F4,8437,XV_125_OPEN_FB,,Signal Tag,123,float 32, , ,Digital,ON,OFF,Block 116  Output 11
+0x20F6,8439,XV_125_CLOSE_FB,,Signal Tag,124,float 32, , ,Digital,ON,OFF,Block 116  Output 12
+0x20F8,8441,XV_126_OPEN_FB,,Signal Tag,125,float 32, , ,Digital,ON,OFF,Block 116  Output 13
+0x20FA,8443,XV_126_CLOSE_FB,,Signal Tag,126,float 32, , ,Digital,ON,OFF,Block 116  Output 14
+0x20FC,8445,XV_127_OPEN_FB,,Signal Tag,127,float 32, , ,Digital,ON,OFF,Block 116  Output 15
+0x20FE,8447,XV_127_CLOSE_FB,,Signal Tag,128,float 32, , ,Digital,ON,OFF,Block 116  Output 16
+0x2100,8449,XV_128_OPEN_FB,,Signal Tag,129,float 32, , ,Digital,ON,OFF,Block 117  Output 9
+0x2102,8451,XV_128_CLOSE_FB,,Signal Tag,130,float 32, , ,Digital,ON,OFF,Block 117  Output 10
+0x2104,8453,XV_129_OPEN_FB,,Signal Tag,131,float 32, , ,Digital,ON,OFF,Block 117  Output 11
+0x2106,8455,XV_129_CLOSE_FB,,Signal Tag,132,float 32, , ,Digital,ON,OFF,Block 117  Output 12
+0x2108,8457,XV_130_OPEN_FB,,Signal Tag,133,float 32, , ,Digital,ON,OFF,Block 117  Output 13
+0x210A,8459,XV_130_CLOSE_FB,,Signal Tag,134,float 32, , ,Digital,ON,OFF,Block 117  Output 14
+0x210C,8461,XV_131_OPEN_FB,,Signal Tag,135,float 32, , ,Digital,ON,OFF,Block 117  Output 15
+0x210E,8463,XV_131_CLOSE_FB,,Signal Tag,136,float 32, , ,Digital,ON,OFF,Block 117  Output 16
+0x2110,8465,XV_132_OPEN_FB,,Signal Tag,137,float 32, , ,Digital,ON,OFF,Block 118  Output 9
+0x2112,8467,XV_132_CLOSE_FB,,Signal Tag,138,float 32, , ,Digital,ON,OFF,Block 118  Output 10
+0x2114,8469,XV_133_OPEN_FB,,Signal Tag,139,float 32, , ,Digital,ON,OFF,Block 118  Output 11
+0x2116,8471,XV_133_CLOSE_FB,,Signal Tag,140,float 32, , ,Digital,ON,OFF,Block 118  Output 12
+0x2118,8473,XV_134_OPEN_FB,,Signal Tag,141,float 32, , ,Digital,ON,OFF,Block 118  Output 13
+0x211A,8475,XV_134_CLOSE_FB,,Signal Tag,142,float 32, , ,Digital,ON,OFF,Block 118  Output 14
+0x211C,8477,XV_135_OPEN_FB,,Signal Tag,143,float 32, , ,Digital,ON,OFF,Block 118  Output 15
+0x211E,8479,XV_135_CLOSE_FB,,Signal Tag,144,float 32, , ,Digital,ON,OFF,Block 118  Output 16
+0x2120,8481,XV_136_OPEN_FB,,Signal Tag,145,float 32, , ,Digital,ON,OFF,Block 119  Output 9
+0x2122,8483,XV_136_CLOSE_FB,,Signal Tag,146,float 32, , ,Digital,ON,OFF,Block 119  Output 10
+0x2124,8485,XV_137_OPEN_FB,,Signal Tag,147,float 32, , ,Digital,ON,OFF,Block 119  Output 11
+0x2126,8487,XV_137_CLOSE_FB,,Signal Tag,148,float 32, , ,Digital,ON,OFF,Block 119  Output 12
+0x2128,8489,XV_138_OPEN_FB,,Signal Tag,149,float 32, , ,Digital,ON,OFF,Block 119  Output 13
+0x212A,8491,XV_138_CLOSE_FB,,Signal Tag,150,float 32, , ,Digital,ON,OFF,Block 119  Output 14
+0x212C,8493,XV_139_OPEN_FB,,Signal Tag,151,float 32, , ,Digital,ON,OFF,Block 119  Output 15
+0x212E,8495,XV_139_CLOSE_FB,,Signal Tag,152,float 32, , ,Digital,ON,OFF,Block 119  Output 16
+0x2130,8497,XV_140_OPEN_FB,,Signal Tag,153,float 32, , ,Digital,ON,OFF,Block 120  Output 9
+0x2132,8499,XV_140_CLOSE_FB,,Signal Tag,154,float 32, , ,Digital,ON,OFF,Block 120  Output 10
+0x2134,8501,XV_141_OPEN_FB,,Signal Tag,155,float 32, , ,Digital,ON,OFF,Block 120  Output 11
+0x2136,8503,XV_141_CLOSE_FB,,Signal Tag,156,float 32, , ,Digital,ON,OFF,Block 120  Output 12
+0x2138,8505,XV_142_OPEN_FB,,Signal Tag,157,float 32, , ,Digital,ON,OFF,Block 120  Output 13
+0x213A,8507,XV_142_CLOSE_FB,,Signal Tag,158,float 32, , ,Digital,ON,OFF,Block 120  Output 14
+0x213C,8509,XV_143_OPEN_FB,,Signal Tag,159,float 32, , ,Digital,ON,OFF,Block 120  Output 15
+0x213E,8511,XV_143_CLOSE_FB,,Signal Tag,160,float 32, , ,Digital,ON,OFF,Block 120  Output 16
+0x2140,8513,XV_144_OPEN_FB,,Signal Tag,161,float 32, , ,Digital,ON,OFF,Block 121  Output 9
+0x2142,8515,XV_144_CLOSE_FB,,Signal Tag,162,float 32, , ,Digital,ON,OFF,Block 121  Output 10
+0x2144,8517,XV_145_OPEN_FB,,Signal Tag,163,float 32, , ,Digital,ON,OFF,Block 121  Output 11
+0x2146,8519,XV_145_CLOSE_FB,,Signal Tag,164,float 32, , ,Digital,ON,OFF,Block 121  Output 12
+0x2148,8521,DI_SPARE_01,,Signal Tag,165,float 32, , ,Digital,ON,OFF,Block 121  Output 13
+0x214A,8523,DI_SPARE_02,,Signal Tag,166,float 32, , ,Digital,ON,OFF,Block 121  Output 14
+0x214C,8525,DI_SPARE_03,,Signal Tag,167,float 32, , ,Digital,ON,OFF,Block 121  Output 15
+0x214E,8527,DI_SPARE_04,,Signal Tag,168,float 32, , ,Digital,ON,OFF,Block 121  Output 16
+0x2150,8529,DI_SPARE_05,,Signal Tag,169,float 32, , ,Digital,ON,OFF,Block 122  Output 9
+0x2152,8531,DI_SPARE_06,,Signal Tag,170,float 32, , ,Digital,ON,OFF,Block 122  Output 10
+0x2154,8533,DI_SPARE_07,,Signal Tag,171,float 32, , ,Digital,ON,OFF,Block 122  Output 11
+0x2156,8535,DI_SPARE_08,,Signal Tag,172,float 32, , ,Digital,ON,OFF,Block 122  Output 12
+0x2158,8537,DI_SPARE_09,,Signal Tag,173,float 32, , ,Digital,ON,OFF,Block 122  Output 13
+0x215A,8539,DI_SPARE_10,,Signal Tag,174,float 32, , ,Digital,ON,OFF,Block 122  Output 14
+0x215C,8541,DI_SPARE_11,,Signal Tag,175,float 32, , ,Digital,ON,OFF,Block 122  Output 15
+0x215E,8543,DI_SPARE_12,,Signal Tag,176,float 32, , ,Digital,ON,OFF,Block 122  Output 16
+0x2160,8545,DI_SPARE_13,,Signal Tag,177,float 32, , ,Digital,ON,OFF,Block 123  Output 9
+0x2162,8547,DI_SPARE_14,,Signal Tag,178,float 32, , ,Digital,ON,OFF,Block 123  Output 10
+0x2164,8549,DI_SPARE_15,,Signal Tag,179,float 32, , ,Digital,ON,OFF,Block 123  Output 11
+0x2166,8551,DI_SPARE_16,,Signal Tag,180,float 32, , ,Digital,ON,OFF,Block 123  Output 12
+0x2168,8553,DI_SPARE_17,,Signal Tag,181,float 32, , ,Digital,ON,OFF,Block 123  Output 13
+0x216A,8555,DI_SPARE_18,,Signal Tag,182,float 32, , ,Digital,ON,OFF,Block 123  Output 14
+0x216C,8557,DI_SPARE_19,,Signal Tag,183,float 32, , ,Digital,ON,OFF,Block 123  Output 15
+0x216E,8559,DI_SPARE_20,,Signal Tag,184,float 32, , ,Digital,ON,OFF,Block 123  Output 16
+0x2170,8561,DI_SPARE_21,,Signal Tag,185,float 32, , ,Digital,ON,OFF,Block 124  Output 9
+0x2172,8563,DI_SPARE_22,,Signal Tag,186,float 32, , ,Digital,ON,OFF,Block 124  Output 10
+0x2174,8565,DI_SPARE_23,,Signal Tag,187,float 32, , ,Digital,ON,OFF,Block 124  Output 11
+0x2176,8567,DI_SPARE_24,,Signal Tag,188,float 32, , ,Digital,ON,OFF,Block 124  Output 12
+0x2178,8569,DI_SPARE_25,,Signal Tag,189,float 32, , ,Digital,ON,OFF,Block 124  Output 13
+0x217A,8571,DI_SPARE_26,,Signal Tag,190,float 32, , ,Digital,ON,OFF,Block 124  Output 14
+0x217C,8573,DI_SPARE_27,,Signal Tag,191,float 32, , ,Digital,ON,OFF,Block 124  Output 15
+0x217E,8575,DI_SPARE_28,,Signal Tag,192,float 32, , ,Digital,ON,OFF,Block 124  Output 16
+0x2180,8577,SRN_RW_PMP01_ON,,Signal Tag,193,float 32, , ,Digital,ON,OFF,Block 125  Output 9
+0x2182,8579,SRN_RW_PMP02_ON,,Signal Tag,194,float 32, , ,Digital,ON,OFF,Block 125  Output 10
+0x2184,8581,PTN_PMP01_ON,,Signal Tag,195,float 32, , ,Digital,ON,OFF,Block 125  Output 11
+0x2186,8583,PTN_PMP02_ON,,Signal Tag,196,float 32, , ,Digital,ON,OFF,Block 125  Output 12
+0x2188,8585,DM_WTR_PMP01_ON,,Signal Tag,197,float 32, , ,Digital,ON,OFF,Block 125  Output 13
+0x218A,8587,DM_WTR_PMP02_ON,,Signal Tag,198,float 32, , ,Digital,ON,OFF,Block 125  Output 14
+0x218C,8589,EF_WTR_PMP01_ON,,Signal Tag,199,float 32, , ,Digital,ON,OFF,Block 125  Output 15
+0x218E,8591,EF_WTR_PMP02_ON,,Signal Tag,200,float 32, , ,Digital,ON,OFF,Block 125  Output 16
+0x2190,8593,ACD_MIX_TNK_ON,,Signal Tag,201,float 32, , ,Digital,ON,OFF,Block 126  Output 9
+0x2192,8595,CNT_AIR_BR01_ON,,Signal Tag,202,float 32, , ,Digital,ON,OFF,Block 126  Output 10
+0x2194,8597,CNT_AIR_BR02_ON,,Signal Tag,203,float 32, , ,Digital,ON,OFF,Block 126  Output 11
+0x2196,8599,WTR_COL_PMP_ON,,Signal Tag,204,float 32, , ,Digital,ON,OFF,Block 126  Output 12
+0x2198,8601,DRY_CHN_ON,,Signal Tag,205,float 32, , ,Digital,ON,OFF,Block 126  Output 13
+0x219A,8603,DRY_USA_ON,,Signal Tag,206,float 32, , ,Digital,ON,OFF,Block 126  Output 14
+0x219C,8605,HLD_TK_VFD01_ON,,Signal Tag,207,float 32, , ,Digital,ON,OFF,Block 126  Output 15
+0x219E,8607,HLD_TK_VFD02_ON,,Signal Tag,208,float 32, , ,Digital,ON,OFF,Block 126  Output 16
+0x21A0,8609,CHL_WTR_PMP1_ON,,Signal Tag,209,float 32, , ,Digital,ON,OFF,Block 127  Output 9
+0x21A2,8611,CHL_WTR_PMP2_ON,,Signal Tag,210,float 32, , ,Digital,ON,OFF,Block 127  Output 10
+0x21A4,8613,RCT_RX01_VFD_ON,,Signal Tag,211,float 32, , ,Digital,ON,OFF,Block 127  Output 11
+0x21A6,8615,RCT_RX02_VFD_ON,,Signal Tag,212,float 32, , ,Digital,ON,OFF,Block 127  Output 12
+0x21A8,8617,RCT_RX03_VFD_ON,,Signal Tag,213,float 32, , ,Digital,ON,OFF,Block 127  Output 13
+0x21AA,8619,RCT_RX04_VFD_ON,,Signal Tag,214,float 32, , ,Digital,ON,OFF,Block 127  Output 14
+0x21AC,8621,XVX_101_STR_ON,,Signal Tag,215,float 32, , ,Digital,ON,OFF,Block 127  Output 15
+0x21AE,8623,XVX_102_STR_ON,,Signal Tag,216,float 32, , ,Digital,ON,OFF,Block 127  Output 16
+0x21B0,8625,XVX_103_STR_ON,,Signal Tag,217,float 32, , ,Digital,ON,OFF,Block 128  Output 9
+0x21B2,8627,XVX_104_STR_ON,,Signal Tag,218,float 32, , ,Digital,ON,OFF,Block 128  Output 10
+0x21B4,8629,XV_101_STR_ON,,Signal Tag,219,float 32, , ,Digital,ON,OFF,Block 128  Output 11
+0x21B6,8631,XV_102_STR_ON,,Signal Tag,220,float 32, , ,Digital,ON,OFF,Block 128  Output 12
+0x21B8,8633,XV_103_STR_ON,,Signal Tag,221,float 32, , ,Digital,ON,OFF,Block 128  Output 13
+0x21BA,8635,XV_104_STR_ON,,Signal Tag,222,float 32, , ,Digital,ON,OFF,Block 128  Output 14
+0x21BC,8637,XV_105_STR_ON,,Signal Tag,223,float 32, , ,Digital,ON,OFF,Block 128  Output 15
+0x21BE,8639,XV_106_STR_ON,,Signal Tag,224,float 32, , ,Digital,ON,OFF,Block 128  Output 16
+0x21C0,8641,XV_107_STR_ON,,Signal Tag,225,float 32, , ,Digital,ON,OFF,Block 129  Output 9
+0x21C2,8643,XV_108_STR_ON,,Signal Tag,226,float 32, , ,Digital,ON,OFF,Block 129  Output 10
+0x21C4,8645,XV_109_STR_ON,,Signal Tag,227,float 32, , ,Digital,ON,OFF,Block 129  Output 11
+0x21C6,8647,XV_110_STR_ON,,Signal Tag,228,float 32, , ,Digital,ON,OFF,Block 129  Output 12
+0x21C8,8649,XV_111_STR_ON,,Signal Tag,229,float 32, , ,Digital,ON,OFF,Block 129  Output 13
+0x21CA,8651,XV_112_STR_ON,,Signal Tag,230,float 32, , ,Digital,ON,OFF,Block 129  Output 14
+0x21CC,8653,XV_113_STR_ON,,Signal Tag,231,float 32, , ,Digital,ON,OFF,Block 129  Output 15
+0x21CE,8655,XV_114_STR_ON,,Signal Tag,232,float 32, , ,Digital,ON,OFF,Block 129  Output 16
+0x21D0,8657,XV_115_STR_ON,,Signal Tag,233,float 32, , ,Digital,ON,OFF,Block 130  Output 9
+0x21D2,8659,XV_116_STR_ON,,Signal Tag,234,float 32, , ,Digital,ON,OFF,Block 130  Output 10
+0x21D4,8661,XV_117_STR_ON,,Signal Tag,235,float 32, , ,Digital,ON,OFF,Block 130  Output 11
+0x21D6,8663,XV_118_STR_ON,,Signal Tag,236,float 32, , ,Digital,ON,OFF,Block 130  Output 12
+0x21D8,8665,XV_119_STR_ON,,Signal Tag,237,float 32, , ,Digital,ON,OFF,Block 130  Output 13
+0x21DA,8667,XV_120_STR_ON,,Signal Tag,238,float 32, , ,Digital,ON,OFF,Block 130  Output 14
+0x21DC,8669,XV_121_STR_ON,,Signal Tag,239,float 32, , ,Digital,ON,OFF,Block 130  Output 15
+0x21DE,8671,XV_122_STR_ON,,Signal Tag,240,float 32, , ,Digital,ON,OFF,Block 130  Output 16
+0x21E0,8673,XV_123_STR_ON,,Signal Tag,241,float 32, , ,Digital,ON,OFF,Block 131  Output 9
+0x21E2,8675,XV_124_STR_ON,,Signal Tag,242,float 32, , ,Digital,ON,OFF,Block 131  Output 10
+0x21E4,8677,XV_125_STR_ON,,Signal Tag,243,float 32, , ,Digital,ON,OFF,Block 131  Output 11
+0x21E6,8679,XV_126_STR_ON,,Signal Tag,244,float 32, , ,Digital,ON,OFF,Block 131  Output 12
+0x21E8,8681,XV_127_STR_ON,,Signal Tag,245,float 32, , ,Digital,ON,OFF,Block 131  Output 13
+0x21EA,8683,XV_128_STR_ON,,Signal Tag,246,float 32, , ,Digital,ON,OFF,Block 131  Output 14
+0x21EC,8685,XV_129_STR_ON,,Signal Tag,247,float 32, , ,Digital,ON,OFF,Block 131  Output 15
+0x21EE,8687,XV_130_STR_ON,,Signal Tag,248,float 32, , ,Digital,ON,OFF,Block 131  Output 16
+0x21F0,8689,XV_131_STR_ON,,Signal Tag,249,float 32, , ,Digital,ON,OFF,Block 132  Output 9
+0x21F2,8691,XV_132_STR_ON,,Signal Tag,250,float 32, , ,Digital,ON,OFF,Block 132  Output 10
+0x21F4,8693,XV_133_STR_ON,,Signal Tag,251,float 32, , ,Digital,ON,OFF,Block 132  Output 11
+0x21F6,8695,XV_134_STR_ON,,Signal Tag,252,float 32, , ,Digital,ON,OFF,Block 132  Output 12
+0x21F8,8697,XV_135_STR_ON,,Signal Tag,253,float 32, , ,Digital,ON,OFF,Block 132  Output 13
+0x21FA,8699,XV_136_STR_ON,,Signal Tag,254,float 32, , ,Digital,ON,OFF,Block 132  Output 14
+0x21FC,8701,XV_137_STR_ON,,Signal Tag,255,float 32, , ,Digital,ON,OFF,Block 132  Output 15
+0x21FE,8703,XV_138_STR_ON,,Signal Tag,256,float 32, , ,Digital,ON,OFF,Block 132  Output 16
+0x2200,8705,XV_139_STR_ON,,Signal Tag,257,float 32, , ,Digital,ON,OFF,Block 133  Output 9
+0x2202,8707,XV_140_STR_ON,,Signal Tag,258,float 32, , ,Digital,ON,OFF,Block 133  Output 10
+0x2204,8709,XV_141_STR_ON,,Signal Tag,259,float 32, , ,Digital,ON,OFF,Block 133  Output 11
+0x2206,8711,XV_142_STR_ON,,Signal Tag,260,float 32, , ,Digital,ON,OFF,Block 133  Output 12
+0x2208,8713,XV_143_STR_ON,,Signal Tag,261,float 32, , ,Digital,ON,OFF,Block 133  Output 13
+0x220A,8715,XV_144_STR_ON,,Signal Tag,262,float 32, , ,Digital,ON,OFF,Block 133  Output 14
+0x220C,8717,XV_145_STR_ON,,Signal Tag,263,float 32, , ,Digital,ON,OFF,Block 133  Output 15
+0x220E,8719,H,,Signal Tag,264,float 32, , ,Digital,ON,OFF,Block 133  Output 16
+0x2210,8721,DO_SPARE_02,,Signal Tag,265,float 32, , ,Digital,ON,OFF,Block 134  Output 9
+0x2212,8723,DO_SPARE_03,,Signal Tag,266,float 32, , ,Digital,ON,OFF,Block 134  Output 10
+0x2214,8725,DO_SPARE_04,,Signal Tag,267,float 32, , ,Digital,ON,OFF,Block 134  Output 11
+0x2216,8727,DO_SPARE_05,,Signal Tag,268,float 32, , ,Digital,ON,OFF,Block 134  Output 12
+0x2218,8729,DO_SPARE_06,,Signal Tag,269,float 32, , ,Digital,ON,OFF,Block 134  Output 13
+0x221A,8731,DO_SPARE_07,,Signal Tag,270,float 32, , ,Digital,ON,OFF,Block 134  Output 14
+0x221C,8733,DO_SPARE_08,,Signal Tag,271,float 32, , ,Digital,ON,OFF,Block 134  Output 15
+0x221E,8735,DO_SPARE_09,,Signal Tag,272,float 32, , ,Digital,ON,OFF,Block 134  Output 16
+0x2220,8737,DO_SPARE_10,,Signal Tag,273,float 32, , ,Digital,ON,OFF,Block 135  Output 9
+0x2222,8739,DO_SPARE_11,,Signal Tag,274,float 32, , ,Digital,ON,OFF,Block 135  Output 10
+0x2224,8741,DO_SPARE_12,,Signal Tag,275,float 32, , ,Digital,ON,OFF,Block 135  Output 11
+0x2226,8743,DO_SPARE_13,,Signal Tag,276,float 32, , ,Digital,ON,OFF,Block 135  Output 12
+0x2228,8745,DO_SPARE_14,,Signal Tag,277,float 32, , ,Digital,ON,OFF,Block 135  Output 13
+0x222A,8747,DO_SPARE_15,,Signal Tag,278,float 32, , ,Digital,ON,OFF,Block 135  Output 14
+0x222C,8749,DO_SPARE_16,,Signal Tag,279,float 32, , ,Digital,ON,OFF,Block 135  Output 15
+0x222E,8751,DO_SPARE_17,,Signal Tag,280,float 32, , ,Digital,ON,OFF,Block 135  Output 16
+0x2230,8753,DO_SPARE_18,,Signal Tag,281,float 32, , ,Digital,ON,OFF,Block 136  Output 9
+0x2232,8755,DO_SPARE_19,,Signal Tag,282,float 32, , ,Digital,ON,OFF,Block 136  Output 10
+0x2234,8757,DO_SPARE_20,,Signal Tag,283,float 32, , ,Digital,ON,OFF,Block 136  Output 11
+0x2236,8759,DO_SPARE_21,,Signal Tag,284,float 32, , ,Digital,ON,OFF,Block 136  Output 12
+0x2238,8761,DO_SPARE_22,,Signal Tag,285,float 32, , ,Digital,ON,OFF,Block 136  Output 13
+0x223A,8763,DO_SPARE_23,,Signal Tag,286,float 32, , ,Digital,ON,OFF,Block 136  Output 14
+0x223C,8765,DO_SPARE_24,,Signal Tag,287,float 32, , ,Digital,ON,OFF,Block 136  Output 15
+0x223E,8767,DO_SPARE_25,,Signal Tag,288,float 32, , ,Digital,ON,OFF,Block 136  Output 16
+0x2240,8769,PT_101,,Signal Tag,289,float 32,,0,Analog, , ,Block 137  Output 4
+0x2242,8771,PT_102,,Signal Tag,290,float 32,,0,Analog, , ,Block 138  Output 4
+0x2244,8773,PT_103,,Signal Tag,291,float 32,,0,Analog, , ,Block 139  Output 4
+0x2246,8775,PT_104,,Signal Tag,292,float 32,,0,Analog, , ,Block 140  Output 4
+0x2248,8777,PT_105,,Signal Tag,293,float 32,,0,Analog, , ,Block 141  Output 4
+0x224A,8779,PT_106,,Signal Tag,294,float 32,,0,Analog, , ,Block 142  Output 4
+0x224C,8781,PT_107,,Signal Tag,295,float 32,,0,Analog, , ,Block 143  Output 4
+0x224E,8783,PT_108,,Signal Tag,296,float 32,,0,Analog, , ,Block 144  Output 4
+0x2250,8785,PT_109,,Signal Tag,297,float 32,,0,Analog, , ,Block 145  Output 4
+0x2252,8787,PT_110,,Signal Tag,298,float 32,,0,Analog, , ,Block 146  Output 4
+0x2254,8789,PT_111,,Signal Tag,299,float 32,,0,Analog, , ,Block 147  Output 4
+0x2256,8791,PT_112,,Signal Tag,300,float 32,,0,Analog, , ,Block 148  Output 4
+0x2258,8793,LT_101,,Signal Tag,301,float 32,,0,Analog, , ,Block 149  Output 4
+0x225A,8795,LT_102,,Signal Tag,302,float 32,,0,Analog, , ,Block 150  Output 4
+0x225C,8797,LT_103,,Signal Tag,303,float 32,,0,Analog, , ,Block 151  Output 4
+0x225E,8799,LT_104,,Signal Tag,304,float 32,,0,Analog, , ,Block 152  Output 4
+0x2260,8801,LT_105,,Signal Tag,305,float 32,,0,Analog, , ,Block 153  Output 4
+0x2262,8803,LT_106,,Signal Tag,306,float 32,,0,Analog, , ,Block 154  Output 4
+0x2264,8805,LT_107,,Signal Tag,307,float 32,,0,Analog, , ,Block 155  Output 4
+0x2266,8807,LT_108,,Signal Tag,308,float 32,,0,Analog, , ,Block 156  Output 4
+0x2268,8809,LT_109,,Signal Tag,309,float 32,,0,Analog, , ,Block 157  Output 4
+0x226A,8811,TT_101,,Signal Tag,310,float 32,,0,Analog, , ,Block 158  Output 4
+0x226C,8813,TT_102,,Signal Tag,311,float 32,,0,Analog, , ,Block 159  Output 4
+0x226E,8815,TT_103,,Signal Tag,312,float 32,,0,Analog, , ,Block 160  Output 4
+0x2270,8817,TT_104,,Signal Tag,313,float 32,,0,Analog, , ,Block 161  Output 4
+0x2272,8819,TT_105,,Signal Tag,314,float 32,,0,Analog, , ,Block 162  Output 4
+0x2274,8821,TT_106,,Signal Tag,315,float 32,,0,Analog, , ,Block 163  Output 4
+0x2276,8823,TT_107,,Signal Tag,316,float 32,,0,Analog, , ,Block 164  Output 4
+0x2278,8825,TT_108,,Signal Tag,317,float 32,,0,Analog, , ,Block 165  Output 4
+0x227A,8827,TT_109,,Signal Tag,318,float 32,,0,Analog, , ,Block 166  Output 4
+0x227C,8829,TT_110,,Signal Tag,319,float 32,,0,Analog, , ,Block 167  Output 4
+0x227E,8831,TT_111,,Signal Tag,320,float 32,,0,Analog, , ,Block 168  Output 4
+0x2280,8833,TT_112,,Signal Tag,321,float 32,,0,Analog, , ,Block 169  Output 4
+0x2282,8835,TT_113,,Signal Tag,322,float 32,,0,Analog, , ,Block 170  Output 4
+0x2284,8837,TT_114,,Signal Tag,323,float 32,,0,Analog, , ,Block 171  Output 4
+0x2286,8839,TT_115,,Signal Tag,324,float 32,,0,Analog, , ,Block 172  Output 4
+0x2288,8841,TT_116,,Signal Tag,325,float 32,,0,Analog, , ,Block 173  Output 4
+0x228A,8843,TT_117,,Signal Tag,326,float 32,,0,Analog, , ,Block 174  Output 4
+0x228C,8845,TT_118,,Signal Tag,327,float 32,,0,Analog, , ,Block 175  Output 4
+0x228E,8847,TT_119,,Signal Tag,328,float 32,,0,Analog, , ,Block 176  Output 4
+0x2290,8849,TT_120,,Signal Tag,329,float 32,,0,Analog, , ,Block 177  Output 4
+0x2292,8851,TT_121,,Signal Tag,330,float 32,,0,Analog, , ,Block 178  Output 4
+0x2294,8853,TT_122,,Signal Tag,331,float 32,,0,Analog, , ,Block 179  Output 4
+0x2296,8855,TT_123,,Signal Tag,332,float 32,,0,Analog, , ,Block 180  Output 4
+0x2298,8857,TT_124,,Signal Tag,333,float 32,,0,Analog, , ,Block 181  Output 4
+0x229A,8859,TT_125,,Signal Tag,334,float 32,,0,Analog, , ,Block 182  Output 4
+0x229C,8861,TT_126,,Signal Tag,335,float 32,,0,Analog, , ,Block 183  Output 4
+0x229E,8863,TT_127,,Signal Tag,336,float 32,,0,Analog, , ,Block 184  Output 4
+0x22A0,8865,TT_128,,Signal Tag,337,float 32,,0,Analog, , ,Block 185  Output 4
+0x22A2,8867,TT_129,,Signal Tag,338,float 32,,0,Analog, , ,Block 186  Output 4
+0x22A4,8869,TT_130,,Signal Tag,339,float 32,,0,Analog, , ,Block 187  Output 4
+0x22A6,8871,TT_131,,Signal Tag,340,float 32,,0,Analog, , ,Block 188  Output 4
+0x22A8,8873,TT_132,,Signal Tag,341,float 32,,0,Analog, , ,Block 189  Output 4
+0x22AA,8875,TT_133,,Signal Tag,342,float 32,,0,Analog, , ,Block 190  Output 4
+0x22AC,8877,TT_134,,Signal Tag,343,float 32,,0,Analog, , ,Block 191  Output 4
+0x22AE,8879,TT_135,,Signal Tag,344,float 32,,0,Analog, , ,Block 192  Output 4
+0x22B0,8881,TT_136,,Signal Tag,345,float 32,,0,Analog, , ,Block 193  Output 4
+0x22B2,8883,FT_108,,Signal Tag,346,float 32,,0,Analog, , ,Block 194  Output 4
+0x22B4,8885,LT_112,,Signal Tag,347,float 32,,0,Analog, , ,Block 195  Output 4
+0x22B6,8887,AI_SPARE_02,,Signal Tag,348,float 32,,0,Analog, , ,Block 196  Output 4
+0x22B8,8889,AI_SPARE_03,,Signal Tag,349,float 32,,0,Analog, , ,Block 197  Output 4
+0x22BA,8891,AI_SPARE_04,,Signal Tag,350,float 32,,0,Analog, , ,Block 198  Output 4
+0x22BC,8893,AI_SPARE_05,,Signal Tag,351,float 32,,0,Analog, , ,Block 199  Output 4
+0x22BE,8895,AI_SPARE_06,,Signal Tag,352,float 32,,0,Analog, , ,Block 200  Output 4
+0x22C0,8897,FT_101,,Signal Tag,353,float 32,,0,Analog, , ,Block 201  Output 4
+0x22C2,8899,FT_101_A,,Signal Tag,354,float 32,,0,Analog, , ,Block 202  Output 4
+0x22C4,8901,FT_102,,Signal Tag,355,float 32,,0,Analog, , ,Block 203  Output 4
+0x22C6,8903,FT_103,,Signal Tag,356,float 32,,0,Analog, , ,Block 204  Output 4
+0x22C8,8905,FT_103_A,,Signal Tag,357,float 32,,0,Analog, , ,Block 205  Output 4
+0x22CA,8907,CHINA_VFD,,Signal Tag,358,float 32,,0,Analog, , ,Block 206  Output 4
+0x22CC,8909,USA_VFD,,Signal Tag,359,float 32,,0,Analog, , ,Block 207  Output 4
+0x22CE,8911,H_TK_VFD01,,Signal Tag,360,float 32,,0,Analog, , ,Block 208  Output 4
+0x22D0,8913,H_TK_VFD02,,Signal Tag,361,float 32,,0,Analog, , ,Block 209  Output 4
+0x22D2,8915,RX_01_VFD,,Signal Tag,362,float 32,,0,Analog, , ,Block 210  Output 4
+0x22D4,8917,RX_02_VFD,,Signal Tag,363,float 32,,0,Analog, , ,Block 211  Output 4
+0x22D6,8919,RX_03_VFD,,Signal Tag,364,float 32,,0,Analog, , ,Block 212  Output 4
+0x22D8,8921,RX_04_VFD,,Signal Tag,365,float 32,,0,Analog, , ,Block 213  Output 4
+0x22DA,8923,AI_SPARE_07,,Signal Tag,366,float 32,,0,Analog, , ,Block 214  Output 4
+0x22DC,8925,AI_SPARE_08,,Signal Tag,367,float 32,,0,Analog, , ,Block 215  Output 4
+0x22DE,8927,AI_SPARE_09,,Signal Tag,368,float 32,,0,Analog, , ,Block 216  Output 4
+0x22E0,8929,SRN_RW_PMP01_CMD,,Signal Tag,369,float 32, , ,Digital,ON,OFF,Block 217  Output 11
+0x22E2,8931,SRN_RW_PMP01_STS,,Signal Tag,370,float 32,,0,Analog, , ,Block 217  Output 10
+0x22E4,8933,SRN_RW_PMP02_CMD,,Signal Tag,371,float 32, , ,Digital,ON,OFF,Block 221  Output 11
+0x22E6,8935,SRN_RW_PMP02_STS,,Signal Tag,372,float 32,,0,Analog, , ,Block 221  Output 10
+0x22E8,8937,PTN_FD_PMP01_CMD,,Signal Tag,373,float 32, , ,Digital,ON,OFF,Block 225  Output 11
+0x22EA,8939,PTN_FD_PMP01_STS,,Signal Tag,374,float 32,,0,Analog, , ,Block 225  Output 10
+0x22EC,8941,PTN_FD_PMP02_CMD,,Signal Tag,375,float 32, , ,Digital,ON,OFF,Block 229  Output 11
+0x22EE,8943,PTN_FD_PMP02_STS,,Signal Tag,376,float 32,,0,Analog, , ,Block 229  Output 10
+0x22F0,8945,DM_WTR_PMP01_CMD,,Signal Tag,377,float 32, , ,Digital,ON,OFF,Block 233  Output 11
+0x22F2,8947,DM_WTR_PMP01_STS,,Signal Tag,378,float 32,,0,Analog, , ,Block 233  Output 10
+0x22F4,8949,DM_WTR_PMP02_CMD,,Signal Tag,379,float 32, , ,Digital,ON,OFF,Block 237  Output 11
+0x22F6,8951,DM_WTR_PMP02_STS,,Signal Tag,380,float 32,,0,Analog, , ,Block 237  Output 10
+0x22F8,8953,EF_WTR_PMP01_CMD,,Signal Tag,381,float 32, , ,Digital,ON,OFF,Block 241  Output 11
+0x22FA,8955,EF_WTR_PMP01_STS,,Signal Tag,382,float 32,,0,Analog, , ,Block 241  Output 10
+0x22FC,8957,EF_WTR_PMP02_CMD,,Signal Tag,383,float 32, , ,Digital,ON,OFF,Block 245  Output 11
+0x22FE,8959,EF_WTR_PMP02_STS,,Signal Tag,384,float 32,,0,Analog, , ,Block 245  Output 10
+0x2300,8961,ACD_MIX_TNK_CMD,,Signal Tag,385,float 32, , ,Digital,ON,OFF,Block 249  Output 11
+0x2302,8963,ACD_MIX_TNK_STS,,Signal Tag,386,float 32,,0,Analog, , ,Block 249  Output 10
+0x2304,8965,CNT_AIR_BR01_CMD,,Signal Tag,387,float 32, , ,Digital,ON,OFF,Block 253  Output 11
+0x2306,8967,CNT_AIR_BR01_STS,,Signal Tag,388,float 32,,0,Analog, , ,Block 253  Output 10
+0x2308,8969,CNT_AIR_BR02_CMD,,Signal Tag,389,float 32, , ,Digital,ON,OFF,Block 257  Output 11
+0x230A,8971,CNT_AIR_BR02_STS,,Signal Tag,390,float 32,,0,Analog, , ,Block 257  Output 10
+0x230C,8973,WTR_COOL_PMP_CMD,,Signal Tag,391,float 32, , ,Digital,ON,OFF,Block 261  Output 11
+0x230E,8975,WTR_COOL_PMP_STS,,Signal Tag,392,float 32,,0,Analog, , ,Block 261  Output 10
+0x2310,8977,DRY_CHN_CMD,,Signal Tag,393,float 32, , ,Digital,ON,OFF,Block 265  Output 11
+0x2312,8979,DRY_CHN_STS,,Signal Tag,394,float 32,,0,Analog, , ,Block 265  Output 10
+0x2314,8981,DRY_USA_CMD,,Signal Tag,395,float 32, , ,Digital,ON,OFF,Block 269  Output 11
+0x2316,8983,DRY_USA_STS,,Signal Tag,396,float 32,,0,Analog, , ,Block 269  Output 10
+0x2318,8985,HLD_TK_VFD01_CMD,,Signal Tag,397,float 32, , ,Digital,ON,OFF,Block 273  Output 11
+0x231A,8987,HLD_TK_VFD01_STS,,Signal Tag,398,float 32,,0,Analog, , ,Block 273  Output 10
+0x231C,8989,HLD_TK_VFD02_CMD,,Signal Tag,399,float 32, , ,Digital,ON,OFF,Block 277  Output 11
+0x231E,8991,HLD_TK_VFD02_STS,,Signal Tag,400,float 32,,0,Analog, , ,Block 277  Output 10
+0x2320,8993,CHL_WTR_PMP1_CMD,,Signal Tag,401,float 32, , ,Digital,ON,OFF,Block 281  Output 11
+0x2322,8995,CHL_WTR_PMP1_STS,,Signal Tag,402,float 32,,0,Analog, , ,Block 281  Output 10
+0x2324,8997,CHL_WTR_PMP2_CMD,,Signal Tag,403,float 32, , ,Digital,ON,OFF,Block 285  Output 11
+0x2326,8999,CHL_WTR_PMP2_STS,,Signal Tag,404,float 32,,0,Analog, , ,Block 285  Output 10
+0x2328,9001,RCT_RX01_VFD_CMD,,Signal Tag,405,float 32, , ,Digital,ON,OFF,Block 289  Output 11
+0x232A,9003,RCT_RX01_VFD_STS,,Signal Tag,406,float 32,,0,Analog, , ,Block 289  Output 10
+0x232C,9005,RCT_RX02_VFD_CMD,,Signal Tag,407,float 32, , ,Digital,ON,OFF,Block 293  Output 11
+0x232E,9007,RCT_RX02_VFD_STS,,Signal Tag,408,float 32,,0,Analog, , ,Block 293  Output 10
+0x2330,9009,RCT_RX03_VFD_CMD,,Signal Tag,409,float 32, , ,Digital,ON,OFF,Block 297  Output 11
+0x2332,9011,RCT_RX03_VFD_STS,,Signal Tag,410,float 32,,0,Analog, , ,Block 297  Output 10
+0x2334,9013,RCT_RX04_VFD_CMD,,Signal Tag,411,float 32, , ,Digital,ON,OFF,Block 301  Output 11
+0x2336,9015,RCT_RX04_VFD_STS,,Signal Tag,412,float 32,,0,Analog, , ,Block 301  Output 10
+0x2338,9017,XVX_101_STR_CMD,,Signal Tag,413,float 32, , ,Digital,ON,OFF,Block 305  Output 11
+0x233A,9019,XVX_101_STR_STS,,Signal Tag,414,float 32,,0,Analog, , ,Block 305  Output 10
+0x233C,9021,XVX_101_AM,,Signal Tag,415,float 32, , ,Digital,ON,OFF,Variable #:47
+0x233E,9023,XVX_102_STR_CMD,,Signal Tag,416,float 32, , ,Digital,ON,OFF,Block 310  Output 11
+0x2340,9025,XVX_102_STR_STS,,Signal Tag,417,float 32,,0,Analog, , ,Block 310  Output 10
+0x2342,9027,XVX_102_AM,,Signal Tag,418,float 32, , ,Digital,ON,OFF,Variable #:50
+0x2344,9029,XVX_103_STR_CMD,,Signal Tag,419,float 32, , ,Digital,ON,OFF,Block 315  Output 11
+0x2346,9031,XVX_103_STR_STS,,Signal Tag,420,float 32,,0,Analog, , ,Block 315  Output 10
+0x2348,9033,XVX_103_AM,,Signal Tag,421,float 32, , ,Digital,ON,OFF,Variable #:53
+0x234A,9035,XVX_104_STR_CMD,,Signal Tag,422,float 32, , ,Digital,ON,OFF,Block 320  Output 11
+0x234C,9037,XVX_104_STR_STS,,Signal Tag,423,float 32,,0,Analog, , ,Block 320  Output 10
+0x234E,9039,XVX_104_AM,,Signal Tag,424,float 32, , ,Digital,ON,OFF,Variable #:56
+0x2350,9041,XV_101_STR_CMD,,Signal Tag,425,float 32, , ,Digital,ON,OFF,Block 325  Output 11
+0x2352,9043,XV_101_STR_STS,,Signal Tag,426,float 32,,0,Analog, , ,Block 325  Output 10
+0x2354,9045,XV_101_AM,,Signal Tag,427,float 32, , ,Digital,ON,OFF,Variable #:59
+0x2356,9047,XV_102_STR_CMD,,Signal Tag,428,float 32, , ,Digital,ON,OFF,Block 330  Output 11
+0x2358,9049,XV_102_STR_STS,,Signal Tag,429,float 32,,0,Analog, , ,Block 330  Output 10
+0x235A,9051,XV_102_AM,,Signal Tag,430,float 32, , ,Digital,ON,OFF,Variable #:62
+0x235C,9053,XV_103_STR_CMD,,Signal Tag,431,float 32, , ,Digital,ON,OFF,Block 335  Output 11
+0x235E,9055,XV_103_STR_STS,,Signal Tag,432,float 32,,0,Analog, , ,Block 335  Output 10
+0x2360,9057,XV_103_AM,,Signal Tag,433,float 32, , ,Digital,ON,OFF,Variable #:65
+0x2362,9059,XV_104_STR_CMD,,Signal Tag,434,float 32, , ,Digital,ON,OFF,Block 340  Output 11
+0x2364,9061,XV_104_STR_STS,,Signal Tag,435,float 32,,0,Analog, , ,Block 340  Output 10
+0x2366,9063,XV_104_AM,,Signal Tag,436,float 32, , ,Digital,ON,OFF,Variable #:68
+0x2368,9065,XV_105_STR_CMD,,Signal Tag,437,float 32, , ,Digital,ON,OFF,Block 345  Output 11
+0x236A,9067,XV_105_STS,,Signal Tag,438,float 32,,0,Analog, , ,Block 345  Output 10
+0x236C,9069,XV_105_AM,,Signal Tag,439,float 32, , ,Digital,ON,OFF,Variable #:71
+0x236E,9071,XV_106_STR_CMD,,Signal Tag,440,float 32, , ,Digital,ON,OFF,Block 350  Output 11
+0x2370,9073,XV_106_STS,,Signal Tag,441,float 32,,0,Analog, , ,Block 350  Output 10
+0x2372,9075,XV_106_AM,,Signal Tag,442,float 32, , ,Digital,ON,OFF,Variable #:74
+0x2374,9077,XV_107_STR_CMD,,Signal Tag,443,float 32, , ,Digital,ON,OFF,Block 355  Output 11
+0x2376,9079,XV_107_STS,,Signal Tag,444,float 32,,0,Analog, , ,Block 355  Output 10
+0x2378,9081,XV_107_AM,,Signal Tag,445,float 32, , ,Digital,ON,OFF,Variable #:77
+0x237A,9083,XV_108_STR_CMD,,Signal Tag,446,float 32, , ,Digital,ON,OFF,Block 360  Output 11
+0x237C,9085,XV_108_STS,,Signal Tag,447,float 32,,0,Analog, , ,Block 360  Output 10
+0x237E,9087,XV_108_AM,,Signal Tag,448,float 32, , ,Digital,ON,OFF,Variable #:80
+0x2380,9089,XV_109_STR_CMD,,Signal Tag,449,float 32, , ,Digital,ON,OFF,Block 365  Output 11
+0x2382,9091,XV_109_STS,,Signal Tag,450,float 32,,0,Analog, , ,Block 365  Output 10
+0x2384,9093,XV_109_AM,,Signal Tag,451,float 32, , ,Digital,ON,OFF,Variable #:83
+0x2386,9095,XV_110_STR_CMD,,Signal Tag,452,float 32, , ,Digital,ON,OFF,Block 370  Output 11
+0x2388,9097,XV_110_STS,,Signal Tag,453,float 32,,0,Analog, , ,Block 370  Output 10
+0x238A,9099,XV_110_AM,,Signal Tag,454,float 32, , ,Digital,ON,OFF,Variable #:86
+0x238C,9101,XV_111_STR_CMD,,Signal Tag,455,float 32, , ,Digital,ON,OFF,Block 375  Output 11
+0x238E,9103,XV_111_STS,,Signal Tag,456,float 32,,0,Analog, , ,Block 375  Output 10
+0x2390,9105,XV_111_AM,,Signal Tag,457,float 32, , ,Digital,ON,OFF,Variable #:89
+0x2392,9107,XV_112_STR_CMD,,Signal Tag,458,float 32, , ,Digital,ON,OFF,Block 380  Output 11
+0x2394,9109,XV_112_STS,,Signal Tag,459,float 32,,0,Analog, , ,Block 380  Output 10
+0x2396,9111,XV_112_AM,,Signal Tag,460,float 32, , ,Digital,ON,OFF,Variable #:92
+0x2398,9113,XV_113_STR_CMD,,Signal Tag,461,float 32, , ,Digital,ON,OFF,Block 385  Output 11
+0x239A,9115,XV_113_STS,,Signal Tag,462,float 32,,0,Analog, , ,Block 385  Output 10
+0x239C,9117,XV_113_AM,,Signal Tag,463,float 32, , ,Digital,ON,OFF,Variable #:95
+0x239E,9119,XV_114_STR_CMD,,Signal Tag,464,float 32, , ,Digital,ON,OFF,Block 390  Output 11
+0x23A0,9121,XV_114_STS,,Signal Tag,465,float 32,,0,Analog, , ,Block 390  Output 10
+0x23A2,9123,XV_114_AM,,Signal Tag,466,float 32, , ,Digital,ON,OFF,Variable #:98
+0x23A4,9125,XV_115_STR_CMD,,Signal Tag,467,float 32, , ,Digital,ON,OFF,Block 395  Output 11
+0x23A6,9127,XV_115_STS,,Signal Tag,468,float 32,,0,Analog, , ,Block 395  Output 10
+0x23A8,9129,XV_115_AM,,Signal Tag,469,float 32, , ,Digital,ON,OFF,Variable #:101
+0x23AA,9131,XV_116_STR_CMD,,Signal Tag,470,float 32, , ,Digital,ON,OFF,Block 400  Output 11
+0x23AC,9133,XV_116_STS,,Signal Tag,471,float 32,,0,Analog, , ,Block 400  Output 10
+0x23AE,9135,XV_116_AM,,Signal Tag,472,float 32, , ,Digital,ON,OFF,Variable #:104
+0x23B0,9137,XV_117_STR_CMD,,Signal Tag,473,float 32, , ,Digital,ON,OFF,Block 405  Output 11
+0x23B2,9139,XV_117_STS,,Signal Tag,474,float 32,,0,Analog, , ,Block 405  Output 10
+0x23B4,9141,XV_117_AM,,Signal Tag,475,float 32, , ,Digital,ON,OFF,Variable #:107
+0x23B6,9143,XV_118_STR_CMD,,Signal Tag,476,float 32, , ,Digital,ON,OFF,Block 410  Output 11
+0x23B8,9145,XV_118_STS,,Signal Tag,477,float 32,,0,Analog, , ,Block 410  Output 10
+0x23BA,9147,XV_118_AM,,Signal Tag,478,float 32, , ,Digital,ON,OFF,Variable #:110
+0x23BC,9149,XV_119_STR_CMD,,Signal Tag,479,float 32, , ,Digital,ON,OFF,Block 415  Output 11
+0x23BE,9151,XV_119_STS,,Signal Tag,480,float 32,,0,Analog, , ,Block 415  Output 10
+0x23C0,9153,XV_119_AM,,Signal Tag,481,float 32, , ,Digital,ON,OFF,Variable #:113
+0x23C2,9155,XV_120_STR_CMD,,Signal Tag,482,float 32, , ,Digital,ON,OFF,Block 420  Output 11
+0x23C4,9157,XV_120_STS,,Signal Tag,483,float 32,,0,Analog, , ,Block 420  Output 10
+0x23C6,9159,XV_120_AM,,Signal Tag,484,float 32, , ,Digital,ON,OFF,Variable #:116
+0x23C8,9161,XV_121_STR_CMD,,Signal Tag,485,float 32, , ,Digital,ON,OFF,Block 425  Output 11
+0x23CA,9163,XV_121_STS,,Signal Tag,486,float 32,,0,Analog, , ,Block 425  Output 10
+0x23CC,9165,XV_121_AM,,Signal Tag,487,float 32, , ,Digital,ON,OFF,Variable #:119
+0x23CE,9167,XV_122_STR_CMD,,Signal Tag,488,float 32, , ,Digital,ON,OFF,Block 430  Output 11
+0x23D0,9169,XV_122_STS,,Signal Tag,489,float 32,,0,Analog, , ,Block 430  Output 10
+0x23D2,9171,XV_122_AM,,Signal Tag,490,float 32, , ,Digital,ON,OFF,Variable #:122
+0x23D4,9173,XV_123_STR_CMD,,Signal Tag,491,float 32, , ,Digital,ON,OFF,Block 435  Output 11
+0x23D6,9175,XV_123_STS,,Signal Tag,492,float 32,,0,Analog, , ,Block 435  Output 10
+0x23D8,9177,XV_123_AM,,Signal Tag,493,float 32, , ,Digital,ON,OFF,Variable #:125
+0x23DA,9179,XV_124_STR_CMD,,Signal Tag,494,float 32, , ,Digital,ON,OFF,Block 440  Output 11
+0x23DC,9181,XV_124_STS,,Signal Tag,495,float 32,,0,Analog, , ,Block 440  Output 10
+0x23DE,9183,XV_124_AM,,Signal Tag,496,float 32, , ,Digital,ON,OFF,Variable #:128
+0x23E0,9185,XV_125_STR_CMD,,Signal Tag,497,float 32, , ,Digital,ON,OFF,Block 445  Output 11
+0x23E2,9187,XV_125_STS,,Signal Tag,498,float 32,,0,Analog, , ,Block 445  Output 10
+0x23E4,9189,XV_125_AM,,Signal Tag,499,float 32, , ,Digital,ON,OFF,Variable #:131
+0x23E6,9191,XV_126_STR_CMD,,Signal Tag,500,float 32, , ,Digital,ON,OFF,Block 450  Output 11
+0x23E8,9193,XV_126_STS,,Signal Tag,501,float 32,,0,Analog, , ,Block 450  Output 10
+0x23EA,9195,XV_126_AM,,Signal Tag,502,float 32, , ,Digital,ON,OFF,Variable #:134
+0x23EC,9197,XV_127_STR_CMD,,Signal Tag,503,float 32, , ,Digital,ON,OFF,Block 455  Output 11
+0x23EE,9199,XV_127_STS,,Signal Tag,504,float 32,,0,Analog, , ,Block 455  Output 10
+0x23F0,9201,XV_127_AM,,Signal Tag,505,float 32, , ,Digital,ON,OFF,Variable #:137
+0x23F2,9203,XV_128_STR_CMD,,Signal Tag,506,float 32, , ,Digital,ON,OFF,Block 460  Output 11
+0x23F4,9205,XV_128_STS,,Signal Tag,507,float 32,,0,Analog, , ,Block 460  Output 10
+0x23F6,9207,XV_128_AM,,Signal Tag,508,float 32, , ,Digital,ON,OFF,Variable #:140
+0x23F8,9209,XV_129_STR_CMD,,Signal Tag,509,float 32, , ,Digital,ON,OFF,Block 465  Output 11
+0x23FA,9211,XV_129_STS,,Signal Tag,510,float 32,,0,Analog, , ,Block 465  Output 10
+0x23FC,9213,XV_129_AM,,Signal Tag,511,float 32, , ,Digital,ON,OFF,Variable #:143
+0x23FE,9215,XV_130_STR_CMD,,Signal Tag,512,float 32, , ,Digital,ON,OFF,Block 470  Output 11
+0x2400,9217,XV_130_STS,,Signal Tag,513,float 32,,0,Analog, , ,Block 470  Output 10
+0x2402,9219,XV_130_AM,,Signal Tag,514,float 32, , ,Digital,ON,OFF,Variable #:146
+0x2404,9221,XV_131_STR_CMD,,Signal Tag,515,float 32, , ,Digital,ON,OFF,Block 475  Output 11
+0x2406,9223,XV_131_STS,,Signal Tag,516,float 32,,0,Analog, , ,Block 475  Output 10
+0x2408,9225,XV_131_AM,,Signal Tag,517,float 32, , ,Digital,ON,OFF,Variable #:149
+0x240A,9227,XV_132_STR_CMD,,Signal Tag,518,float 32, , ,Digital,ON,OFF,Block 480  Output 11
+0x240C,9229,XV_132_STS,,Signal Tag,519,float 32,,0,Analog, , ,Block 480  Output 10
+0x240E,9231,XV_132_AM,,Signal Tag,520,float 32, , ,Digital,ON,OFF,Variable #:152
+0x2410,9233,XV_133_STR_CMD,,Signal Tag,521,float 32, , ,Digital,ON,OFF,Block 485  Output 11
+0x2412,9235,XV_133_STS,,Signal Tag,522,float 32,,0,Analog, , ,Block 485  Output 10
+0x2414,9237,XV_133_AM,,Signal Tag,523,float 32, , ,Digital,ON,OFF,Variable #:155
+0x2416,9239,XV_134_STR_CMD,,Signal Tag,524,float 32, , ,Digital,ON,OFF,Block 490  Output 11
+0x2418,9241,XV_134_STS,,Signal Tag,525,float 32,,0,Analog, , ,Block 490  Output 10
+0x241A,9243,XV_134_AM,,Signal Tag,526,float 32, , ,Digital,ON,OFF,Variable #:158
+0x241C,9245,XV_135_STR_CMD,,Signal Tag,527,float 32, , ,Digital,ON,OFF,Block 495  Output 11
+0x241E,9247,XV_135_STS,,Signal Tag,528,float 32,,0,Analog, , ,Block 495  Output 10
+0x2420,9249,XV_135_AM,,Signal Tag,529,float 32, , ,Digital,ON,OFF,Variable #:161
+0x2422,9251,XV_136_STR_CMD,,Signal Tag,530,float 32, , ,Digital,ON,OFF,Block 500  Output 11
+0x2424,9253,XV_136_STS,,Signal Tag,531,float 32,,0,Analog, , ,Block 500  Output 10
+0x2426,9255,XV_136_AM,,Signal Tag,532,float 32, , ,Digital,ON,OFF,Variable #:164
+0x2428,9257,XV_137_STR_CMD,,Signal Tag,533,float 32, , ,Digital,ON,OFF,Block 505  Output 11
+0x242A,9259,XV_137_STS,,Signal Tag,534,float 32,,0,Analog, , ,Block 505  Output 10
+0x242C,9261,XV_137_AM,,Signal Tag,535,float 32, , ,Digital,ON,OFF,Variable #:167
+0x242E,9263,XV_138_STR_CMD,,Signal Tag,536,float 32, , ,Digital,ON,OFF,Block 510  Output 11
+0x2430,9265,XV_138_STS,,Signal Tag,537,float 32,,0,Analog, , ,Block 510  Output 10
+0x2432,9267,XV_138_AM,,Signal Tag,538,float 32, , ,Digital,ON,OFF,Variable #:170
+0x2434,9269,XV_139_STR_CMD,,Signal Tag,539,float 32, , ,Digital,ON,OFF,Block 515  Output 11
+0x2436,9271,XV_139_STS,,Signal Tag,540,float 32,,0,Analog, , ,Block 515  Output 10
+0x2438,9273,XV_139_AM,,Signal Tag,541,float 32, , ,Digital,ON,OFF,Variable #:173
+0x243A,9275,XV_140_STR_CMD,,Signal Tag,542,float 32, , ,Digital,ON,OFF,Block 520  Output 11
+0x243C,9277,XV_140_STS,,Signal Tag,543,float 32,,0,Analog, , ,Block 520  Output 10
+0x243E,9279,XV_140_AM,,Signal Tag,544,float 32, , ,Digital,ON,OFF,Variable #:176
+0x2440,9281,XV_141_STR_CMD,,Signal Tag,545,float 32, , ,Digital,ON,OFF,Block 525  Output 11
+0x2442,9283,XV_141_STS,,Signal Tag,546,float 32,,0,Analog, , ,Block 525  Output 10
+0x2444,9285,XV_141_AM,,Signal Tag,547,float 32, , ,Digital,ON,OFF,Variable #:179
+0x2446,9287,XV_142_STR_CMD,,Signal Tag,548,float 32, , ,Digital,ON,OFF,Block 530  Output 11
+0x2448,9289,XV_142_STS,,Signal Tag,549,float 32,,0,Analog, , ,Block 530  Output 10
+0x244A,9291,XV_142_AM,,Signal Tag,550,float 32, , ,Digital,ON,OFF,Variable #:182
+0x244C,9293,XV_143_STR_CMD,,Signal Tag,551,float 32, , ,Digital,ON,OFF,Block 535  Output 11
+0x244E,9295,XV_143_STS,,Signal Tag,552,float 32,,0,Analog, , ,Block 535  Output 10
+0x2450,9297,XV_143_AM,,Signal Tag,553,float 32, , ,Digital,ON,OFF,Variable #:185
+0x2452,9299,XV_144_STR_CMD,,Signal Tag,554,float 32, , ,Digital,ON,OFF,Block 540  Output 11
+0x2454,9301,XV_144_STS,,Signal Tag,555,float 32,,0,Analog, , ,Block 540  Output 10
+0x2456,9303,XV_144_AM,,Signal Tag,556,float 32, , ,Digital,ON,OFF,Variable #:188
+0x2458,9305,XV_145_STR_CMD,,Signal Tag,557,float 32, , ,Digital,ON,OFF,Block 545  Output 11
+0x245A,9307,XV_145_STS,,Signal Tag,558,float 32,,0,Analog, , ,Block 545  Output 10
+0x245C,9309,XV_145_AM,,Signal Tag,559,float 32, , ,Digital,ON,OFF,Variable #:191
+0x245E,9311,CHINA_VFD_REF,,Signal Tag,560,float 32,,0,Analog, , ,Block 550  Output 4
+0x2460,9313,USA_VFD_REF,,Signal Tag,561,float 32,,0,Analog, , ,Block 554  Output 4
+0x2462,9315,H_TK_VFD01_REF,,Signal Tag,562,float 32,,0,Analog, , ,Block 558  Output 4
+0x2464,9317,H_TK_VFD02_REF,,Signal Tag,563,float 32,,0,Analog, , ,Block 562  Output 4
+0x2466,9319,AO_SPARE_01,,Signal Tag,564,float 32,,0,Analog, , ,Block 650  Output 4
+0x2468,9321,0577-004,,Signal Tag,565,float 32,,0,Analog, , ,Block 570  Output 4
+0x246A,9323,RX_02_VFD_REF,,Signal Tag,566,float 32,,0,Analog, , ,Block 574  Output 4
+0x246C,9325,RX_03_VFD_REF,,Signal Tag,567,float 32,,0,Analog, , ,Block 578  Output 4
+0x246E,9327,RX_04_VFD_REF,,Signal Tag,568,float 32,,0,Analog, , ,Block 582  Output 4
+0x2470,9329,FCV_101_REF,,Signal Tag,569,float 32,%,1,Analog, , ,Block 588  Output 18
+0x2472,9331,FCV_102_REF,,Signal Tag,570,float 32,%,1,Analog, , ,Block 592  Output 18
+0x2474,9333,FCV_103_REF,,Signal Tag,571,float 32,%,1,Analog, , ,Block 596  Output 18
+0x2476,9335,FCV_104_REF,,Signal Tag,572,float 32,%,1,Analog, , ,Block 600  Output 18
+0x2478,9337,FCV_105_REF,,Signal Tag,573,float 32,%,1,Analog, , ,Block 604  Output 18
+0x247A,9339,STR_FD_PMP01_ON,,Signal Tag,574,float 32, , ,Digital,ON,OFF,Block 101  Output 9
+0x247C,9341,FT_101_LH,,Signal Tag,575,float 32,,0,Analog, , ,Block 615  Output 1
+0x247E,9343,FT_101_CH,,Signal Tag,576,float 32,,0,Analog, , ,Block 616  Output 1
+0x2480,9345,LST_HOUR,,Signal Tag,577,float 32, , ,Digital,ON,OFF,Block 608  Output 1
+0x2482,9347,SEC,,Signal Tag,578,float 32,,0,Analog, , ,Block 609  Output 1
+0x2484,9349,MIN,,Signal Tag,579,float 32,,0,Analog, , ,Block 609  Output 2
+0x2486,9351,HOUR,,Signal Tag,580,float 32,,0,Analog, , ,Block 609  Output 3
+0x2488,9353,DAY,,Signal Tag,581,float 32,,0,Analog, , ,Block 609  Output 5
+0x248A,9355,MONTH,,Signal Tag,582,float 32,,0,Analog, , ,Block 609  Output 7
+0x248C,9357,YEAR,,Signal Tag,583,float 32,,0,Analog, , ,Block 609  Output 8
+0x248E,9359,CH_RST,,Signal Tag,584,float 32, , ,Digital,ON,OFF,Block 612  Output 1
+0x2490,9361,FT_102_TOTALIZER,,Signal Tag,585,float 32,,0,Analog, , ,Block 617  Output 1
+0x2492,9363,FT_102_LH,,Signal Tag,586,float 32,,0,Analog, , ,Block 619  Output 1
+0x2494,9365,FT_102_CH,,Signal Tag,587,float 32,,0,Analog, , ,Block 620  Output 1
+0x2496,9367,FT_103_TOTALIZER,,Signal Tag,588,float 32,,0,Analog, , ,Block 621  Output 1
+0x2498,9369,FT_103_LH,,Signal Tag,589,float 32,,0,Analog, , ,Block 623  Output 1
+0x249A,9371,FT_103_CH,,Signal Tag,590,float 32,,0,Analog, , ,Block 624  Output 1
+0x249C,9373,FT1_OUT,,Signal Tag,591,float 32, , ,Digital,ON,OFF,Block 625  Output 1
+0x249E,9375,TT_103_OUT,,Signal Tag,592,float 32, , ,Digital,ON,OFF,Block 628  Output 1
+0x24A0,9377,XVX104_XV105_OUT,,Signal Tag,593,float 32, , ,Digital,ON,OFF,Block 632  Output 1
+0x24A2,9379,XV112_XV113_OUT,,Signal Tag,594,float 32, , ,Digital,ON,OFF,Block 633  Output 1
+0x24A4,9381,XV120_XV121_OUT,,Signal Tag,595,float 32, , ,Digital,ON,OFF,Block 634  Output 1
+0x24A6,9383,RX_01_MODE,,Signal Tag,596,float 32,,0,Analog, , ,Variable #:227
+0x24A8,9385,RX_01_MD_01,,Signal Tag,597,float 32, , ,Digital,ON,OFF,Block 629  Output 2
+0x24AA,9387,RX_01_MD_02,,Signal Tag,598,float 32, , ,Digital,ON,OFF,Block 630  Output 2
+0x24AC,9389,RX_01_MD_03,,Signal Tag,599,float 32, , ,Digital,ON,OFF,Block 631  Output 2
+0x24AE,9391,RX_01_MD,,Signal Tag,600,float 32, , ,Digital,ON,OFF,Variable #:224
+0x24B0,9393,XVX101_XV129_OUT,,Signal Tag,601,float 32, , ,Digital,ON,OFF,Variable #:225
+0x24B2,9395,XVX101_XV128_OUT,,Signal Tag,602,float 32, , ,Digital,ON,OFF,Variable #:226
+0x24B4,9397,TT_107_OUT,,Signal Tag,603,float 32, , ,Digital,ON,OFF,Block 635  Output 1
+0x24B6,9399,XVX106_XV107_OUT,,Signal Tag,604,float 32, , ,Digital,ON,OFF,Block 639  Output 1
+0x24B8,9401,XV114_XV115_OUT,,Signal Tag,605,float 32, , ,Digital,ON,OFF,Block 640  Output 1
+0x24BA,9403,XV122_XV123_OUT,,Signal Tag,606,float 32, , ,Digital,ON,OFF,Block 641  Output 1
+0x24BC,9405,RX_02_MODE,,Signal Tag,607,float 32,,0,Analog, , ,Variable #:232
+0x24BE,9407,RX_02_MD_01,,Signal Tag,608,float 32, , ,Digital,ON,OFF,Block 636  Output 2
+0x24C0,9409,RX_02_MD_02,,Signal Tag,609,float 32, , ,Digital,ON,OFF,Block 637  Output 2
+0x24C2,9411,RX_02_MD_03,,Signal Tag,610,float 32, , ,Digital,ON,OFF,Block 638  Output 2
+0x24C4,9413,RX_02_MD,,Signal Tag,611,float 32, , ,Digital,ON,OFF,Variable #:229
+0x24C6,9415,XVX102_XV131_OUT,,Signal Tag,612,float 32, , ,Digital,ON,OFF,Variable #:230
+0x24C8,9417,XVX102_XV130_OUT,,Signal Tag,613,float 32, , ,Digital,ON,OFF,Variable #:231
+0x24CA,9419,TT_111_OUT,,Signal Tag,614,float 32, , ,Digital,ON,OFF,Block 642  Output 1
+0x24CC,9421,0655-001,,Signal Tag,615,float 32, , ,Digital,ON,OFF,Block 646  Output 1
+0x24CE,9423,0656-001,,Signal Tag,616,float 32, , ,Digital,ON,OFF,Block 647  Output 1
+0x24D0,9425,0657-001,,Signal Tag,617,float 32, , ,Digital,ON,OFF,Block 648  Output 1
+0x24D2,9427,0003-236,,Signal Tag,618,float 32,,0,Analog, , ,Variable #:237
+0x24D4,9429,0652-002,,Signal Tag,619,float 32, , ,Digital,ON,OFF,Block 643  Output 2
+0x24D6,9431,0653-002,,Signal Tag,620,float 32, , ,Digital,ON,OFF,Block 644  Output 2
+0x24D8,9433,0654-002,,Signal Tag,621,float 32, , ,Digital,ON,OFF,Block 645  Output 2
+0x24DA,9435,0003-233,,Signal Tag,622,float 32, , ,Digital,ON,OFF,Variable #:234
+0x24DC,9437,0003-234,,Signal Tag,623,float 32, , ,Digital,ON,OFF,Variable #:235
+0x24DE,9439,0003-235,,Signal Tag,624,float 32, , ,Digital,ON,OFF,Variable #:236
+0x24E0,9441,AO_SPARE_02,,Signal Tag,625,float 32,,0,Analog, , ,Block 651  Output 4
+0x24E2,9443,0652-004,,Signal Tag,626,float 32,,0,Analog, , ,Block 652  Output 4
+0x24E4,9445,0653-004,,Signal Tag,627,float 32,,0,Analog, , ,Block 653  Output 4
+0x24E6,9447,0654-004,,Signal Tag,628,float 32,,0,Analog, , ,Block 654  Output 4
+0x24E8,9449,0655-004,,Signal Tag,629,float 32,,0,Analog, , ,Block 655  Output 4
+0x24EA,9451,0656-004,,Signal Tag,630,float 32,,0,Analog, , ,Block 656  Output 4
+0x24EC,9453,0657-004,,Signal Tag,631,float 32,,0,Analog, , ,Block 657  Output 4
+0x24EE,9455,0658-004,,Signal Tag,632,float 32,,0,Analog, , ,Block 658  Output 4
+0x24F0,9457,0659-004,,Signal Tag,633,float 32,,0,Analog, , ,Block 659  Output 4
+0x24F2,9459,0660-004,,Signal Tag,634,float 32,,0,Analog, , ,Block 660  Output 4
+0x24F4,9461,0661-004,,Signal Tag,635,float 32,,0,Analog, , ,Block 661  Output 4
+0x24F6,9463,0662-004,,Signal Tag,636,float 32,,0,Analog, , ,Block 662  Output 4
+0x24F8,9465,0663-004,,Signal Tag,637,float 32,,0,Analog, , ,Block 663  Output 4
+0x24FA,9467,0664-004,,Signal Tag,638,float 32,,0,Analog, , ,Block 664  Output 4
+0x24FC,9469,0665-004,,Signal Tag,639,float 32,,0,Analog, , ,Block 665  Output 4
+0x24FE,9471,0666-004,,Signal Tag,640,float 32,,0,Analog, , ,Block 666  Output 4
+0x2500,9473,0667-004,,Signal Tag,641,float 32,,0,Analog, , ,Block 667  Output 4
+0x2502,9475,0668-004,,Signal Tag,642,float 32,,0,Analog, , ,Block 668  Output 4
+0x2504,9477,0669-011,,Signal Tag,643,float 32, , ,Digital,ON,OFF,Block 669  Output 11
+0x2506,9479,T1,,Signal Tag,644,float 32, , ,Digital,ON,OFF,Block 356  Output 1
+0x2508,9481,0003-259,,Signal Tag,645,float 32, , ,Digital,ON,OFF,Variable #:260
+0x250A,9483,PT_102_HH,,Signal Tag,646,float 32, , ,Digital,ON,OFF,Block 762  Output 2
+0x250C,9485,0003-264,,Signal Tag,647,float 32, , ,Digital,ON,OFF,Variable #:265
+0x250E,9487,PT_101_HH,,Signal Tag,648,float 32, , ,Digital,ON,OFF,Block 742  Output 2
+0x2510,9489,PT_101_H,,Signal Tag,649,float 32, , ,Digital,ON,OFF,Block 742  Output 3
+0x2512,9491,PT_101_L,,Signal Tag,650,float 32, , ,Digital,ON,OFF,Block 742  Output 4
+0x2514,9493,PT_101_LL,,Signal Tag,651,float 32, , ,Digital,ON,OFF,Block 742  Output 5
+0x2516,9495,HOOTER,,Signal Tag,652,float 32, , ,Digital,ON,OFF,Block 757  Output 1
+0x2518,9497,A1,,Signal Tag,653,float 32, , ,Digital,ON,OFF,Block 759  Output 1
+0x251A,9499,A3,,Signal Tag,654,float 32, , ,Digital,ON,OFF,Block 1439  Output 1
+0x251C,9501,PT_102_H,,Signal Tag,655,float 32, , ,Digital,ON,OFF,Block 762  Output 3
+0x251E,9503,PT_102_L,,Signal Tag,656,float 32, , ,Digital,ON,OFF,Block 762  Output 4
+0x2520,9505,PT_102_LL,,Signal Tag,657,float 32, , ,Digital,ON,OFF,Block 762  Output 5
+0x2522,9507,PT_103_HH,,Signal Tag,658,float 32, , ,Digital,ON,OFF,Block 763  Output 2
+0x2524,9509,PT_103_H,,Signal Tag,659,float 32, , ,Digital,ON,OFF,Block 763  Output 3
+0x2526,9511,PT_103_L,,Signal Tag,660,float 32, , ,Digital,ON,OFF,Block 763  Output 4
+0x2528,9513,PT_103_LL,,Signal Tag,661,float 32, , ,Digital,ON,OFF,Block 763  Output 5
+0x252A,9515,PT_104_HH,,Signal Tag,662,float 32, , ,Digital,ON,OFF,Block 764  Output 2
+0x252C,9517,PT_104_H,,Signal Tag,663,float 32, , ,Digital,ON,OFF,Block 764  Output 3
+0x252E,9519,PT_104_L,,Signal Tag,664,float 32, , ,Digital,ON,OFF,Block 764  Output 4
+0x2530,9521,PT_104_LL,,Signal Tag,665,float 32, , ,Digital,ON,OFF,Block 764  Output 5
+0x2532,9523,PT_105_HH,,Signal Tag,666,float 32, , ,Digital,ON,OFF,Block 765  Output 2
+0x2534,9525,PT_105_H,,Signal Tag,667,float 32, , ,Digital,ON,OFF,Block 765  Output 3
+0x2536,9527,PT_105_L,,Signal Tag,668,float 32, , ,Digital,ON,OFF,Block 765  Output 4
+0x2538,9529,PT_105_LL,,Signal Tag,669,float 32, , ,Digital,ON,OFF,Block 765  Output 5
+0x253A,9531,PT_106_HH,,Signal Tag,670,float 32, , ,Digital,ON,OFF,Block 766  Output 2
+0x253C,9533,PT_106_H,,Signal Tag,671,float 32, , ,Digital,ON,OFF,Block 766  Output 3
+0x253E,9535,PT_106_L,,Signal Tag,672,float 32, , ,Digital,ON,OFF,Block 766  Output 4
+0x2540,9537,PT_106_LL,,Signal Tag,673,float 32, , ,Digital,ON,OFF,Block 766  Output 5
+0x2542,9539,PT_107_HH,,Signal Tag,674,float 32, , ,Digital,ON,OFF,Block 767  Output 2
+0x2544,9541,PT_107_H,,Signal Tag,675,float 32, , ,Digital,ON,OFF,Block 767  Output 3
+0x2546,9543,PT_107_L,,Signal Tag,676,float 32, , ,Digital,ON,OFF,Block 767  Output 4
+0x2548,9545,PT_107_LL,,Signal Tag,677,float 32, , ,Digital,ON,OFF,Block 767  Output 5
+0x254A,9547,PT_108_HH,,Signal Tag,678,float 32, , ,Digital,ON,OFF,Block 768  Output 2
+0x254C,9549,PT_108_H,,Signal Tag,679,float 32, , ,Digital,ON,OFF,Block 768  Output 3
+0x254E,9551,PT_108_L,,Signal Tag,680,float 32, , ,Digital,ON,OFF,Block 768  Output 4
+0x2550,9553,PT_108_LL,,Signal Tag,681,float 32, , ,Digital,ON,OFF,Block 768  Output 5
+0x2552,9555,PT_109_HH,,Signal Tag,682,float 32, , ,Digital,ON,OFF,Block 769  Output 2
+0x2554,9557,PT_109_H,,Signal Tag,683,float 32, , ,Digital,ON,OFF,Block 769  Output 3
+0x2556,9559,PT_109_L,,Signal Tag,684,float 32, , ,Digital,ON,OFF,Block 769  Output 4
+0x2558,9561,PT_109_LL,,Signal Tag,685,float 32, , ,Digital,ON,OFF,Block 769  Output 5
+0x255A,9563,PT_110_HH,,Signal Tag,686,float 32, , ,Digital,ON,OFF,Block 770  Output 2
+0x255C,9565,PT_110_H,,Signal Tag,687,float 32, , ,Digital,ON,OFF,Block 770  Output 3
+0x255E,9567,PT_110_L,,Signal Tag,688,float 32, , ,Digital,ON,OFF,Block 770  Output 4
+0x2560,9569,PT_110_LL,,Signal Tag,689,float 32, , ,Digital,ON,OFF,Block 770  Output 5
+0x2562,9571,PT_111_HH,,Signal Tag,690,float 32, , ,Digital,ON,OFF,Block 771  Output 2
+0x2564,9573,PT_111_H,,Signal Tag,691,float 32, , ,Digital,ON,OFF,Block 771  Output 3
+0x2566,9575,PT_111_L,,Signal Tag,692,float 32, , ,Digital,ON,OFF,Block 771  Output 4
+0x2568,9577,PT_111_LL,,Signal Tag,693,float 32, , ,Digital,ON,OFF,Block 771  Output 5
+0x256A,9579,PT_112_HH,,Signal Tag,694,float 32, , ,Digital,ON,OFF,Block 772  Output 2
+0x256C,9581,PT_112_H,,Signal Tag,695,float 32, , ,Digital,ON,OFF,Block 772  Output 3
+0x256E,9583,PT_112_L,,Signal Tag,696,float 32, , ,Digital,ON,OFF,Block 772  Output 4
+0x2570,9585,PT_112_LL,,Signal Tag,697,float 32, , ,Digital,ON,OFF,Block 772  Output 5
+0x2572,9587,LT_101_HH,,Signal Tag,698,float 32, , ,Digital,ON,OFF,Block 773  Output 2
+0x2574,9589,LT_101_H,,Signal Tag,699,float 32, , ,Digital,ON,OFF,Block 773  Output 3
+0x2576,9591,LT_101_L,,Signal Tag,700,float 32, , ,Digital,ON,OFF,Block 773  Output 4
+0x2578,9593,LT_101_LL,,Signal Tag,701,float 32, , ,Digital,ON,OFF,Block 773  Output 5
+0x257A,9595,LT_102_HH,,Signal Tag,702,float 32, , ,Digital,ON,OFF,Block 774  Output 2
+0x257C,9597,LT_102_H,,Signal Tag,703,float 32, , ,Digital,ON,OFF,Block 774  Output 3
+0x257E,9599,LT_102_L,,Signal Tag,704,float 32, , ,Digital,ON,OFF,Block 774  Output 4
+0x2580,9601,LT_102_LL,,Signal Tag,705,float 32, , ,Digital,ON,OFF,Block 774  Output 5
+0x2582,9603,LT_103_HH,,Signal Tag,706,float 32, , ,Digital,ON,OFF,Block 775  Output 2
+0x2584,9605,LT_103_H,,Signal Tag,707,float 32, , ,Digital,ON,OFF,Block 775  Output 3
+0x2586,9607,LT_103_L,,Signal Tag,708,float 32, , ,Digital,ON,OFF,Block 775  Output 4
+0x2588,9609,LT_103_LL,,Signal Tag,709,float 32, , ,Digital,ON,OFF,Block 775  Output 5
+0x258A,9611,LT_104_HH,,Signal Tag,710,float 32, , ,Digital,ON,OFF,Block 776  Output 2
+0x258C,9613,LT_104_H,,Signal Tag,711,float 32, , ,Digital,ON,OFF,Block 776  Output 3
+0x258E,9615,LT_104_L,,Signal Tag,712,float 32, , ,Digital,ON,OFF,Block 776  Output 4
+0x2590,9617,LT_104_LL,,Signal Tag,713,float 32, , ,Digital,ON,OFF,Block 776  Output 5
+0x2592,9619,LT_105_HH,,Signal Tag,714,float 32, , ,Digital,ON,OFF,Block 777  Output 2
+0x2594,9621,LT_105_H,,Signal Tag,715,float 32, , ,Digital,ON,OFF,Block 777  Output 3
+0x2596,9623,LT_105_L,,Signal Tag,716,float 32, , ,Digital,ON,OFF,Block 777  Output 4
+0x2598,9625,LT_105_LL,,Signal Tag,717,float 32, , ,Digital,ON,OFF,Block 777  Output 5
+0x259A,9627,LT_106_HH,,Signal Tag,718,float 32, , ,Digital,ON,OFF,Block 778  Output 2
+0x259C,9629,LT_106_H,,Signal Tag,719,float 32, , ,Digital,ON,OFF,Block 778  Output 3
+0x259E,9631,LT_106_L,,Signal Tag,720,float 32, , ,Digital,ON,OFF,Block 778  Output 4
+0x25A0,9633,LT_106_LL,,Signal Tag,721,float 32, , ,Digital,ON,OFF,Block 778  Output 5
+0x25A2,9635,LT_107_HH,,Signal Tag,722,float 32, , ,Digital,ON,OFF,Block 779  Output 2
+0x25A4,9637,LT_107_H,,Signal Tag,723,float 32, , ,Digital,ON,OFF,Block 779  Output 3
+0x25A6,9639,LT_107_L,,Signal Tag,724,float 32, , ,Digital,ON,OFF,Block 779  Output 4
+0x25A8,9641,LT_107_LL,,Signal Tag,725,float 32, , ,Digital,ON,OFF,Block 779  Output 5
+0x25AA,9643,LT_108_HH,,Signal Tag,726,float 32, , ,Digital,ON,OFF,Block 780  Output 2
+0x25AC,9645,LT_108_H,,Signal Tag,727,float 32, , ,Digital,ON,OFF,Block 780  Output 3
+0x25AE,9647,LT_108_L,,Signal Tag,728,float 32, , ,Digital,ON,OFF,Block 780  Output 4
+0x25B0,9649,LT_108_LL,,Signal Tag,729,float 32, , ,Digital,ON,OFF,Block 780  Output 5
+0x25B2,9651,LT_109_HH,,Signal Tag,730,float 32, , ,Digital,ON,OFF,Block 781  Output 2
+0x25B4,9653,LT_109_H,,Signal Tag,731,float 32, , ,Digital,ON,OFF,Block 781  Output 3
+0x25B6,9655,LT_109_L,,Signal Tag,732,float 32, , ,Digital,ON,OFF,Block 781  Output 4
+0x25B8,9657,LT_109_LL,,Signal Tag,733,float 32, , ,Digital,ON,OFF,Block 781  Output 5
+0x25BA,9659,TT_101_HH,,Signal Tag,734,float 32, , ,Digital,ON,OFF,Block 782  Output 2
+0x25BC,9661,TT_101_H,,Signal Tag,735,float 32, , ,Digital,ON,OFF,Block 782  Output 3
+0x25BE,9663,TT_101_L,,Signal Tag,736,float 32, , ,Digital,ON,OFF,Block 782  Output 4
+0x25C0,9665,TT_101_LL,,Signal Tag,737,float 32, , ,Digital,ON,OFF,Block 782  Output 5
+0x25C2,9667,TT_102_HH,,Signal Tag,738,float 32, , ,Digital,ON,OFF,Block 783  Output 2
+0x25C4,9669,TT_102_H,,Signal Tag,739,float 32, , ,Digital,ON,OFF,Block 783  Output 3
+0x25C6,9671,TT_102_L,,Signal Tag,740,float 32, , ,Digital,ON,OFF,Block 783  Output 4
+0x25C8,9673,TT_102_LL,,Signal Tag,741,float 32, , ,Digital,ON,OFF,Block 783  Output 5
+0x25CA,9675,TT_103_HH,,Signal Tag,742,float 32, , ,Digital,ON,OFF,Block 784  Output 2
+0x25CC,9677,TT_103_H,,Signal Tag,743,float 32, , ,Digital,ON,OFF,Block 784  Output 3
+0x25CE,9679,TT_103_L,,Signal Tag,744,float 32, , ,Digital,ON,OFF,Block 784  Output 4
+0x25D0,9681,TT_103_LL,,Signal Tag,745,float 32, , ,Digital,ON,OFF,Block 784  Output 5
+0x25D2,9683,TT_104_HH,,Signal Tag,746,float 32, , ,Digital,ON,OFF,Block 785  Output 2
+0x25D4,9685,TT_104_H,,Signal Tag,747,float 32, , ,Digital,ON,OFF,Block 785  Output 3
+0x25D6,9687,TT_104_L,,Signal Tag,748,float 32, , ,Digital,ON,OFF,Block 785  Output 4
+0x25D8,9689,TT_104_LL,,Signal Tag,749,float 32, , ,Digital,ON,OFF,Block 785  Output 5
+0x25DA,9691,TT_105_HH,,Signal Tag,750,float 32, , ,Digital,ON,OFF,Block 786  Output 2
+0x25DC,9693,TT_105_H,,Signal Tag,751,float 32, , ,Digital,ON,OFF,Block 786  Output 3
+0x25DE,9695,TT_105_L,,Signal Tag,752,float 32, , ,Digital,ON,OFF,Block 786  Output 4
+0x25E0,9697,TT_105_LL,,Signal Tag,753,float 32, , ,Digital,ON,OFF,Block 786  Output 5
+0x25E2,9699,TT_106_HH,,Signal Tag,754,float 32, , ,Digital,ON,OFF,Block 787  Output 2
+0x25E4,9701,TT_106_H,,Signal Tag,755,float 32, , ,Digital,ON,OFF,Block 787  Output 3
+0x25E6,9703,TT_106_L,,Signal Tag,756,float 32, , ,Digital,ON,OFF,Block 787  Output 4
+0x25E8,9705,TT_106_LL,,Signal Tag,757,float 32, , ,Digital,ON,OFF,Block 787  Output 5
+0x25EA,9707,TT_107_HH,,Signal Tag,758,float 32, , ,Digital,ON,OFF,Block 788  Output 2
+0x25EC,9709,TT_107_H,,Signal Tag,759,float 32, , ,Digital,ON,OFF,Block 788  Output 3
+0x25EE,9711,TT_107_L,,Signal Tag,760,float 32, , ,Digital,ON,OFF,Block 788  Output 4
+0x25F0,9713,TT_107_LL,,Signal Tag,761,float 32, , ,Digital,ON,OFF,Block 788  Output 5
+0x25F2,9715,TT_108_HH,,Signal Tag,762,float 32, , ,Digital,ON,OFF,Block 789  Output 2
+0x25F4,9717,TT_108_H,,Signal Tag,763,float 32, , ,Digital,ON,OFF,Block 789  Output 3
+0x25F6,9719,TT_108_L,,Signal Tag,764,float 32, , ,Digital,ON,OFF,Block 789  Output 4
+0x25F8,9721,TT_108_LL,,Signal Tag,765,float 32, , ,Digital,ON,OFF,Block 789  Output 5
+0x25FA,9723,TT_109_HH,,Signal Tag,766,float 32, , ,Digital,ON,OFF,Block 790  Output 2
+0x25FC,9725,TT_109_H,,Signal Tag,767,float 32, , ,Digital,ON,OFF,Block 790  Output 3
+0x25FE,9727,TT_109_L,,Signal Tag,768,float 32, , ,Digital,ON,OFF,Block 790  Output 4
+0x2600,9729,TT_109_LL,,Signal Tag,769,float 32, , ,Digital,ON,OFF,Block 790  Output 5
+0x2602,9731,TT_110_HH,,Signal Tag,770,float 32, , ,Digital,ON,OFF,Block 791  Output 2
+0x2604,9733,TT_110_H,,Signal Tag,771,float 32, , ,Digital,ON,OFF,Block 791  Output 3
+0x2606,9735,TT_110_L,,Signal Tag,772,float 32, , ,Digital,ON,OFF,Block 791  Output 4
+0x2608,9737,TT_110_LL,,Signal Tag,773,float 32, , ,Digital,ON,OFF,Block 791  Output 5
+0x260A,9739,TT_111_HH,,Signal Tag,774,float 32, , ,Digital,ON,OFF,Block 792  Output 2
+0x260C,9741,TT_111_H,,Signal Tag,775,float 32, , ,Digital,ON,OFF,Block 792  Output 3
+0x260E,9743,TT_111_L,,Signal Tag,776,float 32, , ,Digital,ON,OFF,Block 792  Output 4
+0x2610,9745,TT_111_LL,,Signal Tag,777,float 32, , ,Digital,ON,OFF,Block 792  Output 5
+0x2612,9747,TT_112_HH,,Signal Tag,778,float 32, , ,Digital,ON,OFF,Block 793  Output 2
+0x2614,9749,TT_112_H,,Signal Tag,779,float 32, , ,Digital,ON,OFF,Block 793  Output 3
+0x2616,9751,TT_112_L,,Signal Tag,780,float 32, , ,Digital,ON,OFF,Block 793  Output 4
+0x2618,9753,TT_112_LL,,Signal Tag,781,float 32, , ,Digital,ON,OFF,Block 793  Output 5
+0x261A,9755,TT_113_HH,,Signal Tag,782,float 32, , ,Digital,ON,OFF,Block 794  Output 2
+0x261C,9757,TT_113_H,,Signal Tag,783,float 32, , ,Digital,ON,OFF,Block 794  Output 3
+0x261E,9759,TT_113_L,,Signal Tag,784,float 32, , ,Digital,ON,OFF,Block 794  Output 4
+0x2620,9761,TT_113_LL,,Signal Tag,785,float 32, , ,Digital,ON,OFF,Block 794  Output 5
+0x2622,9763,TT_114_HH,,Signal Tag,786,float 32, , ,Digital,ON,OFF,Block 795  Output 2
+0x2624,9765,TT_114_H,,Signal Tag,787,float 32, , ,Digital,ON,OFF,Block 795  Output 3
+0x2626,9767,TT_114_L,,Signal Tag,788,float 32, , ,Digital,ON,OFF,Block 795  Output 4
+0x2628,9769,TT_114_LL,,Signal Tag,789,float 32, , ,Digital,ON,OFF,Block 795  Output 5
+0x262A,9771,TT_115_HH,,Signal Tag,790,float 32, , ,Digital,ON,OFF,Block 796  Output 2
+0x262C,9773,TT_115_H,,Signal Tag,791,float 32, , ,Digital,ON,OFF,Block 796  Output 3
+0x262E,9775,TT_115_L,,Signal Tag,792,float 32, , ,Digital,ON,OFF,Block 796  Output 4
+0x2630,9777,TT_115_LL,,Signal Tag,793,float 32, , ,Digital,ON,OFF,Block 796  Output 5
+0x2632,9779,TT_116_HH,,Signal Tag,794,float 32, , ,Digital,ON,OFF,Block 797  Output 2
+0x2634,9781,TT_116_H,,Signal Tag,795,float 32, , ,Digital,ON,OFF,Block 797  Output 3
+0x2636,9783,TT_116_L,,Signal Tag,796,float 32, , ,Digital,ON,OFF,Block 797  Output 4
+0x2638,9785,TT_116_LL,,Signal Tag,797,float 32, , ,Digital,ON,OFF,Block 797  Output 5
+0x263A,9787,TT_117_HH,,Signal Tag,798,float 32, , ,Digital,ON,OFF,Block 798  Output 2
+0x263C,9789,TT_117_H,,Signal Tag,799,float 32, , ,Digital,ON,OFF,Block 798  Output 3
+0x263E,9791,TT_117_L,,Signal Tag,800,float 32, , ,Digital,ON,OFF,Block 798  Output 4
+0x2640,9793,TT_117_LL,,Signal Tag,801,float 32, , ,Digital,ON,OFF,Block 798  Output 5
+0x2642,9795,TT_118_HH,,Signal Tag,802,float 32, , ,Digital,ON,OFF,Block 799  Output 2
+0x2644,9797,TT_118_H,,Signal Tag,803,float 32, , ,Digital,ON,OFF,Block 799  Output 3
+0x2646,9799,TT_118_L,,Signal Tag,804,float 32, , ,Digital,ON,OFF,Block 799  Output 4
+0x2648,9801,TT_118_LL,,Signal Tag,805,float 32, , ,Digital,ON,OFF,Block 799  Output 5
+0x264A,9803,TT_119_HH,,Signal Tag,806,float 32, , ,Digital,ON,OFF,Block 800  Output 2
+0x264C,9805,TT_119_H,,Signal Tag,807,float 32, , ,Digital,ON,OFF,Block 800  Output 3
+0x264E,9807,TT_119_L,,Signal Tag,808,float 32, , ,Digital,ON,OFF,Block 800  Output 4
+0x2650,9809,TT_119_LL,,Signal Tag,809,float 32, , ,Digital,ON,OFF,Block 800  Output 5
+0x2652,9811,TT_120_HH,,Signal Tag,810,float 32, , ,Digital,ON,OFF,Block 801  Output 2
+0x2654,9813,TT_120_H,,Signal Tag,811,float 32, , ,Digital,ON,OFF,Block 801  Output 3
+0x2656,9815,TT_120_L,,Signal Tag,812,float 32, , ,Digital,ON,OFF,Block 801  Output 4
+0x2658,9817,TT_120_LL,,Signal Tag,813,float 32, , ,Digital,ON,OFF,Block 801  Output 5
+0x265A,9819,TT_121_HH,,Signal Tag,814,float 32, , ,Digital,ON,OFF,Block 802  Output 2
+0x265C,9821,TT_121_H,,Signal Tag,815,float 32, , ,Digital,ON,OFF,Block 802  Output 3
+0x265E,9823,TT_121_L,,Signal Tag,816,float 32, , ,Digital,ON,OFF,Block 802  Output 4
+0x2660,9825,TT_121_LL,,Signal Tag,817,float 32, , ,Digital,ON,OFF,Block 802  Output 5
+0x2662,9827,TT_122_HH,,Signal Tag,818,float 32, , ,Digital,ON,OFF,Block 803  Output 2
+0x2664,9829,TT_122_H,,Signal Tag,819,float 32, , ,Digital,ON,OFF,Block 803  Output 3
+0x2666,9831,TT_122_L,,Signal Tag,820,float 32, , ,Digital,ON,OFF,Block 803  Output 4
+0x2668,9833,TT_122_LL,,Signal Tag,821,float 32, , ,Digital,ON,OFF,Block 803  Output 5
+0x266A,9835,TT_123_HH,,Signal Tag,822,float 32, , ,Digital,ON,OFF,Block 804  Output 2
+0x266C,9837,TT_123_H,,Signal Tag,823,float 32, , ,Digital,ON,OFF,Block 804  Output 3
+0x266E,9839,TT_123_L,,Signal Tag,824,float 32, , ,Digital,ON,OFF,Block 804  Output 4
+0x2670,9841,TT_123_LL,,Signal Tag,825,float 32, , ,Digital,ON,OFF,Block 804  Output 5
+0x2672,9843,TT_124_HH,,Signal Tag,826,float 32, , ,Digital,ON,OFF,Block 805  Output 2
+0x2674,9845,TT_124_H,,Signal Tag,827,float 32, , ,Digital,ON,OFF,Block 805  Output 3
+0x2676,9847,TT_124_L,,Signal Tag,828,float 32, , ,Digital,ON,OFF,Block 805  Output 4
+0x2678,9849,TT_124_LL,,Signal Tag,829,float 32, , ,Digital,ON,OFF,Block 805  Output 5
+0x267A,9851,TT_125_HH,,Signal Tag,830,float 32, , ,Digital,ON,OFF,Block 806  Output 2
+0x267C,9853,TT_125_H,,Signal Tag,831,float 32, , ,Digital,ON,OFF,Block 806  Output 3
+0x267E,9855,TT_125_L,,Signal Tag,832,float 32, , ,Digital,ON,OFF,Block 806  Output 4
+0x2680,9857,TT_125_LL,,Signal Tag,833,float 32, , ,Digital,ON,OFF,Block 806  Output 5
+0x2682,9859,TT_126_HH,,Signal Tag,834,float 32, , ,Digital,ON,OFF,Block 807  Output 2
+0x2684,9861,TT_126_H,,Signal Tag,835,float 32, , ,Digital,ON,OFF,Block 807  Output 3
+0x2686,9863,TT_126_L,,Signal Tag,836,float 32, , ,Digital,ON,OFF,Block 807  Output 4
+0x2688,9865,TT_126_LL,,Signal Tag,837,float 32, , ,Digital,ON,OFF,Block 807  Output 5
+0x268A,9867,TT_127_HH,,Signal Tag,838,float 32, , ,Digital,ON,OFF,Block 808  Output 2
+0x268C,9869,TT_127_H,,Signal Tag,839,float 32, , ,Digital,ON,OFF,Block 808  Output 3
+0x268E,9871,TT_127_L,,Signal Tag,840,float 32, , ,Digital,ON,OFF,Block 808  Output 4
+0x2690,9873,TT_127_LL,,Signal Tag,841,float 32, , ,Digital,ON,OFF,Block 808  Output 5
+0x2692,9875,TT_128_HH,,Signal Tag,842,float 32, , ,Digital,ON,OFF,Block 809  Output 2
+0x2694,9877,TT_128_H,,Signal Tag,843,float 32, , ,Digital,ON,OFF,Block 809  Output 3
+0x2696,9879,TT_128_L,,Signal Tag,844,float 32, , ,Digital,ON,OFF,Block 809  Output 4
+0x2698,9881,TT_128_LL,,Signal Tag,845,float 32, , ,Digital,ON,OFF,Block 809  Output 5
+0x269A,9883,TT_129_HH,,Signal Tag,846,float 32, , ,Digital,ON,OFF,Block 810  Output 2
+0x269C,9885,TT_129_H,,Signal Tag,847,float 32, , ,Digital,ON,OFF,Block 810  Output 3
+0x269E,9887,TT_129_L,,Signal Tag,848,float 32, , ,Digital,ON,OFF,Block 810  Output 4
+0x26A0,9889,TT_129_LL,,Signal Tag,849,float 32, , ,Digital,ON,OFF,Block 810  Output 5
+0x26A2,9891,TT_130_HH,,Signal Tag,850,float 32, , ,Digital,ON,OFF,Block 811  Output 2
+0x26A4,9893,TT_130_H,,Signal Tag,851,float 32, , ,Digital,ON,OFF,Block 811  Output 3
+0x26A6,9895,TT_130_L,,Signal Tag,852,float 32, , ,Digital,ON,OFF,Block 811  Output 4
+0x26A8,9897,TT_130_LL,,Signal Tag,853,float 32, , ,Digital,ON,OFF,Block 811  Output 5
+0x26AA,9899,TT_131_HH,,Signal Tag,854,float 32, , ,Digital,ON,OFF,Block 812  Output 2
+0x26AC,9901,TT_131_H,,Signal Tag,855,float 32, , ,Digital,ON,OFF,Block 812  Output 3
+0x26AE,9903,TT_131_L,,Signal Tag,856,float 32, , ,Digital,ON,OFF,Block 812  Output 4
+0x26B0,9905,TT_131_LL,,Signal Tag,857,float 32, , ,Digital,ON,OFF,Block 812  Output 5
+0x26B2,9907,TT_132_HH,,Signal Tag,858,float 32, , ,Digital,ON,OFF,Block 813  Output 2
+0x26B4,9909,TT_132_H,,Signal Tag,859,float 32, , ,Digital,ON,OFF,Block 813  Output 3
+0x26B6,9911,TT_132_L,,Signal Tag,860,float 32, , ,Digital,ON,OFF,Block 813  Output 4
+0x26B8,9913,TT_132_LL,,Signal Tag,861,float 32, , ,Digital,ON,OFF,Block 813  Output 5
+0x26BA,9915,TT_133_HH,,Signal Tag,862,float 32, , ,Digital,ON,OFF,Block 814  Output 2
+0x26BC,9917,TT_133_H,,Signal Tag,863,float 32, , ,Digital,ON,OFF,Block 814  Output 3
+0x26BE,9919,TT_133_L,,Signal Tag,864,float 32, , ,Digital,ON,OFF,Block 814  Output 4
+0x26C0,9921,TT_133_LL,,Signal Tag,865,float 32, , ,Digital,ON,OFF,Block 814  Output 5
+0x26C2,9923,TT_134_HH,,Signal Tag,866,float 32, , ,Digital,ON,OFF,Block 815  Output 2
+0x26C4,9925,TT_134_H,,Signal Tag,867,float 32, , ,Digital,ON,OFF,Block 815  Output 3
+0x26C6,9927,TT_134_L,,Signal Tag,868,float 32, , ,Digital,ON,OFF,Block 815  Output 4
+0x26C8,9929,TT_134_LL,,Signal Tag,869,float 32, , ,Digital,ON,OFF,Block 815  Output 5
+0x26CA,9931,TT_135_HH,,Signal Tag,870,float 32, , ,Digital,ON,OFF,Block 816  Output 2
+0x26CC,9933,TT_135_H,,Signal Tag,871,float 32, , ,Digital,ON,OFF,Block 816  Output 3
+0x26CE,9935,TT_135_L,,Signal Tag,872,float 32, , ,Digital,ON,OFF,Block 816  Output 4
+0x26D0,9937,TT_135_LL,,Signal Tag,873,float 32, , ,Digital,ON,OFF,Block 816  Output 5
+0x26D2,9939,TT_136_HH,,Signal Tag,874,float 32, , ,Digital,ON,OFF,Block 817  Output 2
+0x26D4,9941,TT_136_H,,Signal Tag,875,float 32, , ,Digital,ON,OFF,Block 817  Output 3
+0x26D6,9943,TT_136_L,,Signal Tag,876,float 32, , ,Digital,ON,OFF,Block 817  Output 4
+0x26D8,9945,TT_136_LL,,Signal Tag,877,float 32, , ,Digital,ON,OFF,Block 817  Output 5
+0x26DA,9947,FT_108_HH,,Signal Tag,878,float 32, , ,Digital,ON,OFF,Block 818  Output 2
+0x26DC,9949,FT_108_H,,Signal Tag,879,float 32, , ,Digital,ON,OFF,Block 818  Output 3
+0x26DE,9951,FT_108_L,,Signal Tag,880,float 32, , ,Digital,ON,OFF,Block 818  Output 4
+0x26E0,9953,FT_108_LL,,Signal Tag,881,float 32, , ,Digital,ON,OFF,Block 818  Output 5
+0x26E2,9955,FT_101_HH,,Signal Tag,882,float 32, , ,Digital,ON,OFF,Block 819  Output 2
+0x26E4,9957,FT_101_H,,Signal Tag,883,float 32, , ,Digital,ON,OFF,Block 819  Output 3
+0x26E6,9959,FT_101_L,,Signal Tag,884,float 32, , ,Digital,ON,OFF,Block 819  Output 4
+0x26E8,9961,FT_101_LL,,Signal Tag,885,float 32, , ,Digital,ON,OFF,Block 819  Output 5
+0x26EA,9963,FT_101_A_HH,,Signal Tag,886,float 32, , ,Digital,ON,OFF,Block 820  Output 2
+0x26EC,9965,FT_101_A_H,,Signal Tag,887,float 32, , ,Digital,ON,OFF,Block 820  Output 3
+0x26EE,9967,FT_101_A_L,,Signal Tag,888,float 32, , ,Digital,ON,OFF,Block 820  Output 4
+0x26F0,9969,FT_101_A_LL,,Signal Tag,889,float 32, , ,Digital,ON,OFF,Block 820  Output 5
+0x26F2,9971,FT_102_HH,,Signal Tag,890,float 32, , ,Digital,ON,OFF,Block 821  Output 2
+0x26F4,9973,FT_102_H,,Signal Tag,891,float 32, , ,Digital,ON,OFF,Block 821  Output 3
+0x26F6,9975,FT_102_L,,Signal Tag,892,float 32, , ,Digital,ON,OFF,Block 821  Output 4
+0x26F8,9977,FT_102_LL,,Signal Tag,893,float 32, , ,Digital,ON,OFF,Block 821  Output 5
+0x26FA,9979,FT_103_HH,,Signal Tag,894,float 32, , ,Digital,ON,OFF,Block 822  Output 2
+0x26FC,9981,FT_103_H,,Signal Tag,895,float 32, , ,Digital,ON,OFF,Block 822  Output 3
+0x26FE,9983,FT_103_L,,Signal Tag,896,float 32, , ,Digital,ON,OFF,Block 822  Output 4
+0x2700,9985,FT_103_LL,,Signal Tag,897,float 32, , ,Digital,ON,OFF,Block 822  Output 5
+0x2702,9987,FT_103_A_HH,,Signal Tag,898,float 32, , ,Digital,ON,OFF,Block 823  Output 2
+0x2704,9989,FT_103_A_H,,Signal Tag,899,float 32, , ,Digital,ON,OFF,Block 823  Output 3
+0x2706,9991,FT_103_A_L,,Signal Tag,900,float 32, , ,Digital,ON,OFF,Block 823  Output 4
+0x2708,9993,FT_103_A_LL,,Signal Tag,901,float 32, , ,Digital,ON,OFF,Block 823  Output 5
+0x270A,9995,CHINA_VFD_HH,,Signal Tag,902,float 32, , ,Digital,ON,OFF,Block 824  Output 2
+0x270C,9997,CHINA_VFD_H,,Signal Tag,903,float 32, , ,Digital,ON,OFF,Block 824  Output 3
+0x270E,9999,CHINA_VFD_L,,Signal Tag,904,float 32, , ,Digital,ON,OFF,Block 824  Output 4
+0x2710,10001,CHINA_VFD_LL,,Signal Tag,905,float 32, , ,Digital,ON,OFF,Block 824  Output 5
+0x2712,10003,USA_VFD_HH,,Signal Tag,906,float 32, , ,Digital,ON,OFF,Block 825  Output 2
+0x2714,10005,USA_VFD_H,,Signal Tag,907,float 32, , ,Digital,ON,OFF,Block 825  Output 3
+0x2716,10007,USA_VFD_L,,Signal Tag,908,float 32, , ,Digital,ON,OFF,Block 825  Output 4
+0x2718,10009,USA_VFD_LL,,Signal Tag,909,float 32, , ,Digital,ON,OFF,Block 825  Output 5
+0x271A,10011,H_TK_VFD01_HH,,Signal Tag,910,float 32, , ,Digital,ON,OFF,Block 826  Output 2
+0x271C,10013,H_TK_VFD01_H,,Signal Tag,911,float 32, , ,Digital,ON,OFF,Block 826  Output 3
+0x271E,10015,H_TK_VFD01_L,,Signal Tag,912,float 32, , ,Digital,ON,OFF,Block 826  Output 4
+0x2720,10017,H_TK_VFD01_LL,,Signal Tag,913,float 32, , ,Digital,ON,OFF,Block 826  Output 5
+0x2722,10019,H_TK_VFD02_HH,,Signal Tag,914,float 32, , ,Digital,ON,OFF,Block 827  Output 2
+0x2724,10021,H_TK_VFD02_H,,Signal Tag,915,float 32, , ,Digital,ON,OFF,Block 827  Output 3
+0x2726,10023,H_TK_VFD02_L,,Signal Tag,916,float 32, , ,Digital,ON,OFF,Block 827  Output 4
+0x2728,10025,H_TK_VFD02_LL,,Signal Tag,917,float 32, , ,Digital,ON,OFF,Block 827  Output 5
+0x272A,10027,RX_01_VFD_HH,,Signal Tag,918,float 32, , ,Digital,ON,OFF,Block 828  Output 2
+0x272C,10029,RX_01_VFD_H,,Signal Tag,919,float 32, , ,Digital,ON,OFF,Block 828  Output 3
+0x272E,10031,RX_01_VFD_L,,Signal Tag,920,float 32, , ,Digital,ON,OFF,Block 828  Output 4
+0x2730,10033,RX_01_VFD_LL,,Signal Tag,921,float 32, , ,Digital,ON,OFF,Block 828  Output 5
+0x2732,10035,RX_02_VFD_HH,,Signal Tag,922,float 32, , ,Digital,ON,OFF,Block 829  Output 2
+0x2734,10037,RX_02_VFD_H,,Signal Tag,923,float 32, , ,Digital,ON,OFF,Block 829  Output 3
+0x2736,10039,RX_02_VFD_L,,Signal Tag,924,float 32, , ,Digital,ON,OFF,Block 829  Output 4
+0x2738,10041,RX_02_VFD_LL,,Signal Tag,925,float 32, , ,Digital,ON,OFF,Block 829  Output 5
+0x273A,10043,RX_03_VFD_HH,,Signal Tag,926,float 32, , ,Digital,ON,OFF,Block 830  Output 2
+0x273C,10045,RX_03_VFD_H,,Signal Tag,927,float 32, , ,Digital,ON,OFF,Block 830  Output 3
+0x273E,10047,RX_03_VFD_L,,Signal Tag,928,float 32, , ,Digital,ON,OFF,Block 830  Output 4
+0x2740,10049,RX_03_VFD_LL,,Signal Tag,929,float 32, , ,Digital,ON,OFF,Block 830  Output 5
+0x2742,10051,RX_04_VFD_HH,,Signal Tag,930,float 32, , ,Digital,ON,OFF,Block 831  Output 2
+0x2744,10053,RX_04_VFD_H,,Signal Tag,931,float 32, , ,Digital,ON,OFF,Block 831  Output 3
+0x2746,10055,RX_04_VFD_L,,Signal Tag,932,float 32, , ,Digital,ON,OFF,Block 831  Output 4
+0x2748,10057,RX_04_VFD_LL,,Signal Tag,933,float 32, , ,Digital,ON,OFF,Block 831  Output 5
+0x274A,10059,FL_PT_101,,Signal Tag,934,float 32, , ,Digital,ON,OFF,Block 137  Output 5
+0x274C,10061,FL_PT_102,,Signal Tag,935,float 32, , ,Digital,ON,OFF,Block 138  Output 5
+0x274E,10063,FL_PT_103,,Signal Tag,936,float 32, , ,Digital,ON,OFF,Block 139  Output 5
+0x2750,10065,FL_PT_104,,Signal Tag,937,float 32, , ,Digital,ON,OFF,Block 140  Output 5
+0x2752,10067,FL_PT_105,,Signal Tag,938,float 32, , ,Digital,ON,OFF,Block 141  Output 5
+0x2754,10069,FL_PT_109,,Signal Tag,939,float 32, , ,Digital,ON,OFF,Block 145  Output 5
+0x2756,10071,FL_LT_101,,Signal Tag,940,float 32, , ,Digital,ON,OFF,Block 149  Output 5
+0x2758,10073,FL_PT_106,,Signal Tag,941,float 32, , ,Digital,ON,OFF,Block 142  Output 5
+0x275A,10075,FL_PT_110,,Signal Tag,942,float 32, , ,Digital,ON,OFF,Block 146  Output 5
+0x275C,10077,FL_LT_102,,Signal Tag,943,float 32, , ,Digital,ON,OFF,Block 150  Output 5
+0x275E,10079,FL_PT_107,,Signal Tag,944,float 32, , ,Digital,ON,OFF,Block 143  Output 5
+0x2760,10081,FL_PT_111,,Signal Tag,945,float 32, , ,Digital,ON,OFF,Block 147  Output 5
+0x2762,10083,FL_LT_103,,Signal Tag,946,float 32, , ,Digital,ON,OFF,Block 151  Output 5
+0x2764,10085,FL_PT_108,,Signal Tag,947,float 32, , ,Digital,ON,OFF,Block 144  Output 5
+0x2766,10087,FL_PT_112,,Signal Tag,948,float 32, , ,Digital,ON,OFF,Block 148  Output 5
+0x2768,10089,FL_LT_104,,Signal Tag,949,float 32, , ,Digital,ON,OFF,Block 152  Output 5
+0x276A,10091,FL_LT_105,,Signal Tag,950,float 32, , ,Digital,ON,OFF,Block 153  Output 5
+0x276C,10093,FL_LT_106,,Signal Tag,951,float 32, , ,Digital,ON,OFF,Block 154  Output 5
+0x276E,10095,FL_LT_107,,Signal Tag,952,float 32, , ,Digital,ON,OFF,Block 155  Output 5
+0x2770,10097,FL_LT_108,,Signal Tag,953,float 32, , ,Digital,ON,OFF,Block 156  Output 5
+0x2772,10099,FL_LT_109,,Signal Tag,954,float 32, , ,Digital,ON,OFF,Block 157  Output 5
+0x2774,10101,FL_TT_101,,Signal Tag,955,float 32, , ,Digital,ON,OFF,Block 158  Output 5
+0x2776,10103,FL_TT_102,,Signal Tag,956,float 32, , ,Digital,ON,OFF,Block 159  Output 5
+0x2778,10105,FL_TT_103,,Signal Tag,957,float 32, , ,Digital,ON,OFF,Block 160  Output 5
+0x277A,10107,FL_TT_104,,Signal Tag,958,float 32, , ,Digital,ON,OFF,Block 161  Output 5
+0x277C,10109,FL_TT_105,,Signal Tag,959,float 32, , ,Digital,ON,OFF,Block 162  Output 5
+0x277E,10111,FL_TT_106,,Signal Tag,960,float 32, , ,Digital,ON,OFF,Block 163  Output 5
+0x2780,10113,FL_TT_107,,Signal Tag,961,float 32, , ,Digital,ON,OFF,Block 164  Output 5
+0x2782,10115,FL_TT_108,,Signal Tag,962,float 32, , ,Digital,ON,OFF,Block 165  Output 5
+0x2784,10117,FL_TT_109,,Signal Tag,963,float 32, , ,Digital,ON,OFF,Block 166  Output 5
+0x2786,10119,FL_TT_110,,Signal Tag,964,float 32, , ,Digital,ON,OFF,Block 167  Output 5
+0x2788,10121,FL_TT_111,,Signal Tag,965,float 32, , ,Digital,ON,OFF,Block 168  Output 5
+0x278A,10123,FL_TT_112,,Signal Tag,966,float 32, , ,Digital,ON,OFF,Block 169  Output 5
+0x278C,10125,FL_TT_113,,Signal Tag,967,float 32, , ,Digital,ON,OFF,Block 170  Output 5
+0x278E,10127,FL_TT_114,,Signal Tag,968,float 32, , ,Digital,ON,OFF,Block 171  Output 5
+0x2790,10129,FL_TT_115,,Signal Tag,969,float 32, , ,Digital,ON,OFF,Block 172  Output 5
+0x2792,10131,FL_TT_116,,Signal Tag,970,float 32, , ,Digital,ON,OFF,Block 173  Output 5
+0x2794,10133,FL_TT_117,,Signal Tag,971,float 32, , ,Digital,ON,OFF,Block 174  Output 5
+0x2796,10135,FL_TT_118,,Signal Tag,972,float 32, , ,Digital,ON,OFF,Block 175  Output 5
+0x2798,10137,FL_TT_119,,Signal Tag,973,float 32, , ,Digital,ON,OFF,Block 176  Output 5
+0x279A,10139,FL_TT_120,,Signal Tag,974,float 32, , ,Digital,ON,OFF,Block 177  Output 5
+0x279C,10141,FL_TT_121,,Signal Tag,975,float 32, , ,Digital,ON,OFF,Block 178  Output 5
+0x279E,10143,FL_TT_122,,Signal Tag,976,float 32, , ,Digital,ON,OFF,Block 179  Output 5
+0x27A0,10145,FL_TT_123,,Signal Tag,977,float 32, , ,Digital,ON,OFF,Block 180  Output 5
+0x27A2,10147,FL_TT_124,,Signal Tag,978,float 32, , ,Digital,ON,OFF,Block 181  Output 5
+0x27A4,10149,FL_TT_125,,Signal Tag,979,float 32, , ,Digital,ON,OFF,Block 182  Output 5
+0x27A6,10151,FL_TT_126,,Signal Tag,980,float 32, , ,Digital,ON,OFF,Block 183  Output 5
+0x27A8,10153,FL_TT_127,,Signal Tag,981,float 32, , ,Digital,ON,OFF,Block 184  Output 5
+0x27AA,10155,FL_TT_128,,Signal Tag,982,float 32, , ,Digital,ON,OFF,Block 185  Output 5
+0x27AC,10157,FL_TT_129,,Signal Tag,983,float 32, , ,Digital,ON,OFF,Block 186  Output 5
+0x27AE,10159,FL_TT_130,,Signal Tag,984,float 32, , ,Digital,ON,OFF,Block 187  Output 5
+0x27B0,10161,FL_TT_131,,Signal Tag,985,float 32, , ,Digital,ON,OFF,Block 188  Output 5
+0x27B2,10163,FL_TT_132,,Signal Tag,986,float 32, , ,Digital,ON,OFF,Block 189  Output 5
+0x27B4,10165,FL_TT_133,,Signal Tag,987,float 32, , ,Digital,ON,OFF,Block 190  Output 5
+0x27B6,10167,FL_TT_134,,Signal Tag,988,float 32, , ,Digital,ON,OFF,Block 191  Output 5
+0x27B8,10169,FL_TT_135,,Signal Tag,989,float 32, , ,Digital,ON,OFF,Block 192  Output 5
+0x27BA,10171,FL_TT_136,,Signal Tag,990,float 32, , ,Digital,ON,OFF,Block 193  Output 5
+0x27BC,10173,FL_FT_108,,Signal Tag,991,float 32, , ,Digital,ON,OFF,Block 194  Output 5
+0x27BE,10175,0195-005,,Signal Tag,992,float 32, , ,Digital,ON,OFF,Block 195  Output 5
+0x27C0,10177,0196-005,,Signal Tag,993,float 32, , ,Digital,ON,OFF,Block 196  Output 5
+0x27C2,10179,0197-005,,Signal Tag,994,float 32, , ,Digital,ON,OFF,Block 197  Output 5
+0x27C4,10181,0198-005,,Signal Tag,995,float 32, , ,Digital,ON,OFF,Block 198  Output 5
+0x27C6,10183,0199-005,,Signal Tag,996,float 32, , ,Digital,ON,OFF,Block 199  Output 5
+0x27C8,10185,0200-005,,Signal Tag,997,float 32, , ,Digital,ON,OFF,Block 200  Output 5
+0x27CA,10187,FL_FT_101,,Signal Tag,998,float 32, , ,Digital,ON,OFF,Block 201  Output 5
+0x27CC,10189,FL_FT_101_A,,Signal Tag,999,float 32, , ,Digital,ON,OFF,Block 202  Output 5
+0x27CE,10191,FL_FT_102,,Signal Tag,1000,float 32, , ,Digital,ON,OFF,Block 203  Output 5
+0x4330,17201,FL_FT_103_A,,Signal Tag,1001,float 32, , ,Digital,ON,OFF,Block 205  Output 5
+0x4332,17203,FL_CHINA_VFD,,Signal Tag,1002,float 32, , ,Digital,ON,OFF,Block 206  Output 5
+0x4334,17205,FL_USA_VFD,,Signal Tag,1003,float 32, , ,Digital,ON,OFF,Block 207  Output 5
+0x4336,17207,FL_H_TK_VFD01,,Signal Tag,1004,float 32, , ,Digital,ON,OFF,Block 208  Output 5
+0x4338,17209,FL_FT_103,,Signal Tag,1005,float 32, , ,Digital,ON,OFF,Block 204  Output 5
+0x433A,17211,FL_RX_03_VFD,,Signal Tag,1006,float 32, , ,Digital,ON,OFF,Block 212  Output 5
+0x433C,17213,0216-005,,Signal Tag,1007,float 32, , ,Digital,ON,OFF,Block 216  Output 5
+0x433E,17215,0215-005,,Signal Tag,1008,float 32, , ,Digital,ON,OFF,Block 215  Output 5
+0x4340,17217,FL_RX_02_VFD,,Signal Tag,1009,float 32, , ,Digital,ON,OFF,Block 211  Output 5
+0x4342,17219,FL_RX_01_VFD,,Signal Tag,1010,float 32, , ,Digital,ON,OFF,Block 210  Output 5
+0x4344,17221,FL_H_TK_VFD02,,Signal Tag,1011,float 32, , ,Digital,ON,OFF,Block 209  Output 5
+0x4346,17223,FL_RX_04_VFD,,Signal Tag,1012,float 32, , ,Digital,ON,OFF,Block 213  Output 5
+0x4348,17225,0214-005,,Signal Tag,1013,float 32, , ,Digital,ON,OFF,Block 214  Output 5
+0x434A,17227,SRN_RWPMP01_AM,,Signal Tag,1014,float 32, , ,Digital,ON,OFF,Variable #:844
+0x434C,17229,SRN_RWPMP02_AM,,Signal Tag,1015,float 32, , ,Digital,ON,OFF,Variable #:845
+0x434E,17231,DM_WTR_PMP01_AT,,Signal Tag,1016,float 32, , ,Digital,ON,OFF,Variable #:846
+0x4350,17233,DM_WTR_PMP02_AT,,Signal Tag,1017,float 32, , ,Digital,ON,OFF,Variable #:847
+0x4352,17235,PTN_FD_PMP01_AT,,Signal Tag,1018,float 32, , ,Digital,ON,OFF,Variable #:848
+0x4354,17237,PTN_FD_PMP02_AT,,Signal Tag,1019,float 32, , ,Digital,ON,OFF,Variable #:849
+0x4356,17239,EF_WTR_PMP01_AT,,Signal Tag,1020,float 32, , ,Digital,ON,OFF,Variable #:850
+0x4358,17241,EF_WTR_PMP02_AT,,Signal Tag,1021,float 32, , ,Digital,ON,OFF,Variable #:851
+0x435A,17243,ACD_MIX_TNK_AT,,Signal Tag,1022,float 32, , ,Digital,ON,OFF,Variable #:852
+0x435C,17245,CNT_AIR_BR01_AT,,Signal Tag,1023,float 32, , ,Digital,ON,OFF,Variable #:853
+0x435E,17247,CNT_AIR_BR02_AT,,Signal Tag,1024,float 32, , ,Digital,ON,OFF,Variable #:854
+0x4360,17249,WTR_COOL_PMP_AT,,Signal Tag,1025,float 32, , ,Digital,ON,OFF,Variable #:855
+0x4362,17251,DRY_CHN_AT,,Signal Tag,1026,float 32, , ,Digital,ON,OFF,Variable #:856
+0x4364,17253,DRY_USA_AT,,Signal Tag,1027,float 32, , ,Digital,ON,OFF,Variable #:857
+0x4366,17255,HLD_TK_VFD01_AT,,Signal Tag,1028,float 32, , ,Digital,ON,OFF,Variable #:858
+0x4368,17257,HLD_TK_VFD02_AT,,Signal Tag,1029,float 32, , ,Digital,ON,OFF,Variable #:859
+0x436A,17259,CHL_WTR_PMP1_AT,,Signal Tag,1030,float 32, , ,Digital,ON,OFF,Variable #:860
+0x436C,17261,CHL_WTR_PMP2_AT,,Signal Tag,1031,float 32, , ,Digital,ON,OFF,Variable #:861
+0x436E,17263,RCT_RX02_VFD_AT,,Signal Tag,1032,float 32, , ,Digital,ON,OFF,Variable #:863
+0x4370,17265,RCT_RX01_VFD_AT,,Signal Tag,1033,float 32, , ,Digital,ON,OFF,Variable #:862
+0x4372,17267,RCT_RX03_VFD_AT,,Signal Tag,1034,float 32, , ,Digital,ON,OFF,Variable #:864
+0x4374,17269,RCT_RX04_VFD_AT,,Signal Tag,1035,float 32, , ,Digital,ON,OFF,Variable #:865
+0x4376,17271,START_M,,Signal Tag,1036,float 32, , ,Digital,ON,OFF,Variable #:193
+0x4378,17273,STOP_M,,Signal Tag,1037,float 32, , ,Digital,ON,OFF,Variable #:195
+0x437A,17275,FT_102_GRT,,Signal Tag,1038,float 32, , ,Digital,ON,OFF,Block 1156  Output 2
+0x437C,17277,SRN_RW_PMP01_F,,Signal Tag,1039,float 32, , ,Digital,ON,OFF,Block 217  Output 8
+0x437E,17279,0233-008,,Signal Tag,1040,float 32, , ,Digital,ON,OFF,Block 233  Output 8
+0x4380,17281,0237-008,,Signal Tag,1041,float 32, , ,Digital,ON,OFF,Block 237  Output 8
+0x4382,17283,STR_START_M,,Signal Tag,1042,float 32, , ,Digital,ON,OFF,Variable #:207
+0x4384,17285,STR_STOP_M,,Signal Tag,1043,float 32, , ,Digital,ON,OFF,Variable #:209
+0x4386,17287,FT_101_GRT,,Signal Tag,1044,float 32, , ,Digital,ON,OFF,Block 1247  Output 2
+0x4388,17289,FT_101_TOTALIZER,,Signal Tag,1045,float 32,,0,Analog, , ,Block 613  Output 1
+0x438A,17291,A4,,Signal Tag,1046,float 32, , ,Digital,ON,OFF,Block 1440  Output 1
+0x438C,17293,ALARM,,Signal Tag,1047,float 32, , ,Digital,ON,OFF,Block 1442  Output 1

@@ -1,0 +1,14 @@
+plcs:
+  PLC1_MANUFACTURING_LINE:
+    host: "127.0.0.1"
+    port: 5020
+    unit_id: 1
+    timeout: 3.0
+    retries: 3
+    description: "Manufacturing Line Controller"
+    vendor: "Honeywell"
+    model: "M580"
+    max_concurrent_connections: 5
+    health_check_interval: 30
+    circuit_breaker_threshold: 5
+    circuit_breaker_timeout: 60
