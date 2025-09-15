@@ -9,6 +9,6 @@ plcs:
     vendor: "Honeywell"
     model: "M580"
     max_concurrent_connections: 5
-    health_check_interval: 30
+    health_check_interval: 15
     circuit_breaker_threshold: 5
     circuit_breaker_timeout: 60
