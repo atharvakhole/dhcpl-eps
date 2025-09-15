@@ -143,8 +143,9 @@ def convert_modbus_address(address):
 @dataclass
 class ModbusOperation:
     """Represents a Modbus operation request"""
-    operation_type: str  # 'read_holding', 'write_register', 'write_registers'
-    address: int
+    operation_type: str  # 'read_holding', 'read_input', 'read_coil', 'read_discrete', 'write_register', etc.
+    address: int         # Converted Modbus address (not extended address)
+    original_address: int  # Original extended address for logging
     count: Optional[int] = None
     values: Optional[Union[int, List[int]]] = None
     unit_id: Optional[int] = None
@@ -321,7 +322,7 @@ class PLCConnection:
             raise
     
     async def _execute_with_retry(self, operation: ModbusOperation) -> Any:
-        """Execute operation with retry logic"""
+        """Execute operation with retry logic - now handles all register types"""
         last_exception = None
         
         for attempt in range(operation.max_retries + 1):
@@ -329,6 +330,7 @@ class PLCConnection:
                 async with self.get_client() as client:
                     unit_id = operation.unit_id or self.config.unit_id
                     
+                    # Handle different register types
                     if operation.operation_type == 'read_holding':
                         result = await client.read_holding_registers(
                             operation.address, 
@@ -336,27 +338,69 @@ class PLCConnection:
                             unit_id
                         )
                         if result.isError():
-                            raise ModbusException(f"Modbus error: {result}")
+                            raise ModbusException(f"Modbus error reading holding register {operation.original_address}: {result}")
                         return result.registers
                     
+                    elif operation.operation_type == 'read_input':
+                        result = await client.read_input_registers(
+                            operation.address,
+                            operation.count,
+                            unit_id
+                        )
+                        if result.isError():
+                            raise ModbusException(f"Modbus error reading input register {operation.original_address}: {result}")
+                        return result.registers
+                    
+                    elif operation.operation_type == 'read_coil':
+                        result = await client.read_coils(
+                            operation.address,
+                            operation.count,
+                            unit_id
+                        )
+                        if result.isError():
+                            raise ModbusException(f"Modbus error reading coil {operation.original_address}: {result}")
+                        return result.bits
+                    
+                    elif operation.operation_type == 'read_discrete':
+                        result = await client.read_discrete_inputs(
+                            operation.address,
+                            operation.count,
+                            unit_id
+                        )
+                        if result.isError():
+                            raise ModbusException(f"Modbus error reading discrete input {operation.original_address}: {result}")
+                        return result.bits
+                    
                     elif operation.operation_type == 'write_register':
+                        # For writes, assume holding register
                         result = await client.write_register(
                             operation.address, 
                             operation.values, 
                             unit_id
                         )
                         if result.isError():
-                            raise ModbusException(f"Modbus error: {result}")
+                            raise ModbusException(f"Modbus error writing register {operation.original_address}: {result}")
                         return True
                     
                     elif operation.operation_type == 'write_registers':
+                        # For writes, assume holding register
                         result = await client.write_registers(
                             operation.address, 
                             operation.values, 
                             unit_id
                         )
                         if result.isError():
-                            raise ModbusException(f"Modbus error: {result}")
+                            raise ModbusException(f"Modbus error writing registers {operation.original_address}: {result}")
+                        return True
+                    
+                    elif operation.operation_type == 'write_coil':
+                        result = await client.write_coil(
+                            operation.address,
+                            operation.values,
+                            unit_id
+                        )
+                        if result.isError():
+                            raise ModbusException(f"Modbus error writing coil {operation.original_address}: {result}")
                         return True
                     
                     else:
@@ -454,45 +498,80 @@ class ConnectionManager:
             raise ValueError(f"Unknown PLC ID: {plc_id}")
     
     async def read_registers(self, plc_id: str, start_address: int, count: int, unit_id: Optional[int] = None) -> List[int]:
-        """Read multiple holding registers"""
+        """Read multiple registers with automatic address conversion"""
         self._validate_plc_id(plc_id)
         
+        # Convert address and determine register type
+        modbus_address, register_type = convert_modbus_address(start_address)
+        
+        # Map register type to operation type
+        operation_type_map = {
+            "holding_register": "read_holding",
+            "input_register": "read_input", 
+            "discrete_input": "read_discrete",
+            "coil": "read_coil"
+        }
+        
+        operation_type = operation_type_map.get(register_type, "read_holding")
+        
         operation = ModbusOperation(
-            operation_type='read_holding',
-            address=start_address,
+            operation_type=operation_type,
+            address=modbus_address,
+            original_address=start_address,
             count=count,
             unit_id=unit_id
         )
         
+        logger.debug(f"Reading {register_type} - Extended address: {start_address} -> Modbus address: {modbus_address}")
+        
         return await self.plc_connections[plc_id].execute_operation(operation)
     
     async def read_register(self, plc_id: str, address: int, unit_id: Optional[int] = None) -> int:
-        """Read a single holding register"""
+        """Read a single register with automatic address conversion"""
         result = await self.read_registers(plc_id, address, 1, unit_id)
         return result[0] if result else None
+    
     async def write_register(self, plc_id: str, address: int, value: int, unit_id: Optional[int] = None) -> bool:
-        """Write a single holding register"""
+        """Write a single register with automatic address conversion"""
         self._validate_plc_id(plc_id)
         
+        # Convert address - writes typically go to holding registers
+        modbus_address, register_type = convert_modbus_address(address)
+        
+        # Determine operation type based on register type
+        if register_type == "coil":
+            operation_type = "write_coil"
+        else:
+            operation_type = "write_register"  # Default to holding register write
+        
         operation = ModbusOperation(
-            operation_type='write_register',
-            address=address,
+            operation_type=operation_type,
+            address=modbus_address,
+            original_address=address,
             values=value,
             unit_id=unit_id
         )
         
+        logger.debug(f"Writing {register_type} - Extended address: {address} -> Modbus address: {modbus_address}")
+        
         return await self.plc_connections[plc_id].execute_operation(operation)
     
     async def write_registers(self, plc_id: str, start_address: int, values: List[int], unit_id: Optional[int] = None) -> bool:
-        """Write multiple holding registers"""
+        """Write multiple registers with automatic address conversion"""
         self._validate_plc_id(plc_id)
         
+        # Convert address - writes typically go to holding registers
+        modbus_address, register_type = convert_modbus_address(start_address)
+        
         operation = ModbusOperation(
-            operation_type='write_registers',
-            address=start_address,
+            operation_type="write_registers",
+            address=modbus_address,
+            original_address=start_address,
             values=values,
             unit_id=unit_id
         )
+        
+        logger.debug(f"Writing {register_type}s - Extended address: {start_address} -> Modbus address: {modbus_address}")
         
         return await self.plc_connections[plc_id].execute_operation(operation)
     
