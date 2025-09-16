@@ -2,19 +2,25 @@
 Plant Control API - Production Connection Management Layer
 Industrial-grade ModbusTCP connection management for critical control systems
 
-ADDRESSING STANDARD:
-This implementation follows the official Modbus specification:
-- Data Model addressing (1-based): Used in YAML configs and human documentation
-  • Holding Registers: 40001-49999
-  • Input Registers: 30001-39999  
-  • Discrete Inputs: 10001-19999
-  • Coils: 1-9999
+MULTI-VENDOR ADDRESSING SUPPORT:
+This implementation handles multiple Modbus addressing schemes in mixed vendor environments:
 
-- PDU Protocol addressing (0-based): Used on the wire with PyModbus
-  • All register types: 0-65535
+1. STANDARD MODBUS (Schneider, Siemens following spec):
+   - Data Model addressing: Used in YAML configs and documentation
+     • Holding Registers: 40001-49999 → PyModbus 0-9998
+     • Input Registers: 30001-39999 → PyModbus 0-9998
+     • Discrete Inputs: 10001-19999 → PyModbus 0-9998
+     • Coils: 1-9999 → PyModbus 0-9998
 
-Automatic conversion: Data Model → PDU Protocol (subtract 40001, 30001, 10001, or 1)
-Example: YAML "40001" → PyModbus read_holding_registers(0, ...)
+2. VENDOR-SPECIFIC/RAW ADDRESSING (Custom implementations):
+   - Direct memory addresses: Used as-is (6337 → PyModbus 6337)
+   - Examples: 6337, 17277, etc. from your CSV register maps
+
+3. AUTO-DETECTION:
+   - Analyzes register lists to determine addressing scheme
+   - Configurable per PLC for mixed vendor environments
+
+Usage: configure vendor="custom" or addressing_scheme="custom" for non-standard addressing
 """
 
 import asyncio
@@ -67,7 +73,7 @@ class Priority(Enum):
 
 @dataclass
 class PLCConfig:
-    """Configuration for a single PLC"""
+    """Configuration for a single PLC with vendor-specific addressing support"""
     plc_id: str
     host: str
     port: int = 502
@@ -75,8 +81,9 @@ class PLCConfig:
     timeout: float = 3.0
     retries: int = 3
     description: str = ""
-    vendor: str = ""
+    vendor: str = "generic"  # "schneider", "siemens", "custom", "raw", etc.
     model: str = ""
+    addressing_scheme: str = "auto"  # "standard", "custom", or "auto"
     max_concurrent_connections: int = 5
     health_check_interval: int = 30
     circuit_breaker_threshold: int = 5
@@ -95,40 +102,71 @@ class ConnectionMetrics:
     connection_uptime_start: Optional[datetime] = None
     response_times: deque = field(default_factory=lambda: deque(maxlen=100))
 
-def convert_modbus_address(address: int) -> tuple[int, str]:
+def convert_modbus_address(address: int, plc_vendor: str = "generic") -> tuple[int, str]:
     """
-    Convert Modbus Data Model addressing to PDU Protocol addressing
+    Convert address based on vendor-specific addressing schemes
     
-    Per Official Modbus Specification:
-    - Data Model uses 1-based addressing (human/documentation)
-    - PDU Protocol uses 0-based addressing (wire protocol)
-    
-    Data Model → PDU Protocol:
-    - Holding Registers 40001-49999 → PDU Address 0-9998
-    - Input Registers 30001-39999 → PDU Address 0-9998  
-    - Discrete Inputs 10001-19999 → PDU Address 0-9998
-    - Coils 1-9999 → PDU Address 0-9998
+    Supports multiple addressing schemes:
+    1. Standard Modbus (Schneider, Siemens following spec)
+    2. Raw/Direct addressing (vendor-specific like your CSV)
+    3. Custom vendor schemes
     
     Args:
-        address: Data Model address (e.g., 40001)
+        address: Address from YAML configuration
+        plc_vendor: Vendor type for addressing scheme
         
     Returns:
-        tuple: (pdu_protocol_address, register_type)
+        tuple: (protocol_address, register_type)
     """
-    if 40001 <= address <= 49999:
-        return address - 40001, "holding_register"  # 40001 → 0, 40002 → 1
-    elif 30001 <= address <= 39999:
-        return address - 30001, "input_register"    # 30001 → 0, 30002 → 1
-    elif 10001 <= address <= 19999:
-        return address - 10001, "discrete_input"    # 10001 → 0, 10002 → 1
-    elif 1 <= address <= 9999:
-        return address - 1, "coil"                   # 1 → 0, 2 → 1
-    elif address == 0:
-        # Special case: assume holding register PDU address 0
-        return 0, "holding_register"
-    else:
-        # If address doesn't match standard ranges, assume it's already PDU address
+    
+    # Handle vendor-specific addressing
+    if plc_vendor.lower() in ["custom", "raw", "direct"]:
+        # Vendor uses raw memory addresses - use directly
+        # Assume holding registers unless specified otherwise
         return address, "holding_register"
+    
+    # Standard Modbus addressing (per official specification)
+    elif 40001 <= address <= 49999:
+        return address - 40001, "holding_register"
+    elif 30001 <= address <= 39999:
+        return address - 30001, "input_register"
+    elif 10001 <= address <= 19999:
+        return address - 10001, "discrete_input"
+    elif 1 <= address <= 9999:
+        return address - 1, "coil"
+    elif address == 0:
+        return 0, "holding_register"
+    
+    # If address doesn't match standard ranges, assume vendor-specific
+    # This handles cases like your CSV (6337, 17277, etc.)
+    else:
+        logger.warning(f"Non-standard address {address} - treating as direct protocol address")
+        return address, "holding_register"
+
+def detect_addressing_scheme(addresses: List[int]) -> str:
+    """
+    Auto-detect addressing scheme from register list
+    
+    Args:
+        addresses: List of addresses from register configuration
+        
+    Returns:
+        str: Detected scheme ("standard" or "custom")
+    """
+    standard_count = 0
+    custom_count = 0
+    
+    for addr in addresses:
+        if (40001 <= addr <= 49999) or (30001 <= addr <= 39999) or \
+           (10001 <= addr <= 19999) or (1 <= addr <= 9999):
+            standard_count += 1
+        else:
+            custom_count += 1
+    
+    if standard_count > custom_count:
+        return "standard"
+    else:
+        return "custom"
 
 @dataclass
 class ModbusOperation:
@@ -546,15 +584,19 @@ class ConnectionManager:
     
     async def write_register(self, plc_id: str, address: int, value: int, unit_id: Optional[int] = None) -> bool:
         """
-        Write single register with automatic Data Model → PDU address conversion
-        
-        Converts Data Model addresses (40001, 1, etc.) to PDU Protocol addresses (0-based)
-        per official Modbus specification
+        Write single register with vendor-specific address conversion
         """
         self._validate_plc_id(plc_id)
         
-        # Convert Data Model address to PDU Protocol address
-        pdu_address, register_type = convert_modbus_address(address)
+        # Get vendor-specific addressing scheme
+        addressing_scheme = self._get_addressing_scheme(plc_id)
+        vendor = self.plc_connections[plc_id].config.vendor
+        
+        # Convert address based on scheme
+        if addressing_scheme == "custom":
+            pdu_address, register_type = convert_modbus_address(address, "custom")
+        else:
+            pdu_address, register_type = convert_modbus_address(address, vendor)
         
         operation_type = "write_coil" if register_type == "coil" else "write_register"
         
@@ -566,21 +608,26 @@ class ConnectionManager:
             unit_id=unit_id
         )
         
-        logger.debug(f"Write address conversion: Data Model {address} → PDU {pdu_address} ({register_type})")
+        if pdu_address != address:
+            logger.debug(f"{plc_id} write address conversion: {address} → {pdu_address} ({addressing_scheme} scheme)")
         
         return await self.plc_connections[plc_id].execute_operation(operation)
     
     async def write_registers(self, plc_id: str, start_address: int, values: List[int], unit_id: Optional[int] = None) -> bool:
         """
-        Write multiple registers with automatic Data Model → PDU address conversion
-        
-        Converts Data Model addresses (40001, etc.) to PDU Protocol addresses (0-based)
-        per official Modbus specification  
+        Write multiple registers with vendor-specific address conversion
         """
         self._validate_plc_id(plc_id)
         
-        # Convert Data Model address to PDU Protocol address
-        pdu_address, register_type = convert_modbus_address(start_address)
+        # Get vendor-specific addressing scheme
+        addressing_scheme = self._get_addressing_scheme(plc_id)
+        vendor = self.plc_connections[plc_id].config.vendor
+        
+        # Convert address based on scheme
+        if addressing_scheme == "custom":
+            pdu_address, register_type = convert_modbus_address(start_address, "custom")
+        else:
+            pdu_address, register_type = convert_modbus_address(start_address, vendor)
         
         operation = ModbusOperation(
             operation_type="write_registers",
@@ -590,7 +637,8 @@ class ConnectionManager:
             unit_id=unit_id
         )
         
-        logger.debug(f"Batch write address conversion: Data Model {start_address} → PDU {pdu_address} ({register_type})")
+        if pdu_address != start_address:
+            logger.debug(f"{plc_id} batch write address conversion: {start_address} → {pdu_address} ({addressing_scheme} scheme)")
         
         return await self.plc_connections[plc_id].execute_operation(operation)
     
@@ -656,7 +704,7 @@ connection_manager = ConnectionManager()
 
 # Production API functions
 async def initialize_connections(plc_configs: List[PLCConfig], redis_url: Optional[str] = None):
-    """Initialize global connection manager"""
+    """Initialize global connection manager with multi-vendor support"""
     await connection_manager.initialize(plc_configs, redis_url)
 
 async def shutdown_connections():
