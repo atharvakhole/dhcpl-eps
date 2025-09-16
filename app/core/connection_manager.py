@@ -2,25 +2,33 @@
 Plant Control API - Production Connection Management Layer
 Industrial-grade ModbusTCP connection management for critical control systems
 
-MULTI-VENDOR ADDRESSING SUPPORT:
-This implementation handles multiple Modbus addressing schemes in mixed vendor environments:
+MULTI-VENDOR ADDRESSING & REGISTER TYPE SUPPORT:
+This implementation handles multiple Modbus addressing schemes and register types:
 
 1. STANDARD MODBUS (Schneider, Siemens following spec):
-   - Data Model addressing: Used in YAML configs and documentation
-     • Holding Registers: 40001-49999 → PyModbus 0-9998
-     • Input Registers: 30001-39999 → PyModbus 0-9998
-     • Discrete Inputs: 10001-19999 → PyModbus 0-9998
-     • Coils: 1-9999 → PyModbus 0-9998
+   - Data Model addressing: 40001-49999 → PyModbus 0-9998 (Holding)
+   - Auto-converts to correct PyModbus function codes
 
 2. VENDOR-SPECIFIC/RAW ADDRESSING (Custom implementations):
-   - Direct memory addresses: Used as-is (6337 → PyModbus 6337)
-   - Examples: 6337, 17277, etc. from your CSV register maps
+   - Direct memory addresses: 6337 → PyModbus 6337 (with type detection)
+   - Proper register type detection from configuration
 
-3. AUTO-DETECTION:
-   - Analyzes register lists to determine addressing scheme
-   - Configurable per PLC for mixed vendor environments
+3. REGISTER TYPE DETECTION:
+   - Coils: Digital outputs (read_coils/write_coil) → True/False
+   - Discrete Inputs: Digital inputs (read_discrete_inputs) → True/False, read-only
+   - Input Registers: Analog inputs (read_input_registers) → int, read-only  
+   - Holding Registers: Analog outputs (read_holding_registers/write_register) → int
 
-Usage: configure vendor="custom" or addressing_scheme="custom" for non-standard addressing
+4. AUTO-DETECTION FROM CSV/YAML:
+   - tag_type="Digital" + readonly=false → Coil
+   - tag_type="Digital" + readonly=true → Discrete Input
+   - tag_type="Analog" + readonly=false → Holding Register
+   - tag_type="Analog" + readonly=true → Input Register
+   - on_label/off_label present → Digital register
+   - modbus_type override → Explicit type
+
+Usage: Configure addressing_scheme="custom" for non-standard addressing
+Returns: Appropriate data types (bool for digital, int for analog)
 """
 
 import asyncio
@@ -102,28 +110,70 @@ class ConnectionMetrics:
     connection_uptime_start: Optional[datetime] = None
     response_times: deque = field(default_factory=lambda: deque(maxlen=100))
 
-def convert_modbus_address(address: int, plc_vendor: str = "generic") -> tuple[int, str]:
+def determine_register_type_from_config(register_config: Dict[str, Any]) -> str:
     """
-    Convert address based on vendor-specific addressing schemes
+    Determine Modbus register type from register configuration
     
-    Supports multiple addressing schemes:
-    1. Standard Modbus (Schneider, Siemens following spec)
-    2. Raw/Direct addressing (vendor-specific like your CSV)
-    3. Custom vendor schemes
+    Analyzes register metadata to determine correct Modbus function code to use:
+    - Digital + Read/Write → Coil
+    - Digital + Read-only → Discrete Input  
+    - Analog + Read/Write → Holding Register
+    - Analog + Read-only → Input Register
     
     Args:
-        address: Address from YAML configuration
-        plc_vendor: Vendor type for addressing scheme
+        register_config: Register configuration from YAML/CSV
         
     Returns:
-        tuple: (protocol_address, register_type)
+        str: Register type ("coil", "discrete_input", "input_register", "holding_register")
     """
     
-    # Handle vendor-specific addressing
+    # Check explicit register type if specified
+    if "modbus_type" in register_config:
+        return register_config["modbus_type"]
+    
+    # Determine from tag type and read/write properties
+    tag_type = register_config.get("tag_type", "").lower()
+    readonly = register_config.get("readonly", False)
+    
+    # Digital registers
+    if tag_type == "digital" or "on_label" in register_config or "off_label" in register_config:
+        if readonly:
+            return "discrete_input"  # Read-only digital
+        else:
+            return "coil"            # Read/write digital
+    
+    # Analog registers  
+    elif tag_type == "analog" or register_config.get("data_type", "").startswith(("int", "uint", "float")):
+        if readonly:
+            return "input_register"   # Read-only analog
+        else:
+            return "holding_register" # Read/write analog
+    
+    # Check data type for clues
+    data_type = register_config.get("data_type", "").lower()
+    if "bool" in data_type:
+        return "coil" if not readonly else "discrete_input"
+    
+    # Default to holding register for unknown types
+    return "holding_register"
+
+def convert_modbus_address(address: int, plc_vendor: str = "generic", register_config: Dict[str, Any] = None) -> tuple[int, str]:
+    """
+    Convert address with register type detection for vendor-specific addressing
+    
+    Enhanced to determine correct register type for custom addressing schemes
+    """
+    
+    # Handle vendor-specific addressing with type detection
     if plc_vendor.lower() in ["custom", "raw", "direct"]:
-        # Vendor uses raw memory addresses - use directly
-        # Assume holding registers unless specified otherwise
-        return address, "holding_register"
+        if register_config:
+            # Use register configuration to determine type
+            register_type = determine_register_type_from_config(register_config)
+            return address, register_type
+        else:
+            # Default to holding register if no config available
+            logger.warning(f"No register config for address {address} - defaulting to holding_register")
+            return address, "holding_register"
     
     # Standard Modbus addressing (per official specification)
     elif 40001 <= address <= 49999:
@@ -138,10 +188,14 @@ def convert_modbus_address(address: int, plc_vendor: str = "generic") -> tuple[i
         return 0, "holding_register"
     
     # If address doesn't match standard ranges, assume vendor-specific
-    # This handles cases like your CSV (6337, 17277, etc.)
     else:
-        logger.warning(f"Non-standard address {address} - treating as direct protocol address")
-        return address, "holding_register"
+        if register_config:
+            register_type = determine_register_type_from_config(register_config)
+            logger.info(f"Non-standard address {address} detected as {register_type}")
+            return address, register_type
+        else:
+            logger.warning(f"Non-standard address {address} - treating as holding_register")
+            return address, "holding_register"
 
 def detect_addressing_scheme(addresses: List[int]) -> str:
     """
@@ -458,6 +512,14 @@ class PLCConnection:
                             raise ModbusException(f"Modbus error writing coil {operation.original_address} (PDU {operation.address}): {result}")
                         return True
                     
+                    elif operation.operation_type == 'write_coils':
+                        result = await client.write_coils(
+                            operation.address, operation.values, unit_id
+                        )
+                        if result.isError():
+                            raise ModbusException(f"Modbus error writing coils {operation.original_address} (PDU {operation.address}): {result}")
+                        return True
+                    
                     else:
                         raise ValueError(f"Unknown operation type: {operation.operation_type}")
             
@@ -582,9 +644,14 @@ class ConnectionManager:
         result = await self.read_registers(plc_id, address, 1, unit_id)
         return result[0] if result else None
     
-    async def write_register(self, plc_id: str, address: int, value: int, unit_id: Optional[int] = None) -> bool:
+    async def read_register(self, plc_id: str, address: int, unit_id: Optional[int] = None) -> Union[int, bool]:
+        """Read single register with automatic type detection"""
+        result = await self.read_registers(plc_id, address, 1, unit_id)
+        return result[0] if result else None
+    
+    async def write_register(self, plc_id: str, address: int, value: Union[int, bool], unit_id: Optional[int] = None) -> bool:
         """
-        Write single register with vendor-specific address conversion
+        Write single register with vendor-specific address conversion and type detection
         """
         self._validate_plc_id(plc_id)
         
@@ -592,13 +659,21 @@ class ConnectionManager:
         addressing_scheme = self._get_addressing_scheme(plc_id)
         vendor = self.plc_connections[plc_id].config.vendor
         
-        # Convert address based on scheme
-        if addressing_scheme == "custom":
-            pdu_address, register_type = convert_modbus_address(address, "custom")
-        else:
-            pdu_address, register_type = convert_modbus_address(address, vendor)
+        # Get register configuration for type detection
+        register_config = self._get_register_config(plc_id, address)
         
+        # Convert address and determine type based on scheme and config
+        if addressing_scheme == "custom":
+            pdu_address, register_type = convert_modbus_address(address, "custom", register_config)
+        else:
+            pdu_address, register_type = convert_modbus_address(address, vendor, register_config)
+        
+        # Determine operation type based on register type
         operation_type = "write_coil" if register_type == "coil" else "write_register"
+        
+        # Validate write operation for read-only registers
+        if register_type in ["discrete_input", "input_register"]:
+            raise ValueError(f"Cannot write to read-only register type: {register_type}")
         
         operation = ModbusOperation(
             operation_type=operation_type,
@@ -609,13 +684,13 @@ class ConnectionManager:
         )
         
         if pdu_address != address:
-            logger.debug(f"{plc_id} write address conversion: {address} → {pdu_address} ({addressing_scheme} scheme)")
+            logger.debug(f"{plc_id} write address conversion: {address} → {pdu_address} ({register_type}, {addressing_scheme} scheme)")
         
         return await self.plc_connections[plc_id].execute_operation(operation)
     
-    async def write_registers(self, plc_id: str, start_address: int, values: List[int], unit_id: Optional[int] = None) -> bool:
+    async def write_registers(self, plc_id: str, start_address: int, values: List[Union[int, bool]], unit_id: Optional[int] = None) -> bool:
         """
-        Write multiple registers with vendor-specific address conversion
+        Write multiple registers with vendor-specific address conversion and type detection
         """
         self._validate_plc_id(plc_id)
         
@@ -623,14 +698,27 @@ class ConnectionManager:
         addressing_scheme = self._get_addressing_scheme(plc_id)
         vendor = self.plc_connections[plc_id].config.vendor
         
-        # Convert address based on scheme
+        # Get register configuration for type detection
+        register_config = self._get_register_config(plc_id, start_address)
+        
+        # Convert address and determine type based on scheme and config
         if addressing_scheme == "custom":
-            pdu_address, register_type = convert_modbus_address(start_address, "custom")
+            pdu_address, register_type = convert_modbus_address(start_address, "custom", register_config)
         else:
-            pdu_address, register_type = convert_modbus_address(start_address, vendor)
+            pdu_address, register_type = convert_modbus_address(start_address, vendor, register_config)
+        
+        # Validate write operation for read-only registers
+        if register_type in ["discrete_input", "input_register"]:
+            raise ValueError(f"Cannot write to read-only register type: {register_type}")
+        
+        # Determine operation type based on register type
+        if register_type == "coil":
+            operation_type = "write_coils"  # Multiple coils
+        else:
+            operation_type = "write_registers"  # Multiple holding registers
         
         operation = ModbusOperation(
-            operation_type="write_registers",
+            operation_type=operation_type,
             address=pdu_address,
             original_address=start_address,
             values=values,
@@ -638,7 +726,7 @@ class ConnectionManager:
         )
         
         if pdu_address != start_address:
-            logger.debug(f"{plc_id} batch write address conversion: {start_address} → {pdu_address} ({addressing_scheme} scheme)")
+            logger.debug(f"{plc_id} batch write address conversion: {start_address} → {pdu_address} ({register_type}, {addressing_scheme} scheme)")
         
         return await self.plc_connections[plc_id].execute_operation(operation)
     
@@ -711,20 +799,20 @@ async def shutdown_connections():
     """Shutdown global connection manager"""
     await connection_manager.shutdown()
 
-async def read_register(plc_id: str, address: int, unit_id: Optional[int] = None) -> int:
-    """Read single register"""
+async def read_register(plc_id: str, address: int, unit_id: Optional[int] = None) -> Union[int, bool]:
+    """Read single register (returns int for analog, bool for digital)"""
     return await connection_manager.read_register(plc_id, address, unit_id)
 
-async def write_register(plc_id: str, address: int, value: int, unit_id: Optional[int] = None) -> bool:
-    """Write single register"""
+async def write_register(plc_id: str, address: int, value: Union[int, bool], unit_id: Optional[int] = None) -> bool:
+    """Write single register (accepts int for analog, bool for digital)"""
     return await connection_manager.write_register(plc_id, address, value, unit_id)
 
-async def read_registers(plc_id: str, start_address: int, count: int, unit_id: Optional[int] = None) -> List[int]:
-    """Read multiple registers"""
+async def read_registers(plc_id: str, start_address: int, count: int, unit_id: Optional[int] = None) -> List[Union[int, bool]]:
+    """Read multiple registers (returns list of int/bool based on register type)"""
     return await connection_manager.read_registers(plc_id, start_address, count, unit_id)
 
-async def write_registers(plc_id: str, start_address: int, values: List[int], unit_id: Optional[int] = None) -> bool:
-    """Write multiple registers"""
+async def write_registers(plc_id: str, start_address: int, values: List[Union[int, bool]], unit_id: Optional[int] = None) -> bool:
+    """Write multiple registers (accepts list of int/bool based on register type)"""
     return await connection_manager.write_registers(plc_id, start_address, values, unit_id)
 
 def get_connection_status(plc_id: Optional[str] = None) -> Dict[str, Any]:
