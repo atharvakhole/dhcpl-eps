@@ -46,6 +46,9 @@ from collections import deque
 # Configure logging
 logger = logging.getLogger(__name__)
 
+# TODO: 
+# Use Redis for caching
+
 # Optional Redis import with compatibility handling
 REDIS_AVAILABLE = False
 redis_client_class = None
@@ -196,31 +199,6 @@ def convert_modbus_address(address: int, plc_vendor: str = "generic", register_c
         else:
             logger.warning(f"Non-standard address {address} - treating as holding_register")
             return address, "holding_register"
-
-def detect_addressing_scheme(addresses: List[int]) -> str:
-    """
-    Auto-detect addressing scheme from register list
-    
-    Args:
-        addresses: List of addresses from register configuration
-        
-    Returns:
-        str: Detected scheme ("standard" or "custom")
-    """
-    standard_count = 0
-    custom_count = 0
-    
-    for addr in addresses:
-        if (40001 <= addr <= 49999) or (30001 <= addr <= 39999) or \
-           (10001 <= addr <= 19999) or (1 <= addr <= 9999):
-            standard_count += 1
-        else:
-            custom_count += 1
-    
-    if standard_count > custom_count:
-        return "standard"
-    else:
-        return "custom"
 
 @dataclass
 class ModbusOperation:
