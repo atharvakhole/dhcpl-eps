@@ -143,7 +143,7 @@ registers:
     30012:
       name: "system_efficiency"
       description: "Overall system efficiency"
-      data_type: "uint16"
+      data_type: "float32"
       scaling_factor: 1.0
       units: "%"
       min_value: 0
@@ -283,6 +283,18 @@ registers:
         5: "Vibration High"
         6: "Part Jam"
         7: "Maintenance Due"
+  PLC-EPS1:
+    8769:
+      name: "motor_current_limit"
+      description: "Motor current limit setting"
+      data_type: "float32"
+      scaling_factor: 1.0
+      units: "A"
+      min_value: 0
+      max_value: 200
+      readonly: true
+      critical: true
+      tag_type: "Analog"
 
 # Connection Configuration
 connection:

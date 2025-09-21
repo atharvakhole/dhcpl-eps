@@ -1,5 +1,4 @@
-﻿Hex Addr,Dec Addr,Tag Name,Description,Type,#,Data Type,Access
- , ,PID595,,PID,#10,,
+﻿Hex Addr,Dec Addr,Tag Name,Description,Type,#,Data Type,Access, ,PID595,,PID,#10,,
 0x0940,2369,PID595.PV,PV,PID,#10,float 32,R
 0x0942,2371,PID595.RSP_SP2,RSP_SP2,PID,#10,float 32,R/W
 0x0944,2373,PID595.WSP,WSP,PID,#10,float 32,R/W
@@ -37,7 +36,10 @@
 0x0994,2453,PID595.FurnaceFactor,Furnace Factor,PID,#10,float 32,R/W
 0x0996,2455,PID595.PercentHydrogen,Percent Hydrogen,PID,#10,float 32,R/W
 0x0998,2457,PID595.OnOff_OutHysterisis,On Off_Out Hysterisis,PID,#10,float 32,R/W
-0x099A,2459,PID595.CarbPotDewPt,Carb Pot Dew Pt,PID,#10,float 32,R/W
+0x099A,2459,PID595.CarbPotDewPt,Carb Pot Dew Pt,PID,#10,float 32,R/WEcoStruxure Control Expert V15.0 Crack
+￼
+100-ac.com
+https://100-ac.com › ...
 0x099C,2461,PID595.3PosStepMotorTime,3 Pos Step Motor Time,PID,#10,float 32,R/W
 0x09F7,2552,PID595.EnableDisableFuzzy,Enable Disable Fuzzy,PID,#10,unsigned 16,R/W
 0x09F8,2553,PID595.DemandTuneReq,Demand Tune Req,PID,#10,unsigned 16,R/W

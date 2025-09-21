@@ -12,3 +12,16 @@ plcs:
     health_check_interval: 15
     circuit_breaker_threshold: 5
     circuit_breaker_timeout: 60
+  PLC-EPS1:
+    host: "192.168.1.254"
+    port: 502
+    unit_id: 1
+    timeout: 3.0
+    retries: 5
+    description: "EPS Reactors PLC 1"
+    vendor: "Honeywell"
+    model: "M580"
+    max_concurrent_connections: 5
+    health_check_interval: 15
+    circuit_breaker_threshold: 5
+    circuit_breaker_timeout: 60

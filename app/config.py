@@ -67,7 +67,6 @@ class ConfigManager:
                 plc_configs.append(plc_config)
                 self.plc_configs[plc_id] = plc_config
         
-        print(plc_configs)
         return plc_configs
     
     def load_register_maps(self) -> Dict[str, Dict[int, Dict[str, Any]]]:

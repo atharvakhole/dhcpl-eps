@@ -1,22 +1,223 @@
-import logging
-from datetime import datetime
-import time
-from typing import Any, Dict, List, Optional
+"""
+Plant Control API - Production Connection Management Layer
+Industrial-grade ModbusTCP connection management for critical control systems
 
-from pymodbus.exceptions import ConnectionException, ModbusException
-from app.models.connection_manager import ConnectionMetrics, ConnectionState, ModbusOperation, Priority
-from app.models.plc_config import PLCConfig
-from pymodbus.client import AsyncModbusTcpClient
-from contextlib import asynccontextmanager
+MULTI-VENDOR ADDRESSING & REGISTER TYPE SUPPORT:
+This implementation handles multiple Modbus addressing schemes and register types:
+
+1. STANDARD MODBUS (Schneider, Siemens following spec):
+   - Data Model addressing: 40001-49999 → PyModbus 0-9998 (Holding)
+   - Auto-converts to correct PyModbus function codes
+
+2. VENDOR-SPECIFIC/RAW ADDRESSING (Custom implementations):
+   - Direct memory addresses: 6337 → PyModbus 6337 (with type detection)
+   - Proper register type detection from configuration
+
+3. REGISTER TYPE DETECTION:
+   - Coils: Digital outputs (read_coils/write_coil) → True/False
+   - Discrete Inputs: Digital inputs (read_discrete_inputs) → True/False, read-only
+   - Input Registers: Analog inputs (read_input_registers) → int, read-only  
+   - Holding Registers: Analog outputs (read_holding_registers/write_register) → int
+
+4. AUTO-DETECTION FROM CSV/YAML:
+   - tag_type="Digital" + readonly=false → Coil
+   - tag_type="Digital" + readonly=true → Discrete Input
+   - tag_type="Analog" + readonly=false → Holding Register
+   - tag_type="Analog" + readonly=true → Input Register
+   - on_label/off_label present → Digital register
+   - modbus_type override → Explicit type
+
+Usage: Configure addressing_scheme="custom" for non-standard addressing
+Returns: Appropriate data types (bool for digital, int for analog)
+"""
+
 import asyncio
+import logging
+import time
+from typing import Dict, List, Optional, Any, Union
+from dataclasses import dataclass, field
+from enum import Enum
+from contextlib import asynccontextmanager
+from datetime import datetime, timedelta
+from pymodbus.client import AsyncModbusTcpClient
+from pymodbus.exceptions import ModbusException, ConnectionException
+from collections import deque
+
+# Configure logging
+logger = logging.getLogger(__name__)
 
 # TODO: 
-# - Make config class for register map like plc config
-# - Load all registers for a plc
-# - Read / write register should be able to figure out addressing scheme and register type
-#
+# Use Redis for caching
 
-logger = logging.getLogger(__name__)
+# Optional Redis import with compatibility handling
+REDIS_AVAILABLE = False
+redis_client_class = None
+
+try:
+    import redis.asyncio as redis
+    redis_client_class = redis.Redis
+    REDIS_AVAILABLE = True
+    logger.debug("Redis support available")
+except ImportError:
+    try:
+        import aioredis
+        redis_client_class = aioredis.Redis
+        REDIS_AVAILABLE = True
+        logger.debug("AioRedis support available")
+    except (ImportError, TypeError):
+        logger.info("Redis not available - running without cache")
+        REDIS_AVAILABLE = False
+
+class ConnectionState(Enum):
+    DISCONNECTED = "disconnected"
+    CONNECTING = "connecting"
+    CONNECTED = "connected"
+    ERROR = "error"
+    MAINTENANCE = "maintenance"
+    CIRCUIT_OPEN = "circuit_open"
+
+class Priority(Enum):
+    EMERGENCY = 1
+    CRITICAL = 2
+    NORMAL = 3
+    BACKGROUND = 4
+
+@dataclass
+class PLCConfig:
+    """Configuration for a single PLC with vendor-specific addressing support"""
+    plc_id: str
+    host: str
+    port: int = 502
+    unit_id: int = 1
+    timeout: float = 3.0
+    retries: int = 3
+    description: str = ""
+    vendor: str = "generic"  # "schneider", "siemens", "custom", "raw", etc.
+    model: str = ""
+    addressing_scheme: str = "auto"  # "standard", "custom", or "auto"
+    max_concurrent_connections: int = 5
+    health_check_interval: int = 30
+    circuit_breaker_threshold: int = 5
+    circuit_breaker_timeout: int = 60
+
+@dataclass
+class ConnectionMetrics:
+    """Connection performance and reliability metrics"""
+    total_requests: int = 0
+    successful_requests: int = 0
+    failed_requests: int = 0
+    avg_response_time: float = 0.0
+    last_successful_connection: Optional[datetime] = None
+    last_error: Optional[str] = None
+    last_error_time: Optional[datetime] = None
+    connection_uptime_start: Optional[datetime] = None
+    response_times: deque = field(default_factory=lambda: deque(maxlen=100))
+
+def determine_register_type_from_config(register_config: Dict[str, Any]) -> str:
+    """
+    Determine Modbus register type from register configuration
+    
+    Analyzes register metadata to determine correct Modbus function code to use:
+    - Digital + Read/Write → Coil
+    - Digital + Read-only → Discrete Input  
+    - Analog + Read/Write → Holding Register
+    - Analog + Read-only → Input Register
+    
+    Args:
+        register_config: Register configuration from YAML/CSV
+        
+    Returns:
+        str: Register type ("coil", "discrete_input", "input_register", "holding_register")
+    """
+    
+    # Check explicit register type if specified
+    if "modbus_type" in register_config:
+        return register_config["modbus_type"]
+    
+    # Determine from tag type and read/write properties
+    tag_type = register_config.get("tag_type", "").lower()
+    readonly = register_config.get("readonly", False)
+    
+    # Digital registers
+    if tag_type == "digital" or "on_label" in register_config or "off_label" in register_config:
+        if readonly:
+            return "discrete_input"  # Read-only digital
+        else:
+            return "coil"            # Read/write digital
+    
+    # Analog registers  
+    elif tag_type == "analog" or register_config.get("data_type", "").startswith(("int", "uint", "float")):
+        if readonly:
+            return "input_register"   # Read-only analog
+        else:
+            return "holding_register" # Read/write analog
+    
+    # Check data type for clues
+    data_type = register_config.get("data_type", "").lower()
+    if "bool" in data_type:
+        return "coil" if not readonly else "discrete_input"
+    
+    # Default to holding register for unknown types
+    return "holding_register"
+
+def convert_modbus_address(address: int, plc_vendor: str = "generic", register_config: Dict[str, Any] = None) -> tuple[int, str]:
+    """
+    Convert address with register type detection for vendor-specific addressing
+    
+    Enhanced to determine correct register type for custom addressing schemes
+    """
+    
+    # Handle vendor-specific addressing with type detection
+    if plc_vendor.lower() in ["custom", "raw", "direct"]:
+        if register_config:
+            # Use register configuration to determine type
+            register_type = determine_register_type_from_config(register_config)
+            return address, register_type
+        else:
+            # Default to holding register if no config available
+            logger.warning(f"No register config for address {address} - defaulting to holding_register")
+            return address, "holding_register"
+    
+    # Standard Modbus addressing (per official specification)
+    elif 40001 <= address <= 49999:
+        return address - 40001, "holding_register"
+    elif 30001 <= address <= 39999:
+        return address - 30001, "input_register"
+    elif 10001 <= address <= 19999:
+        return address - 10001, "discrete_input"
+    elif 1 <= address <= 9999:
+        return address - 1, "coil"
+    elif address == 0:
+        return 0, "holding_register"
+    
+    # If address doesn't match standard ranges, assume vendor-specific
+    else:
+        if register_config:
+            register_type = determine_register_type_from_config(register_config)
+            logger.info(f"Non-standard address {address} detected as {register_type}")
+            return address, register_type
+        else:
+            logger.warning(f"Non-standard address {address} - treating as holding_register")
+            return address, "holding_register"
+
+@dataclass
+class ModbusOperation:
+    """
+    Modbus operation request with official addressing
+    
+    Stores both Data Model address (from YAML) and PDU Protocol address (for wire)
+    to maintain full traceability per Modbus specification
+    """
+    operation_type: str       # PDU function type: 'read_holding', 'read_input', etc.
+    address: int             # PDU Protocol address (0-based, for wire)
+    original_address: int    # Data Model address (1-based, from YAML/user)
+    count: Optional[int] = None
+    values: Optional[Union[int, List[int]]] = None
+    unit_id: Optional[int] = None
+    priority: Priority = Priority.NORMAL
+    timeout: Optional[float] = None
+    retry_count: int = 0
+    max_retries: int = 3
 
 class CircuitBreaker:
     """Circuit breaker for PLC connection protection"""
@@ -58,7 +259,6 @@ class CircuitBreaker:
             return True
         
         return False
-
 
 class PLCConnection:
     """Manages connection pool and operations for a single PLC"""
@@ -312,17 +512,31 @@ class PLCConnection:
         
         raise last_exception
 
-
 class ConnectionManager:
     """Global connection manager for all PLCs"""
     
     def __init__(self):
         self.plc_connections: Dict[str, PLCConnection] = {}
         self.is_initialized = False
+        self.redis_client = None
     
-    async def initialize(self, plc_configs: List[PLCConfig]):
+    async def initialize(self, plc_configs: List[PLCConfig], redis_url: Optional[str] = None):
         """Initialize all PLC connections"""
         logger.info("Initializing Connection Manager")
+        
+        if redis_url and REDIS_AVAILABLE:
+            try:
+                if 'redis.asyncio' in str(redis_client_class):
+                    self.redis_client = redis_client_class.from_url(redis_url)
+                    await self.redis_client.ping()
+                else:
+                    self.redis_client = await redis_client_class.from_url(redis_url)
+                logger.info("Redis connection established")
+            except Exception as e:
+                logger.warning(f"Redis connection failed: {e}. Continuing without cache.")
+                self.redis_client = None
+        elif redis_url and not REDIS_AVAILABLE:
+            logger.warning("Redis URL provided but redis package not available")
         
         initialization_tasks = []
         for config in plc_configs:
@@ -348,6 +562,16 @@ class ConnectionManager:
             shutdown_tasks.append(plc_connection.shutdown())
         
         await asyncio.gather(*shutdown_tasks, return_exceptions=True)
+        
+        if self.redis_client:
+            try:
+                if hasattr(self.redis_client, 'aclose'):
+                    await self.redis_client.aclose()
+                elif hasattr(self.redis_client, 'close'):
+                    await self.redis_client.close()
+                logger.info("Redis connection closed")
+            except Exception as e:
+                logger.warning(f"Error closing Redis connection: {e}")
         
         self.is_initialized = False
         logger.info("Connection Manager shutdown complete")
@@ -410,12 +634,12 @@ class ConnectionManager:
         self._validate_plc_id(plc_id)
         
         # Get vendor-specific addressing scheme
-        addressing_scheme = self.plc_connections[plc_id].config.addressing_scheme
+        addressing_scheme = self._get_addressing_scheme(plc_id)
         vendor = self.plc_connections[plc_id].config.vendor
         
         # Get register configuration for type detection
         register_config = self._get_register_config(plc_id, address)
-
+        
         # Convert address and determine type based on scheme and config
         if addressing_scheme == "custom":
             pdu_address, register_type = convert_modbus_address(address, "custom", register_config)
@@ -545,9 +769,9 @@ class ConnectionManager:
 connection_manager = ConnectionManager()
 
 # Production API functions
-async def initialize_connections(plc_configs: List[PLCConfig]):
+async def initialize_connections(plc_configs: List[PLCConfig], redis_url: Optional[str] = None):
     """Initialize global connection manager with multi-vendor support"""
-    await connection_manager.initialize(plc_configs)
+    await connection_manager.initialize(plc_configs, redis_url)
 
 async def shutdown_connections():
     """Shutdown global connection manager"""
