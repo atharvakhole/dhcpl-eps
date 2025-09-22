@@ -7,7 +7,7 @@ import yaml
 from typing import Dict, List, Any
 from pathlib import Path
 from pydantic_settings import BaseSettings
-from app.core.connection_manager import PLCConfig
+from app.models.plc_config import PLCConfig
 
 class Settings(BaseSettings):
     """Application settings"""
@@ -96,6 +96,13 @@ class ConfigManager:
             raise ValueError(f"Register {register_address} not found in PLC {plc_id}")
         
         return self.register_maps[plc_id][register_address]
+
+    def get_plc_config(self, plc_id: str) -> PLCConfig:
+        """Get configuration for a specific register"""
+        if plc_id not in self.plc_configs:
+            raise ValueError(f"Configuration for PLC {plc_id} not found")
+        
+        return self.plc_configs[plc_id]
     
     def is_register_readonly(self, plc_id: str, register_address: int) -> bool:
         """Check if a register is read-only"""

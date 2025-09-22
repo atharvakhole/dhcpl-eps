@@ -1,20 +1,17 @@
 import logging
 from datetime import datetime
 import time
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Union
 
 from pymodbus.exceptions import ConnectionException, ModbusException
+from app.config import ConfigManager
 from app.models.connection_manager import ConnectionMetrics, ConnectionState, ModbusOperation, Priority
 from app.models.plc_config import PLCConfig
 from pymodbus.client import AsyncModbusTcpClient
 from contextlib import asynccontextmanager
 import asyncio
 
-# TODO: 
-# - Make config class for register map like plc config
-# - Load all registers for a plc
-# - Read / write register should be able to figure out addressing scheme and register type
-#
+from app.utilities.registers import convert_modbus_address
 
 logger = logging.getLogger(__name__)
 
@@ -319,10 +316,12 @@ class ConnectionManager:
     def __init__(self):
         self.plc_connections: Dict[str, PLCConnection] = {}
         self.is_initialized = False
+        self.config_manager = None
     
-    async def initialize(self, plc_configs: List[PLCConfig]):
+    async def initialize(self, plc_configs: List[PLCConfig], config_manager: ConfigManager):
         """Initialize all PLC connections"""
         logger.info("Initializing Connection Manager")
+        self.config_manager = config_manager
         
         initialization_tasks = []
         for config in plc_configs:
@@ -360,7 +359,10 @@ class ConnectionManager:
         if plc_id not in self.plc_connections:
             raise ValueError(f"Unknown PLC ID: {plc_id}")
     
-    async def read_registers(self, plc_id: str, start_address: int, count: int, unit_id: Optional[int] = None) -> List[int]:
+
+    async def read_registers(self, plc_id: str, start_address: int, count: int, unit_id: Optional[int] = None) -> List[float]:
+        from pymodbus.payload import BinaryPayloadDecoder
+        from pymodbus.constants import Endian
         """
         Read multiple registers with automatic Data Model → PDU address conversion
         
@@ -370,7 +372,9 @@ class ConnectionManager:
         self._validate_plc_id(plc_id)
         
         # Convert Data Model address to PDU Protocol address
-        pdu_address, register_type = convert_modbus_address(start_address)
+        addressing_scheme = plc_vendor=self.config_manager.get_plc_config(plc_id).addressing_scheme or 'absoulte'
+        register_config = self.config_manager.get_register_config(plc_id, start_address) or None
+        pdu_address, register_type = convert_modbus_address(start_address, addressing_scheme, register_config=register_config)
         
         operation_type_map = {
             "holding_register": "read_holding",
@@ -391,36 +395,35 @@ class ConnectionManager:
         
         logger.debug(f"Address conversion: Data Model {start_address} → PDU {pdu_address} ({register_type})")
         
-        return await self.plc_connections[plc_id].execute_operation(operation)
+        raw_registers = await self.plc_connections[plc_id].execute_operation(operation)
+        
+        # Decode registers to float32 values
+        decoder = BinaryPayloadDecoder.fromRegisters(
+            raw_registers, 
+            byteorder=Endian.BIG, 
+            wordorder=Endian.BIG
+        )
+        
+        decoded_values = []
+        for _ in range(count // 2):  # Each float32 uses 2 registers
+            decoded_values.append(decoder.decode_32bit_float())
+        
+        return decoded_values
     
     async def read_register(self, plc_id: str, address: int, unit_id: Optional[int] = None) -> int:
         """Read single register with automatic address conversion"""
         result = await self.read_registers(plc_id, address, 1, unit_id)
         return result[0] if result else None
     
-    async def read_register(self, plc_id: str, address: int, unit_id: Optional[int] = None) -> Union[int, bool]:
-        """Read single register with automatic type detection"""
-        result = await self.read_registers(plc_id, address, 1, unit_id)
-        return result[0] if result else None
     
-    async def write_register(self, plc_id: str, address: int, value: Union[int, bool], unit_id: Optional[int] = None) -> bool:
+    async def write_register(self, plc_id: str, start_address: int, value: Union[int, bool], unit_id: Optional[int] = None) -> bool:
         """
         Write single register with vendor-specific address conversion and type detection
         """
         self._validate_plc_id(plc_id)
         
-        # Get vendor-specific addressing scheme
-        addressing_scheme = self.plc_connections[plc_id].config.addressing_scheme
-        vendor = self.plc_connections[plc_id].config.vendor
-        
-        # Get register configuration for type detection
-        register_config = self._get_register_config(plc_id, address)
-
-        # Convert address and determine type based on scheme and config
-        if addressing_scheme == "custom":
-            pdu_address, register_type = convert_modbus_address(address, "custom", register_config)
-        else:
-            pdu_address, register_type = convert_modbus_address(address, vendor, register_config)
+        # Convert Data Model address to PDU Protocol address
+        pdu_address, register_type = convert_modbus_address(start_address, register_config=self.config_manager.get_register_config(plc_id, start_address) | None)
         
         # Determine operation type based on register type
         operation_type = "write_coil" if register_type == "coil" else "write_register"
@@ -432,13 +435,13 @@ class ConnectionManager:
         operation = ModbusOperation(
             operation_type=operation_type,
             address=pdu_address,
-            original_address=address,
+            original_address=start_address,
             values=value,
             unit_id=unit_id
         )
         
-        if pdu_address != address:
-            logger.debug(f"{plc_id} write address conversion: {address} → {pdu_address} ({register_type}, {addressing_scheme} scheme)")
+        if pdu_address != start_address:
+            logger.debug(f"{plc_id} write address conversion: {start_address} → {pdu_address} ({register_type}")
         
         return await self.plc_connections[plc_id].execute_operation(operation)
     
@@ -448,28 +451,15 @@ class ConnectionManager:
         """
         self._validate_plc_id(plc_id)
         
-        # Get vendor-specific addressing scheme
-        addressing_scheme = self._get_addressing_scheme(plc_id)
-        vendor = self.plc_connections[plc_id].config.vendor
+        # Convert Data Model address to PDU Protocol address
+        pdu_address, register_type = convert_modbus_address(start_address, register_config=self.config_manager.get_register_config(plc_id, start_address) | None)
         
-        # Get register configuration for type detection
-        register_config = self._get_register_config(plc_id, start_address)
-        
-        # Convert address and determine type based on scheme and config
-        if addressing_scheme == "custom":
-            pdu_address, register_type = convert_modbus_address(start_address, "custom", register_config)
-        else:
-            pdu_address, register_type = convert_modbus_address(start_address, vendor, register_config)
+        # Determine operation type based on register type
+        operation_type = "write_coil" if register_type == "coil" else "write_register"
         
         # Validate write operation for read-only registers
         if register_type in ["discrete_input", "input_register"]:
             raise ValueError(f"Cannot write to read-only register type: {register_type}")
-        
-        # Determine operation type based on register type
-        if register_type == "coil":
-            operation_type = "write_coils"  # Multiple coils
-        else:
-            operation_type = "write_registers"  # Multiple holding registers
         
         operation = ModbusOperation(
             operation_type=operation_type,
@@ -480,7 +470,7 @@ class ConnectionManager:
         )
         
         if pdu_address != start_address:
-            logger.debug(f"{plc_id} batch write address conversion: {start_address} → {pdu_address} ({register_type}, {addressing_scheme} scheme)")
+            logger.debug(f"{plc_id} batch write address conversion: {start_address} → {pdu_address} ({register_type}")
         
         return await self.plc_connections[plc_id].execute_operation(operation)
     
@@ -545,9 +535,9 @@ class ConnectionManager:
 connection_manager = ConnectionManager()
 
 # Production API functions
-async def initialize_connections(plc_configs: List[PLCConfig]):
+async def initialize_connections(plc_configs: List[PLCConfig], config_manager: ConfigManager):
     """Initialize global connection manager with multi-vendor support"""
-    await connection_manager.initialize(plc_configs)
+    await connection_manager.initialize(plc_configs, config_manager)
 
 async def shutdown_connections():
     """Shutdown global connection manager"""
