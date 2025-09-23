@@ -21,12 +21,21 @@ class TagService:
         pass
 
 
-    def write_tag(self, plc_id):
-        pass
+    def write_tag(self, plc_id, tag_name, data):
+        logger.info(f"write_tag request: {plc_id} {tag_name} - data: {data}")
+        address = self._get_address_from_tagname(plc_id, tag_name)
+        payload = self._construct_payload(plc_id, address, data)
+        logger.info(f"Writing payload {payload} to PLC {plc_id} register {address}")
 
     def _is_valid_data(self, plc_id, address, data) -> bool:
+        plc_config = config_manager.get_plc_config(plc_id)
+        if not plc_config:
+            logger.error(f"No plc config for {plc_id}")
+            raise ValueError(f"No plc config for {plc_id}")
+
         register_config: Dict[str, Any] | None = config_manager.get_register_config(plc_id, address)
         if not register_config:
+            logger.error(f"No register config for {plc_id} register: {address}")
             raise ValueError(f"No register config for {plc_id} register: {address}")
 
         logger.debug(f"Validating data for PLC {plc_id}, register {address}: {data}")
@@ -92,6 +101,7 @@ class TagService:
     def _construct_payload(self, plc_id, address, data) -> List[Any]:
         logger.debug(f"Constructing payload for {plc_id}: {address} with data {data}")
         if not self._is_valid_data(plc_id, address, data):
+            logger.error(f"Invalid data {data} for {plc_id} register: {address}")
             raise ValueError(f"Invalid data {data} for {plc_id} register: {address}")
 
         register_config = config_manager.get_register_config(plc_id, address) or None
@@ -125,7 +135,16 @@ class TagService:
         Get data model (yaml) register address from tag name
         * Data model is 1-based unlike Modbus PDU which is 0-based
         """
-        registers = config_manager.register_maps[plc_id]
+
+        if plc_id not in config_manager.plc_configs:
+            logger.error(f"No plc config for {plc_id}")
+            raise ValueError(f"No plc config for {plc_id}")
+
+        registers = config_manager.register_maps.get(plc_id)
+        if not registers:
+            logger.error(f"No registers found for plc {plc_id}")
+            raise ValueError(f"No registers found for plc {tag_name}")
+
 
         address = None
         for register_address, config in registers.items():
@@ -135,6 +154,7 @@ class TagService:
         if not address:
             raise ValueError(f"No Address found for tag {tag_name}")
 
+        logger.debug(f"Determined address for {plc_id}: {tag_name} -> {address}")
         return address
         
 

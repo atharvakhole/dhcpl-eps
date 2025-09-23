@@ -33,17 +33,17 @@ async def test_app():
     
     try:
         # Load your existing configurations
-        print("Loading configurations...")
-        plc_configs = config_manager.load_plc_configs()
-        register_maps = config_manager.load_register_maps()
-
-        print(f"Found {len(plc_configs)} PLCs:")
-        for config in plc_configs:
-            print(f"  - {config.plc_id}: {config.host}:{config.port} :{config.vendor}: {config.addressing_scheme}")
-
-        print(f"Found {len(register_maps)} registers:")
-        for plc_name, register_map in register_maps.items():
-            print(plc_name, register_map)
+        # print("Loading configurations...")
+        # plc_configs = config_manager.load_plc_configs()
+        # register_maps = config_manager.load_register_maps()
+        #
+        # print(f"Found {len(plc_configs)} PLCs:")
+        # for config in plc_configs:
+        #     print(f"  - {config.plc_id}: {config.host}:{config.port} :{config.vendor}: {config.addressing_scheme}")
+        #
+        # print(f"Found {len(register_maps)} registers:")
+        # for plc_name, register_map in register_maps.items():
+        #     print(plc_name, register_map)
 
         # print("Testing convert_modbus_address")
         # print(convert_modbus_address(6879, config_manager.get_plc_config("EPS01").addressing_scheme, register_config=config_manager.get_register_config("EPS01", 6879)))
@@ -91,12 +91,11 @@ async def test_app():
         # print(connection_manager.get_connection_status())
 
         tag_service = TagService()
-        print(tag_service._construct_payload("EPS01", 7449, 1))
-        print(tag_service._construct_payload("EPS01", 6879, 1))
+        tag_service.write_tag("EPS01", "TEST_DIGITAL_04", 1)
 
 
     except Exception as e:
-        print(e)
+        pass
 
 
 if __name__ == "__main__":
