@@ -5,7 +5,7 @@ from typing import Any, Dict, List, Optional, Union
 
 from pymodbus.exceptions import ConnectionException, ModbusException
 from app.config import ConfigManager
-from app.models.connection_manager import ConnectionMetrics, ConnectionState, ModbusOperation, Priority
+from app.models.connection_manager import ConnectionMetrics, ConnectionState, ModbusOperation
 from app.models.plc_config import PLCConfig
 from pymodbus.client import AsyncModbusTcpClient
 from contextlib import asynccontextmanager

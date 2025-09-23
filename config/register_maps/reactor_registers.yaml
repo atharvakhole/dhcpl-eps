@@ -31,24 +31,26 @@ registers:
       description: "Digital Out for testing"
       stored_as: "float32"
       decode_as: "float32"
+      encode_as: "float32"
       scaling_factor: 1.0
-      units: "C"
+      units: ""
       min_value: 0
-      max_value: 200
-      readonly: true
+      max_value: 1
+      readonly: false
       critical: true
-      tag_type: "Analog"
+      tag_type: "Digital"
       register_type: "holding_register"
     6879:
       name: "TEST_ANALOG_01"
       description: "Analog Out for testing"
       stored_as: "float32"
       decode_as: "float32"
+      encode_as: "float32"
       scaling_factor: 1.0
       units: "C"
       min_value: 0
       max_value: 200
-      readonly: true
+      readonly: false
       critical: true
       tag_type: "Analog"
       register_type: "holding_register"
