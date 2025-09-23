@@ -264,16 +264,20 @@ class PLCConnection:
                         return result.bits
                     
                     elif operation.operation_type == 'write_register':
+                        print('-' * 40)
+                        print(operation.address, operation.values, unit_id)
                         result = await client.write_register(
-                            operation.address, operation.values, unit_id
+                            operation.address, operation.values, unit_id,
                         )
                         if result.isError():
                             raise ModbusException(f"Modbus error writing register {operation.original_address} (PDU {operation.address}): {result}")
                         return True
                     
                     elif operation.operation_type == 'write_registers':
+                        print(operation.address, operation.values)
+
                         result = await client.write_registers(
-                            operation.address, operation.values, unit_id
+                            operation.address, operation.values, unit_id,
                         )
                         if result.isError():
                             raise ModbusException(f"Modbus error writing registers {operation.original_address} (PDU {operation.address}): {result}")
@@ -423,7 +427,9 @@ class ConnectionManager:
         self._validate_plc_id(plc_id)
         
         # Convert Data Model address to PDU Protocol address
-        pdu_address, register_type = convert_modbus_address(start_address, register_config=self.config_manager.get_register_config(plc_id, start_address) | None)
+        addressing_scheme = plc_vendor=self.config_manager.get_plc_config(plc_id).addressing_scheme or 'absoulte'
+        register_config = self.config_manager.get_register_config(plc_id, start_address) or None
+        pdu_address, register_type = convert_modbus_address(start_address, addressing_scheme, register_config=register_config)
         
         # Determine operation type based on register type
         operation_type = "write_coil" if register_type == "coil" else "write_register"
@@ -441,7 +447,7 @@ class ConnectionManager:
         )
         
         if pdu_address != start_address:
-            logger.debug(f"{plc_id} write address conversion: {start_address} → {pdu_address} ({register_type}")
+            logger.debug(f"{plc_id} write address conversion: {start_address} → {pdu_address} ({register_type})")
         
         return await self.plc_connections[plc_id].execute_operation(operation)
     
@@ -452,10 +458,12 @@ class ConnectionManager:
         self._validate_plc_id(plc_id)
         
         # Convert Data Model address to PDU Protocol address
-        pdu_address, register_type = convert_modbus_address(start_address, register_config=self.config_manager.get_register_config(plc_id, start_address) | None)
+        addressing_scheme = plc_vendor=self.config_manager.get_plc_config(plc_id).addressing_scheme or 'absoulte'
+        register_config = self.config_manager.get_register_config(plc_id, start_address) or None
+        pdu_address, register_type = convert_modbus_address(start_address, addressing_scheme, register_config=register_config)
         
         # Determine operation type based on register type
-        operation_type = "write_coil" if register_type == "coil" else "write_register"
+        operation_type =  "write_registers"
         
         # Validate write operation for read-only registers
         if register_type in ["discrete_input", "input_register"]:
@@ -470,7 +478,7 @@ class ConnectionManager:
         )
         
         if pdu_address != start_address:
-            logger.debug(f"{plc_id} batch write address conversion: {start_address} → {pdu_address} ({register_type}")
+            logger.debug(f"{plc_id} batch write address conversion: {start_address} → {pdu_address} ({register_type})")
         
         return await self.plc_connections[plc_id].execute_operation(operation)
     

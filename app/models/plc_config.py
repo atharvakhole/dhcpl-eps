@@ -7,7 +7,7 @@ class PLCConfig:
     plc_id: str
     host: str
     port: int = 502
-    unit_id: int = 1
+    unit_id: int = 1 # slave id for operations
     timeout: float = 3.0
     retries: int = 3
     description: str = ""

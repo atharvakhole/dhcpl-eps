@@ -266,7 +266,7 @@ Hex Addr,Dec Addr,Tag Name,Description,Type,#,Data Type,EU,Decimal Places,Tag Ty
 0x1AD4,6869,LL_PT_101_SP,,Variable,267,float 32,,0,Analog, , ,0.00
 0x1AD6,6871,HH_PT_101_SP,,Variable,268,float 32,,0,Analog, , ,1.50
 0x1AD8,6873,H_PT_101_SP,,Variable,269,float 32,,0,Analog, , ,1.00
-0x1ADA,6875,L_PT_101_SP,,Variable,270,float 32,,0,Analog, , ,0.00
+0x1ADA,6875,L_PT_101_SP,,Variable,270,float 32,,0,Analog, , ,0.00mapp
 0x1AE4,6885,ACK,,Variable,275,float 32, , ,Digital,ON,OFF,OFF
 0x1AE6,6887,LL_PT_102_SP,,Variable,276,float 32,,0,Analog, , ,0.00
 0x1AE8,6889,HH_PT_102_SP,,Variable,277,float 32,,0,Analog, , ,1.50
