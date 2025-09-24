@@ -16,27 +16,19 @@ sys.path.append(str(Path(__file__).parent))
 from app.core.connection_manager import (
     connection_manager,
     initialize_connections, shutdown_connections, 
-    read_register, write_register, read_registers, 
     get_health_status, get_connection_status
 )
 from app.config import config_manager
-
-logging.basicConfig(level=logging.DEBUG, format='%(levelname)s: %(message)s')
-logger = logging.getLogger(__name__)
-
+from app.utilities.telemetry import logger
 
 async def test_app():
     """Test app with existing configurations"""
-    
-    print("🔧 Testing App")
-    print("-" * 40)
-    
     try:
         # Load your existing configurations
-        # print("Loading configurations...")
-        # plc_configs = config_manager.load_plc_configs()
-        # register_maps = config_manager.load_register_maps()
-        #
+        logger.info("Loading configurations...")
+        plc_configs = config_manager.load_plc_configs()
+        register_maps = config_manager.load_register_maps()
+
         # print(f"Found {len(plc_configs)} PLCs:")
         # for config in plc_configs:
         #     print(f"  - {config.plc_id}: {config.host}:{config.port} :{config.vendor}: {config.addressing_scheme}")
@@ -50,7 +42,7 @@ async def test_app():
         #
         #
         # print("Testing connection_manager")
-        # await connection_manager.initialize(plc_configs, config_manager)
+        await connection_manager.initialize(plc_configs, config_manager)
         #
         # try:
         #     result = await connection_manager.read_registers('EPS01', 7449, 2)
@@ -91,7 +83,8 @@ async def test_app():
         # print(connection_manager.get_connection_status())
 
         tag_service = TagService()
-        tag_service.write_tag("EPS01", "TEST_DIGITAL_04", 1)
+        await tag_service.write_tag("EPS01", "TEST_ANALOG_01", 78.5)
+        await tag_service.read_tag("EPS01", "TEST_ANALOG_01")
 
 
     except Exception as e:

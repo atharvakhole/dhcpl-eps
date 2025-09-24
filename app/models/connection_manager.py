@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 from datetime import datetime 
 from enum import Enum
-from typing import List, Optional, Union
+from typing import Any, List, Optional, Union
 from collections import deque
 
 class ConnectionState(Enum):
@@ -43,8 +43,8 @@ class ModbusOperation:
     operation_type: str      # PDU function type: 'read_holding', 'read_input', etc.
     address: int             # PDU Protocol address (0-based, for wire)
     original_address: int    # Data Model address (1-based, from YAML/user)
+    values: Optional[List[Any]] = None
     count: Optional[int] = None
-    values: Optional[Union[int, List[int]]] = None
     unit_id: Optional[int] = None
     priority: Priority = Priority.NORMAL
     timeout: Optional[float] = None

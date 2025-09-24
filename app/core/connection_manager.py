@@ -11,9 +11,7 @@ from pymodbus.client import AsyncModbusTcpClient
 from contextlib import asynccontextmanager
 import asyncio
 
-from app.utilities.registers import convert_modbus_address
-
-logger = logging.getLogger(__name__)
+from app.utilities.telemetry import logger
 
 class CircuitBreaker:
     """Circuit breaker for PLC connection protection"""
@@ -232,11 +230,15 @@ class PLCConnection:
                     
                     # All PyModbus functions use PDU Protocol addressing (0-based)
                     if operation.operation_type == 'read_holding':
+                        logger.debug(f"Executing read_holding with retry")
                         result = await client.read_holding_registers(
                             operation.address, operation.count, unit_id
                         )
                         if result.isError():
                             raise ModbusException(f"Modbus error reading holding register {operation.original_address} (PDU {operation.address}): {result}")
+                        logger.debug(f"Executed read_holding_registers", extra={
+                            "registers": result.registers
+                        })
                         return result.registers
                     
                     elif operation.operation_type == 'read_input':
@@ -354,138 +356,61 @@ class ConnectionManager:
         
         self.is_initialized = False
         logger.info("Connection Manager shutdown complete")
-    
-    def _validate_plc_id(self, plc_id: str):
-        """Validate PLC ID exists"""
-        if not self.is_initialized:
-            raise RuntimeError("Connection Manager not initialized")
-        
-        if plc_id not in self.plc_connections:
-            raise ValueError(f"Unknown PLC ID: {plc_id}")
-    
 
-    async def read_registers(self, plc_id: str, start_address: int, count: int, unit_id: Optional[int] = None) -> List[float]:
-        from pymodbus.payload import BinaryPayloadDecoder
-        from pymodbus.constants import Endian
+
+    async def execute_operation(self, plc_id: str, operation: ModbusOperation) -> Any:
         """
-        Read multiple registers with automatic Data Model → PDU address conversion
+        Broker to execute a valid ModbusOperation on a PLCConnection
         
-        Converts Data Model addresses (40001, 30001, etc.) to PDU Protocol addresses (0-based)
-        per official Modbus specification
+        Args:
+            plc_id: Identifier of the target PLC
+            operation: ModbusOperation object containing operation details
+            
+        Returns:
+            Result from the PLC operation
+            
+        Raises:
+            ValueError: If PLC ID is invalid or connection doesn't exist
+            ConnectionError: If PLC communication fails
+            Exception: For other operation execution failures
         """
-        self._validate_plc_id(plc_id)
+        start_time = time.time()
+        operation_type = getattr(operation, 'operation_type', 'unknown')
+        logger.info(f"Executing {operation_type} on PLC {plc_id}")
         
-        # Convert Data Model address to PDU Protocol address
-        addressing_scheme = plc_vendor=self.config_manager.get_plc_config(plc_id).addressing_scheme or 'absoulte'
-        register_config = self.config_manager.get_register_config(plc_id, start_address) or None
-        pdu_address, register_type = convert_modbus_address(start_address, addressing_scheme, register_config=register_config)
-        
-        operation_type_map = {
-            "holding_register": "read_holding",
-            "input_register": "read_input", 
-            "discrete_input": "read_discrete",
-            "coil": "read_coil"
-        }
-        
-        operation_type = operation_type_map.get(register_type, "read_holding")
-        
-        operation = ModbusOperation(
-            operation_type=operation_type,
-            address=pdu_address,
-            original_address=start_address,
-            count=count,
-            unit_id=unit_id
-        )
-        
-        logger.debug(f"Address conversion: Data Model {start_address} → PDU {pdu_address} ({register_type})")
-        
-        raw_registers = await self.plc_connections[plc_id].execute_operation(operation)
-        
-        # Decode registers to float32 values
-        decoder = BinaryPayloadDecoder.fromRegisters(
-            raw_registers, 
-            byteorder=Endian.BIG, 
-            wordorder=Endian.BIG
-        )
-        
-        decoded_values = []
-        for _ in range(count // 2):  # Each float32 uses 2 registers
-            decoded_values.append(decoder.decode_32bit_float())
-        
-        return decoded_values
-    
-    async def read_register(self, plc_id: str, address: int, unit_id: Optional[int] = None) -> int:
-        """Read single register with automatic address conversion"""
-        result = await self.read_registers(plc_id, address, 1, unit_id)
-        return result[0] if result else None
-    
-    
-    async def write_register(self, plc_id: str, start_address: int, value: Union[int, bool], unit_id: Optional[int] = None) -> bool:
-        """
-        Write single register with vendor-specific address conversion and type detection
-        """
-        self._validate_plc_id(plc_id)
-        
-        # Convert Data Model address to PDU Protocol address
-        addressing_scheme = plc_vendor=self.config_manager.get_plc_config(plc_id).addressing_scheme or 'absoulte'
-        register_config = self.config_manager.get_register_config(plc_id, start_address) or None
-        pdu_address, register_type = convert_modbus_address(start_address, addressing_scheme, register_config=register_config)
-        
-        # Determine operation type based on register type
-        operation_type = "write_coil" if register_type == "coil" else "write_register"
-        
-        # Validate write operation for read-only registers
-        if register_type in ["discrete_input", "input_register"]:
-            raise ValueError(f"Cannot write to read-only register type: {register_type}")
-        
-        operation = ModbusOperation(
-            operation_type=operation_type,
-            address=pdu_address,
-            original_address=start_address,
-            values=value,
-            unit_id=unit_id
-        )
-        
-        if pdu_address != start_address:
-            logger.debug(f"{plc_id} write address conversion: {start_address} → {pdu_address} ({register_type})")
-        
-        return await self.plc_connections[plc_id].execute_operation(operation)
-    
-    async def write_registers(self, plc_id: str, start_address: int, values: List[Union[int, bool]], unit_id: Optional[int] = None) -> bool:
-        """
-        Write multiple registers with vendor-specific address conversion and type detection
-        """
-        self._validate_plc_id(plc_id)
-        
-        # Convert Data Model address to PDU Protocol address
-        addressing_scheme = plc_vendor=self.config_manager.get_plc_config(plc_id).addressing_scheme or 'absoulte'
-        register_config = self.config_manager.get_register_config(plc_id, start_address) or None
-        pdu_address, register_type = convert_modbus_address(start_address, addressing_scheme, register_config=register_config)
-        
-        # Determine operation type based on register type
-        operation_type =  "write_registers"
-        
-        # Validate write operation for read-only registers
-        if register_type in ["discrete_input", "input_register"]:
-            raise ValueError(f"Cannot write to read-only register type: {register_type}")
-        
-        operation = ModbusOperation(
-            operation_type=operation_type,
-            address=pdu_address,
-            original_address=start_address,
-            values=values,
-            unit_id=unit_id
-        )
-        
-        if pdu_address != start_address:
-            logger.debug(f"{plc_id} batch write address conversion: {start_address} → {pdu_address} ({register_type})")
-        
-        return await self.plc_connections[plc_id].execute_operation(operation)
-    
+        try:
+            # Validate inputs
+            if not plc_id or not operation:
+                raise ValueError("PLC ID and operation are required")
+                
+            # Check connection exists
+            if plc_id not in self.plc_connections:
+                available_plcs = list(self.plc_connections.keys())
+                logger.error(f"PLC {plc_id} not found. Available: {available_plcs}")
+                raise ValueError(f"No connection found for PLC {plc_id}")
+            
+            # Execute the operation
+            result = await self.plc_connections[plc_id].execute_operation(operation)
+            
+            duration_ms = int((time.time() - start_time) * 1000)
+            logger.info(f"{operation_type} completed on PLC {plc_id} in {duration_ms}ms")
+            return result
+            
+        except Exception as e:
+            duration_ms = int((time.time() - start_time) * 1000)
+            logger.error(f"{operation_type} failed on PLC {plc_id}: {e}", extra={
+                "operation": "execute_operation",
+                "plc_id": plc_id,
+                "operation_type": operation_type,
+                "error": str(e),
+                "duration_ms": duration_ms
+            })
+            raise Exception(f"Failed to execute {operation_type} on PLC {plc_id}: {e}") from e
+
+
     def get_connection_status(self, plc_id: Optional[str] = None) -> Dict[str, Any]:
         """Get connection status for specified PLC or all PLCs"""
         if plc_id:
-            self._validate_plc_id(plc_id)
             return self._get_plc_status(self.plc_connections[plc_id])
         
         return {
@@ -550,22 +475,6 @@ async def initialize_connections(plc_configs: List[PLCConfig], config_manager: C
 async def shutdown_connections():
     """Shutdown global connection manager"""
     await connection_manager.shutdown()
-
-async def read_register(plc_id: str, address: int, unit_id: Optional[int] = None) -> Union[int, bool]:
-    """Read single register (returns int for analog, bool for digital)"""
-    return await connection_manager.read_register(plc_id, address, unit_id)
-
-async def write_register(plc_id: str, address: int, value: Union[int, bool], unit_id: Optional[int] = None) -> bool:
-    """Write single register (accepts int for analog, bool for digital)"""
-    return await connection_manager.write_register(plc_id, address, value, unit_id)
-
-async def read_registers(plc_id: str, start_address: int, count: int, unit_id: Optional[int] = None) -> List[Union[int, bool]]:
-    """Read multiple registers (returns list of int/bool based on register type)"""
-    return await connection_manager.read_registers(plc_id, start_address, count, unit_id)
-
-async def write_registers(plc_id: str, start_address: int, values: List[Union[int, bool]], unit_id: Optional[int] = None) -> bool:
-    """Write multiple registers (accepts list of int/bool based on register type)"""
-    return await connection_manager.write_registers(plc_id, start_address, values, unit_id)
 
 def get_connection_status(plc_id: Optional[str] = None) -> Dict[str, Any]:
     """Get connection status"""
