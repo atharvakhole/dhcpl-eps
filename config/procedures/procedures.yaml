@@ -1,0 +1,37 @@
+procedures:
+  START_HEATING_REACTOR_04:
+    description: "Start heating sequence for Reactor 04"
+    steps:
+      - name: "check_pressure"
+        type: "read"
+        plc_id: "EPS01"
+        register: "TEST_ANALOG_01"
+
+      - name: "pressure_safety_check"
+        type: "condition"
+        plc_id: "EPS01"
+        condition: "TEST_ANALOG_01 > 5.0"
+        if_true: "enable_heating"
+        if_false: "abort_procedure"
+
+      - name: "enable_heating"
+        type: "write"
+        plc_id: "EPS01"
+        register: "TEST_DIGITAL_01"
+        value: 1
+
+      - name: "wait_startup"
+        type: "wait"
+        seconds: 5
+
+      - name: "check_ready_loop"
+        type: "loop"
+        plc_id: "EPS01"
+        condition: "TEST_ANALOG_01 == 50"
+        max_iterations: 30
+
+      - name: "abort_procedure"
+        type: "write"
+        plc_id: "EPS01"
+        register: "TEST_ANALOG_01"
+        value: 50

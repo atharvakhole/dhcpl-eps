@@ -2,7 +2,6 @@
 Configuration management for Plant Control API
 """
 
-import os
 import yaml
 from typing import Dict, List, Any
 from pathlib import Path
@@ -30,6 +29,7 @@ class Settings(BaseSettings):
     # PLC Configuration
     plc_config_dir: str = "config/plc_configs"
     register_map_dir: str = "config/register_maps"
+    procedure_config_dir: str = "config/procedures"  # Add procedure config directory
     
     # Logging
     log_level: str = "INFO"
@@ -44,11 +44,12 @@ class Settings(BaseSettings):
 settings = Settings()
 
 class ConfigManager:
-    """Manages loading of PLC and register configurations"""
+    """Manages loading of PLC, register, and procedure configurations"""
     
     def __init__(self):
         self.plc_configs: Dict[str, PLCConfig] = {}
         self.register_maps: Dict[str, Dict[int, Dict[str, Any]]] = {}
+        self.procedures: Dict[str, Any] = {}  # Will store ProcedureDefinition objects
     
     def load_plc_configs(self) -> List[PLCConfig]:
         """Load all PLC configurations from YAML files"""
@@ -87,6 +88,58 @@ class ConfigManager:
         
         return self.register_maps
     
+    def load_procedures(self) -> Dict[str, Any]:
+        """
+        Load and validate all procedure configurations from YAML files
+        
+        This must be called AFTER load_plc_configs() and load_register_maps()
+        since procedures reference PLCs and registers.
+        
+        Returns:
+            Dictionary of procedure name -> ProcedureDefinition
+        """
+        if not self.plc_configs:
+            raise ValueError("Must load PLC configs before loading procedures")
+        
+        if not self.register_maps:
+            raise ValueError("Must load register maps before loading procedures")
+        
+        from app.core.procedure_loader import ProcedureLoader
+        
+        # Create procedure loader with loaded configs
+        procedure_loader = ProcedureLoader(
+            plc_configs=self.plc_configs,
+            register_maps=self.register_maps
+        )
+        
+        config_dir = Path(settings.procedure_config_dir)
+        
+        if not config_dir.exists():
+            from app.utilities.telemetry import logger
+            logger.warning(f"Procedure config directory not found: {config_dir}")
+            return {}
+        
+        all_procedures = {}
+        
+        # Load all YAML files in the procedures directory
+        for config_file in config_dir.glob("*.yaml"):
+            try:
+                procedures = procedure_loader.load_procedures_file(str(config_file))
+                all_procedures.update(procedures)
+                
+            except Exception as e:
+                from app.utilities.telemetry import logger
+                logger.error(f"Failed to load procedure file {config_file}: {e}")
+                raise ValueError(f"Failed to load procedures from {config_file}: {e}")
+        
+        # Store loaded procedures
+        self.procedures = all_procedures
+        
+        from app.utilities.telemetry import logger
+        logger.info(f"Loaded {len(all_procedures)} procedures with full validation")
+        
+        return all_procedures
+    
     def get_register_config(self, plc_id: str, register_address: int) -> Dict[str, Any]:
         """Get configuration for a specific register"""
         if plc_id not in self.register_maps:
@@ -98,11 +151,23 @@ class ConfigManager:
         return self.register_maps[plc_id][register_address]
 
     def get_plc_config(self, plc_id: str) -> PLCConfig:
-        """Get configuration for a specific register"""
+        """Get configuration for a specific PLC"""
         if plc_id not in self.plc_configs:
             raise ValueError(f"Configuration for PLC {plc_id} not found")
         
         return self.plc_configs[plc_id]
+    
+    def get_procedure(self, procedure_name: str):
+        """Get a specific procedure definition"""
+        if procedure_name not in self.procedures:
+            available_procedures = list(self.procedures.keys())
+            raise ValueError(f"Procedure '{procedure_name}' not found. Available: {available_procedures}")
+        
+        return self.procedures[procedure_name]
+    
+    def list_procedures(self) -> List[str]:
+        """Get list of all loaded procedure names"""
+        return list(self.procedures.keys())
     
     def is_register_readonly(self, plc_id: str, register_address: int) -> bool:
         """Check if a register is read-only"""
@@ -124,3 +189,11 @@ class ConfigManager:
 
 # Global config manager instance
 config_manager = ConfigManager()
+
+
+if __name__ == "__main__":
+    config_manager.load_plc_configs()
+    config_manager.load_register_maps()
+    config_manager.load_procedures()  # Must be last - validates against PLCs/registers
+
+    procedure = config_manager.get_procedure("START_HEATING_REACTOR_04")
