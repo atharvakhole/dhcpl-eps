@@ -201,6 +201,7 @@ Hex Addr,Dec Addr,Tag Name,Description,Type,#,Data Type,EU,Decimal Places,Tag Ty
 0x1A4E,6735,VAR200,,Variable,200,float 32,,0,Analog, , ,0.00
 0x1A50,6737,VAR201,,Variable,201,float 32,,0,Analog, , ,0.00
 0x1A52,6739,RX_01_VFD_SP,,Variable,202,float 32,,0,Analog, , ,0.00
+0x1A54,6741,FT_103_SET_VAL,,Variable,203,float 32,,0,Analog, , ,0.00
 0x1A56,6743,RX_02_VFD_SP,,Variable,204,float 32,,0,Analog, , ,0.00
 0x1A58,6745,FT_101_SET_VAL,,Variable,205,float 32,,0,Analog, , ,0.00
 0x1A5A,6747,RX_03_VFD_SP,,Variable,206,float 32,,0,Analog, , ,0.00
@@ -256,6 +257,7 @@ Hex Addr,Dec Addr,Tag Name,Description,Type,#,Data Type,EU,Decimal Places,Tag Ty
 0x1ABE,6847,VAR256D,,Variable,256,float 32, , ,Digital,ON,OFF,OFF
 0x1AC0,6849,PT_101_HI,,Variable,257,float 32,,0,Analog, , ,2.00
 0x1AC2,6851,PT_101_LO,,Variable,258,float 32,,0,Analog, , ,0.00
+0x1AC4,6853,PNTN_START_MSR,,Variable,259,float 32, , ,Digital,ON,OFF,OFF
 0x1AC6,6855,DOOR1,,Variable,260,float 32, , ,Digital,ON,OFF,OFF
 0x1AC8,6857,VAR261D,,Variable,261,float 32, , ,Digital,ON,OFF,OFF
 0x1ACA,6859,VAR262D,,Variable,262,float 32, , ,Digital,ON,OFF,OFF
@@ -266,7 +268,11 @@ Hex Addr,Dec Addr,Tag Name,Description,Type,#,Data Type,EU,Decimal Places,Tag Ty
 0x1AD4,6869,LL_PT_101_SP,,Variable,267,float 32,,0,Analog, , ,0.00
 0x1AD6,6871,HH_PT_101_SP,,Variable,268,float 32,,0,Analog, , ,1.50
 0x1AD8,6873,H_PT_101_SP,,Variable,269,float 32,,0,Analog, , ,1.00
-0x1ADA,6875,L_PT_101_SP,,Variable,270,float 32,,0,Analog, , ,0.00mapp
+0x1ADA,6875,L_PT_101_SP,,Variable,270,float 32,,0,Analog, , ,0.00
+0x1ADC,6877,PNTN_STP_MSR,,Variable,271,float 32, , ,Digital,ON,OFF,OFF
+0x1ADE,6879,TEST_ANALOG_01,,Variable,272,float 32,,1,Analog, , ,0.00
+0x1AE0,6881,VAR273,,Variable,273,float 32,,0,Analog, , ,0.00
+0x1AE2,6883,VAR274,,Variable,274,float 32,,0,Analog, , ,166.00
 0x1AE4,6885,ACK,,Variable,275,float 32, , ,Digital,ON,OFF,OFF
 0x1AE6,6887,LL_PT_102_SP,,Variable,276,float 32,,0,Analog, , ,0.00
 0x1AE8,6889,HH_PT_102_SP,,Variable,277,float 32,,0,Analog, , ,1.50
@@ -548,6 +554,8 @@ Hex Addr,Dec Addr,Tag Name,Description,Type,#,Data Type,EU,Decimal Places,Tag Ty
 0x1D10,7441,HH_RX_04_VFD_SP,,Variable,553,float 32,,0,Analog, , ,0.00
 0x1D12,7443,H_RX_04_VFD_SP,,Variable,554,float 32,,0,Analog, , ,0.00
 0x1D14,7445,L_RX_04_VFD_SP,,Variable,555,float 32,,0,Analog, , ,0.00
+0x1D16,7447,FCV_103_OP,,Variable,556,float 32,,1,Analog, , ,0.00
+0x1D18,7449,TEST_DIGITAL_01,,Variable,557,float 32, , ,Digital,ON,OFF,OFF
 0xEC36,60471,PT_102_LO,,Variable,836,float 32,,0,Analog, , ,0.00
 0xEC38,60473,PT_102_HI,,Variable,837,float 32,,0,Analog, , ,2.00
 0xEC3A,60475,PT_103_LO,,Variable,838,float 32,,0,Analog, , ,0.00
@@ -807,7 +815,7 @@ Hex Addr,Dec Addr,Tag Name,Description,Type,#,Data Type,EU,Decimal Places,Tag Ty
 0x21C4,8645,XV_109_STR_ON,,Signal Tag,227,float 32, , ,Digital,ON,OFF,Block 129  Output 11
 0x21C6,8647,XV_110_STR_ON,,Signal Tag,228,float 32, , ,Digital,ON,OFF,Block 129  Output 12
 0x21C8,8649,XV_111_STR_ON,,Signal Tag,229,float 32, , ,Digital,ON,OFF,Block 129  Output 13
-0x21CA,8651,XV_112_STR_ON,,Signal Tag,230,float 32, , ,Digital,ON,OFF,Block 129  Output 14
+0x21CA,8651,XV_112_STR_ON,,Signal Tag,230,float 32, , ,Digital,ON,OFF,Block 133  Output 11
 0x21CC,8653,XV_113_STR_ON,,Signal Tag,231,float 32, , ,Digital,ON,OFF,Block 129  Output 15
 0x21CE,8655,XV_114_STR_ON,,Signal Tag,232,float 32, , ,Digital,ON,OFF,Block 129  Output 16
 0x21D0,8657,XV_115_STR_ON,,Signal Tag,233,float 32, , ,Digital,ON,OFF,Block 130  Output 9
@@ -836,8 +844,8 @@ Hex Addr,Dec Addr,Tag Name,Description,Type,#,Data Type,EU,Decimal Places,Tag Ty
 0x21FE,8703,XV_138_STR_ON,,Signal Tag,256,float 32, , ,Digital,ON,OFF,Block 132  Output 16
 0x2200,8705,XV_139_STR_ON,,Signal Tag,257,float 32, , ,Digital,ON,OFF,Block 133  Output 9
 0x2202,8707,XV_140_STR_ON,,Signal Tag,258,float 32, , ,Digital,ON,OFF,Block 133  Output 10
-0x2204,8709,XV_141_STR_ON,,Signal Tag,259,float 32, , ,Digital,ON,OFF,Block 133  Output 11
-0x2206,8711,XV_142_STR_ON,,Signal Tag,260,float 32, , ,Digital,ON,OFF,Block 133  Output 12
+0x2204,8709,XV_141_STR_ON,,Signal Tag,259,float 32, , ,Digital,ON,OFF,Block 133  Output 17
+0x2206,8711,XV_142_STR_ON,,Signal Tag,260,float 32, , ,Digital,ON,OFF,Block 130  Output 17
 0x2208,8713,XV_143_STR_ON,,Signal Tag,261,float 32, , ,Digital,ON,OFF,Block 133  Output 13
 0x220A,8715,XV_144_STR_ON,,Signal Tag,262,float 32, , ,Digital,ON,OFF,Block 133  Output 14
 0x220C,8717,XV_145_STR_ON,,Signal Tag,263,float 32, , ,Digital,ON,OFF,Block 133  Output 15
@@ -923,18 +931,18 @@ Hex Addr,Dec Addr,Tag Name,Description,Type,#,Data Type,EU,Decimal Places,Tag Ty
 0x22AC,8877,TT_134,,Signal Tag,343,float 32,,0,Analog, , ,Block 191  Output 4
 0x22AE,8879,TT_135,,Signal Tag,344,float 32,,0,Analog, , ,Block 192  Output 4
 0x22B0,8881,TT_136,,Signal Tag,345,float 32,,0,Analog, , ,Block 193  Output 4
-0x22B2,8883,FT_108,,Signal Tag,346,float 32,,0,Analog, , ,Block 194  Output 4
+0x22B2,8883,PT_136,,Signal Tag,346,float 32,Kg/cm2,0,Analog, , ,Block 196  Output 4
 0x22B4,8885,LT_112,,Signal Tag,347,float 32,,0,Analog, , ,Block 195  Output 4
-0x22B6,8887,AI_SPARE_02,,Signal Tag,348,float 32,,0,Analog, , ,Block 196  Output 4
-0x22B8,8889,AI_SPARE_03,,Signal Tag,349,float 32,,0,Analog, , ,Block 197  Output 4
-0x22BA,8891,AI_SPARE_04,,Signal Tag,350,float 32,,0,Analog, , ,Block 198  Output 4
-0x22BC,8893,AI_SPARE_05,,Signal Tag,351,float 32,,0,Analog, , ,Block 199  Output 4
-0x22BE,8895,AI_SPARE_06,,Signal Tag,352,float 32,,0,Analog, , ,Block 200  Output 4
+0x22B6,8887,LT_111,,Signal Tag,348,float 32,,0,Analog, , ,Block 194  Output 4
+0x22B8,8889,FT_108,,Signal Tag,349,float 32,,0,Analog, , ,Block 197  Output 4
+0x22BA,8891,AI_SPARE_03,,Signal Tag,350,float 32,,0,Analog, , ,Block 198  Output 4
+0x22BC,8893,TT_R4JKTIL,,Signal Tag,351,float 32,,0,Analog, , ,Block 199  Output 4
+0x22BE,8895,XX_SPARE,,Signal Tag,352,float 32,,0,Analog, , ,Block 200  Output 4
 0x22C0,8897,FT_101,,Signal Tag,353,float 32,,0,Analog, , ,Block 201  Output 4
-0x22C2,8899,FT_101_A,,Signal Tag,354,float 32,,0,Analog, , ,Block 202  Output 4
+0x22C2,8899,RX_01_VFD_AMP,,Signal Tag,354,float 32,,0,Analog, , ,Block 202  Output 4
 0x22C4,8901,FT_102,,Signal Tag,355,float 32,,0,Analog, , ,Block 203  Output 4
 0x22C6,8903,FT_103,,Signal Tag,356,float 32,,0,Analog, , ,Block 204  Output 4
-0x22C8,8905,FT_103_A,,Signal Tag,357,float 32,,0,Analog, , ,Block 205  Output 4
+0x22C8,8905,RX_02_VFD_AMP,,Signal Tag,357,float 32,,0,Analog, , ,Block 205  Output 4
 0x22CA,8907,CHINA_VFD,,Signal Tag,358,float 32,,0,Analog, , ,Block 206  Output 4
 0x22CC,8909,USA_VFD,,Signal Tag,359,float 32,,0,Analog, , ,Block 207  Output 4
 0x22CE,8911,H_TK_VFD01,,Signal Tag,360,float 32,,0,Analog, , ,Block 208  Output 4
@@ -943,9 +951,9 @@ Hex Addr,Dec Addr,Tag Name,Description,Type,#,Data Type,EU,Decimal Places,Tag Ty
 0x22D4,8917,RX_02_VFD,,Signal Tag,363,float 32,,0,Analog, , ,Block 211  Output 4
 0x22D6,8919,RX_03_VFD,,Signal Tag,364,float 32,,0,Analog, , ,Block 212  Output 4
 0x22D8,8921,RX_04_VFD,,Signal Tag,365,float 32,,0,Analog, , ,Block 213  Output 4
-0x22DA,8923,AI_SPARE_07,,Signal Tag,366,float 32,,0,Analog, , ,Block 214  Output 4
-0x22DC,8925,AI_SPARE_08,,Signal Tag,367,float 32,,0,Analog, , ,Block 215  Output 4
-0x22DE,8927,AI_SPARE_09,,Signal Tag,368,float 32,,0,Analog, , ,Block 216  Output 4
+0x22DA,8923,RX_03_VFD_AMP,,Signal Tag,366,float 32,,0,Analog, , ,Block 214  Output 4
+0x22DC,8925,FT_R4JKTIL,,Signal Tag,367,float 32,,0,Analog, , ,Block 215  Output 4
+0x22DE,8927,RX_04_VFD_AMP,,Signal Tag,368,float 32,,0,Analog, , ,Block 216  Output 4
 0x22E0,8929,SRN_RW_PMP01_CMD,,Signal Tag,369,float 32, , ,Digital,ON,OFF,Block 217  Output 11
 0x22E2,8931,SRN_RW_PMP01_STS,,Signal Tag,370,float 32,,0,Analog, , ,Block 217  Output 10
 0x22E4,8933,SRN_RW_PMP02_CMD,,Signal Tag,371,float 32, , ,Digital,ON,OFF,Block 221  Output 11
@@ -1148,7 +1156,7 @@ Hex Addr,Dec Addr,Tag Name,Description,Type,#,Data Type,EU,Decimal Places,Tag Ty
 0x246E,9327,RX_04_VFD_REF,,Signal Tag,568,float 32,,0,Analog, , ,Block 582  Output 4
 0x2470,9329,FCV_101_REF,,Signal Tag,569,float 32,%,1,Analog, , ,Block 588  Output 18
 0x2472,9331,FCV_102_REF,,Signal Tag,570,float 32,%,1,Analog, , ,Block 592  Output 18
-0x2474,9333,FCV_103_REF,,Signal Tag,571,float 32,%,1,Analog, , ,Block 596  Output 18
+0x2474,9333,FCV_103_CV_REF,,Signal Tag,571,float 32,%,1,Analog, , ,Block 1484  Output 1
 0x2476,9335,FCV_104_REF,,Signal Tag,572,float 32,%,1,Analog, , ,Block 600  Output 18
 0x2478,9337,FCV_105_REF,,Signal Tag,573,float 32,%,1,Analog, , ,Block 604  Output 18
 0x247A,9339,STR_FD_PMP01_ON,,Signal Tag,574,float 32, , ,Digital,ON,OFF,Block 101  Output 9
@@ -1568,17 +1576,17 @@ Hex Addr,Dec Addr,Tag Name,Description,Type,#,Data Type,EU,Decimal Places,Tag Ty
 0x27B6,10167,FL_TT_134,,Signal Tag,988,float 32, , ,Digital,ON,OFF,Block 191  Output 5
 0x27B8,10169,FL_TT_135,,Signal Tag,989,float 32, , ,Digital,ON,OFF,Block 192  Output 5
 0x27BA,10171,FL_TT_136,,Signal Tag,990,float 32, , ,Digital,ON,OFF,Block 193  Output 5
-0x27BC,10173,FL_FT_108,,Signal Tag,991,float 32, , ,Digital,ON,OFF,Block 194  Output 5
+0x27BC,10173,FL_FT_111,,Signal Tag,991,float 32, , ,Digital,ON,OFF,Block 194  Output 5
 0x27BE,10175,0195-005,,Signal Tag,992,float 32, , ,Digital,ON,OFF,Block 195  Output 5
 0x27C0,10177,0196-005,,Signal Tag,993,float 32, , ,Digital,ON,OFF,Block 196  Output 5
-0x27C2,10179,0197-005,,Signal Tag,994,float 32, , ,Digital,ON,OFF,Block 197  Output 5
+0x27C2,10179,FL_FT_108,,Signal Tag,994,float 32, , ,Digital,ON,OFF,Block 197  Output 5
 0x27C4,10181,0198-005,,Signal Tag,995,float 32, , ,Digital,ON,OFF,Block 198  Output 5
 0x27C6,10183,0199-005,,Signal Tag,996,float 32, , ,Digital,ON,OFF,Block 199  Output 5
 0x27C8,10185,0200-005,,Signal Tag,997,float 32, , ,Digital,ON,OFF,Block 200  Output 5
 0x27CA,10187,FL_FT_101,,Signal Tag,998,float 32, , ,Digital,ON,OFF,Block 201  Output 5
-0x27CC,10189,FL_FT_101_A,,Signal Tag,999,float 32, , ,Digital,ON,OFF,Block 202  Output 5
+0x27CC,10189,RX_02_VFD_AMP_F,,Signal Tag,999,float 32, , ,Digital,ON,OFF,Block 202  Output 5
 0x27CE,10191,FL_FT_102,,Signal Tag,1000,float 32, , ,Digital,ON,OFF,Block 203  Output 5
-0x4330,17201,FL_FT_103_A,,Signal Tag,1001,float 32, , ,Digital,ON,OFF,Block 205  Output 5
+0x4330,17201,RX_02_VFD_F,,Signal Tag,1001,float 32, , ,Digital,ON,OFF,Block 205  Output 5
 0x4332,17203,FL_CHINA_VFD,,Signal Tag,1002,float 32, , ,Digital,ON,OFF,Block 206  Output 5
 0x4334,17205,FL_USA_VFD,,Signal Tag,1003,float 32, , ,Digital,ON,OFF,Block 207  Output 5
 0x4336,17207,FL_H_TK_VFD01,,Signal Tag,1004,float 32, , ,Digital,ON,OFF,Block 208  Output 5
@@ -1615,13 +1623,22 @@ Hex Addr,Dec Addr,Tag Name,Description,Type,#,Data Type,EU,Decimal Places,Tag Ty
 0x4374,17269,RCT_RX04_VFD_AT,,Signal Tag,1035,float 32, , ,Digital,ON,OFF,Variable #:865
 0x4376,17271,START_M,,Signal Tag,1036,float 32, , ,Digital,ON,OFF,Variable #:193
 0x4378,17273,STOP_M,,Signal Tag,1037,float 32, , ,Digital,ON,OFF,Variable #:195
-0x437A,17275,FT_102_GRT,,Signal Tag,1038,float 32, , ,Digital,ON,OFF,Block 1156  Output 2
+0x437A,17275,FT_102_GRT,,Signal Tag,1038,float 32, , ,Digital,ON,OFF,Block 1456  Output 1
 0x437C,17277,SRN_RW_PMP01_F,,Signal Tag,1039,float 32, , ,Digital,ON,OFF,Block 217  Output 8
 0x437E,17279,0233-008,,Signal Tag,1040,float 32, , ,Digital,ON,OFF,Block 233  Output 8
 0x4380,17281,0237-008,,Signal Tag,1041,float 32, , ,Digital,ON,OFF,Block 237  Output 8
 0x4382,17283,STR_START_M,,Signal Tag,1042,float 32, , ,Digital,ON,OFF,Variable #:207
 0x4384,17285,STR_STOP_M,,Signal Tag,1043,float 32, , ,Digital,ON,OFF,Variable #:209
-0x4386,17287,FT_101_GRT,,Signal Tag,1044,float 32, , ,Digital,ON,OFF,Block 1247  Output 2
+0x4386,17287,FT_101_GRT,,Signal Tag,1044,float 32, , ,Digital,ON,OFF,Block 1458  Output 1
 0x4388,17289,FT_101_TOTALIZER,,Signal Tag,1045,float 32,,0,Analog, , ,Block 613  Output 1
 0x438A,17291,A4,,Signal Tag,1046,float 32, , ,Digital,ON,OFF,Block 1440  Output 1
 0x438C,17293,ALARM,,Signal Tag,1047,float 32, , ,Digital,ON,OFF,Block 1442  Output 1
+0x438E,17295,FT_102_MT,,Signal Tag,1048,float 32,,0,Analog, , ,Block 1444  Output 1
+0x4390,17297,FT_101_MT,,Signal Tag,1049,float 32,,0,Analog, , ,Block 1446  Output 1
+0x4392,17299,PNTN_STRT_MSR,,Signal Tag,1050,float 32, , ,Digital,ON,OFF,Variable #:259
+0x4394,17301,PNTN_STP_MSRE,,Signal Tag,1051,float 32, , ,Digital,ON,OFF,Variable #:271
+0x4396,17303,FT_103_GRT,,Signal Tag,1052,float 32, , ,Digital,ON,OFF,Block 1461  Output 1
+0x4398,17305,FT_103_MT,,Signal Tag,1053,float 32,,0,Analog, , ,Block 1465  Output 1
+0x439A,17307,LT_103_M3,,Signal Tag,1054,float 32,,0,Analog, , ,Block 1469  Output 1
+0x439C,17309,1486-002,,Signal Tag,1055,float 32, , ,Digital,ON,OFF,Block 1486  Output 2
+0x439E,17311,1486-001,,Signal Tag,1056,float 32, , ,Digital,ON,OFF,Block 1486  Output 1

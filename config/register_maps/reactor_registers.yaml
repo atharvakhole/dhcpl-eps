@@ -13,19 +13,62 @@ registers:
   #     tag_type: "Analog"
   #     register_type: "holding_register"
   EPS01:
-    # 8841:
-    #   name: "TT_JACKET_RX04"
-    #   description: "Temperature Transmitter - Reactor 04 Jacket"
-    #   stored_as: "float32"
-    #   decode_as: "float32"
-    #   scaling_factor: 1.0
-    #   units: "C"
-    #   min_value: 0
-    #   max_value: 200
-    #   readonly: true
-    #   critical: true
-    #   tag_type: "Analog"
-    #   register_type: "holding_register"
+    8789:
+      name: "PRESSURE_RX04"
+      description: "Reactor pressure"
+      stored_as: "float32"
+      decode_as: "float32"
+      encode_as: "float32"
+      scaling_factor: 1.0
+      units: ""
+      min_value: 0
+      max_value: 200
+      readonly: true
+      critical: true
+      tag_type: "Analog"
+      register_type: "holding_register"
+    8835:
+      name: "MT_RX04_TOP"
+      description: "Mass temperature top"
+      stored_as: "float32"
+      decode_as: "float32"
+      encode_as: "float32"
+      scaling_factor: 1.0
+      units: ""
+      min_value: 0
+      max_value: 200
+      readonly: true
+      critical: true
+      tag_type: "Analog"
+      register_type: "holding_register"
+    8837:
+      name: "MT_RX04_BOTTOM"
+      description: "Mass temperature bottom"
+      stored_as: "float32"
+      decode_as: "float32"
+      encode_as: "float32"
+      scaling_factor: 1.0
+      units: ""
+      min_value: 0
+      max_value: 200
+      readonly: true
+      critical: true
+      tag_type: "Analog"
+      register_type: "holding_register"
+    8893:
+      name: "IL_T_RX04_JACKET"
+      description: "Reactor jacket Inlet temperature"
+      stored_as: "float32"
+      decode_as: "float32"
+      encode_as: "float32"
+      scaling_factor: 1.0
+      units: ""
+      min_value: 0
+      max_value: 200
+      readonly: true
+      critical: true
+      tag_type: "Analog"
+      register_type: "holding_register"
     7449:
       name: "TEST_DIGITAL_01"
       description: "Digital Out for testing"
