@@ -125,9 +125,9 @@ registers:
       critical: true
       tag_type: "Analog"
       register_type: "holding_register"
-    8845:
+    8847:
       name: "HW_OL_T_RX04"
-      description: "Reactor 4 hot water inlet temperature"
+      description: "Reactor 4 hot water outlet temperature"
       stored_as: "float32"
       decode_as: "float32"
       encode_as: "float32"
