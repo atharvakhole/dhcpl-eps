@@ -69,6 +69,76 @@ registers:
       critical: true
       tag_type: "Analog"
       register_type: "holding_register"
+    8925:
+      name: "FLOW_RX04_JACKET_IL"
+      description: "Reactor 04 jacket inlet flow rate"
+      stored_as: "float32"
+      decode_as: "float32"
+      encode_as: "float32"
+      scaling_factor: 1.0
+      units: ""
+      min_value: 0
+      max_value: 2000
+      readonly: true
+      critical: true
+      tag_type: "Analog"
+      register_type: "holding_register"
+    8885:
+      name: "LEVEL_T_RX04"
+      description: "Reactor 04 level transsmitter"
+      stored_as: "float32"
+      decode_as: "float32"
+      encode_as: "float32"
+      scaling_factor: 1.0
+      units: ""
+      min_value: 0
+      max_value: 2000
+      readonly: true
+      critical: true
+      tag_type: "Analog"
+      register_type: "holding_register"
+    8841:
+      name: "T_RX04_JACKET"
+      description: "Reactor 04 jacket temperature"
+      stored_as: "float32"
+      decode_as: "float32"
+      encode_as: "float32"
+      scaling_factor: 1.0
+      units: ""
+      min_value: 0
+      max_value: 200
+      readonly: true
+      critical: true
+      tag_type: "Analog"
+      register_type: "holding_register"
+    8845:
+      name: "HW_IL_T_RX04"
+      description: "Reactor 4 hot water inlet temperature"
+      stored_as: "float32"
+      decode_as: "float32"
+      encode_as: "float32"
+      scaling_factor: 1.0
+      units: ""
+      min_value: 0
+      max_value: 200
+      readonly: true
+      critical: true
+      tag_type: "Analog"
+      register_type: "holding_register"
+    8845:
+      name: "HW_OL_T_RX04"
+      description: "Reactor 4 hot water inlet temperature"
+      stored_as: "float32"
+      decode_as: "float32"
+      encode_as: "float32"
+      scaling_factor: 1.0
+      units: ""
+      min_value: 0
+      max_value: 200
+      readonly: true
+      critical: true
+      tag_type: "Analog"
+      register_type: "holding_register"
     7449:
       name: "TEST_DIGITAL_01"
       description: "Digital Out for testing"
