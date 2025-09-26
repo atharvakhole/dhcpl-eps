@@ -4,8 +4,8 @@ from typing import Any, Dict, List, Optional
 import time
 from datetime import datetime
 
-from ...app.core.connection_manager import connection_manager
-from ...app.utilities.telemetry import logger
+from plant_control.app.core.connection_manager import connection_manager
+from plant_control.app.utilities.telemetry import logger
 
 
 # Enums for health states

@@ -4,7 +4,7 @@ from typing import Any, Dict, List, Optional
 from pathlib import Path
 import re
 
-from ...app.utilities.telemetry import logger
+from plant_control.app.utilities.telemetry import logger
 
 
 @dataclass

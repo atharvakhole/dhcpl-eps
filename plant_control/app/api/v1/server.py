@@ -8,21 +8,21 @@ import uvicorn
 import time
 
 # Import your modules
-from ....app.core.tag_service import (
+from plant_control.app.core.tag_service import (
     TagService, TagServiceError, ConfigurationError, ValidationError, 
     AddressResolutionError, EncodingError, ConnectionError,
     TagReadResult, TagWriteResult, BulkReadResponse, BulkWriteResponse,
     ReadStatus, WriteStatus
 )
-from ....app.config import config_manager
-from ....app.core.connection_manager import connection_manager
-from ....app.utilities.telemetry import logger
-from ....app.core.health_service import (
+from plant_control.app.config import config_manager
+from plant_control.app.core.connection_manager import connection_manager
+from plant_control.app.utilities.telemetry import logger
+from plant_control.app.core.health_service import (
     HealthService, SystemHealth, SystemDiagnostics, PLCHealth, 
     PerformanceMetrics, ServiceHealth, ComponentStatus
 )
-from ....app.core.procedure_execution_engine import ProcedureExecutor, ExecutionResult
-from ....app.config import config_manager
+from plant_control.app.core.procedure_execution_engine import ProcedureExecutor, ExecutionResult
+from plant_control.app.config import config_manager
 
 
 @asynccontextmanager

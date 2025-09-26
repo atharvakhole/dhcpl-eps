@@ -3,10 +3,10 @@ from pymodbus.payload import BinaryPayloadBuilder, BinaryPayloadDecoder
 from typing import Any, Dict, List, Optional, Tuple
 import time
 import asyncio
-from ...app.models.connection_manager import ModbusOperation
-from ...app.core.connection_manager import connection_manager
-from ...app.utilities.telemetry import logger
-from ...app.config import config_manager
+from plant_control.app.models.connection_manager import ModbusOperation
+from plant_control.app.core.connection_manager import connection_manager
+from plant_control.app.utilities.telemetry import logger
+from plant_control.app.config import config_manager
 from dataclasses import dataclass
 from enum import Enum
 

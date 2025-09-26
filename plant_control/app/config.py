@@ -6,7 +6,9 @@ import yaml
 from typing import Dict, List, Any
 from pathlib import Path
 from pydantic_settings import BaseSettings
-from ..app.models.plc_config import PLCConfig
+from plant_control.app.models.plc_config import PLCConfig
+from plant_control.app.core.procedure_loader import ProcedureLoader
+from plant_control.app.utilities.telemetry import logger
 
 class Settings(BaseSettings):
     """Application settings"""
@@ -27,9 +29,9 @@ class Settings(BaseSettings):
     access_token_expire_minutes: int = 30
     
     # PLC Configuration
-    plc_config_dir: str = "../config/plc_configs"
-    register_map_dir: str = "../config/register_maps"
-    procedure_config_dir: str = "../config/procedures"  # Add procedure config directory
+    plc_config_dir: str = "plant_control/config/plc_configs"
+    register_map_dir: str = "plant_control/config/register_maps"
+    procedure_config_dir: str = "plant_control/config/procedures"  # Add procedure config directory
     
     # Logging
     log_level: str = "INFO"
@@ -104,7 +106,6 @@ class ConfigManager:
         if not self.register_maps:
             raise ValueError("Must load register maps before loading procedures")
         
-        from app.core.procedure_loader import ProcedureLoader
         
         # Create procedure loader with loaded configs
         procedure_loader = ProcedureLoader(
@@ -115,7 +116,6 @@ class ConfigManager:
         config_dir = Path(settings.procedure_config_dir)
         
         if not config_dir.exists():
-            from app.utilities.telemetry import logger
             logger.warning(f"Procedure config directory not found: {config_dir}")
             return {}
         
@@ -128,14 +128,12 @@ class ConfigManager:
                 all_procedures.update(procedures)
                 
             except Exception as e:
-                from app.utilities.telemetry import logger
                 logger.error(f"Failed to load procedure file {config_file}: {e}")
                 raise ValueError(f"Failed to load procedures from {config_file}: {e}")
         
         # Store loaded procedures
         self.procedures = all_procedures
         
-        from app.utilities.telemetry import logger
         logger.info(f"Loaded {len(all_procedures)} procedures with full validation")
         
         return all_procedures
