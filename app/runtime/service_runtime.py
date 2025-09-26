@@ -1,7 +1,7 @@
-from app.core.tag_service import TagService
-from app.config import config_manager
-from app.core.connection_manager import connection_manager
-from app.utilities.telemetry import logger
+from ...app.core.tag_service import TagService
+from ...app.config import config_manager
+from ...app.core.connection_manager import connection_manager
+from ...app.utilities.telemetry import logger
 
 
 class ServiceRuntime:

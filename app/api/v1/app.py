@@ -8,15 +8,21 @@ import uvicorn
 import time
 
 # Import your modules
-from app.core.tag_service import (
+from ....app.core.tag_service import (
     TagService, TagServiceError, ConfigurationError, ValidationError, 
     AddressResolutionError, EncodingError, ConnectionError,
     TagReadResult, TagWriteResult, BulkReadResponse, BulkWriteResponse,
     ReadStatus, WriteStatus
 )
-from app.config import config_manager
-from app.core.connection_manager import connection_manager
-from app.utilities.telemetry import logger
+from ....app.config import config_manager
+from ....app.core.connection_manager import connection_manager
+from ....app.utilities.telemetry import logger
+from ....app.core.health_service import (
+    HealthService, SystemHealth, SystemDiagnostics, PLCHealth, 
+    PerformanceMetrics, ServiceHealth, ComponentStatus
+)
+from ....app.core.procedure_execution_engine import ProcedureExecutor, ExecutionResult
+from ....app.config import config_manager
 
 
 @asynccontextmanager
@@ -60,12 +66,6 @@ async def lifespan(app: FastAPI):
 app = FastAPI(title="PLC Tag API", version="1.0.0", lifespan=lifespan)
 
 
-from app.core.health_service import (
-    HealthService, SystemHealth, SystemDiagnostics, PLCHealth, 
-    PerformanceMetrics, ServiceHealth, ComponentStatus
-)
-from app.core.procedure_execution_engine import ProcedureExecutor, ExecutionResult
-from app.config import config_manager
 
 # Initialize procedure executor globally (after TagService is initialized)
 procedure_executor = None  # Will be initialized in lifespan

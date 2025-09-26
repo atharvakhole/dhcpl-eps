@@ -6,7 +6,7 @@ import yaml
 from typing import Dict, List, Any
 from pathlib import Path
 from pydantic_settings import BaseSettings
-from app.models.plc_config import PLCConfig
+from ..app.models.plc_config import PLCConfig
 
 class Settings(BaseSettings):
     """Application settings"""
@@ -27,9 +27,9 @@ class Settings(BaseSettings):
     access_token_expire_minutes: int = 30
     
     # PLC Configuration
-    plc_config_dir: str = "config/plc_configs"
-    register_map_dir: str = "config/register_maps"
-    procedure_config_dir: str = "config/procedures"  # Add procedure config directory
+    plc_config_dir: str = "../config/plc_configs"
+    register_map_dir: str = "../config/register_maps"
+    procedure_config_dir: str = "../config/procedures"  # Add procedure config directory
     
     # Logging
     log_level: str = "INFO"

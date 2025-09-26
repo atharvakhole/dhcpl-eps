@@ -3,14 +3,14 @@ import time
 from typing import Any, Dict, List, Optional
 
 from pymodbus.exceptions import ConnectionException, ModbusException
-from app.config import ConfigManager
-from app.models.connection_manager import ConnectionMetrics, ConnectionState, ModbusOperation
-from app.models.plc_config import PLCConfig
+from ...app.config import ConfigManager
+from ...app.models.connection_manager import ConnectionMetrics, ConnectionState, ModbusOperation
+from ...app.models.plc_config import PLCConfig
 from pymodbus.client import AsyncModbusTcpClient
 from contextlib import asynccontextmanager
 import asyncio
 
-from app.utilities.telemetry import logger
+from ...app.utilities.telemetry import logger
 
 # Constants for better maintainability
 DEFAULT_CONNECTION_TIMEOUT = 10.0
