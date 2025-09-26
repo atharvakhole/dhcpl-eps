@@ -37,6 +37,7 @@
 - VALVES
 
   - XV_HWS_RX04
+
     - 0x1966,6503,XV_110_STR,,Variable,84,float 32, , ,Digital,ON,OFF,OFF
     - 0x1968,6505,XV_110_RST,,Variable,85,float 32, , ,Digital,ON,OFF,OFF
     - 0x196A,6507,XV_110_STR_AM,,Variable,86,float 32, , ,Digital,ON,OFF,OFF
@@ -46,6 +47,7 @@
     - 0x2386,9095,XV_110_STR_CMD,,Signal Tag,452,float 32, , ,Digital,ON,OFF,Block 370 Output 11
     - 0x2388,9097,XV_110_STS,,Signal Tag,453,float 32,,0,Analog, , ,Block 370 Output 10
     - 0x238A,9099,XV_110_AM,,Signal Tag,454,float 32, , ,Digital,ON,OFF,Variable #:86
+
   - XV_HWR_RX04
 
     - 0x196C,6509,XV_111_STR,,Variable,87,float 32, , ,Digital,ON,OFF,OFF
@@ -179,8 +181,13 @@
 
   - AGITATOR_VFD_AUTO_MODE
     0xEC70,60529,RCT_RX04_VFD_ATO,,Variable,865,float 32, , ,Digital,ON,OFF,OFF
+
   - AGITATOR_AGITATOR_VFD_START
     0x1914,6421,RCT_RX04_VFD_STR,,Variable,43,float 32, , ,Digital,ON,OFF,OFF
+
+  - AGITATOR_TRIP_FB
+
+  - AGITATOR_TRIP_RESET
     0x1916,6423,RCT_RX04_VFD_RST,,Variable,44,float 32, , ,Digital,ON,OFF,OFF
 
 0x21AA,8619,RCT_RX04_VFD_ON,,Signal Tag,214,float 32, , ,Digital,ON,OFF,Block 127 Output 14
@@ -190,6 +197,10 @@
 0x22D8,8921,RX_04_VFD,,Signal Tag,365,float 32,,0,Analog, , ,Block 213 Output 4
 0x22DE,8927,RX_04_VFD_AMP,,Signal Tag,368,float 32,,0,Analog, , ,Block 216 Output 4
 0x246E,9327,RX_04_VFD_REF,,Signal Tag,568,float 32,,0,Analog, , ,Block 582 Output 4
+
+0x207E,8319,RX_4_VFD_BY_ON,,Signal Tag,64,float 32, , ,Digital,ON,OFF,Block 108 Output 16
+0x2080,8321,RX_4_VFD_BY_TRP,,Signal Tag,65,float 32, , ,Digital,ON,OFF,Block 109 Output 9
+0x2082,8323,RX_4_VFD_BY_AM,,Signal Tag,66,float 32, , ,Digital,ON,OFF,Block 109 Output 10
 
 - INPUTS
 - Reactor 04 pressure
