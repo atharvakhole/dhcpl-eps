@@ -434,50 +434,50 @@ registers:
       critical: true
       tag_type: "Analog"
       register_type: "holding_register"
-
-# Connection Configuration
-connection:
-  host: "localhost"
-  port: 5020
-  slave_id: 1
-  timeout: 3
-  retry_count: 3
-  poll_interval: 1000 # milliseconds
-
-# Metadata
-metadata:
-  plc_name: "Manufacturing Line Controller"
-  location: "Production Floor A"
-  firmware_version: "1.2.3"
-  last_updated: "2024-01-15"
-  description: "Main production line conveyor and process control"
-
-# Data Logging Configuration
-logging:
-  enabled: true
-  log_level: "INFO"
-  dynamic_registers_only: false
-  log_interval: 5000 # milliseconds
-  archive_interval: 3600 # seconds
-
-# Alarm Configuration
-alarms:
-  temperature_actual:
-    high_alarm: 300
-    high_warning: 280
-    low_warning: 150
-    low_alarm: 100
-
-  motor_current_actual:
-    high_alarm: 150
-    high_warning: 120
-
-  system_pressure:
-    high_alarm: 120
-    high_warning: 100
-    low_warning: 20
-    low_alarm: 10
-
-  vibration_level:
-    high_alarm: 80
-    high_warning: 60
+#
+# # Connection Configuration
+# connection:
+#   host: "localhost"
+#   port: 5020
+#   slave_id: 1
+#   timeout: 3
+#   retry_count: 3
+#   poll_interval: 1000 # milliseconds
+#
+# # Metadata
+# metadata:
+#   plc_name: "Manufacturing Line Controller"
+#   location: "Production Floor A"
+#   firmware_version: "1.2.3"
+#   last_updated: "2024-01-15"
+#   description: "Main production line conveyor and process control"
+#
+# # Data Logging Configuration
+# logging:
+#   enabled: true
+#   log_level: "INFO"
+#   dynamic_registers_only: false
+#   log_interval: 5000 # milliseconds
+#   archive_interval: 3600 # seconds
+#
+# # Alarm Configuration
+# alarms:
+#   temperature_actual:
+#     high_alarm: 300
+#     high_warning: 280
+#     low_warning: 150
+#     low_alarm: 100
+#
+#   motor_current_actual:
+#     high_alarm: 150
+#     high_warning: 120
+#
+#   system_pressure:
+#     high_alarm: 120
+#     high_warning: 100
+#     low_warning: 20
+#     low_alarm: 10
+#
+#   vibration_level:
+#     high_alarm: 80
+#     high_warning: 60
