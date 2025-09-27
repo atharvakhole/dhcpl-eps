@@ -38,6 +38,32 @@ def setup_development_logging():
     })
     return logger
 
+def setup_file_logging(file_path: str):
+    """Setup logging for development environment"""
+    config = LoggingConfig(
+        level=LogLevel.DEBUG,
+        format_type=LogFormat.JSON_PRETTY,  # Pretty for readability
+        enable_console=True,
+        console_destination=LogDestination.FILE,
+        log_file_path=file_path,
+        # Enable detailed component filtering for debugging
+        component_filters={
+            "plant_control.app.core.connection_manager": LogLevel.DEBUG,
+            "plant_control.app.core.plc_connection": LogLevel.DEBUG,
+            "plant_control.app.api": LogLevel.INFO,
+        },
+        capture_warnings=True
+    )
+    
+    configure_logging(config)
+    logger = get_logger()
+    logger.info("File logging configured", extra={
+        "environment": "development",
+        "log_level": "DEBUG"
+    })
+    return logger
+
+
 # Production Configuration
 def setup_production_logging():
     """Setup logging for production environment"""
