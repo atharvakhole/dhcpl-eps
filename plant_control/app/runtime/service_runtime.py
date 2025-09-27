@@ -6,7 +6,7 @@ from plant_control.app.utilities.telemetry import logger
 
 
 class ServiceRuntime:
-    def __init__(self, log_file_path: str, enable_console: bool):
+    def __init__(self, log_file_path: str, enable_console: bool=False):
         self.config_manager = config_manager
         self.tag_service = None
         self.procedure_executor = None
