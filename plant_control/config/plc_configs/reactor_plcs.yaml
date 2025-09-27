@@ -1,29 +1,29 @@
 plcs:
-  # PLC1_SIMULATOR:
-  #   host: "127.0.0.1"
-  #   port: 5020
-  #   unit_id: 1
-  #   timeout: 3.0
-  #   retries: 3
-  #   description: "Manufacturing Line Controller"
-  #   vendor: "Honeywell"
-  #   model: "M580"
-  #   addressing_scheme: "absolute"
-  #   max_concurrent_connections: 5
-  #   health_check_interval: 15
-  #   circuit_breaker_threshold: 5
-  #   circuit_breaker_timeout: 60
-  EPS01:
-    host: "192.168.1.254"
-    port: 502
+  PLC1_SIMULATOR:
+    host: "127.0.0.1"
+    port: 5020
     unit_id: 1
     timeout: 3.0
     retries: 3
-    description: "EPS Reactors Controller"
+    description: "Manufacturing Line Controller"
     vendor: "Honeywell"
-    model: "HC900"
-    addressing_scheme: "relative"
+    model: "M580"
+    addressing_scheme: "absolute"
     max_concurrent_connections: 5
     health_check_interval: 15
     circuit_breaker_threshold: 5
-    circuit_breaker_timeout: 30
+    circuit_breaker_timeout: 60
+  # EPS01:
+  #   host: "192.168.1.254"
+  #   port: 502
+  #   unit_id: 1
+  #   timeout: 3.0
+  #   retries: 3
+  #   description: "EPS Reactors Controller"
+  #   vendor: "Honeywell"
+  #   model: "HC900"
+  #   addressing_scheme: "relative"
+  #   max_concurrent_connections: 5
+  #   health_check_interval: 15
+  #   circuit_breaker_threshold: 5
+  #   circuit_breaker_timeout: 30

@@ -1,483 +1,483 @@
 registers:
-  # PLC1_SIMULATOR:
-  #   40001:
-  #     name: "CONVEYOR_SP"
-  #     description: "Conveyor motor setpoint"
-  #     data_type: "uint16"
-  #     scaling_factor: 1.0
-  #     units: "RPM"
-  #     min_value: 0
-  #     max_value: 2000
-  #     readonly: false
-  #     critical: true
-  #     tag_type: "Analog"
-  #     register_type: "holding_register"
-  EPS01:
-    60529:
-      name: "AGITATOR_START_RX04"
-      description: "Reactor 4 agitator start"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 1
-      readonly: false
-      critical: true
-      tag_type: "Digital"
-      register_type: "holding_register"
-    6751:
-      name: "AGITATOR_VFD_SP_RX04"
-      description: "Reactor 4 agitator setpoint"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 100
-      readonly: false
-      critical: true
-      tag_type: "Analog"
-      register_type: "holding_register"
-    8321:
-      name: "AGITATOR_VFD_TRIP_FB_RX04"
-      description: "Reactor 4 agitator trip feedback"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 1
-      readonly: true
-      critical: true
-      tag_type: "Digital"
-      register_type: "holding_register"
-    8921:
-      name: "AGITATOR_RPM_RX04"
-      description: "Reactor 4 agitator RPM"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
+  PLC1_SIMULATOR:
+    40001:
+      name: "CONVEYOR_SP"
+      description: "Conveyor motor setpoint"
+      data_type: "uint16"
       scaling_factor: 1.0
       units: "RPM"
       min_value: 0
       max_value: 2000
-      readonly: true
-      critical: true
-      tag_type: "Analog"
-      register_type: "holding_register"
-    8927:
-      name: "AGITATOR_CURRENT_RX04"
-      description: "Reactor 4 agitator Current"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: "AMP"
-      min_value: 0
-      max_value: 2000
-      readonly: true
-      critical: true
-      tag_type: "Analog"
-      register_type: "holding_register"
-    6767:
-      name: "FCV_RX04_SET_AUTO"
-      description: "Reactor 4 agitator start"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 1
-      readonly: false
-      critical: true
-      tag_type: "Digital"
-      register_type: "holding_register"
-    7451:
-      name: "FCV_RX04_PERCENT_OPEN"
-      description: "FCV Opening percentage for reactor 4"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 100
       readonly: false
       critical: true
       tag_type: "Analog"
       register_type: "holding_register"
-    6513:
-      name: "XV_HWR_RX04_OPEN"
-      description: "Reactor 4 agitator start"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 1
-      readonly: false
-      critical: true
-      tag_type: "Digital"
-      register_type: "holding_register"
-    6507:
-      name: "XV_HWS_RX04_OPEN"
-      description: "Reactor 4 agitator start"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 1
-      readonly: false
-      critical: true
-      tag_type: "Digital"
-      register_type: "holding_register"
-    6561:
-      name: "XV_CWR_RX04_OPEN"
-      description: "Reactor 4 agitator start"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 1
-      readonly: false
-      critical: true
-      tag_type: "Digital"
-      register_type: "holding_register"
-    6555:
-      name: "XV_CWS_RX04_OPEN"
-      description: "Reactor 4 agitator start"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 1
-      readonly: false
-      critical: true
-      tag_type: "Digital"
-      register_type: "holding_register"
-    6609:
-      name: "XV_CHWR_RX04_OPEN"
-      description: "Reactor 4 agitator start"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 1
-      readonly: false
-      critical: true
-      tag_type: "Digital"
-      register_type: "holding_register"
-    6603:
-      name: "XV_CHWS_RX04_OPEN"
-      description: "Reactor 4 agitator start"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 1
-      readonly: false
-      critical: true
-      tag_type: "Digital"
-      register_type: "holding_register"
-    6447:
-      name: "FBV_RX04_OPEN"
-      description: "Reactor 4 agitator start"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 1
-      readonly: false
-      critical: true
-      tag_type: "Digital"
-      register_type: "holding_register"
-    6657:
-      name: "EMERGENCY_DR_XV_RX04"
-      description: "Reactor 4 agitator start"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 1
-      readonly: false
-      critical: true
-      tag_type: "Digital"
-      register_type: "holding_register"
-    6611:
-      name: "SLURRY_OL_XV_RX01"
-      description: "Reactor 1 slurry outlet"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 1
-      readonly: false
-      critical: true
-      tag_type: "Digital"
-      register_type: "holding_register"
-    6627:
-      name: "SLURRY_OL_XV_RX02"
-      description: "Reactor 2 slurry outlet"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 1
-      readonly: false
-      critical: true
-      tag_type: "Digital"
-      register_type: "holding_register"
-    6639:
-      name: "SLURRY_OL_XV_RX03"
-      description: "Reactor 3 slurry outlet"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 1
-      readonly: false
-      critical: true
-      tag_type: "Digital"
-      register_type: "holding_register"
-    6651:
-      name: "SLURRY_OL_XV_RX04"
-      description: "Reactor 4 agitator start"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 1
-      readonly: false
-      critical: true
-      tag_type: "Digital"
-      register_type: "holding_register"
-    # SIGNALS
-    8789:
-      name: "PRESSURE_RX04"
-      description: "Reactor pressure"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 200
-      readonly: true
-      critical: true
-      tag_type: "Analog"
-      register_type: "holding_register"
-    8835:
-      name: "MT_RX04_TOP"
-      description: "Mass temperature top"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 200
-      readonly: true
-      critical: true
-      tag_type: "Analog"
-      register_type: "holding_register"
-    8837:
-      name: "MT_RX04_BOTTOM"
-      description: "Mass temperature bottom"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 200
-      readonly: true
-      critical: true
-      tag_type: "Analog"
-      register_type: "holding_register"
-    8893:
-      name: "IL_T_RX04_JACKET"
-      description: "Reactor jacket Inlet temperature"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 200
-      readonly: true
-      critical: true
-      tag_type: "Analog"
-      register_type: "holding_register"
-    8925:
-      name: "FLOW_RX04_JACKET_IL"
-      description: "Reactor 04 jacket inlet flow rate"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 2000
-      readonly: true
-      critical: true
-      tag_type: "Analog"
-      register_type: "holding_register"
-    8885:
-      name: "LEVEL_T_RX04"
-      description: "Reactor 04 level transsmitter"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 2000
-      readonly: true
-      critical: true
-      tag_type: "Analog"
-      register_type: "holding_register"
-    8841:
-      name: "T_RX04_JACKET"
-      description: "Reactor 04 jacket temperature"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 200
-      readonly: true
-      critical: true
-      tag_type: "Analog"
-      register_type: "holding_register"
-    8845:
-      name: "HW_IL_T_RX04"
-      description: "Reactor 4 hot water inlet temperature"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 200
-      readonly: true
-      critical: true
-      tag_type: "Analog"
-      register_type: "holding_register"
-    8847:
-      name: "HW_OL_T_RX04"
-      description: "Reactor 4 hot water outlet temperature"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 200
-      readonly: true
-      critical: true
-      tag_type: "Analog"
-      register_type: "holding_register"
-    7449:
-      name: "TEST_DIGITAL_01"
-      description: "Digital Out for testing"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: ""
-      min_value: 0
-      max_value: 1
-      readonly: false
-      critical: true
-      tag_type: "Digital"
-      register_type: "holding_register"
-    6879:
-      name: "TEST_ANALOG_01"
-      description: "Analog Out for testing"
-      stored_as: "float32"
-      decode_as: "float32"
-      encode_as: "float32"
-      scaling_factor: 1.0
-      units: "C"
-      min_value: 0
-      max_value: 200
-      readonly: false
-      critical: true
-      tag_type: "Analog"
-      register_type: "holding_register"
-
-# Connection Configuration
-connection:
-  host: "localhost"
-  port: 5020
-  slave_id: 1
-  timeout: 3
-  retry_count: 3
-  poll_interval: 1000 # milliseconds
-
-# Metadata
-metadata:
-  plc_name: "Manufacturing Line Controller"
-  location: "Production Floor A"
-  firmware_version: "1.2.3"
-  last_updated: "2024-01-15"
-  description: "Main production line conveyor and process control"
-
-# Data Logging Configuration
-logging:
-  enabled: true
-  log_level: "INFO"
-  dynamic_registers_only: false
-  log_interval: 5000 # milliseconds
-  archive_interval: 3600 # seconds
-
-# Alarm Configuration
-alarms:
-  temperature_actual:
-    high_alarm: 300
-    high_warning: 280
-    low_warning: 150
-    low_alarm: 100
-
-  motor_current_actual:
-    high_alarm: 150
-    high_warning: 120
-
-  system_pressure:
-    high_alarm: 120
-    high_warning: 100
-    low_warning: 20
-    low_alarm: 10
-
-  vibration_level:
-    high_alarm: 80
-    high_warning: 60
+#   EPS01:
+#     60529:
+#       name: "AGITATOR_START_RX04"
+#       description: "Reactor 4 agitator start"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 1
+#       readonly: false
+#       critical: true
+#       tag_type: "Digital"
+#       register_type: "holding_register"
+#     6751:
+#       name: "AGITATOR_VFD_SP_RX04"
+#       description: "Reactor 4 agitator setpoint"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 100
+#       readonly: false
+#       critical: true
+#       tag_type: "Analog"
+#       register_type: "holding_register"
+#     8321:
+#       name: "AGITATOR_VFD_TRIP_FB_RX04"
+#       description: "Reactor 4 agitator trip feedback"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 1
+#       readonly: true
+#       critical: true
+#       tag_type: "Digital"
+#       register_type: "holding_register"
+#     8921:
+#       name: "AGITATOR_RPM_RX04"
+#       description: "Reactor 4 agitator RPM"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: "RPM"
+#       min_value: 0
+#       max_value: 2000
+#       readonly: true
+#       critical: true
+#       tag_type: "Analog"
+#       register_type: "holding_register"
+#     8927:
+#       name: "AGITATOR_CURRENT_RX04"
+#       description: "Reactor 4 agitator Current"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: "AMP"
+#       min_value: 0
+#       max_value: 2000
+#       readonly: true
+#       critical: true
+#       tag_type: "Analog"
+#       register_type: "holding_register"
+#     6767:
+#       name: "FCV_RX04_SET_AUTO"
+#       description: "Reactor 4 agitator start"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 1
+#       readonly: false
+#       critical: true
+#       tag_type: "Digital"
+#       register_type: "holding_register"
+#     7451:
+#       name: "FCV_RX04_PERCENT_OPEN"
+#       description: "FCV Opening percentage for reactor 4"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 100
+#       readonly: false
+#       critical: true
+#       tag_type: "Analog"
+#       register_type: "holding_register"
+#     6513:
+#       name: "XV_HWR_RX04_OPEN"
+#       description: "Reactor 4 agitator start"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 1
+#       readonly: false
+#       critical: true
+#       tag_type: "Digital"
+#       register_type: "holding_register"
+#     6507:
+#       name: "XV_HWS_RX04_OPEN"
+#       description: "Reactor 4 agitator start"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 1
+#       readonly: false
+#       critical: true
+#       tag_type: "Digital"
+#       register_type: "holding_register"
+#     6561:
+#       name: "XV_CWR_RX04_OPEN"
+#       description: "Reactor 4 agitator start"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 1
+#       readonly: false
+#       critical: true
+#       tag_type: "Digital"
+#       register_type: "holding_register"
+#     6555:
+#       name: "XV_CWS_RX04_OPEN"
+#       description: "Reactor 4 agitator start"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 1
+#       readonly: false
+#       critical: true
+#       tag_type: "Digital"
+#       register_type: "holding_register"
+#     6609:
+#       name: "XV_CHWR_RX04_OPEN"
+#       description: "Reactor 4 agitator start"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 1
+#       readonly: false
+#       critical: true
+#       tag_type: "Digital"
+#       register_type: "holding_register"
+#     6603:
+#       name: "XV_CHWS_RX04_OPEN"
+#       description: "Reactor 4 agitator start"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 1
+#       readonly: false
+#       critical: true
+#       tag_type: "Digital"
+#       register_type: "holding_register"
+#     6447:
+#       name: "FBV_RX04_OPEN"
+#       description: "Reactor 4 agitator start"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 1
+#       readonly: false
+#       critical: true
+#       tag_type: "Digital"
+#       register_type: "holding_register"
+#     6657:
+#       name: "EMERGENCY_DR_XV_RX04"
+#       description: "Reactor 4 agitator start"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 1
+#       readonly: false
+#       critical: true
+#       tag_type: "Digital"
+#       register_type: "holding_register"
+#     6611:
+#       name: "SLURRY_OL_XV_RX01"
+#       description: "Reactor 1 slurry outlet"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 1
+#       readonly: false
+#       critical: true
+#       tag_type: "Digital"
+#       register_type: "holding_register"
+#     6627:
+#       name: "SLURRY_OL_XV_RX02"
+#       description: "Reactor 2 slurry outlet"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 1
+#       readonly: false
+#       critical: true
+#       tag_type: "Digital"
+#       register_type: "holding_register"
+#     6639:
+#       name: "SLURRY_OL_XV_RX03"
+#       description: "Reactor 3 slurry outlet"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 1
+#       readonly: false
+#       critical: true
+#       tag_type: "Digital"
+#       register_type: "holding_register"
+#     6651:
+#       name: "SLURRY_OL_XV_RX04"
+#       description: "Reactor 4 agitator start"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 1
+#       readonly: false
+#       critical: true
+#       tag_type: "Digital"
+#       register_type: "holding_register"
+#     # SIGNALS
+#     8789:
+#       name: "PRESSURE_RX04"
+#       description: "Reactor pressure"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 200
+#       readonly: true
+#       critical: true
+#       tag_type: "Analog"
+#       register_type: "holding_register"
+#     8835:
+#       name: "MT_RX04_TOP"
+#       description: "Mass temperature top"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 200
+#       readonly: true
+#       critical: true
+#       tag_type: "Analog"
+#       register_type: "holding_register"
+#     8837:
+#       name: "MT_RX04_BOTTOM"
+#       description: "Mass temperature bottom"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 200
+#       readonly: true
+#       critical: true
+#       tag_type: "Analog"
+#       register_type: "holding_register"
+#     8893:
+#       name: "IL_T_RX04_JACKET"
+#       description: "Reactor jacket Inlet temperature"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 200
+#       readonly: true
+#       critical: true
+#       tag_type: "Analog"
+#       register_type: "holding_register"
+#     8925:
+#       name: "FLOW_RX04_JACKET_IL"
+#       description: "Reactor 04 jacket inlet flow rate"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 2000
+#       readonly: true
+#       critical: true
+#       tag_type: "Analog"
+#       register_type: "holding_register"
+#     8885:
+#       name: "LEVEL_T_RX04"
+#       description: "Reactor 04 level transsmitter"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 2000
+#       readonly: true
+#       critical: true
+#       tag_type: "Analog"
+#       register_type: "holding_register"
+#     8841:
+#       name: "T_RX04_JACKET"
+#       description: "Reactor 04 jacket temperature"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 200
+#       readonly: true
+#       critical: true
+#       tag_type: "Analog"
+#       register_type: "holding_register"
+#     8845:
+#       name: "HW_IL_T_RX04"
+#       description: "Reactor 4 hot water inlet temperature"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 200
+#       readonly: true
+#       critical: true
+#       tag_type: "Analog"
+#       register_type: "holding_register"
+#     8847:
+#       name: "HW_OL_T_RX04"
+#       description: "Reactor 4 hot water outlet temperature"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 200
+#       readonly: true
+#       critical: true
+#       tag_type: "Analog"
+#       register_type: "holding_register"
+#     7449:
+#       name: "TEST_DIGITAL_01"
+#       description: "Digital Out for testing"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: ""
+#       min_value: 0
+#       max_value: 1
+#       readonly: false
+#       critical: true
+#       tag_type: "Digital"
+#       register_type: "holding_register"
+#     6879:
+#       name: "TEST_ANALOG_01"
+#       description: "Analog Out for testing"
+#       stored_as: "float32"
+#       decode_as: "float32"
+#       encode_as: "float32"
+#       scaling_factor: 1.0
+#       units: "C"
+#       min_value: 0
+#       max_value: 200
+#       readonly: false
+#       critical: true
+#       tag_type: "Analog"
+#       register_type: "holding_register"
+#
+# # Connection Configuration
+# connection:
+#   host: "localhost"
+#   port: 5020
+#   slave_id: 1
+#   timeout: 3
+#   retry_count: 3
+#   poll_interval: 1000 # milliseconds
+#
+# # Metadata
+# metadata:
+#   plc_name: "Manufacturing Line Controller"
+#   location: "Production Floor A"
+#   firmware_version: "1.2.3"
+#   last_updated: "2024-01-15"
+#   description: "Main production line conveyor and process control"
+#
+# # Data Logging Configuration
+# logging:
+#   enabled: true
+#   log_level: "INFO"
+#   dynamic_registers_only: false
+#   log_interval: 5000 # milliseconds
+#   archive_interval: 3600 # seconds
+#
+# # Alarm Configuration
+# alarms:
+#   temperature_actual:
+#     high_alarm: 300
+#     high_warning: 280
+#     low_warning: 150
+#     low_alarm: 100
+#
+#   motor_current_actual:
+#     high_alarm: 150
+#     high_warning: 120
+#
+#   system_pressure:
+#     high_alarm: 120
+#     high_warning: 100
+#     low_warning: 20
+#     low_alarm: 10
+#
+#   vibration_level:
+#     high_alarm: 80
+#     high_warning: 60
