@@ -3,15 +3,14 @@ from asyncio.tasks import sleep
 from plant_control.app.runtime.service_runtime import ServiceRuntime
 
 async def main():
-    runtime = ServiceRuntime()
+    runtime = ServiceRuntime(log_file_path="/tmp/service_runtime.txt")
     try:
         await runtime.start()
         tag_service = runtime.tag_service
         try:
             result = await tag_service.read_tag("EPS01", "HW_OL_T_RX04")
-            print(result)
         except Exception as e:
-            print(e)
+            pass
     finally:
         await runtime.stop()
 
