@@ -3,7 +3,7 @@ from asyncio.tasks import sleep
 from plant_control.app.runtime.service_runtime import ServiceRuntime
 
 async def main():
-    runtime = ServiceRuntime()
+    runtime = ServiceRuntime(log_file_path="/tmp/service_runtime.txt", enable_console=False)
     try:
         await runtime.start()
         tag_service = runtime.tag_service

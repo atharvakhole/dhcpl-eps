@@ -38,12 +38,12 @@ def setup_development_logging():
     })
     return logger
 
-def setup_file_logging(file_path: str):
+def setup_file_logging(file_path: str, enable_console: bool):
     """Setup logging for development environment"""
     config = LoggingConfig(
         level=LogLevel.DEBUG,
         format_type=LogFormat.JSON_PRETTY,  # Pretty for readability
-        enable_console=True,
+        enable_console=enable_console,
         console_destination=LogDestination.FILE,
         log_file_path=file_path,
         # Enable detailed component filtering for debugging

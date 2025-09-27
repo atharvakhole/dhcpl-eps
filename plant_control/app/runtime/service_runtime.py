@@ -6,12 +6,12 @@ from plant_control.app.utilities.telemetry import logger
 
 
 class ServiceRuntime:
-    def __init__(self, log_file_path: str):
+    def __init__(self, log_file_path: str, enable_console: bool):
         self.config_manager = config_manager
         self.tag_service = None
         self.procedure_executor = None
         self.register_maps = None
-        self.logger = setup_file_logging(log_file_path)
+        self.logger = setup_file_logging(log_file_path, enable_console)
 
 
     async def start(self):
