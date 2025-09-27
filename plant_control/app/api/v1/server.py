@@ -7,19 +7,17 @@ from contextlib import asynccontextmanager
 import uvicorn
 import time
 
-# Import your modules
-from plant_control.app.core.tag_service import (
-    TagService, TagServiceError, ConfigurationError, ValidationError, 
-    AddressResolutionError, EncodingError, ConnectionError,
-    TagReadResult, TagWriteResult, BulkReadResponse, BulkWriteResponse,
-    ReadStatus, WriteStatus
+from plant_control.app.core.tag_service import (TagService, TagReadResult, TagWriteResult)
+from plant_control.app.core.tag_exceptions import (
+    TagServiceError, ConfigurationError, ValidationError, 
+    AddressResolutionError, EncodingError, ConnectionError
 )
 from plant_control.app.config import config_manager
 from plant_control.app.core.connection_manager import connection_manager
 from plant_control.app.utilities.telemetry import logger
 from plant_control.app.core.health_service import (
-    HealthService, SystemHealth, SystemDiagnostics, PLCHealth, 
-    PerformanceMetrics, ServiceHealth, ComponentStatus
+    HealthService, SystemHealth, PLCHealth, 
+    ServiceHealth, ComponentStatus
 )
 from plant_control.app.core.procedure_execution_engine import ProcedureExecutor, ExecutionResult
 from plant_control.app.config import config_manager
