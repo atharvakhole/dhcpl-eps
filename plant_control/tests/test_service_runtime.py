@@ -2,10 +2,11 @@ import signal
 import time
 from plant_control.app.runtime.service_manager import service_manager
 from plant_control.app.runtime.service_runtime import ServiceRuntime
+from plant_control.app.utilities.logging_config import LogLevel
 
 def main():
     """Main function - now completely synchronous!"""
-    runtime = ServiceRuntime(log_file_path="/tmp/service_runtime.txt", enable_console=True)
+    runtime = ServiceRuntime(log_file_path="/tmp/service_runtime.txt", enable_console=True, log_level=LogLevel.INFO)
     
     try:
         print("Starting background service...")
@@ -14,11 +15,10 @@ def main():
         print("Testing tag operations...")
         
         # Now you can use sync calls!
-        try:
-            result = service_manager.read_tag("PLC1_SIMULATOR", "CONVEYOR_SP", timeout=10.0)
-            print(f"Tag read result: {result}")
-        except Exception as e:
-            print(f"Tag read failed: {e}")
+        print(service_manager.write_tag("PLC1_SIMULATOR", "CONVEYOR_SP", 300))
+        print(service_manager.write_tag("PLC1_SIMULATOR", "TEMPERATURE_SP", 55))
+        print(service_manager.write_tag("PLC1_SIMULATOR", "MOTOR_CURRENT_LIMIT", 23))
+        print(service_manager.write_tag("PLC1_SIMULATOR", "PR_TARGET", 1000))
         
         # You can do multiple operations
         try:

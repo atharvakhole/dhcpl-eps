@@ -3,11 +3,83 @@ registers:
   #   40001:
   #     name: "CONVEYOR_SP"
   #     description: "Conveyor motor setpoint"
-  #     data_type: "uint16"
+  #     stored_as: "uint16"
+  #     decode_as: "uint16"
+  #     encode_as: "uint16"
   #     scaling_factor: 1.0
   #     units: "RPM"
   #     min_value: 0
   #     max_value: 2000
+  #     readonly: false
+  #     critical: true
+  #     tag_type: "Analog"
+  #     register_type: "holding_register"
+  #   40002:
+  #     name: "TEMPERATURE_SP"
+  #     description: "Temperature setpoint"
+  #     stored_as: "uint16"
+  #     decode_as: "uint16"
+  #     encode_as: "uint16"
+  #     scaling_factor: 1.0
+  #     units: "C"
+  #     min_value: 0
+  #     max_value: 200
+  #     readonly: false
+  #     critical: true
+  #     tag_type: "Analog"
+  #     register_type: "holding_register"
+  #   40003:
+  #     name: "PR_TARGET"
+  #     description: "Production rate target"
+  #     stored_as: "uint16"
+  #     decode_as: "uint16"
+  #     encode_as: "uint16"
+  #     scaling_factor: 1.0
+  #     units: "Units"
+  #     min_value: 0
+  #     max_value: 5000
+  #     readonly: false
+  #     critical: true
+  #     tag_type: "Analog"
+  #     register_type: "holding_register"
+  #   40011:
+  #     name: "MOTOR_CURRENT_LIMIT"
+  #     description: "Motor current limit"
+  #     stored_as: "uint16"
+  #     decode_as: "uint16"
+  #     encode_as: "uint16"
+  #     scaling_factor: 1.0
+  #     units: "A"
+  #     min_value: 0
+  #     max_value: 100
+  #     readonly: false
+  #     critical: true
+  #     tag_type: "Analog"
+  #     register_type: "holding_register"
+  #   40012:
+  #     name: "PRESSURE_SP"
+  #     description: "Pressure setpoint"
+  #     stored_as: "uint16"
+  #     decode_as: "uint16"
+  #     encode_as: "uint16"
+  #     scaling_factor: 1.0
+  #     units: "A"
+  #     min_value: 0
+  #     max_value: 100
+  #     readonly: false
+  #     critical: true
+  #     tag_type: "Analog"
+  #     register_type: "holding_register"
+  #   40021:
+  #     name: "PART_COUNT"
+  #     description: "Part Count"
+  #     stored_as: "uint16"
+  #     decode_as: "uint16"
+  #     encode_as: "uint16"
+  #     scaling_factor: 1.0
+  #     units: "A"
+  #     min_value: 0
+  #     max_value: 20000
   #     readonly: false
   #     critical: true
   #     tag_type: "Analog"

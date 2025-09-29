@@ -38,18 +38,18 @@ def setup_development_logging():
     })
     return logger
 
-def setup_file_logging(file_path: str, enable_console: bool):
+def setup_file_logging(file_path: str, enable_console: bool, log_level=LogLevel.WARNING):
     """Setup logging for development environment"""
     config = LoggingConfig(
-        level=LogLevel.DEBUG,
+        level=log_level,
         format_type=LogFormat.JSON_PRETTY,  # Pretty for readability
         enable_console=enable_console,
         console_destination=LogDestination.FILE,
         log_file_path=file_path,
         # Enable detailed component filtering for debugging
         component_filters={
-            "plant_control.app.core.connection_manager": LogLevel.DEBUG,
-            "plant_control.app.core.plc_connection": LogLevel.DEBUG,
+            "plant_control.app.core.connection_manager": log_level,
+            "plant_control.app.core.plc_connection": log_level,
             "plant_control.app.api": LogLevel.INFO,
         },
         capture_warnings=True
@@ -59,7 +59,7 @@ def setup_file_logging(file_path: str, enable_console: bool):
     logger = get_logger()
     logger.info("File logging configured", extra={
         "environment": "development",
-        "log_level": "DEBUG"
+        "log_level": f"{log_level}"
     })
     return logger
 
@@ -73,14 +73,14 @@ def setup_production_logging():
         enable_console=True,
         console_destination=LogDestination.STDOUT,
         # Production file logging with rotation
-        log_file_path="/var/log/plant_control/app.log",
+        log_file_path="/tmp/log/plant_control/app.log",
         max_file_size=50 * 1024 * 1024,  # 50MB
-        backup_count=10,
+        backup_count=3,
         # Additional destinations for different log types
         destinations=[
             {
                 "type": LogDestination.ROTATING_FILE,
-                "path": "/var/log/plant_control/errors.log",
+                "path": "/tmp/log/plant_control/errors.log",
                 "level": LogLevel.ERROR,
                 "format": LogFormat.JSON_COMPACT,
                 "max_size": 10 * 1024 * 1024,
@@ -88,7 +88,7 @@ def setup_production_logging():
             },
             {
                 "type": LogDestination.ROTATING_FILE,
-                "path": "/var/log/plant_control/plc_operations.log",
+                "path": "/tmp/log/plant_control/plc_operations.log",
                 "level": LogLevel.INFO,
                 "format": LogFormat.JSON_COMPACT,
                 "max_size": 100 * 1024 * 1024,
@@ -103,7 +103,7 @@ def setup_production_logging():
         # Component-specific levels
         component_filters={
             "plant_control.app.core": LogLevel.INFO,
-            "plant_control.app.api": LogLevel.WARNING,
+            "plant_control.app.api": LogLevel.INFO,
             "plant_control.app.safety": LogLevel.DEBUG,  # Always debug safety
         },
         capture_warnings=True,

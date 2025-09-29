@@ -41,7 +41,7 @@ class TagService:
         context = {"plc_id": plc_id, "tag_name": tag_name}
         
         try:
-            logger.info(f"Reading tag {tag_name} from PLC {plc_id}")
+            logger.debug(f"Reading tag {tag_name} from PLC {plc_id}")
             
             # Validate inputs
             if not plc_id or not isinstance(plc_id, str):
@@ -67,7 +67,7 @@ class TagService:
             decoded_data = self.helper.decode_registers(registers, decode_type)
             
             duration_ms = int((time.time() - start_time) * 1000)
-            logger.info(f"Tag read completed in {duration_ms}ms")
+            logger.debug(f"Tag read completed in {duration_ms}ms")
             logger.debug(f"Tag read completed", extra={
                 "operation": "read_tag", **context, "duration_ms": duration_ms,
                 "registers": registers, "result": decoded_data
@@ -114,7 +114,7 @@ class TagService:
         context = {"plc_id": plc_id, "tag_name": tag_name, "data": data}
         
         try:
-            logger.info(f"Writing {data} to tag {tag_name} on PLC {plc_id}")
+            logger.debug(f"Writing {data} to tag {tag_name} on PLC {plc_id}")
             
             # Validate inputs
             if not plc_id or not isinstance(plc_id, str):
@@ -137,7 +137,7 @@ class TagService:
             result = await connection_manager.execute_operation(plc_id, operation)
             
             duration_ms = int((time.time() - start_time) * 1000)
-            logger.info(f"Tag write completed in {duration_ms}ms", extra={
+            logger.debug(f"Tag write completed in {duration_ms}ms", extra={
                 "operation": "write_tag", **context, "address": original_address,
                 "convert_modbus_address": converted_modbus_address, "duration_ms": duration_ms
             })
@@ -195,7 +195,7 @@ class TagService:
         
         # Only log at INFO level for bulk operations summary, not individual tags
         if verbose_logging:
-            logger.info(f"Reading {len(tag_names)} tags from PLC {plc_id}")
+            logger.debug(f"Reading {len(tag_names)} tags from PLC {plc_id}")
         
         try:
             # Input validation (errors always logged)
@@ -254,7 +254,7 @@ class TagService:
             # Only log summary info, not individual tag details
             if failed_count > 0 or verbose_logging:
                 # Always log if there are failures, or if verbose logging is enabled
-                logger.info(f"Bulk read PLC {plc_id} completed in {duration_ms}ms: {successful_count} successful, {failed_count} failed")
+                logger.debug(f"Bulk read PLC {plc_id} completed in {duration_ms}ms: {successful_count} successful, {failed_count} failed")
             
             return BulkReadResponse(
                 plc_id=plc_id,
@@ -324,7 +324,7 @@ class TagService:
         timestamp = start_time
         
         if verbose_logging:
-            logger.info(f"Writing {len(tag_data)} tags to PLC {plc_id}")
+            logger.debug(f"Writing {len(tag_data)} tags to PLC {plc_id}")
         
         try:
             # Input validation (errors always logged)
@@ -377,7 +377,7 @@ class TagService:
             
             # Only log summary if there are failures or verbose logging is enabled
             if failed_count > 0 or verbose_logging:
-                logger.info(f"Bulk write PLC {plc_id} completed in {duration_ms}ms: {successful_count} successful, {failed_count} failed")
+                logger.debug(f"Bulk write PLC {plc_id} completed in {duration_ms}ms: {successful_count} successful, {failed_count} failed")
             
             return BulkWriteResponse(
                 plc_id=plc_id,

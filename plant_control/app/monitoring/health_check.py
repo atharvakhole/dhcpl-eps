@@ -58,7 +58,7 @@ async def health_check(health_service=get_health_service) -> SystemHealthRespons
             status_code = status.HTTP_503_SERVICE_UNAVAILABLE
         
         duration_ms = int((time.time() - start_time) * 1000)
-        logger.info("Health check completed", extra={
+        logger.debug("Health check completed", extra={
             "component": "api",
             "endpoint": "health_check",
             "overall_status": system_health.overall_status.value,

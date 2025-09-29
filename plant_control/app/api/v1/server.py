@@ -14,7 +14,7 @@ from plant_control.app.core.tag_exceptions import (
 )
 from plant_control.app.config import config_manager
 from plant_control.app.core.connection_manager import connection_manager
-from plant_control.app.utilities.telemetry import logger
+from plant_control.app.utilities.logging_examples import setup_production_logging
 from plant_control.app.core.health_service import (
     HealthService, SystemHealth, PLCHealth, 
     ServiceHealth, ComponentStatus
@@ -23,6 +23,7 @@ from plant_control.app.core.procedure_execution_engine import ProcedureExecutor,
 from plant_control.app.config import config_manager
 
 
+logger = setup_production_logging()
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Handle application startup and shutdown"""
@@ -391,7 +392,7 @@ async def health_check() -> SystemHealthResponse:
             status_code = status.HTTP_503_SERVICE_UNAVAILABLE
         
         duration_ms = int((time.time() - start_time) * 1000)
-        logger.info("Health check completed", extra={
+        logger.debug("Health check completed", extra={
             "component": "api",
             "endpoint": "health_check",
             "overall_status": system_health.overall_status.value,
@@ -578,7 +579,7 @@ async def system_diagnostics() -> SystemDiagnosticsResponse:
         
     except Exception as e:
         duration_ms = int((time.time() - start_time) * 1000)
-        logger.error("System diagnostics failed", extra={
+        logger.warning("System diagnostics failed", extra={
             "component": "api",
             "endpoint": "system_diagnostics",
             "error": str(e),
@@ -934,7 +935,7 @@ async def read_multiple_tags_endpoint(plc_id: str, request: BulkReadRequest) -> 
     }
     
     # Log the request (without full tag list for brevity)
-    logger.info(f"Bulk read request for {len(request.tag_names)} tags from PLC {plc_id}")
+    logger.debug(f"Bulk read request for {len(request.tag_names)} tags from PLC {plc_id}")
     logger.debug(f"Bulk read tag names: {request.tag_names[:10]}{'...' if len(request.tag_names) > 10 else ''}")
     
     try:
@@ -957,7 +958,7 @@ async def read_multiple_tags_endpoint(plc_id: str, request: BulkReadRequest) -> 
         else:  # "failed"
             response_status = status.HTTP_200_OK  # Still return 200, but with error details in response
         
-        logger.info(f"Bulk read API completed", extra={
+        logger.debug(f"Bulk read API completed", extra={
             **context, 
             "successful_count": bulk_result.successful_count,
             "failed_count": bulk_result.failed_count,
@@ -1163,7 +1164,7 @@ async def read_tag_endpoint(plc_id: str, tag_name: str) -> TagReadResponse:
         result = await plc_handler.read_tag(plc_id, tag_name)
         duration_ms = int((time.time() - start_time) * 1000)
         
-        logger.info(f"Tag read API completed with status: {result.status.value}", extra={
+        logger.debug(f"Tag read API completed with status: {result.status.value}", extra={
             **context, "duration_ms": duration_ms, "status": result.status.value
         })
         

@@ -55,7 +55,7 @@ async def read_multiple_tags_endpoint(plc_id: str, request: BulkReadRequest, plc
     }
     
     # Log the request (without full tag list for brevity)
-    logger.info(f"Bulk read request for {len(request.tag_names)} tags from PLC {plc_id}")
+    logger.debug(f"Bulk read request for {len(request.tag_names)} tags from PLC {plc_id}")
     logger.debug(f"Bulk read tag names: {request.tag_names[:10]}{'...' if len(request.tag_names) > 10 else ''}")
     
     try:
@@ -78,7 +78,7 @@ async def read_multiple_tags_endpoint(plc_id: str, request: BulkReadRequest, plc
         else:  # "failed"
             response_status = status.HTTP_200_OK  # Still return 200, but with error details in response
         
-        logger.info(f"Bulk read API completed", extra={
+        logger.debug(f"Bulk read API completed", extra={
             **context, 
             "successful_count": bulk_result.successful_count,
             "failed_count": bulk_result.failed_count,
@@ -284,7 +284,7 @@ async def read_tag_endpoint(plc_id: str, tag_name: str, plc_handler=get_plc_hand
         result = await plc_handler.read_tag(plc_id, tag_name)
         duration_ms = int((time.time() - start_time) * 1000)
         
-        logger.info(f"Tag read API completed with status: {result.status.value}", extra={
+        logger.debug(f"Tag read API completed with status: {result.status.value}", extra={
             **context, "duration_ms": duration_ms, "status": result.status.value
         })
         
@@ -343,7 +343,7 @@ async def write_tag_endpoint(plc_id: str, tag_name: str, request: WriteTagReques
         result = await plc_handler.write_tag(plc_id, tag_name, request.data)
         duration_ms = int((time.time() - start_time) * 1000)
         
-        logger.info(f"Tag write API completed with status: {result.status.value}", extra={
+        logger.debug(f"Tag write API completed with status: {result.status.value}", extra={
             **context, "duration_ms": duration_ms, "status": result.status.value
         })
         

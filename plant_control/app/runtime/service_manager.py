@@ -1,9 +1,9 @@
 import asyncio
 import threading
-import time
 from typing import Any, Optional
 from plant_control.app.core.tag_service import TagService
 from plant_control.app.schemas.tag_service import TagReadResult, TagWriteResult
+from plant_control.app.utilities.telemetry import logger
 
 class ServiceManager:
     _instance: Optional['ServiceManager'] = None
@@ -110,6 +110,7 @@ class ServiceManager:
     
     def write_tag(self, plc_id: str, tag_name: str, data: Any, timeout: float = 10.0) -> TagWriteResult:
         """Synchronous wrapper for tag writing"""
+        logger.info(f"Writing {data} to tag {tag_name} on PLC {plc_id}")
         if not self._tag_service or not self._loop:
             raise RuntimeError("Background service not started. Call start_background_service() first.")
         
@@ -118,10 +119,16 @@ class ServiceManager:
                 self._tag_service.write_tag(plc_id, tag_name, data), 
                 self._loop
             )
+
+            context = {"plc_id": plc_id, "tag_name": tag_name, "data": data}
+            logger.info(f"Tag write completed", extra={
+                "operation": "write_tag", **context})
             return future.result(timeout=timeout)
         except asyncio.TimeoutError:
+            logger.warning(f"Tag write operation timed out after {timeout} seconds")
             raise TimeoutError(f"Tag write operation timed out after {timeout} seconds")
         except Exception as e:
+            logger.warning(f"Tag write failed: {str(e)}")
             raise RuntimeError(f"Tag write failed: {str(e)}") from e
 
 # Global instance
