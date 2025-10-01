@@ -460,7 +460,7 @@ class PLCConnection:
     
     async def _execute_modbus_operation(self, client: AsyncModbusTcpClient, operation: ModbusOperation) -> Any:
         """Execute specific modbus operation - kept unchanged for stability"""
-        unit_id = operation.unit_id or self.config.unit_id
+        unit_id = self.config.unit_id or 1
         
         logger.debug("Executing modbus operation", extra={
             "component": "plc_connection",

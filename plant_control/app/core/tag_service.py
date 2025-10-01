@@ -58,6 +58,8 @@ class TagService:
             data_type = self.helper.get_data_type(plc_id, original_address)
             decode_type = self.helper.get_decode_type(plc_id, original_address)
             register_count = self.helper.determine_register_count(data_type)
+            units = self.helper.get_units(plc_id, original_address)
+            scaling_factor = self.helper.get_scaling_factor(plc_id, original_address)
             
             # Build and execute operation
             operation = self.helper.build_modbus_operation("read", converted_modbus_address, original_address, register_type, register_count)
@@ -78,6 +80,8 @@ class TagService:
                 status=ReadStatus.SUCCESS,
                 data=decoded_data,
                 registers=registers,
+                units=units,
+                scaling_factor=scaling_factor,
                 timestamp=timestamp
             )
             
@@ -457,6 +461,9 @@ class TagService:
                 data_type = self.helper.get_data_type(plc_id, original_address)
                 decode_type = self.helper.get_decode_type(plc_id, original_address)
                 register_count = self.helper.determine_register_count(data_type)
+                units = self.helper.get_units(plc_id, original_address)
+                scaling_factor = self.helper.get_scaling_factor(plc_id, original_address)
+
             except Exception as e:
                 # Configuration/resolution errors are always important to log
                 logger.error(f"Tag resolution failed for {plc_id}.{tag_name}: {str(e)}")
@@ -506,6 +513,8 @@ class TagService:
                 status=ReadStatus.SUCCESS,
                 data=decoded_data,
                 registers=registers,
+                units=units,
+                scaling_factor=scaling_factor,
                 timestamp=timestamp
             )
             

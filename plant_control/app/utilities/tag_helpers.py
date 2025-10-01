@@ -150,6 +150,35 @@ class TagServiceHelper:
             raise ConfigurationError(f"Failed to get data type for address {original_address}: {str(e)}", 
                                    plc_id=plc_id, address=original_address) from e
 
+    def get_units(self, plc_id: str, original_address: int) -> str:
+        """Get data type of stored data from register config"""
+        try:
+            register_config = config_manager.get_register_config(plc_id, original_address)
+            if not register_config:
+                raise ConfigurationError(f"No register configuration found", 
+                                       plc_id=plc_id, address=original_address)
+
+            return register_config.get("units", "")
+            
+        except Exception as e:
+            raise ConfigurationError(f"Failed to get units address {original_address}: {str(e)}", 
+                                   plc_id=plc_id, address=original_address) from e
+
+
+    def get_scaling_factor(self, plc_id: str, original_address: int) -> float:
+        """Get data type of stored data from register config"""
+        try:
+            register_config = config_manager.get_register_config(plc_id, original_address)
+            if not register_config:
+                raise ConfigurationError(f"No register configuration found", 
+                                       plc_id=plc_id, address=original_address)
+
+            return register_config.get("scaling_factor", 1.0)
+            
+        except Exception as e:
+            raise ConfigurationError(f"Failed to get scaling factor for address {original_address}: {str(e)}", 
+                                   plc_id=plc_id, address=original_address) from e
+
     def build_modbus_operation(self, read_write: str, address: int, original_address: int, 
                                register_type: str, count: int, payload: Optional[List[Any]] = None, 
                                unit_id: int = 1) -> ModbusOperation:

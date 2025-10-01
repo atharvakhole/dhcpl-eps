@@ -759,6 +759,8 @@ class TagReadResponse(BaseModel):
     status: str
     data: Optional[Any] = None
     registers: Optional[List[Any]] = None
+    units: Optional[str] = None
+    scaling_factor: Optional[float] = None
     error_type: Optional[str] = None
     error_message: Optional[str] = None
     timestamp: float
@@ -880,6 +882,8 @@ def _convert_read_result_to_response(result: TagReadResult, plc_id: str) -> TagR
         status=result.status.value,
         data=result.data,
         registers=result.registers,
+        units=result.units,
+        scaling_factor=result.scaling_factor,
         error_type=result.error_type,
         error_message=result.error_message,
         timestamp=result.timestamp

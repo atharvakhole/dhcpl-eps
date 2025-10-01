@@ -19,6 +19,8 @@ class TagReadResult:
     tag_name: str
     status: ReadStatus
     data: Optional[Any] = None
+    units: Optional[str] = ""
+    scaling_factor: Optional[float] = None
     registers: Optional[List[Any]] = None
     error_type: Optional[str] = None
     error_message: Optional[str] = None
