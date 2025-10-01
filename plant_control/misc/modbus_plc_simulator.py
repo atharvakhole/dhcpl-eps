@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Modbus TCP Pump Simulator
-Simulates 2 Pumps on port 5020 with different slave IDs, and PLC2 on port 5021
+Simulates 6 Pumps on port 5020 with slave IDs 1-6, and PLC2 on port 5021
 Uses modern pymodbus 3.x API with actual pump register mappings
 """
 
@@ -180,11 +180,14 @@ def create_plc2_context():
 
 async def simulate_pump_control(context_5020):
     """Simulate pump start/stop behavior with delay and RPM control"""
-    # Track previous states to detect changes
-    pump_states = {
-        5: {'last_start': 1, 'transitioning': False, 'current_rpm': 1200},   # PUMP1
-        10: {'last_start': 1, 'transitioning': False, 'current_rpm': 1200}   # PUMP2
-    }
+    # Track previous states to detect changes - now for 6 pumps (slave IDs 1-6)
+    pump_states = {}
+    for slave_id in range(1, 7):
+        pump_states[slave_id] = {
+            'last_start': 1, 
+            'transitioning': False, 
+            'current_rpm': 1200
+        }
     
     MAX_RPM = 1500
     
@@ -192,7 +195,7 @@ async def simulate_pump_control(context_5020):
         try:
             await asyncio.sleep(0.5)  # Check every 0.5 seconds
             
-            for slave_id in [5, 10]:
+            for slave_id in range(1, 7):  # Iterate through slave IDs 1-6
                 if context_5020 and slave_id in context_5020.slaves():
                     slave_context = context_5020[slave_id]
                     state = pump_states[slave_id]
@@ -267,7 +270,7 @@ async def update_pump_status(slave_context, slave_id, target_status, state):
         state['transitioning'] = False
 
 async def run_server_5020(context):
-    """Run server on port 5020 with multiple slaves (PUMP1 and PUMP2)"""
+    """Run server on port 5020 with multiple slaves (PUMP1-PUMP6)"""
     identity = ModbusDeviceIdentification()
     identity.VendorName = 'PyModbus Simulator'
     identity.ProductCode = 'Multi-Slave-5020'
@@ -276,7 +279,7 @@ async def run_server_5020(context):
     identity.ModelName = 'Multi-Pump Server'
     identity.MajorMinorRevision = '1.0'
     
-    log.info("Starting Multi-Pump server on port 5020 (PUMP1=SlaveID:5, PUMP2=SlaveID:10)")
+    log.info("Starting Multi-Pump server on port 5020 (6 Pumps: SlaveIDs 1-6)")
     
     await StartAsyncTcpServer(
         context=context,
@@ -305,17 +308,17 @@ async def run_server_5021(context):
 async def main_async():
     """Async main function to start all simulators"""
     
-    # Create slave contexts
-    pump1_slave = create_pump_context("PUMP1", 1)
-    pump2_slave = create_pump_context("PUMP2", 2)
+    # Create 6 pump slave contexts
+    pump_slaves = {}
+    for i in range(1, 7):
+        pump_slaves[i] = create_pump_context(f"PUMP{i}", i)
+    
+    # Create PLC2 context
     plc2_slave = create_plc2_context()
     
     # Create server contexts
-    # Port 5020: Multiple slaves (PUMP1 and PUMP2)
-    context_5020 = ModbusServerContext(slaves={
-        5: pump1_slave,   # PUMP1
-        10: pump2_slave   # PUMP2
-    }, single=False)
+    # Port 5020: Multiple slaves (PUMP1-PUMP6 with slave IDs 1-6)
+    context_5020 = ModbusServerContext(slaves=pump_slaves, single=False)
     
     # Port 5021: Single slave (PLC2)
     context_5021 = ModbusServerContext(slaves={
@@ -344,8 +347,15 @@ def main():
     print("=" * 80)
     print("Modbus TCP Pump Simulator - Multi-Slave Configuration")
     print("=" * 80)
-    print("\nPort 5020 (Multi-Slave Server - Pumps):")
-    print("  PUMP1 - Slave ID: 5")
+    print("\nPort 5020 (Multi-Slave Server - 6 Pumps):")
+    print("  PUMP1 - Slave ID: 1")
+    print("  PUMP2 - Slave ID: 2")
+    print("  PUMP3 - Slave ID: 3")
+    print("  PUMP4 - Slave ID: 4")
+    print("  PUMP5 - Slave ID: 5")
+    print("  PUMP6 - Slave ID: 6")
+    print()
+    print("  All pumps have identical register mappings:")
     print("    Key Registers (Holding Registers):")
     print("      HR 100 (40101): CURRENT_SETPOINT - Actually Actual RPM (1200 RPM)")
     print("      HR 101 (40102): ACTUAL_RPM - Actually RPM % of max 1500 (80%)")
@@ -358,9 +368,6 @@ def main():
     print("      HR 305 (40306): MANUAL_RPM_SP - 1000.0 RPM")
     print("      HR 306 (40307): AUTO_RPM_SP - 1200.0 RPM")
     print("      HR 308 (40309): START_PUMP - 1 (Start)")
-    print()
-    print("  PUMP2 - Slave ID: 10")
-    print("    Same register mappings as PUMP1")
     print()
     print("Port 5021 (Single-Slave Server - HVAC):")
     print("  PLC2 (HVAC) - Slave ID: 1")
@@ -392,7 +399,7 @@ def main():
     print("  - RPM ramps down to 0 when pump is stopped")
     print()
     print("To test pumps on same port:")
-    print("  Connect to localhost:5020 and specify slave ID 5 (PUMP1) or 10 (PUMP2)")
+    print("  Connect to localhost:5020 and specify slave ID (1-6) for each pump")
     print("=" * 80)
     
     try:
