@@ -1,99 +1,15 @@
 plcs:
-  PUMP1:
-    host: "192.168.1.100"
-    port: 501
+  EPS01:
+    host: "192.168.1.254"
+    port: 502
     unit_id: 1
     timeout: 3.0
     retries: 3
-    description: "Manufacturing Line Controller"
+    description: "EPS Reactors Controller"
     vendor: "Honeywell"
-    model: "M580"
-    addressing_scheme: "absolute"
-    max_concurrent_connections: 1
+    model: "HC900"
+    addressing_scheme: "relative"
+    max_concurrent_connections: 5
     health_check_interval: 15
     circuit_breaker_threshold: 5
-    circuit_breaker_timeout: 60
-  PUMP2:
-    host: "192.168.1.100"
-    port: 501
-    unit_id: 2
-    timeout: 3.0
-    retries: 3
-    description: "Manufacturing Line Controller"
-    vendor: "Honeywell"
-    model: "M580"
-    addressing_scheme: "absolute"
-    max_concurrent_connections: 1
-    health_check_interval: 15
-    circuit_breaker_threshold: 5
-    circuit_breaker_timeout: 60
-  PUMP3:
-    host: "192.168.1.100"
-    port: 501
-    unit_id: 3
-    timeout: 3.0
-    retries: 3
-    description: "Manufacturing Line Controller"
-    vendor: "Honeywell"
-    model: "M580"
-    addressing_scheme: "absolute"
-    max_concurrent_connections: 1
-    health_check_interval: 15
-    circuit_breaker_threshold: 5
-    circuit_breaker_timeout: 60
-  PUMP4:
-    host: "192.168.1.100"
-    port: 501
-    unit_id: 4
-    timeout: 3.0
-    retries: 3
-    description: "Manufacturing Line Controller"
-    vendor: "Honeywell"
-    model: "M580"
-    addressing_scheme: "absolute"
-    max_concurrent_connections: 1
-    health_check_interval: 15
-    circuit_breaker_threshold: 5
-    circuit_breaker_timeout: 60
-  PUMP5:
-    host: "192.168.1.100"
-    port: 501
-    unit_id: 5
-    timeout: 3.0
-    retries: 3
-    description: "Manufacturing Line Controller"
-    vendor: "Honeywell"
-    model: "M580"
-    addressing_scheme: "absolute"
-    max_concurrent_connections: 1
-    health_check_interval: 15
-    circuit_breaker_threshold: 5
-    circuit_breaker_timeout: 60
-  PUMP6:
-    host: "192.168.1.100"
-    port: 501
-    unit_id: 6
-    timeout: 3.0
-    retries: 3
-    description: "Manufacturing Line Controller"
-    vendor: "Honeywell"
-    model: "M580"
-    addressing_scheme: "absolute"
-    max_concurrent_connections: 1
-    health_check_interval: 15
-    circuit_breaker_threshold: 5
-    circuit_breaker_timeout: 60
-  # EPS01:
-  #   host: "192.168.1.254"
-  #   port: 502
-  #   unit_id: 1
-  #   timeout: 3.0
-  #   retries: 3
-  #   description: "EPS Reactors Controller"
-  #   vendor: "Honeywell"
-  #   model: "HC900"
-  #   addressing_scheme: "relative"
-  #   max_concurrent_connections: 5
-  #   health_check_interval: 15
-  #   circuit_breaker_threshold: 5
-  #   circuit_breaker_timeout: 30
+    circuit_breaker_timeout: 30

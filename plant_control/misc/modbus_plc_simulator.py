@@ -310,7 +310,7 @@ async def main_async():
     
     # Create 6 pump slave contexts
     pump_slaves = {}
-    for i in range(1, 7):
+    for i in range(1, 8):
         pump_slaves[i] = create_pump_context(f"PUMP{i}", i)
     
     # Create PLC2 context

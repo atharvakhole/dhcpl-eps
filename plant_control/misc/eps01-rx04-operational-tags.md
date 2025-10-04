@@ -241,3 +241,114 @@
 
 - CHW Outlet temperature
   0x22AE,8879,TT_135,,Signal Tag,344,float 32,,0,Analog, , ,Block 192 Output 4
+
+# Reactor 3
+
+Agitator:
+Amp
+0x22DA,8923,RX_03_VFD_AMP,,Signal Tag,366,float 32,,0,Analog, , ,Block 214 Output 4
+RPM
+0x22D6,8919,RX_03_VFD,,Signal Tag,364,float 32,,0,Analog, , ,Block 212 Output 4
+SP
+0x1A5A,6747,RX_03_VFD_SP,,Variable,206,float 32,,0,Analog, , ,0.00
+
+AG_SWTICH_ON_R3
+0xEC6E,60527,RCT_RX03_VFD_ATO,,Variable,864,float 32, , ,Digital,ON,OFF,OFF
+
+AG_IS_ON_R3
+0x21A8,8617,RCT_RX03_VFD_ON,,Signal Tag,213,float 32, , ,Digital,ON,OFF,Block 127 Output 13
+
+AG_TRIP_FEEDBACK_R3
+0x207A,8315,RX_3_VFD_BY_TRP,,Signal Tag,62,float 32, , ,Digital,ON,OFF,Block 108 Output 14
+
+PT_R3
+0x2252,8787,PT_110,,Signal Tag,298,float 32,,0,Analog, , ,Block 146 Output 4
+
+LT_R3
+0x22B6,8887,LT_111,,Signal Tag,348,float 32,,0,Analog, , ,Block 194 Output 4
+
+TE_MASS_UPPER_R3
+0x227A,8827,TT_109,,Signal Tag,318,float 32,,0,Analog, , ,Block 166 Output 4
+
+TE_MASS_LOWER_R3
+0x227C,8829,TT_110,,Signal Tag,319,float 32,,0,Analog, , ,Block 167 Output 4
+
+TE_JACKET_IN_R3
+N/A
+
+TE_JACKET_OUT_R3
+0x2280,8833,TT_112,,Signal Tag,321,float 32,,0,Analog, , ,Block 169 Output 4
+
+=== Same As R4 ===
+TE_HW_IN_R3
+TE_HW_OUT_R3
+TE_CW_IN_R3
+TE_CW_OUT_R3
+TE_CHW_IN_R3
+TE_CHW_OUT_R3
+==================
+
+XV_HWS_R3
+0x195E,6495,XV_108_STR_AM,,Variable,80,float 32, , ,Digital,ON,OFF,OFF
+XV_HWS_R3_FEEDBACK_OPEN
+0x20B0,8369,XV_108_OPEN_FB,,Signal Tag,89,float 32, , ,Digital,ON,OFF,Block 112 Output 9
+XV_HWS_R3_FEEDBACK_CLOSE
+0x20B2,8371,XV_108_CLOSE_FB,,Signal Tag,90,float 32, , ,Digital,ON,OFF,Block 112 Output 10
+
+XV_HWR_R3
+0x1964,6501,XV_109_STR_AM,,Variable,83,float 32, , ,Digital,ON,OFF,OFF
+XV_HWR_R3_FEEDBACK_OPEN
+0x20B4,8373,XV_109_OPEN_FB,,Signal Tag,91,float 32, , ,Digital,ON,OFF,Block 112 Output 11
+XV_HWR_R3_FEEDBACK_CLOSE
+0x20B6,8375,XV_109_CLOSE_FB,,Signal Tag,92,float 32, , ,Digital,ON,OFF,Block 112 Output 12
+
+XV_CWS_R3
+0x198E,6543,XV_116_STR_AM,,Variable,104,float 32, , ,Digital,ON,OFF,OFF
+XV_CWS_R3_FEEDBACK_OPEN
+0x20D0,8401,XV_116_OPEN_FB,,Signal Tag,105,float 32, , ,Digital,ON,OFF,Block 114 Output 9
+XV_CWS_R3_FEEDBACK_CLOSE
+0x20D2,8403,XV_116_CLOSE_FB,,Signal Tag,106,float 32, , ,Digital,ON,OFF,Block 114 Output 10
+
+XV_CWR_R3
+0x1994,6549,XV_117_STR_AM,,Variable,107,float 32, , ,Digital,ON,OFF,OFF
+XV_CWR_R3_FEEDBACK_OPEN
+0x20D4,8405,XV_117_OPEN_FB,,Signal Tag,107,float 32, , ,Digital,ON,OFF,Block 114 Output 11
+XV_CWR_R3_FEEDBACK_CLOSE
+0x20D6,8407,XV_117_CLOSE_FB,,Signal Tag,108,float 32, , ,Digital,ON,OFF,Block 114 Output 12
+
+XV_CHWS_R3
+0x19BE,6591,XV_124_STR_AM,,Variable,128,float 32, , ,Digital,ON,OFF,OFF
+XV_CHWS_R3_FEEDBACK_OPEN
+0x20F0,8433,XV_124_OPEN_FB,,Signal Tag,121,float 32, , ,Digital,ON,OFF,Block 116 Output 9
+XV_CHWS_R3_FEEDBACK_CLOSE
+0x20F2,8435,XV_124_CLOSE_FB,,Signal Tag,122,float 32, , ,Digital,ON,OFF,Block 116 Output 10
+
+XV_CHWR_R3
+0x19C4,6597,XV_125_STR_AM,,Variable,131,float 32, , ,Digital,ON,OFF,OFF
+XV_CHWR_R3_FEEDBACK_OPEN
+0x20F4,8437,XV_125_OPEN_FB,,Signal Tag,123,float 32, , ,Digital,ON,OFF,Block 116 Output 11
+XV_CHWR_R3_FEEDBACK_CLOSE
+0x20F6,8439,XV_125_CLOSE_FB,,Signal Tag,124,float 32, , ,Digital,ON,OFF,Block 116 Output 12
+
+FCV_JACKET_SP_R3
+0x1D16,7447,FCV_103_OP,,Variable,556,float 32,,1,Analog, , ,0.00
+
+FCV_JACKET_SWITCH_ON_R3
+0x1A6A,6763,FCV_103_AM,,Variable,214,float 32, , ,Digital,ON,OFF,OFF
+
+FLOW_METER_JACKET_R3
+N/A
+
+# DRAIN
+
+FBV_R3
+0x1928,6441,XVX_103_STR_AM,,Variable,53,float 32, , ,Digital,ON,OFF,OFF
+
+FBV_OPEN_FB_R3
+0x208C,8333,XVX_103_OPEN_FB,,Signal Tag,71,float 32, , ,Digital,ON,OFF,Block 109 Output 15
+
+FBV_CLOSE_FB_R3
+0x208E,8335,XVX_103_CLOSE_FB,,Signal Tag,72,float 32, , ,Digital,ON,OFF,Block 109 Output 16
+
+XV_ER_DRAIN_R3
+0x19F4,6645,XV_133_STR_AM,,Variable,155,float 32, , ,Digital,ON,OFF,OFF
